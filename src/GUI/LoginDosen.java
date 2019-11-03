@@ -23,6 +23,8 @@ public class LoginDosen extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,6 +42,12 @@ public class LoginDosen extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jTextField1.setText("NIDN");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 150, -1));
+
+        jPasswordField1.setText("jPasswordField1");
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 150, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/LoginDosen.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 510));
 
@@ -50,7 +58,8 @@ public class LoginDosen extends javax.swing.JFrame {
         // TODO add your handling code here:
         LoginBy b = new LoginBy();
         b.setVisible(true);
-        this.setVisible(false); 
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
@@ -85,5 +94,7 @@ public class LoginDosen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
