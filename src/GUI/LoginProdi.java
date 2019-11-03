@@ -29,6 +29,7 @@ public class LoginProdi extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        UserDos = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,6 +46,14 @@ public class LoginProdi extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        UserDos.setText("Username");
+        UserDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserDosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(UserDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 170, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/LoginProdi.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 430));
 
@@ -57,6 +66,10 @@ public class LoginProdi extends javax.swing.JFrame {
         b.setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void UserDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserDosActionPerformed
+        String NIk = UserDos.getText();
+    }//GEN-LAST:event_UserDosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,6 +107,7 @@ public class LoginProdi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField UserDos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
