@@ -6,6 +6,8 @@ package modultugasakhir;
  * Purpose: Defines the Class Jabatan
  ***********************************************************************/
 
+import java.util.*;
+
 /** @pdOid ccad082c-5c4e-491c-a9c9-8e3aea839115 */
 public class Jabatan {
    /** @pdOid 679a1225-fde5-4295-845d-3ac86cf1b37a */
@@ -35,7 +37,8 @@ public class Jabatan {
 	   if (null == newIDJabatan)
             System.out.println("input salah");
         else
-               IDJabatan = newIDJabatan;
+            System.out.println("");
+      IDJabatan = newIDJabatan;
 	}
    
    /**
@@ -51,7 +54,8 @@ public class Jabatan {
 	   if (null == newNamaJabatan)
             System.out.println("input salah");
         else
-               namaJabatan = newNamaJabatan;
+            System.out.println("");
+      namaJabatan = newNamaJabatan;
 	}
    
    /** @pdOid 1e0ef1ae-884f-4a78-8bae-225ee36a2b2d */
