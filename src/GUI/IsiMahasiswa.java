@@ -58,7 +58,7 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         jLabel2.setBounds(10, 10, 440, 30);
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\DIAGRAM OOP\\GUI\\src\\Image_pckg\\BackLogo.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/BackLogo.png"))); // NOI18N
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -127,7 +127,7 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(10, 50, 530, 26);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jempol\\Downloads\\maha.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 540, 542);

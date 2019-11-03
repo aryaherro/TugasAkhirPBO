@@ -47,6 +47,7 @@ public class IsiDosen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(540, 542));
         setSize(new java.awt.Dimension(540, 542));
         getContentPane().setLayout(null);
@@ -58,7 +59,7 @@ public class IsiDosen extends javax.swing.JFrame {
         jLabel2.setBounds(10, 10, 440, 30);
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\DIAGRAM OOP\\GUI\\src\\Image_pckg\\BackLogo.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/BackLogo.png"))); // NOI18N
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -164,7 +165,7 @@ public class IsiDosen extends javax.swing.JFrame {
         getContentPane().add(jSimpan);
         jSimpan.setBounds(430, 500, 90, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jempol\\Documents\\GitHub\\TugasAkhir\\src\\GUI\\Image_pckg\\maha.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 600, 542);
