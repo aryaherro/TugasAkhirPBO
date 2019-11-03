@@ -102,7 +102,7 @@ public class IsiAdmin extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 60, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jempol\\Documents\\GitHub\\TugasAkhir\\src\\GUI\\Image_pckg\\maha.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 350));
 

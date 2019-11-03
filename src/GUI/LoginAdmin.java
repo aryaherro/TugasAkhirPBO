@@ -71,7 +71,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("F:\\Gambar Baru\\LoginAdmin.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/LoginAdmin.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
 

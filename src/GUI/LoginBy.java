@@ -64,14 +64,14 @@ public class LoginBy extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 110, 40));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("F:\\Gambar Baru\\Admin.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/Admin.png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 280, -1, 40));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 280, 130, 40));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/Prodi.png"))); // NOI18N
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -82,7 +82,7 @@ public class LoginBy extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 120, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("F:\\Gambar Baru\\LoginBy.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/LoginBy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 459));
 
         pack();
