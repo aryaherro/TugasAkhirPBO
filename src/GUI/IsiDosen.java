@@ -47,7 +47,6 @@ public class IsiDosen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(540, 542));
         setSize(new java.awt.Dimension(540, 542));
         getContentPane().setLayout(null);
@@ -171,6 +170,7 @@ public class IsiDosen extends javax.swing.JFrame {
         jLabel1.setBounds(0, 0, 600, 542);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
@@ -178,6 +178,7 @@ public class IsiDosen extends javax.swing.JFrame {
         LoginDosen d = new LoginDosen();
         d.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jtxtRevisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtRevisiActionPerformed

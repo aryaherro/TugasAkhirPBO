@@ -1,5 +1,8 @@
 package GUI;
 
+import java.awt.Color;
+import javax.swing.JFrame;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +20,7 @@ public class LoginProdi extends javax.swing.JFrame {
      */
     public LoginProdi() {
         initComponents();
+        this.setBackground (new Color(0,0,0,0));
     }
 
     /**
@@ -29,12 +33,16 @@ public class LoginProdi extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        UserDos = new javax.swing.JTextField();
+        UserPro = new javax.swing.JTextField();
+        PasPro = new javax.swing.JPasswordField();
+        Masuk = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(0, 0));
         setUndecorated(true);
-        setSize(new java.awt.Dimension(591, 473));
+        setPreferredSize(new java.awt.Dimension(540, 542));
+        setSize(new java.awt.Dimension(540, 542));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/BackLogo2.png"))); // NOI18N
@@ -46,18 +54,36 @@ public class LoginProdi extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        UserDos.setText("Username");
-        UserDos.addActionListener(new java.awt.event.ActionListener() {
+        UserPro.setText("Username");
+        UserPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserDosActionPerformed(evt);
+                UserProActionPerformed(evt);
             }
         });
-        getContentPane().add(UserDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 170, 30));
+        getContentPane().add(UserPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 170, 30));
+
+        PasPro.setText("PasMaha");
+        PasPro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasProActionPerformed(evt);
+            }
+        });
+        getContentPane().add(PasPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 170, 30));
+
+        Masuk.setBackground(new java.awt.Color(255, 204, 102));
+        Masuk.setText("MASUK");
+        Masuk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MasukMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 100, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/LoginProdi.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 430));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -67,9 +93,22 @@ public class LoginProdi extends javax.swing.JFrame {
         this.setVisible(false); 
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void UserDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserDosActionPerformed
-        String NIk = UserDos.getText();
-    }//GEN-LAST:event_UserDosActionPerformed
+    private void UserProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserProActionPerformed
+        String NIK = UserPro.getText();
+    }//GEN-LAST:event_UserProActionPerformed
+
+    private void PasProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasProActionPerformed
+        String Pasdos = PasPro.getText();
+    }//GEN-LAST:event_PasProActionPerformed
+
+    private void MasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MasukMouseClicked
+        IsiProdi Pro = new IsiProdi();
+        Pro.setVisible(true);
+        Pro.pack();
+        Pro.setLocationRelativeTo(null);
+        Pro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
+    }//GEN-LAST:event_MasukMouseClicked
 
     /**
      * @param args the command line arguments
@@ -107,7 +146,9 @@ public class LoginProdi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField UserDos;
+    private javax.swing.JButton Masuk;
+    private javax.swing.JPasswordField PasPro;
+    private javax.swing.JTextField UserPro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
