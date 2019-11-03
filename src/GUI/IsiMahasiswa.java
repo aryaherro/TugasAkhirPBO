@@ -110,7 +110,7 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         jtxtProposal1.setBounds(210, 80, 310, 50);
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/BackLogo2.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\DIAGRAM OOP\\GUI\\src\\Image_pckg\\BackLogo.png")); // NOI18N
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,13 +118,13 @@ public class IsiMahasiswa extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(480, 0, 50, 40);
+        jLabel3.setBounds(480, 0, 60, 50);
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 0, 0));
         jLabel6.setText("==============================================");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(10, 40, 530, 26);
+        jLabel6.setBounds(10, 50, 530, 26);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jempol\\Downloads\\maha.png")); // NOI18N
         jLabel1.setText("jLabel1");
