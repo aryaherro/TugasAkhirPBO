@@ -27,8 +27,8 @@ public class LoginDosen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(591, 473));
-        setSize(new java.awt.Dimension(591, 473));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/BackLogo.png"))); // NOI18N

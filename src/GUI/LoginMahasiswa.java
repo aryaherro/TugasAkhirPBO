@@ -33,7 +33,6 @@ public class LoginMahasiswa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(591, 472));
         setSize(new java.awt.Dimension(591, 472));
         getContentPane().setLayout(null);
 
@@ -54,7 +53,7 @@ public class LoginMahasiswa extends javax.swing.JFrame {
             }
         });
         getContentPane().add(PasMaha);
-        PasMaha.setBounds(240, 250, 56, 20);
+        PasMaha.setBounds(240, 250, 140, 20);
 
         Username.setText("Username");
         Username.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +62,7 @@ public class LoginMahasiswa extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Username);
-        Username.setBounds(240, 190, 120, 20);
+        Username.setBounds(240, 190, 140, 20);
 
         MASUK.setBackground(new java.awt.Color(255, 204, 102));
         MASUK.setText("MASUK");
@@ -91,7 +90,8 @@ public class LoginMahasiswa extends javax.swing.JFrame {
         // TODO add your handling code here:
         LoginBy b = new LoginBy();
         b.setVisible(true);
-        this.setVisible(false);        
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed

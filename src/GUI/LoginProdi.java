@@ -56,6 +56,7 @@ public class LoginProdi extends javax.swing.JFrame {
         LoginBy b = new LoginBy();
         b.setVisible(true);
         this.setVisible(false); 
+        this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
