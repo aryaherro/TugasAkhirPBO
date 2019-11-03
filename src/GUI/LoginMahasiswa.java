@@ -99,14 +99,12 @@ public class LoginMahasiswa extends javax.swing.JFrame {
     }//GEN-LAST:event_UsernameActionPerformed
 
     private void MASUKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MASUKMouseClicked
-        //IsiMahasiswa c= new IsiMahasiswa();
-        //c.setVisible(true);
-        if (PasMaha.getText() == null)
-            JOptionPane.showMessageDialog(PasMaha, "password atau username salah");
-        else
-            setVisible(true);
-        //this.setVisible(false);
-        //this.dispose();
+       IsiMahasiswa LMhs = new IsiMahasiswa();
+        LMhs.setVisible(true);
+        LMhs.pack();
+        LMhs.setLocationRelativeTo(null);
+        LMhs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
     }//GEN-LAST:event_MASUKMouseClicked
 
     /**
