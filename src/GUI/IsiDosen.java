@@ -50,13 +50,12 @@ public class IsiDosen extends javax.swing.JFrame {
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(540, 542));
         setSize(new java.awt.Dimension(540, 542));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 51));
         jLabel2.setText("FAKULTAS TEKNIK INFORMATIKA");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 10, 440, 30);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/BackLogo.png"))); // NOI18N
@@ -66,28 +65,24 @@ public class IsiDosen extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(480, 0, 60, 50);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 60, 50));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 0, 0));
         jLabel7.setText("==============================================");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(10, 50, 530, 26);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 530, -1));
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 102));
         jLabel5.setText("NIM MAHASISWA");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 90, 180, 30);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 180, 30));
 
         jtxtNIM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtNIMActionPerformed(evt);
             }
         });
-        getContentPane().add(jtxtNIM);
-        jtxtNIM.setBounds(210, 80, 310, 50);
+        getContentPane().add(jtxtNIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 310, 50));
 
         jBtnGO.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jBtnGO.setText("GO");
@@ -96,44 +91,41 @@ public class IsiDosen extends javax.swing.JFrame {
                 jBtnGOMouseClicked(evt);
             }
         });
-        getContentPane().add(jBtnGO);
-        jBtnGO.setBounds(440, 140, 80, 29);
+        getContentPane().add(jBtnGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 80, -1));
 
-        jBtnProposal.setBackground(new java.awt.Color(255, 255, 102));
+        jBtnProposal.setBackground(new java.awt.Color(0, 0, 0));
         jBtnProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
+        jBtnProposal.setForeground(new java.awt.Color(255, 255, 255));
         jBtnProposal.setText("PROPOSAL TA");
         jBtnProposal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnProposalActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnProposal);
-        jBtnProposal.setBounds(30, 160, 120, 27);
+        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 120, -1));
 
-        jBtnTA.setBackground(new java.awt.Color(255, 255, 102));
+        jBtnTA.setBackground(new java.awt.Color(0, 0, 0));
         jBtnTA.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
+        jBtnTA.setForeground(new java.awt.Color(255, 255, 255));
         jBtnTA.setText("TA");
         jBtnTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnTAActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnTA);
-        jBtnTA.setBounds(180, 160, 70, 27);
+        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 70, -1));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 51));
         jLabel4.setText("MASUKKAN REVISI / CATATAN :");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 200, 250, 30);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 250, 30));
 
         jtxtRevisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtRevisiActionPerformed(evt);
             }
         });
-        getContentPane().add(jtxtRevisi);
-        jtxtRevisi.setBounds(30, 230, 480, 150);
+        getContentPane().add(jtxtRevisi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 480, 150));
 
         jBeritaAcara1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jBeritaAcara1.setText("LIHAT BERITA ACARA");
@@ -142,18 +134,15 @@ public class IsiDosen extends javax.swing.JFrame {
                 jBeritaAcara1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBeritaAcara1);
-        jBeritaAcara1.setBounds(30, 400, 240, 20);
+        getContentPane().add(jBeritaAcara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 240, 20));
 
         jSeminarTA2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jSeminarTA2.setText("JADWAL SEMINAR TA");
-        getContentPane().add(jSeminarTA2);
-        jSeminarTA2.setBounds(30, 430, 240, 20);
+        getContentPane().add(jSeminarTA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 240, 20));
 
         jSeminarProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jSeminarProposal.setText("JADWAL SEMINAR PROPOSAL");
-        getContentPane().add(jSeminarProposal);
-        jSeminarProposal.setBounds(30, 460, 280, 20);
+        getContentPane().add(jSeminarProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 280, 20));
 
         jSimpan.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
         jSimpan.setText("SIMPAN");
@@ -162,13 +151,11 @@ public class IsiDosen extends javax.swing.JFrame {
                 jSimpanActionPerformed(evt);
             }
         });
-        getContentPane().add(jSimpan);
-        jSimpan.setBounds(430, 500, 90, 30);
+        getContentPane().add(jSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, 90, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 600, 542);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 542));
 
         pack();
         setLocationRelativeTo(null);

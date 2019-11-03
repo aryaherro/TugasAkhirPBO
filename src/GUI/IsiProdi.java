@@ -88,8 +88,9 @@ public class IsiProdi extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 80, -1));
 
-        jBtnProposal.setBackground(new java.awt.Color(255, 255, 102));
+        jBtnProposal.setBackground(new java.awt.Color(0, 0, 0));
         jBtnProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
+        jBtnProposal.setForeground(new java.awt.Color(255, 255, 255));
         jBtnProposal.setText("PROPOSAL TA");
         jBtnProposal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,8 +99,9 @@ public class IsiProdi extends javax.swing.JFrame {
         });
         getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 120, -1));
 
-        jBtnTA.setBackground(new java.awt.Color(255, 255, 102));
+        jBtnTA.setBackground(new java.awt.Color(0, 0, 0));
         jBtnTA.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
+        jBtnTA.setForeground(new java.awt.Color(255, 255, 255));
         jBtnTA.setText("TA");
         jBtnTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
