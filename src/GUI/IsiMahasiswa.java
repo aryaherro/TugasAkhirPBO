@@ -33,6 +33,7 @@ public class IsiMahasiswa extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jSeminarProposal = new javax.swing.JButton();
@@ -41,7 +42,6 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         jSeminarTA2 = new javax.swing.JButton();
         txtTA = new javax.swing.JTextField();
         jtxtProposal1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -56,6 +56,17 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         jLabel2.setText("FAKULTAS TEKNIK INFORMATIKA");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 10, 440, 30);
+
+        jLabel3.setBackground(new java.awt.Color(255, 204, 51));
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\DIAGRAM OOP\\GUI\\src\\Image_pckg\\BackLogo.png")); // NOI18N
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(480, 0, 60, 50);
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 102));
@@ -109,17 +120,6 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         });
         jPanel1.add(jtxtProposal1);
         jtxtProposal1.setBounds(210, 80, 310, 50);
-
-        jLabel3.setBackground(new java.awt.Color(255, 204, 51));
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\DIAGRAM OOP\\GUI\\src\\Image_pckg\\BackLogo.png")); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(480, 0, 60, 50);
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 0, 0));
