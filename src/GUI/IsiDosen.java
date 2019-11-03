@@ -7,7 +7,8 @@
 package GUI;
 
 import javax.swing.JOptionPane;
-
+//import javax.swing.JFrame;
+//import java.awt.Color;
 /**
  *
  * @author Jempol
@@ -17,6 +18,7 @@ public class IsiDosen extends javax.swing.JFrame {
     /** Creates new form IsiDosen */
     public IsiDosen() {
         initComponents();
+//        this.setBackground (new Color(0,0,0,0));
     }
 
     /** This method is called from within the constructor to
@@ -45,6 +47,8 @@ public class IsiDosen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(540, 542));
         setSize(new java.awt.Dimension(540, 542));
         getContentPane().setLayout(null);
 
@@ -161,10 +165,10 @@ public class IsiDosen extends javax.swing.JFrame {
         getContentPane().add(jSimpan);
         jSimpan.setBounds(430, 500, 90, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jempol\\Downloads\\maha.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jempol\\Documents\\GitHub\\TugasAkhir\\src\\GUI\\Image_pckg\\maha.png")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 540, 542);
+        jLabel1.setBounds(0, 0, 600, 542);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
