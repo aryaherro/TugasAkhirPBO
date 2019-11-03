@@ -5,11 +5,10 @@ import javax.swing.JFrame;
 //
 
 public class LoginBy extends javax.swing.JFrame {
-
-    /**
-     * Creates new form LoginBy
-     */
-    public LoginBy() {
+   int dragxmouse;
+   int dragymouse;
+   
+   public LoginBy() {
         initComponents();
         this.setBackground (new Color(0,0,0,0));
     }
@@ -27,11 +26,11 @@ public class LoginBy extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(591, 473));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/Close32.png"))); // NOI18N
@@ -69,6 +68,13 @@ public class LoginBy extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 120, 40));
+
+        jLabel6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabel6MouseDragged(evt);
+            }
+        });
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 460));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/LoginBy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 459));
@@ -111,6 +117,15 @@ public class LoginBy extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    private void jLabel6MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x-dragxmouse ,y-dragymouse);
+        // System.out.println(x+","+y);
+    }//GEN-LAST:event_jLabel6MouseDragged
+
     /**
      * @param args the command line arguments
      */
@@ -152,5 +167,6 @@ public class LoginBy extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
