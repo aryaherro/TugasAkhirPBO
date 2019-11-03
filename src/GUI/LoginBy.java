@@ -2,7 +2,7 @@ package GUI;
 
 import java.awt.Color;
 import javax.swing.JFrame;
-
+//
 
 public class LoginBy extends javax.swing.JFrame {
 
