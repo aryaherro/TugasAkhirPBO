@@ -43,7 +43,8 @@ public class IsiProdi extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setSize(new java.awt.Dimension(540, 542));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
         jLabel3.setIcon(new javax.swing.ImageIcon("D:\\DIAGRAM OOP\\GUI\\src\\Image_pckg\\BackLogo.png")); // NOI18N
@@ -53,34 +54,29 @@ public class IsiProdi extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(480, 0, 60, 50);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 60, 50));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 51));
         jLabel2.setText("FAKULTAS TEKNIK INFORMATIKA");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 10, 440, 30);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 30));
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 0, 0));
         jLabel6.setText("==============================================");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(10, 50, 530, 26);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 530, -1));
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 102));
         jLabel5.setText("NIM MAHASISWA");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 110, 180, 30);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 180, 30));
 
         jtxtNIM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtNIMActionPerformed(evt);
             }
         });
-        getContentPane().add(jtxtNIM);
-        jtxtNIM.setBounds(210, 100, 310, 50);
+        getContentPane().add(jtxtNIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 310, 50));
 
         jBtnGO.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jBtnGO.setText("GO");
@@ -89,8 +85,7 @@ public class IsiProdi extends javax.swing.JFrame {
                 jBtnGOMouseClicked(evt);
             }
         });
-        getContentPane().add(jBtnGO);
-        jBtnGO.setBounds(440, 160, 80, 29);
+        getContentPane().add(jBtnGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 80, -1));
 
         jBtnProposal.setBackground(new java.awt.Color(255, 255, 102));
         jBtnProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
@@ -100,8 +95,7 @@ public class IsiProdi extends javax.swing.JFrame {
                 jBtnProposalActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnProposal);
-        jBtnProposal.setBounds(30, 200, 120, 27);
+        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 120, -1));
 
         jBtnTA.setBackground(new java.awt.Color(255, 255, 102));
         jBtnTA.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
@@ -111,14 +105,12 @@ public class IsiProdi extends javax.swing.JFrame {
                 jBtnTAActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnTA);
-        jBtnTA.setBounds(180, 200, 70, 27);
+        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 70, -1));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 51));
         jLabel4.setText("MASUKKAN JADWAL SEMINAR");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 240, 250, 30);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 250, 30));
 
         jDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d MMM y"))));
         jDate.setText("day / month / year");
@@ -127,8 +119,7 @@ public class IsiProdi extends javax.swing.JFrame {
                 jDateActionPerformed(evt);
             }
         });
-        getContentPane().add(jDate);
-        jDate.setBounds(280, 240, 190, 30);
+        getContentPane().add(jDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 190, 30));
 
         jSimpan.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
         jSimpan.setText("SIMPAN");
@@ -137,39 +128,16 @@ public class IsiProdi extends javax.swing.JFrame {
                 jSimpanActionPerformed(evt);
             }
         });
-        getContentPane().add(jSimpan);
-        jSimpan.setBounds(430, 490, 90, 30);
+        getContentPane().add(jSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 90, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jempol\\Downloads\\maha.png")); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 540, 542);
+        jLabel1.setPreferredSize(new java.awt.Dimension(540, 542));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-        LoginMahasiswa c = new LoginMahasiswa();
-        c.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jtxtNIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNIMActionPerformed
-        String nim = jtxtNIM.getText();
-    }//GEN-LAST:event_jtxtNIMActionPerformed
-
-    private void jBtnGOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnGOMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnGOMouseClicked
-
-    private void jBtnProposalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProposalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnProposalActionPerformed
-
-    private void jBtnTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnTAActionPerformed
 
     private void jSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSimpanActionPerformed
         JOptionPane.showMessageDialog(jSimpan, "data telah disimpan");
@@ -178,6 +146,29 @@ public class IsiProdi extends javax.swing.JFrame {
     private void jDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jDateActionPerformed
+
+    private void jBtnTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnTAActionPerformed
+
+    private void jBtnProposalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProposalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnProposalActionPerformed
+
+    private void jBtnGOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnGOMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnGOMouseClicked
+
+    private void jtxtNIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNIMActionPerformed
+        String nim = jtxtNIM.getText();
+    }//GEN-LAST:event_jtxtNIMActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        LoginProdi c = new LoginProdi();
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
