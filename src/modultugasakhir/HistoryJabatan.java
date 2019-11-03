@@ -1,7 +1,5 @@
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid b8369952-17d0-4cde-8ff7-5867fa7ac308 */
 public class HistoryJabatan {
    /** @pdOid d0bfabef-d22a-40da-8809-444766d9ff4d */
@@ -23,11 +21,10 @@ public class HistoryJabatan {
     * @pdOid 0c0ec652-5505-42cf-9d17-28235ceb4beb */
    public void setIDHistoryJabatan(String newIDHistoryJabatan) 
 	{
-	   if (null == newIDHistoryJabatan)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      IDHistoryJabatan = newIDHistoryJabatan;
+            if (null == newIDHistoryJabatan)
+                System.out.println("input salah");
+            else
+               IDHistoryJabatan = newIDHistoryJabatan;
 	}
    
    /**
@@ -38,14 +35,13 @@ public class HistoryJabatan {
    
    /** @param newStartDate
     * @pdOid 15c8a9bd-221d-4610-8192-322f1987bd39 */
-   public void setStartDate(java.util.Date newStartDate) 
-	{
-	   if (null == newStartDate)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      startDate = newStartDate;
-	}
+   public void setStartDate(java.util.Date newStartDate)
+   {
+       if (null == newStartDate)
+           System.out.println("input salah");
+       else
+           startDate = newStartDate;
+   }
    
    /**
      * @return  *  @pdOid bcc42829-3e4d-4f2d-80b0-750e32553ea5 */
@@ -55,14 +51,13 @@ public class HistoryJabatan {
    
    /** @param newTahunAjaran
     * @pdOid 6cd5c736-27e3-44c6-9e9f-deca079cb989 */
-   public void setTahunAjaran(String newTahunAjaran) 
-	{
-	   if (null == newTahunAjaran)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      tahunAjaran = newTahunAjaran;
-	}
+   public void setTahunAjaran(String newTahunAjaran)
+   {
+       if (null == newTahunAjaran)
+           System.out.println("input salah");
+       else
+           tahunAjaran = newTahunAjaran;
+   }
    
    /**
      * @return  *  @pdOid 870df15c-118d-4166-8916-461cf5b470af */
@@ -77,13 +72,12 @@ public class HistoryJabatan {
 	   if (newStatusAktif == false)
             System.out.println("input salah");
         else
-            System.out.println("");
-      statusAktif = newStatusAktif;
+               statusAktif = newStatusAktif;
 	}
    
    /** @pdOid 6640aafd-0b22-4c38-90b5-153b9be9b26c */
    public void historyJabatan() 
-	{
+   {
 		setStatusAktif(true);
 		setTahunAjaran("-");
    }

@@ -6,8 +6,6 @@ package modultugasakhir;
  * Purpose: Defines the Class Dosen
  ***********************************************************************/
 
-import java.util.*;
-
 /** @pdOid 25130c09-13c8-4e8b-b7b1-7f928aab3f0e */
 public class Dosen extends Manusia {
    /** @pdOid a6c569ad-97df-47d9-b0d7-bfe3cd16274d */
@@ -28,13 +26,13 @@ public class Dosen extends Manusia {
    
    /** @param newIDDosen
     * @pdOid 1b980929-ede3-4561-ad88-023777cd700d */
-   public void setIDDosen(String newIDDosen) 
-	{
-	   if (null == newIDDosen)
-            System.out.println("input salah");
-            else
-                IDDosen = newIDDosen;
-	}
+   public void setIDDosen(String newIDDosen)
+   {
+       if (null == newIDDosen)
+           System.out.println("input salah");
+       else
+           IDDosen = newIDDosen;
+   }
    
    /**
      * @return  *  @pdOid 58501c24-29ad-4de9-bb1c-4722624f7ca6 */
@@ -44,13 +42,13 @@ public class Dosen extends Manusia {
    
    /** @param newNPP
     * @pdOid 26e8cf4e-f93c-42ba-be1f-3b82aa0d1691 */
-   public void setNPP(String newNPP) 
-	{
-            if (null == newNPP)
-                System.out.println("input salah");
-            else
-                npp = newNPP;
-	}
+   public void setNPP(String newNPP)
+   {
+       if (null == newNPP)
+           System.out.println("input salah");
+       else
+           npp = newNPP;
+   }
    
    
    /**
@@ -75,8 +73,8 @@ public class Dosen extends Manusia {
       removeAllProdi();
       for (java.util.Iterator iter = newProdi.iterator(); iter.hasNext();)
          addProdi((Prodi)iter.next());
-
-	  if (null == newProdi)
+      
+        if (null == newProdi)
             System.out.println("input salah");
         else
             System.out.println("");
