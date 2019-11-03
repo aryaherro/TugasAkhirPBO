@@ -6,8 +6,6 @@ package modultugasakhir;
  * Purpose: Defines the Class BeritaAcara
  ***********************************************************************/
 
-import java.util.*;
-
 /** @pdOid b3d9360d-3a29-4c15-9edb-644fb1fab4e7 */
 public class BeritaAcara {
    /** @pdOid 62fd3ac4-62f9-4f89-93ca-e6d64baf5888 */
@@ -25,11 +23,10 @@ public class BeritaAcara {
     * @pdOid 2766f25f-c975-41c3-8250-6770df2e8f6d */
    public void setIDBeritaAcara(String newIDBeritaAcara) 
 	{
-	   if (null == newIDBeritaAcara)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      IDBeritaAcara = newIDBeritaAcara;
+            if (null == newIDBeritaAcara)
+                System.out.println("input salah");
+            else
+               IDBeritaAcara = newIDBeritaAcara;
 	}
    
    /**
@@ -42,17 +39,16 @@ public class BeritaAcara {
     * @pdOid 94fa6155-88ea-47d3-8d78-d2113c9cec9d */
    public void setIsiBeritaAcara(String newIsiBeritaAcara) 
 	{
-	   if (null == newIsiBeritaAcara)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      isiBeritaAcara = newIsiBeritaAcara;
+            if (null == newIsiBeritaAcara)
+                System.out.println("input salah");
+            else
+               isiBeritaAcara = newIsiBeritaAcara;
 	}
    
    /** @pdOid b2f26ee9-f4ad-4b7e-95eb-4a4848ab8c35 */
-   public void beritaAcara() 
-	{
-		setIsiBeritaAcara("-");
-	}
+   public void beritaAcara()
+   {
+       setIsiBeritaAcara("-");
+   }
 
 }
