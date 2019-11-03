@@ -1,12 +1,14 @@
+package GUI;
+
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-public class LoginMahasiswa extends javax.swing.JFrame {
+public class LoginMahasiswa1 extends javax.swing.JFrame {
 
     /**
      * Creates new form LoginMahasiswa
      */
-    public LoginMahasiswa() {
+    public LoginMahasiswa1() {
         initComponents();
         this.setBackground (new Color(0,0,0,0));
     }
@@ -31,7 +33,6 @@ public class LoginMahasiswa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(591, 472));
         setSize(new java.awt.Dimension(591, 472));
         getContentPane().setLayout(null);
 
