@@ -6,54 +6,43 @@ package modultugasakhir;
  * Purpose: Defines the Class JadwalSeminar
  ***********************************************************************/
 
-import java.util.*;
-
-/** @pdOid 7c4814b7-3f04-4adc-b0af-c54ac81cd325 */
+/** @pdOid e4e8551f-de74-4e50-9e79-e55094d0b390 */
 public class JadwalSeminar {
-   /** @pdOid d5acbfb1-a3e0-454f-9343-5be2ae1d27e3 */
-   private String IDJadwal;
-   /** @pdOid e713722e-752b-4019-bea5-32690ee40410 */
+   /** @pdOid 1cdffe73-ab06-4244-98e6-986364e99d53 */
+   private String idJadwal;
+   /** @pdOid 27618ae3-e28d-4e4b-b831-51e007f0d0b4 */
    private String jadwal;
    
-   /** @pdRoleInfo migr=no name=BeritaAcara assc=association11 coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
+   /** @pdRoleInfo migr=no name=BeritaAcara assc=lanjut coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
    public BeritaAcara beritaAcara;
    
-   /** @pdOid 129a99f4-b45f-4989-8efe-2da841b9972f */
+   /** @pdOid 4a20dab4-d435-421c-9a04-565d6082a07a */
+   public void jadwalSeminar() {
+      // TODO: implement
+   }
+   
+   /**
+     * @return  *  @pdOid d1a1d327-031e-4eb3-9a8e-9fb7dee8569c */
    public String getIDJadwal() {
-      return IDJadwal;
+      return idJadwal;
    }
    
    /** @param newIDJadwal
-    * @pdOid 7343eb5d-ef6b-49a3-a85c-7328f3d2f86c */
-   public void setIDJadwal(String newIDJadwal) 
-	{
-		if (null == newIDJadwal)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      IDJadwal = newIDJadwal;
-	}
+    * @pdOid fafefaa6-ad37-45fe-acee-ea42ba4f9b09 */
+   public void setIDJadwal(String newIDJadwal) {
+      idJadwal = newIDJadwal;
+   }
    
-   /** @pdOid 4c7dd5ad-3a8a-40cf-ac06-3258e7a76174 */
+   /**
+     * @return  *  @pdOid ebecfd7c-b5d7-469f-8869-11c2b3f1c0f6 */
    public String getJadwal() {
       return jadwal;
    }
    
    /** @param newJadwal
-    * @pdOid c0b76a1e-2341-49b2-904a-64d0d22cb9c6 */
-   public void setJadwal(String newJadwal) 
-	{
-	   if (null == newJadwal)
-            System.out.println("input salah");
-        else
-            System.out.println("");
+    * @pdOid ee84dd10-0792-4f29-af70-1b0b6fe806b0 */
+   public void setJadwal(String newJadwal) {
       jadwal = newJadwal;
-	}
-   
-   /** @pdOid 788fa466-c799-443c-8701-61984cdd3616 */
-   public void jadwalSeminar() 
-	{
-		setJadwal("-");
    }
 
 }

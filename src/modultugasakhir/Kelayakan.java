@@ -6,61 +6,48 @@ package modultugasakhir;
  * Purpose: Defines the Class Kelayakan
  ***********************************************************************/
 
-import java.util.*;
-
-/** @pdOid 796c5049-0439-4d9b-b53c-bc690e729b92 */
+/** @pdOid 4d95b612-8729-4aae-8d5f-6e3e91b604c2 */
 public class Kelayakan {
-   /** @pdOid 1fd9b479-4691-47c5-9cea-daff8f8e7fd4 */
-   private String IDLayak;
-   /** @pdOid 3482e5a2-5701-417c-adba-6bcb39c2b5e7 */
+   /** @pdOid f760e90f-9347-4994-9bcb-4332502d82aa */
+   private String idLayak;
+   /** @pdOid 69287df3-c2cc-41af-9522-ee5eb52f4b52 */
    private boolean statusLayak;
    
-   /** @pdRoleInfo migr=no name=JadwalSeminar assc=association8 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
+   /** @pdRoleInfo migr=no name=JadwalSeminar assc=menentukan coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<JadwalSeminar> jadwalSeminar;
    
+   /** @pdOid 92b41707-fa96-45da-99d5-295369a4af6c */
+   public void kelayakan() {
+      // TODO: implement
+   }
+   
    /**
-     * @return  *  @pdOid 1695be97-ac1f-479f-aa95-a112d3fb9127 */
+     * @return  *  @pdOid 8a468889-fe17-4b2e-9fac-d5cccfd241b6 */
    public String getIDLayak() {
-      return IDLayak;
+      return idLayak;
    }
    
    /** @param newIDLayak
-    * @pdOid fed8b2ba-ccab-4177-ad9d-bef7f62662ce */
-   public void setIDLayak(String newIDLayak) 
-	{
-            if (null == newIDLayak)
-                System.out.println("input salah");
-            else
-                IDLayak = newIDLayak;
-	}
+    * @pdOid c64066ca-0013-497d-8175-13e72f0ebcd9 */
+   public void setIDLayak(String newIDLayak) {
+      idLayak = newIDLayak;
+   }
    
    /**
-     * @return  *  @pdOid 38b8d34f-2b56-4857-99f0-667a4b6a95d5 */
+     * @return  *  @pdOid df5dd429-201b-4282-a136-e1a5c7a0969b */
    public boolean isStatusLayak() {
       return statusLayak;
    }
    
    /** @param newStatusLayak
-    * @pdOid 1aed3059-8b23-44db-b929-b6cedd17d8f9 */
-   public void setStatusLayak(boolean newStatusLayak) 
-	{
-	   if (newStatusLayak == false)
-            System.out.println("input salah");
-        else
-            System.out.println("");
+    * @pdOid 94e066a6-ef6a-4406-b482-d396c097ee3d */
+   public void setStatusLayak(boolean newStatusLayak) {
       statusLayak = newStatusLayak;
-	}
-   
-   /** @pdOid c8ae3e3e-baab-4472-a1f9-f511bc9120d7 */
-   public void kelayakan() 
-	{
-		setStatusLayak(true);
-	}
+   }
    
    
-   /** @pdG
-     * @return enerated default getter */
-
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<JadwalSeminar> getJadwalSeminar() {
       if (jadwalSeminar == null)
          jadwalSeminar = new java.util.HashSet<JadwalSeminar>();
@@ -81,11 +68,6 @@ public class Kelayakan {
       removeAllJadwalSeminar();
       for (java.util.Iterator iter = newJadwalSeminar.iterator(); iter.hasNext();)
          addJadwalSeminar((JadwalSeminar)iter.next());
-
-	  if (null == newJadwalSeminar)
-            System.out.println("input salah");
-        else
-            System.out.println("");
    }
    
    /** @pdGenerated default add
