@@ -1,91 +1,73 @@
 package modultugasakhir;
 
-import java.util.*;
+/***********************************************************************
+ * Module:  HistoryJabatan.java
+ * Author:  Ajeng
+ * Purpose: Defines the Class HistoryJabatan
+ ***********************************************************************/
 
-/** @pdOid b8369952-17d0-4cde-8ff7-5867fa7ac308 */
+/** @pdOid 860c90d7-f5f7-4fa1-bf76-53dfd1d61f17 */
 public class HistoryJabatan {
-   /** @pdOid d0bfabef-d22a-40da-8809-444766d9ff4d */
-   private String IDHistoryJabatan;
-   /** @pdOid 93075ef5-491d-4a03-8c81-79bc54c79f0c */
+   /** @pdOid 0b120689-2885-4d57-af78-1459651b4ab9 */
+   private String idHistoryJabatan;
+   /** @pdOid 2fa70e3e-bb69-4f47-9587-054318c673ca */
    private java.util.Date startDate;
-   /** @pdOid 5d83929e-6b9f-4760-b8bc-6ccdfecfe745 */
+   /** @pdOid 452052cf-07a2-4bb8-87da-60860b97e9ad */
    private String tahunAjaran;
-   /** @pdOid ebc2e85a-ec1b-4952-9f2a-596b2922487e */
+   /** @pdOid d2e2b4e4-125d-411a-b860-c87daa7fd079 */
    private boolean statusAktif;
    
+   /** @pdOid eadbde72-5138-4370-a73d-3cc227a28173 */
+   public void historyJabatan() {
+      // TODO: implement
+   }
+   
    /**
-     * @return  *  @pdOid 9c843f2a-d191-43ba-a2b7-8386c43a2ed7 */
+     * @return  *  @pdOid 42701fae-fb0e-4f75-8ee9-64d329bbc6d9 */
    public String getIDHistoryJabatan() {
-      return IDHistoryJabatan;
+      return idHistoryJabatan;
    }
    
    /** @param newIDHistoryJabatan
-    * @pdOid 0c0ec652-5505-42cf-9d17-28235ceb4beb */
-   public void setIDHistoryJabatan(String newIDHistoryJabatan) 
-	{
-	   if (null == newIDHistoryJabatan)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      IDHistoryJabatan = newIDHistoryJabatan;
-	}
+    * @pdOid ad0032ca-874e-4a55-abdf-68373fe20fbd */
+   public void setIDHistoryJabatan(String newIDHistoryJabatan) {
+      idHistoryJabatan = newIDHistoryJabatan;
+   }
    
    /**
-     * @return  *  @pdOid ab31e964-e23a-4fba-a915-c430c4cd0583 */
+     * @return  *  @pdOid 31c8a331-df93-4430-a9c0-0177bc87cdea */
    public java.util.Date getStartDate() {
       return startDate;
    }
    
    /** @param newStartDate
-    * @pdOid 15c8a9bd-221d-4610-8192-322f1987bd39 */
-   public void setStartDate(java.util.Date newStartDate) 
-	{
-	   if (null == newStartDate)
-            System.out.println("input salah");
-        else
-            System.out.println("");
+    * @pdOid 2977fe73-c200-4156-95c0-25579e84e947 */
+   public void setStartDate(java.util.Date newStartDate) {
       startDate = newStartDate;
-	}
+   }
    
    /**
-     * @return  *  @pdOid bcc42829-3e4d-4f2d-80b0-750e32553ea5 */
+     * @return  *  @pdOid c0f01e2c-a9cc-4003-98a6-abf2ff12abf4 */
    public String getTahunAjaran() {
       return tahunAjaran;
    }
    
    /** @param newTahunAjaran
-    * @pdOid 6cd5c736-27e3-44c6-9e9f-deca079cb989 */
-   public void setTahunAjaran(String newTahunAjaran) 
-	{
-	   if (null == newTahunAjaran)
-            System.out.println("input salah");
-        else
-            System.out.println("");
+    * @pdOid 866b1324-4dea-425f-adab-0957a0295bcd */
+   public void setTahunAjaran(String newTahunAjaran) {
       tahunAjaran = newTahunAjaran;
-	}
+   }
    
    /**
-     * @return  *  @pdOid 870df15c-118d-4166-8916-461cf5b470af */
+     * @return  *  @pdOid ec176892-1f0d-4cb4-98a8-7bbd828c45f3 */
    public boolean isStatusAktif() {
       return statusAktif;
    }
    
    /** @param newStatusAktif
-    * @pdOid bdff8eee-fa1e-4310-b216-14181e0d7551 */
-   public void setStatusAktif(boolean newStatusAktif) 
-	{
-	   if (newStatusAktif == false)
-            System.out.println("input salah");
-        else
-            System.out.println("");
+    * @pdOid 214623a4-4ad0-45b8-afda-5ce49fe41101 */
+   public void setStatusAktif(boolean newStatusAktif) {
       statusAktif = newStatusAktif;
-	}
-   
-   /** @pdOid 6640aafd-0b22-4c38-90b5-153b9be9b26c */
-   public void historyJabatan() 
-	{
-		setStatusAktif(true);
-		setTahunAjaran("-");
    }
 
 }

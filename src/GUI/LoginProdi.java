@@ -18,6 +18,7 @@ public class LoginProdi extends javax.swing.JFrame {
     /**
      * Creates new form LoginProdi
      */
+     
     public LoginProdi() {
         initComponents();
         this.setBackground (new Color(0,0,0,0));
@@ -39,10 +40,8 @@ public class LoginProdi extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(0, 0));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(540, 542));
-        setSize(new java.awt.Dimension(540, 542));
+        setSize(new java.awt.Dimension(590, 430));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/BackLogo2.png"))); // NOI18N
@@ -91,6 +90,7 @@ public class LoginProdi extends javax.swing.JFrame {
         LoginBy b = new LoginBy();
         b.setVisible(true);
         this.setVisible(false); 
+        this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void UserProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserProActionPerformed

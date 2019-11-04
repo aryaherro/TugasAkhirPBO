@@ -5,10 +5,8 @@ import javax.swing.JFrame;
 //
 
 public class LoginBy extends javax.swing.JFrame {
-
-    /**
-     * Creates new form LoginBy
-     */
+    
+      
     public LoginBy() {
         initComponents();
         this.setBackground (new Color(0,0,0,0));
@@ -91,7 +89,7 @@ public class LoginBy extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked

@@ -6,132 +6,105 @@ package modultugasakhir;
  * Purpose: Defines the Class Manusia
  ***********************************************************************/
 
-import java.util.*;
-
-/** @pdOid da6ca950-5144-4694-86c8-66fc9060a90e */
+/** @pdOid 0d947732-179d-4874-801b-a877cde9c7cf */
 public class Manusia {
-   /** @pdOid 418f6d7f-844b-4c4b-8cba-697054a49d58 */
+   /** @pdOid e6ed9287-28f1-4987-b393-659f4b838c90 */
    private String nama;
-   /** @pdOid f212ab0a-f22b-4040-95de-b880395a9ad6 */
+   /** @pdOid 90a28b41-f9d6-4579-bc88-647563d3d89e */
    private String nik;
-   /** @pdOid abe72781-2213-495a-9bf2-1cbf0ec70f21 */
+   /** @pdOid 0d9b92d4-5ffc-4733-8fd1-5dadb12b5396 */
    private String tanggalLahir;
-   /** @pdOid ae6d4db6-b1c1-4004-8d3c-1ef2d4f58d0b */
+   /** @pdOid 4016f022-c466-433b-a68c-a599ec3b2613 */
    private char jenisKelamin;
-   /** @pdOid beca1916-cc9e-45fa-a934-8327493e3561 */
+   /** @pdOid fd7f9975-1cac-49f2-9a3c-6204649e6522 */
    private String alamat;
-   /** @pdOid 793bfdf8-06a9-4a03-99ab-bd42b16f0d09 */
+   /** @pdOid 40d7e9ae-b13b-4a9b-83e4-62a1ab6731ff */
    private String email;
-   /** @pdOid 3571240c-b729-4911-b2ed-e36f93458ae8 */
+   /** @pdOid 7abaab38-536d-427f-b5a5-2b4d21500bf3 */
    private String agama;
    
    /**
-     * @return  *  @pdOid 7364b4cb-5686-4a9e-8bc0-e1e482851377 */
+     * @return  *  @pdOid cfd6c8bd-8926-47a1-8291-f79f70055db6 */
    public String getNama() {
       return nama;
    }
    
    /** @param newNama
-    * @pdOid d11b93b6-8d94-472e-b008-ba317776eaa5 */
-   public void setNama(String newNama) 
-	{
-            if (null == newNama)
-                System.out.println("input salah");
-            else
-                nama = newNama;
-	}
+    * @pdOid 74367e1f-907d-4319-9f6a-e55e7f644fcb */
+   public void setNama(String newNama) {
+      nama = newNama;
+   }
    
    /**
-     * @return  *  @pdOid 4efe03ac-821d-4065-a24e-2e5189612f88 */
+     * @return  *  @pdOid c696f15f-f8d8-4cb3-bc6f-a3e61f6cac18 */
    public String getNIK() {
       return nik;
    }
    
    /** @param newNIK
-    * @pdOid 57698c38-740e-4219-9520-48849eb485f7 */
-   public void setNIK(String newNIK) 
-	{
-            if (null == newNIK)
-                System.out.println("input salah");
-            else
-                nik = newNIK;
-	}
+    * @pdOid 4a0a2478-cb16-4f56-a896-008c96161109 */
+   public void setNIK(String newNIK) {
+      nik = newNIK;
+   }
    
    /**
-     * @return  *  @pdOid c4c3eb84-21da-4447-932d-bcce2d10a9a7 */
+     * @return  *  @pdOid 1213763a-f2f2-431f-98ab-2bf25e8f0637 */
    public String getTanggalLahir() {
       return tanggalLahir;
    }
    
    /** @param newTanggalLahir
-    * @pdOid 0c58ccce-2c4c-417e-98e7-5fa4a52b5c22 */
-   public void setTanggalLahir(String newTanggalLahir) 
-	{
-            if (null == newTanggalLahir)
-                System.out.println("input salah");
-            else
-                tanggalLahir = newTanggalLahir;
-	}
+    * @pdOid fb299ec1-9c30-45c9-858e-5f99d5b8e836 */
+   public void setTanggalLahir(String newTanggalLahir) {
+      tanggalLahir = newTanggalLahir;
+   }
    
    /**
-     * @return  *  @pdOid 0ba973e0-f525-473d-982a-28b49eb91cfc */
+     * @return  *  @pdOid 8bc86c83-d3a9-4344-bcdb-8ba87b932b02 */
    public char getJenisKelamin() {
       return jenisKelamin;
    }
    
    /** @param newJenisKelamin
-    * @pdOid 7acea99c-1e3d-4ccb-9249-071d30db57b0 */
-   public void setJenisKelamin(char newJenisKelamin) 
-	{
-            jenisKelamin = newJenisKelamin;
-	}
+    * @pdOid 470ed474-54ff-4e2a-9bad-bc1632df849a */
+   public void setJenisKelamin(char newJenisKelamin) {
+      jenisKelamin = newJenisKelamin;
+   }
    
    /**
-     * @return  *  @pdOid 4d64d1ec-22cd-49ed-a2dd-dad551ff2cb5 */
+     * @return  *  @pdOid 7db8b55e-f740-4eac-9f38-0a83865c6337 */
    public String getAlamat() {
       return alamat;
    }
    
    /** @param newAlamat
-    * @pdOid c4d004e4-9778-4820-9c2a-4773692917b8 */
-   public void setAlamat(String newAlamat) 
-	{
-            if (null == newAlamat)
-                System.out.println("input salah");
-            else
-                alamat = newAlamat;
-	}
+    * @pdOid b5c855d6-bec0-44f4-b5d1-f9e5f17b44f7 */
+   public void setAlamat(String newAlamat) {
+      alamat = newAlamat;
+   }
    
    /**
-     * @return  *  @pdOid 1db6594f-b979-4648-8b8c-5308255bf390 */
+     * @return  *  @pdOid e9b7733b-e308-4ac9-9de3-ce3c4a3824e0 */
    public String getEmail() {
       return email;
    }
    
    /** @param newEmail
-    * @pdOid 73cb532b-d238-4c26-a6c4-921747ab8c79 */
-   public void setEmail(String newEmail) 
-	{
-            if (null == newEmail)
-                System.out.println("input salah");
-            else
-                email = newEmail;
-	}
+    * @pdOid 9af10124-1438-4101-8762-4ff2f497ad36 */
+   public void setEmail(String newEmail) {
+      email = newEmail;
+   }
    
    /**
-     * @return  *  @pdOid 16ad8fc4-a561-4495-b210-ae0ac77f632c */
+     * @return  *  @pdOid 5329e3a0-5b8e-4bb4-8fcb-caa698e71705 */
    public String getAgama() {
       return agama;
    }
    
    /** @param newAgama
-    * @pdOid 7c88f905-aa23-4a45-932c-5252d93f5e85 */
-   public void setAgama(String newAgama) 
-	{
-            if (null == newAgama)
-                System.out.println("input salah");
-            else
-                agama = newAgama;
-	}
+    * @pdOid ca888461-cfc9-4b43-853b-b3a270a03bd1 */
+   public void setAgama(String newAgama) {
+      agama = newAgama;
+   }
 
 }

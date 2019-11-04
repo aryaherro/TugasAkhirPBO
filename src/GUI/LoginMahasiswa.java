@@ -33,9 +33,8 @@ public class LoginMahasiswa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(591, 472));
         setSize(new java.awt.Dimension(591, 472));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/BackLogo.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -44,8 +43,7 @@ public class LoginMahasiswa extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 11, 50, 50);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 50, 50));
 
         PasMaha.setText("PasMaha");
         PasMaha.addActionListener(new java.awt.event.ActionListener() {
@@ -53,8 +51,7 @@ public class LoginMahasiswa extends javax.swing.JFrame {
                 PasMahaActionPerformed(evt);
             }
         });
-        getContentPane().add(PasMaha);
-        PasMaha.setBounds(240, 250, 56, 20);
+        getContentPane().add(PasMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
 
         Username.setText("Username");
         Username.addActionListener(new java.awt.event.ActionListener() {
@@ -62,8 +59,7 @@ public class LoginMahasiswa extends javax.swing.JFrame {
                 UsernameActionPerformed(evt);
             }
         });
-        getContentPane().add(Username);
-        Username.setBounds(240, 190, 120, 20);
+        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 120, -1));
 
         MASUK.setBackground(new java.awt.Color(255, 204, 102));
         MASUK.setText("MASUK");
@@ -72,14 +68,13 @@ public class LoginMahasiswa extends javax.swing.JFrame {
                 MASUKMouseClicked(evt);
             }
         });
-        getContentPane().add(MASUK);
-        MASUK.setBounds(230, 290, 110, 40);
+        getContentPane().add(MASUK, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 110, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/LoginMahasiswa.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 600, 450);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 450));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void PasMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasMahaActionPerformed

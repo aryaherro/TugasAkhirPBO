@@ -6,75 +6,57 @@ package modultugasakhir;
  * Purpose: Defines the Class Judul
  ***********************************************************************/
 
-import java.util.*;
-
-/** @pdOid 59347f59-560c-4964-950f-d02c2aeb0601 */
+/** @pdOid edb5acc4-1795-498c-8845-b846bf427665 */
 public class Judul {
-   /** @pdOid dd90ee62-0c4e-4e66-9e73-10b2fa40195c */
-   private String IDJudul;
-   /** @pdOid a3b87a87-981e-424e-a1e9-30495b613d22 */
+   /** @pdOid b7d45387-89f7-4da8-9be4-7a67871b7db6 */
+   private String idJudul;
+   /** @pdOid 73014430-3950-4f1a-a5e9-6a4a8f2342ea */
    private String namaJudul;
-   /** @pdOid aa2c9b73-b844-4b05-b7df-13c95d11bb33 */
+   /** @pdOid 17289af4-a523-4235-b3c5-a99ce93c14aa */
    private String deskripsi;
    
-   /** @pdRoleInfo migr=no name=Revisi assc=association16 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
+   /** @pdRoleInfo migr=no name=Revisi assc=memiliki coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<Revisi> revisi;
    
+   /** @pdOid 6872e5c0-1853-447c-847d-6ee39d14e264 */
+   public void judul() {
+      // TODO: implement
+   }
+   
    /**
-     * @return  *  @pdOid a8f77dbe-c289-43fd-9c60-54d4784ee014 */
+     * @return  *  @pdOid 9615b744-9dcf-4b67-916e-ccecb431c6cd */
    public String getIDJudul() {
-      return IDJudul;
+      return idJudul;
    }
    
    /** @param newIDJudul
-    * @pdOid fb048467-8bdf-4a90-b10c-8cd8a28377d9 */
-   public void setIDJudul(String newIDJudul) 
-	{
-            if (null == newIDJudul)
-                System.out.println("input salah");
-            else
-                IDJudul = newIDJudul;
-	}
+    * @pdOid 5e8f602f-50e3-48a9-9ec4-9f15843f8af2 */
+   public void setIDJudul(String newIDJudul) {
+      idJudul = newIDJudul;
+   }
    
    /**
-     * @return  *  @pdOid a5b8393d-a89f-4e5a-8229-174084bee921 */
+     * @return  *  @pdOid 4a5b8a14-d47c-4b0d-a0f9-126ef5fe89cf */
    public String getNamaJudul() {
       return namaJudul;
    }
    
    /** @param newNamaJudul
-    * @pdOid ea0a7653-fd25-4f24-b8bf-c8d1ed773fdc */
-   public void setNamaJudul(String newNamaJudul) 
-	{
-	   if (null == newNamaJudul)
-            System.out.println("input salah");
-        else
-            System.out.println("");
+    * @pdOid 9f8a9125-cbe3-489a-afad-d00c35628f90 */
+   public void setNamaJudul(String newNamaJudul) {
       namaJudul = newNamaJudul;
-	}
+   }
    
    /**
-     * @return  *  @pdOid 6b500434-4bde-412a-bbdf-f9fe9aee654c */
+     * @return  *  @pdOid 76007c81-9779-47e5-9362-5586af212ed0 */
    public String getDeskripsi() {
       return deskripsi;
    }
    
    /** @param newDeskripsi
-    * @pdOid 088f0e5e-76c4-4166-adbe-1d4784fffa07 */
-   public void setDeskripsi(String newDeskripsi) 
-	{
-	   if (null == newDeskripsi)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-	   deskripsi = newDeskripsi;
-	}
-   
-   /** @pdOid 9a8f7990-1031-47be-b9c0-5ab54af3d41f */
-   public void judul() 
-	{
-		setNamaJudul("-");
-		setDeskripsi("-");
+    * @pdOid 9df24e1a-217e-4be8-8e4b-dfb23510c73a */
+   public void setDeskripsi(String newDeskripsi) {
+      deskripsi = newDeskripsi;
    }
    
    
@@ -100,11 +82,6 @@ public class Judul {
       removeAllRevisi();
       for (java.util.Iterator iter = newRevisi.iterator(); iter.hasNext();)
          addRevisi((Revisi)iter.next());
-
-	  if (null == newRevisi)
-            System.out.println("input salah");
-        else
-            System.out.println("");
    }
    
    /** @pdGenerated default add
