@@ -69,7 +69,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/LoginAdmin.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -84,6 +84,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         LoginBy d = new LoginBy();
         d.setVisible(true);
         this.setVisible(false);
+        this.dispose();
 
     }//GEN-LAST:event_jLabel3MouseClicked
 
