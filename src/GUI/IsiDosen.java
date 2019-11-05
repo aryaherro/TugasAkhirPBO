@@ -113,7 +113,7 @@ public class IsiDosen extends javax.swing.JFrame {
                 jBtnTAActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 70, -1));
+        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 70, -1));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 51));

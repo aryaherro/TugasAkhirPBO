@@ -97,7 +97,7 @@ public class IsiProdi extends javax.swing.JFrame {
                 jBtnProposalActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 120, -1));
+        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 120, -1));
 
         jBtnTA.setBackground(new java.awt.Color(0, 0, 0));
         jBtnTA.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
@@ -108,12 +108,12 @@ public class IsiProdi extends javax.swing.JFrame {
                 jBtnTAActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 70, -1));
+        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 70, -1));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 51));
         jLabel4.setText("MASUKKAN JADWAL SEMINAR");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 250, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 250, 30));
 
         jDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d MMM y"))));
         jDate.setText("day / month / year");
@@ -122,7 +122,7 @@ public class IsiProdi extends javax.swing.JFrame {
                 jDateActionPerformed(evt);
             }
         });
-        getContentPane().add(jDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 190, 30));
+        getContentPane().add(jDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 190, 30));
 
         jSimpan.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
         jSimpan.setText("SIMPAN");
