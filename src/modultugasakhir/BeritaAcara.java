@@ -6,53 +6,43 @@ package modultugasakhir;
  * Purpose: Defines the Class BeritaAcara
  ***********************************************************************/
 
-import java.util.*;
-
-/** @pdOid b3d9360d-3a29-4c15-9edb-644fb1fab4e7 */
+/** @pdOid a6dbc9fb-a50f-4f87-ad89-66d37b851a54 */
 public class BeritaAcara {
-   /** @pdOid 62fd3ac4-62f9-4f89-93ca-e6d64baf5888 */
-   private String IDBeritaAcara;
-   /** @pdOid 406cbaad-8d91-4475-b79a-65b0da48bc4d */
+   /** @pdOid 97f6c35e-9f20-4ab6-8007-cbc74d05543b */
+   private String idBeritaAcara;
+   /** @pdOid 82378091-6d07-43a5-a078-7c6b0fddcd2f */
    private String isiBeritaAcara;
    
+   /** @pdRoleInfo migr=no name=Dosen assc=dilihatDosen coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
+   public Dosen dosen;
+   
+   /** @pdOid 8c79a234-4b39-4200-8937-5d214649f61c */
+   public void beritaAcara() {
+      // TODO: implement
+   }
+   
    /**
-     * @return  *  @pdOid 96450cfc-fc4e-416c-ad26-f573a6cf6426 */
+     * @return  *  @pdOid 87887735-ac54-4d79-a54c-f05bf14092b6 */
    public String getIDBeritaAcara() {
-      return IDBeritaAcara;
+      return idBeritaAcara;
    }
    
    /** @param newIDBeritaAcara
-    * @pdOid 2766f25f-c975-41c3-8250-6770df2e8f6d */
-   public void setIDBeritaAcara(String newIDBeritaAcara) 
-	{
-	   if (null == newIDBeritaAcara)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      IDBeritaAcara = newIDBeritaAcara;
-	}
+    * @pdOid 11af66a9-073e-465d-af61-4966b2c79c7a */
+   public void setIDBeritaAcara(String newIDBeritaAcara) {
+      idBeritaAcara = newIDBeritaAcara;
+   }
    
    /**
-     * @return  *  @pdOid 0dec9bb1-9a0a-4194-816c-7997450509fe */
+     * @return  *  @pdOid 75b45aa2-4d9f-4990-a1ba-31053042edc3 */
    public String getIsiBeritaAcara() {
       return isiBeritaAcara;
    }
    
    /** @param newIsiBeritaAcara
-    * @pdOid 94fa6155-88ea-47d3-8d78-d2113c9cec9d */
-   public void setIsiBeritaAcara(String newIsiBeritaAcara) 
-	{
-	   if (null == newIsiBeritaAcara)
-            System.out.println("input salah");
-        else
-            System.out.println("");
+    * @pdOid e3710af9-d3a3-45f3-9970-926cfcbd82ae */
+   public void setIsiBeritaAcara(String newIsiBeritaAcara) {
       isiBeritaAcara = newIsiBeritaAcara;
-	}
-   
-   /** @pdOid b2f26ee9-f4ad-4b7e-95eb-4a4848ab8c35 */
-   public void beritaAcara() 
-	{
-		setIsiBeritaAcara("-");
-	}
+   }
 
 }

@@ -6,54 +6,43 @@ package modultugasakhir;
  * Purpose: Defines the Class Revisi
  ***********************************************************************/
 
-import java.util.*;
-
-/** @pdOid d6a63bc0-1981-46fa-aec5-b74071f0fbf3 */
+/** @pdOid ecab2bd4-6933-4f10-8098-5abe94c11afb */
 public class Revisi {
-   /** @pdOid 4ac221f0-38b2-4857-86cb-c1376dadc1e6 */
-   private String IDRevisi;
-   /** @pdOid 3ab9c2b9-418b-4849-8e72-3fca8231705f */
+   /** @pdOid c6906a3c-daf6-4bc6-adf8-6bdcd14c928d */
+   private String idRevisi;
+   /** @pdOid 2ff75a59-eb2b-4125-a9de-488b15d13a20 */
    private String isiRevisi;
    
-   /** @pdRoleInfo migr=no name=Kelayakan assc=association5 coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
+   /** @pdRoleInfo migr=no name=Kelayakan assc=tidakAda coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
    public Kelayakan kelayakan;
    
-   /** @pdOid 967e078b-84ff-4865-8e27-1519005d893b */
+   /** @pdOid d5bee96d-ba62-4773-b3d9-7ac2fb03c506 */
+   public void revisi() {
+      // TODO: implement
+   }
+   
+   /**
+     * @return  *  @pdOid 9803b349-2a28-4900-98fa-5eb947ba02ee */
    public String getIDRevisi() {
-      return IDRevisi;
+      return idRevisi;
    }
    
    /** @param newIDRevisi
-    * @pdOid 478a4180-9bc9-4128-ba95-7ae4572c2461 */
-   public void setIDRevisi(String newIDRevisi) 
-	{
-	   if (null == newIDRevisi)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      IDRevisi = newIDRevisi;
-	}
+    * @pdOid 4aed43dc-c586-4139-9151-c623c1abf95a */
+   public void setIDRevisi(String newIDRevisi) {
+      idRevisi = newIDRevisi;
+   }
    
-   /** @pdOid ab86b4aa-bb66-4ca5-873d-2f6fbd5d99ee */
+   /**
+     * @return  *  @pdOid a48fd658-249c-4b95-80c0-59909fe2120d */
    public String getIsiRevisi() {
       return isiRevisi;
    }
    
    /** @param newIsiRevisi
-    * @pdOid a2f83924-d38e-4075-82c4-578005a646f9 */
-   public void setIsiRevisi(String newIsiRevisi) 
-	{
-	   if (null == newIsiRevisi)
-            System.out.println("input salah");
-        else
-            System.out.println("");
+    * @pdOid 20e8f842-bf82-4236-9f3c-c93891e39aa8 */
+   public void setIsiRevisi(String newIsiRevisi) {
       isiRevisi = newIsiRevisi;
-	}
-   
-   /** @pdOid da61dbf4-4b8b-44e9-b916-afe126802a18 */
-   public void revisi() 
-	{
-		setIsiRevisi("-");
    }
 
 }

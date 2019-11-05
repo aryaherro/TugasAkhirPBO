@@ -6,60 +6,62 @@ package modultugasakhir;
  * Purpose: Defines the Class Mahasiswa
  ***********************************************************************/
 
-import java.util.*;
-
-/** @pdOid 2fe76d86-bbfc-4824-9208-351cb9c2555c */
+/** @pdOid 9fd0b016-bc97-40bd-b631-3488ab8f298f */
 public class Mahasiswa extends Manusia {
-   /** @pdOid 23f296af-c863-463d-a65c-93d920eaa0e4 */
-   private int IDMahasiswa;
-   /** @pdOid cb12d948-bb24-4136-83a6-91e4046a46a7 */
+   /** @pdOid 8b178ffb-c4c1-475e-95ef-160e2c864ac3 */
+   private int idMahasiswa;
+   /** @pdOid 9ca2f5cb-5d99-493c-8c45-cc6e925506af */
    private int nim;
+   /** @pdOid f56fbe30-92f3-44fb-9035-5063115b889c */
+   private String mahasiswaPassword;
    
-   /** @pdRoleInfo migr=no name=Prodi assc=association17 coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
+   /** @pdRoleInfo migr=no name=Prodi assc=bagian coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
    public Prodi prodi;
-   /** @pdRoleInfo migr=no name=Judul assc=association15 coll=java.util.Collection impl=java.util.HashSet mult=1..* */
+   /** @pdRoleInfo migr=no name=Judul assc=mengajukan coll=java.util.Collection impl=java.util.HashSet mult=1..* */
    public java.util.Collection<Judul> judul;
-   /** @pdRoleInfo migr=no name=JadwalSeminar assc=association18 coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
+   /** @pdRoleInfo migr=no name=JadwalSeminar assc=melihat coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
    public JadwalSeminar jadwalSeminar;
    
+   /** @pdOid 8088bc89-d2bb-4dbf-b87e-910dc6c74dba */
+   public void mahasiswa() {
+      // TODO: implement
+   }
+   
    /**
-     * @return  *  @pdOid d7ddaae8-b4e6-411b-b5e7-445c7ef5dce4 */
+     * @return  *  @pdOid 49306e94-3a21-4d33-beec-cbc56563d5e1 */
    public int getIDMahasiswa() {
-      return IDMahasiswa;
+      return idMahasiswa;
    }
    
    /** @param newIDMahasiswa
-    * @pdOid ad2dce34-55bb-4fec-bfb5-11d35d4d293f */
-   public void setIDMahasiswa(int newIDMahasiswa) 
-	{
-	   if (newIDMahasiswa < 0)
-            System.out.println("input salah");
-        else
-            System.out.println("");
-      IDMahasiswa = newIDMahasiswa;
-	}
+    * @pdOid 657e0593-bd22-4cd7-8ca2-4e71cb5e4661 */
+   public void setIDMahasiswa(int newIDMahasiswa) {
+      idMahasiswa = newIDMahasiswa;
+   }
    
    /**
-     * @return  *  @pdOid 5fc1a4ae-6010-4682-a4d0-1701e3f9c373 */
+     * @return  *  @pdOid f4b70f5c-8b6b-43b7-b4ed-f1bae0ca44f8 */
    public int getNIM() {
       return nim;
    }
    
    /** @param newNIM
-    * @pdOid 5b6eeecc-7e30-4a5a-bc45-1f5bb8554507 */
-   public void setNIM(int newNIM) 
-	{
-            if (newNIM < 0)
-                System.out.println("input salah");
-            else
-                nim = newNIM;
-	}
+    * @pdOid 6ea43766-e7d3-4d7a-9b40-814d867992f4 */
+   public void setNIM(int newNIM) {
+      nim = newNIM;
+   }
    
-   /** @pdOid 6bf944ae-14b7-437c-80b1-c8f8e88380f3 */
-   public void mahasiswa() 
-	{
-		setNIM(11);
-	}
+   /**
+     * @return  *  @pdOid c8025785-07ff-4320-aefa-b2940d1ddbcd */
+   public String getMahasiswaPassword() {
+      return mahasiswaPassword;
+   }
+   
+   /** @param newMahasiswaPassword
+    * @pdOid 7644b91b-ba72-49c1-afdf-5398cc9387ec */
+   public void setMahasiswaPassword(String newMahasiswaPassword) {
+      mahasiswaPassword = newMahasiswaPassword;
+   }
    
    
    /**
@@ -84,11 +86,6 @@ public class Mahasiswa extends Manusia {
       removeAllJudul();
       for (java.util.Iterator iter = newJudul.iterator(); iter.hasNext();)
          addJudul((Judul)iter.next());
-
-	  if (null == newJudul)
-            System.out.println("input salah");
-        else
-            System.out.println("");
    }
    
    /** @pdGenerated default add
