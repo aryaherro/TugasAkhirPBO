@@ -33,13 +33,12 @@ public class IsiProdi extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jtxtNIM = new javax.swing.JTextField();
-        jBtnGO = new javax.swing.JButton();
         jBtnProposal = new javax.swing.JRadioButton();
         jBtnTA = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
-        jDate = new javax.swing.JFormattedTextField();
-        jSimpan = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,24 +68,8 @@ public class IsiProdi extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 102));
-        jLabel5.setText("NIM MAHASISWA");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 180, 30));
-
-        jtxtNIM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtNIMActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jtxtNIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 310, 50));
-
-        jBtnGO.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jBtnGO.setText("GO");
-        jBtnGO.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBtnGOMouseClicked(evt);
-            }
-        });
-        getContentPane().add(jBtnGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 80, -1));
+        jLabel5.setText("PILIHAN");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 180, 30));
 
         jBtnProposal.setBackground(new java.awt.Color(0, 0, 0));
         jBtnProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
@@ -97,7 +80,7 @@ public class IsiProdi extends javax.swing.JFrame {
                 jBtnProposalActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 120, -1));
+        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 120, -1));
 
         jBtnTA.setBackground(new java.awt.Color(0, 0, 0));
         jBtnTA.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
@@ -108,47 +91,49 @@ public class IsiProdi extends javax.swing.JFrame {
                 jBtnTAActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 70, -1));
+        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 70, -1));
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel4.setText("MASUKKAN JADWAL SEMINAR");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 250, 30));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "NIM", "JUDUL", "KELAYAKAN"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
 
-        jDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d MMM y"))));
-        jDate.setText("day / month / year");
-        jDate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jDateActionPerformed(evt);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
             }
         });
-        getContentPane().add(jDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 190, 30));
+        jTable1.setRowHeight(25);
+        jScrollPane2.setViewportView(jTable1);
 
-        jSimpan.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
-        jSimpan.setText("SIMPAN");
-        jSimpan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSimpanActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 90, 30));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 620, 160));
+
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel7.setText("LIST MAHASISWA");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 180, 30));
+
+        jButton1.setText("LOG OUT");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 500, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(540, 542));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSimpanActionPerformed
-        JOptionPane.showMessageDialog(jSimpan, "data telah disimpan");
-    }//GEN-LAST:event_jSimpanActionPerformed
-
-    private void jDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jDateActionPerformed
 
     private void jBtnTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTAActionPerformed
         // TODO add your handling code here:
@@ -157,14 +142,6 @@ public class IsiProdi extends javax.swing.JFrame {
     private void jBtnProposalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProposalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnProposalActionPerformed
-
-    private void jBtnGOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnGOMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnGOMouseClicked
-
-    private void jtxtNIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNIMActionPerformed
-        String nim = jtxtNIM.getText();
-    }//GEN-LAST:event_jtxtNIMActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
@@ -209,17 +186,16 @@ public class IsiProdi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnGO;
     private javax.swing.JRadioButton jBtnProposal;
     private javax.swing.JRadioButton jBtnTA;
-    private javax.swing.JFormattedTextField jDate;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JButton jSimpan;
-    private javax.swing.JTextField jtxtNIM;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
