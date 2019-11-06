@@ -8,7 +8,7 @@ package GUI;
 
 import javax.swing.JOptionPane;
 //import javax.swing.JFrame;
-//import java.awt.Color;
+import java.awt.Color;
 /**
  *
  * @author Jempol
@@ -18,7 +18,7 @@ public class IsiDosen extends javax.swing.JFrame {
     /** Creates new form IsiDosen */
     public IsiDosen() {
         initComponents();
-//        this.setBackground (new Color(0,0,0,0));
+         this.setBackground (new Color(0,0,0,0));
     }
 
     /** This method is called from within the constructor to
@@ -30,30 +30,23 @@ public class IsiDosen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jBtnProposal = new javax.swing.JRadioButton();
         jBtnTA = new javax.swing.JRadioButton();
         jBeritaAcara1 = new javax.swing.JButton();
         jSeminarTA2 = new javax.swing.JButton();
         jSeminarProposal = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setSize(new java.awt.Dimension(540, 542));
+        setSize(new java.awt.Dimension(660, 528));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel2.setText("FAKULTAS TEKNIK INFORMATIKA");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/BackLogo.png"))); // NOI18N
@@ -63,39 +56,31 @@ public class IsiDosen extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 60, 50));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 60, 50));
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel7.setText("==============================================");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 530, -1));
-
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel5.setText("list mahasiswa");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 180, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 180, 30));
 
-        jBtnProposal.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnProposal.setBackground(new java.awt.Color(255, 255, 255));
         jBtnProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
-        jBtnProposal.setForeground(new java.awt.Color(255, 255, 255));
         jBtnProposal.setText("PROPOSAL TA");
         jBtnProposal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnProposalActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 120, -1));
+        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 120, -1));
 
-        jBtnTA.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnTA.setBackground(new java.awt.Color(255, 255, 255));
         jBtnTA.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
-        jBtnTA.setForeground(new java.awt.Color(255, 255, 255));
         jBtnTA.setText("TA");
         jBtnTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnTAActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 70, -1));
+        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 70, -1));
 
         jBeritaAcara1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jBeritaAcara1.setText("LIHAT BERITA ACARA");
@@ -104,22 +89,19 @@ public class IsiDosen extends javax.swing.JFrame {
                 jBeritaAcara1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBeritaAcara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 240, 20));
+        getContentPane().add(jBeritaAcara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 240, 20));
 
         jSeminarTA2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jSeminarTA2.setText("JADWAL SEMINAR TA");
-        getContentPane().add(jSeminarTA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 240, 20));
+        getContentPane().add(jSeminarTA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 240, 20));
 
         jSeminarProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jSeminarProposal.setText("JADWAL SEMINAR PROPOSAL");
-        getContentPane().add(jSeminarProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 280, 20));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<NONE>", "YA", "TIDAK" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 80, -1));
+        getContentPane().add(jSeminarProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 280, 20));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
+                {null, null, null, null,  new Boolean(false)},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -130,7 +112,7 @@ public class IsiDosen extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -140,14 +122,18 @@ public class IsiDosen extends javax.swing.JFrame {
         jTable1.setRowHeight(25);
         jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 600, 220));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 580, 140));
 
         jButton1.setText("LOG OUT");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 490, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel6.setText("PILIHAN     :");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 150, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/IsiProdi.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 542));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 542));
 
         pack();
         setLocationRelativeTo(null);
@@ -207,12 +193,10 @@ public class IsiDosen extends javax.swing.JFrame {
     private javax.swing.JRadioButton jBtnProposal;
     private javax.swing.JRadioButton jBtnTA;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jSeminarProposal;
     private javax.swing.JButton jSeminarTA2;

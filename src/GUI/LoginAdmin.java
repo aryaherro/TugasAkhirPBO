@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import java.awt.Color;
+
 /**
  *
  * @author Jempol
@@ -16,6 +18,7 @@ public class LoginAdmin extends javax.swing.JFrame {
      */
     public LoginAdmin() {
         initComponents();
+        this.setBackground (new Color(0,0,0,0));
     }
 
     /**
@@ -29,12 +32,14 @@ public class LoginAdmin extends javax.swing.JFrame {
 
         txtAdmin1 = new javax.swing.JTextField();
         PasAdmin = new javax.swing.JPasswordField();
-        MasukAdmin = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        Masuk = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(660, 528));
+        setSize(new java.awt.Dimension(660, 528));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtAdmin1.setText("Username");
@@ -43,7 +48,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                 txtAdmin1ActionPerformed(evt);
             }
         });
-        getContentPane().add(txtAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 150, 30));
+        getContentPane().add(txtAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 180, 40));
 
         PasAdmin.setText("jPasswordField1");
         PasAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -51,15 +56,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                 PasAdminActionPerformed(evt);
             }
         });
-        getContentPane().add(PasAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 150, 20));
-
-        MasukAdmin.setText("MASUK");
-        MasukAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MasukAdminActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MasukAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 110, 40));
+        getContentPane().add(PasAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 180, 40));
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/BackLogo.png"))); // NOI18N
@@ -69,11 +66,19 @@ public class LoginAdmin extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, -1));
+
+        Masuk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/Masuk-Admin.png"))); // NOI18N
+        Masuk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Masuk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MasukMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/LoginAdmin.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 510));
 
         pack();
         setLocationRelativeTo(null);
@@ -96,11 +101,11 @@ public class LoginAdmin extends javax.swing.JFrame {
        String Pas = PasAdmin.getText();
     }//GEN-LAST:event_PasAdminActionPerformed
 
-    private void MasukAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukAdminActionPerformed
+    private void MasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MasukMouseClicked
         IsiAdmin d = new IsiAdmin();
         d.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_MasukAdminActionPerformed
+    }//GEN-LAST:event_MasukMouseClicked
 
     /**
      * @param args the command line arguments
@@ -138,7 +143,7 @@ public class LoginAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MasukAdmin;
+    private javax.swing.JLabel Masuk;
     private javax.swing.JPasswordField PasAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

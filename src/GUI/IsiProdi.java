@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ public class IsiProdi extends javax.swing.JFrame {
      */
     public IsiProdi() {
         initComponents();
+        this.setBackground (new Color(0,0,0,0));
     }
 
     /**
@@ -30,8 +32,6 @@ public class IsiProdi extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jBtnProposal = new javax.swing.JRadioButton();
         jBtnTA = new javax.swing.JRadioButton();
@@ -54,44 +54,31 @@ public class IsiProdi extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 60, 50));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 60, 50));
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel2.setText("FAKULTAS TEKNIK INFORMATIKA");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 30));
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel5.setText("PILIHAN     :");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 150, 20));
 
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel6.setText("==============================================");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 530, -1));
-
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 102));
-        jLabel5.setText("PILIHAN");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 180, 30));
-
-        jBtnProposal.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnProposal.setBackground(new java.awt.Color(255, 255, 255));
         jBtnProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
-        jBtnProposal.setForeground(new java.awt.Color(255, 255, 255));
         jBtnProposal.setText("PROPOSAL TA");
         jBtnProposal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnProposalActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 120, -1));
+        getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 120, -1));
 
-        jBtnTA.setBackground(new java.awt.Color(0, 0, 0));
+        jBtnTA.setBackground(new java.awt.Color(255, 255, 255));
         jBtnTA.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
-        jBtnTA.setForeground(new java.awt.Color(255, 255, 255));
         jBtnTA.setText("TA");
         jBtnTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnTAActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 70, -1));
+        getContentPane().add(jBtnTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 70, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,20 +103,19 @@ public class IsiProdi extends javax.swing.JFrame {
         jTable1.setRowHeight(25);
         jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 620, 160));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 540, 150));
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel7.setText("LIST MAHASISWA");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 180, 30));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 180, 30));
 
         jButton1.setText("LOG OUT");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 500, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/IsiProdi.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(540, 542));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 660, 590));
 
         pack();
         setLocationRelativeTo(null);
@@ -190,10 +176,8 @@ public class IsiProdi extends javax.swing.JFrame {
     private javax.swing.JRadioButton jBtnTA;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

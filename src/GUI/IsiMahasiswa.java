@@ -1,10 +1,7 @@
 package GUI;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -20,6 +17,7 @@ public class IsiMahasiswa extends javax.swing.JFrame {
      */
     public IsiMahasiswa() {
         initComponents();
+        this.setBackground (new Color(0,0,0,0));
     }
 
     /**
@@ -32,7 +30,6 @@ public class IsiMahasiswa extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -42,20 +39,15 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         jSeminarTA2 = new javax.swing.JButton();
         txtTA = new javax.swing.JTextField();
         jtxtProposal1 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(660, 528));
+        setSize(new java.awt.Dimension(660, 528));
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(null);
-
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel2.setText("FAKULTAS TEKNIK INFORMATIKA");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 10, 440, 30);
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/BackLogo.png"))); // NOI18N
@@ -66,29 +58,27 @@ public class IsiMahasiswa extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(480, 0, 60, 50);
+        jLabel3.setBounds(590, 20, 60, 50);
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 102));
-        jLabel4.setText("JUDUL PROPOSAL");
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel4.setText("JUDUL PROPOSAL   :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(30, 90, 170, 30);
+        jLabel4.setBounds(50, 110, 220, 30);
 
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 102));
-        jLabel5.setText("JUDUL TA");
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel5.setText("JUDUL TA           :");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(30, 160, 170, 30);
+        jLabel5.setBounds(50, 180, 220, 30);
 
         jSeminarProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jSeminarProposal.setText("JADWAL SEMINAR PROPOSAL");
         jPanel1.add(jSeminarProposal);
-        jSeminarProposal.setBounds(10, 400, 320, 30);
+        jSeminarProposal.setBounds(50, 370, 320, 30);
 
         jBeritaAcara1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jBeritaAcara1.setText("LIHAT BERITA ACARA");
         jPanel1.add(jBeritaAcara1);
-        jBeritaAcara1.setBounds(20, 300, 260, 30);
+        jBeritaAcara1.setBounds(50, 260, 260, 30);
 
         jSimpan.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jSimpan.setText("SIMPAN");
@@ -98,12 +88,12 @@ public class IsiMahasiswa extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jSimpan);
-        jSimpan.setBounds(410, 500, 120, 30);
+        jSimpan.setBounds(490, 470, 120, 30);
 
         jSeminarTA2.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jSeminarTA2.setText("JADWAL SEMINAR TA");
         jPanel1.add(jSeminarTA2);
-        jSeminarTA2.setBounds(20, 350, 260, 30);
+        jSeminarTA2.setBounds(50, 310, 260, 30);
 
         txtTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +101,7 @@ public class IsiMahasiswa extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtTA);
-        txtTA.setBounds(210, 150, 310, 50);
+        txtTA.setBounds(290, 170, 310, 50);
 
         jtxtProposal1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,24 +109,18 @@ public class IsiMahasiswa extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jtxtProposal1);
-        jtxtProposal1.setBounds(210, 80, 310, 50);
+        jtxtProposal1.setBounds(290, 100, 310, 50);
 
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel6.setText("==============================================");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(10, 50, 530, 26);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/IsiMahasiswa.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 540, 542);
+        jLabel1.setBounds(0, 0, 660, 542);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,11 +183,9 @@ public class IsiMahasiswa extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBeritaAcara1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jSeminarProposal;
     private javax.swing.JButton jSeminarTA2;

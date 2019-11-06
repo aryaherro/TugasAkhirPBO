@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import java.awt.Color;
+
 /**
  *
  * @author Jempol
@@ -16,6 +18,7 @@ public class IsiAdmin extends javax.swing.JFrame {
      */
     public IsiAdmin() {
         initComponents();
+        this.setBackground (new Color(0,0,0,0));
     }
 
     /**
@@ -27,8 +30,6 @@ public class IsiAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jTmbPro = new javax.swing.JRadioButton();
         jTmbMaha = new javax.swing.JRadioButton();
         jTmbDosen = new javax.swing.JRadioButton();
@@ -37,51 +38,41 @@ public class IsiAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(660, 528));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(660, 528));
+        setSize(new java.awt.Dimension(660, 528));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel2.setText("FAKULTAS TEKNIK INFORMATIKA");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 30));
-
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel6.setText("==============================================");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        jTmbPro.setBackground(new java.awt.Color(0, 0, 0));
+        jTmbPro.setBackground(new java.awt.Color(255, 255, 255));
         jTmbPro.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
-        jTmbPro.setForeground(new java.awt.Color(255, 255, 255));
         jTmbPro.setText("TAMBAH PRODI");
         jTmbPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTmbProActionPerformed(evt);
             }
         });
-        getContentPane().add(jTmbPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 190, 30));
+        getContentPane().add(jTmbPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 190, 30));
 
-        jTmbMaha.setBackground(new java.awt.Color(0, 0, 0));
+        jTmbMaha.setBackground(new java.awt.Color(255, 255, 255));
         jTmbMaha.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
-        jTmbMaha.setForeground(new java.awt.Color(255, 255, 255));
         jTmbMaha.setText("TAMBAH MAHASISWA");
         jTmbMaha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTmbMahaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTmbMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 190, 30));
+        getContentPane().add(jTmbMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 190, 30));
 
-        jTmbDosen.setBackground(new java.awt.Color(0, 0, 0));
+        jTmbDosen.setBackground(new java.awt.Color(255, 255, 255));
         jTmbDosen.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
-        jTmbDosen.setForeground(new java.awt.Color(255, 255, 255));
         jTmbDosen.setText("TAMBAH DOSEN");
         jTmbDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTmbDosenActionPerformed(evt);
             }
         });
-        getContentPane().add(jTmbDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 190, 30));
+        getContentPane().add(jTmbDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 190, 30));
 
         jBtnGO.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jBtnGO.setText("GO");
@@ -90,7 +81,7 @@ public class IsiAdmin extends javax.swing.JFrame {
                 jBtnGOMouseClicked(evt);
             }
         });
-        getContentPane().add(jBtnGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 100, 30));
+        getContentPane().add(jBtnGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 100, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 51));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/BackLogo.png"))); // NOI18N
@@ -100,11 +91,11 @@ public class IsiAdmin extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 60, 50));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/maha.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/IsiAdmin.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 350));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 510));
 
         pack();
         setLocationRelativeTo(null);
@@ -166,9 +157,7 @@ public class IsiAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnGO;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JRadioButton jTmbDosen;
     private javax.swing.JRadioButton jTmbMaha;
     private javax.swing.JRadioButton jTmbPro;
