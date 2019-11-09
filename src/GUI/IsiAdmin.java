@@ -6,6 +6,7 @@
 package GUI;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -18,7 +19,7 @@ public class IsiAdmin extends javax.swing.JFrame {
      */
     public IsiAdmin() {
         initComponents();
-        this.setBackground (new Color(0,0,0,0));     
+        this.setBackground (new Color(0,0,0,0)); 
     }
 
     /**
@@ -30,6 +31,7 @@ public class IsiAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GroupButton = new javax.swing.ButtonGroup();
         jTmbMaha = new javax.swing.JRadioButton();
         jTmbDosen = new javax.swing.JRadioButton();
         jTmbPro = new javax.swing.JRadioButton();
@@ -45,6 +47,7 @@ public class IsiAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTmbMaha.setBackground(new java.awt.Color(255, 255, 255));
+        GroupButton.add(jTmbMaha);
         jTmbMaha.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
         jTmbMaha.setText("TAMBAH MAHASISWA");
         jTmbMaha.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +58,7 @@ public class IsiAdmin extends javax.swing.JFrame {
         getContentPane().add(jTmbMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 190, 30));
 
         jTmbDosen.setBackground(new java.awt.Color(255, 255, 255));
+        GroupButton.add(jTmbDosen);
         jTmbDosen.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
         jTmbDosen.setText("TAMBAH DOSEN");
         jTmbDosen.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +69,7 @@ public class IsiAdmin extends javax.swing.JFrame {
         getContentPane().add(jTmbDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 190, 30));
 
         jTmbPro.setBackground(new java.awt.Color(255, 255, 255));
+        GroupButton.add(jTmbPro);
         jTmbPro.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
         jTmbPro.setText("TAMBAH PRODI");
         jTmbPro.addActionListener(new java.awt.event.ActionListener() {
@@ -120,11 +125,13 @@ public class IsiAdmin extends javax.swing.JFrame {
 
     private void jBtnGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnGOActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_jBtnGOActionPerformed
 
     private void jTmbProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmbProActionPerformed
         // TODO add your handling code here:
+        addProdi d = new addProdi();
+        d.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jTmbProActionPerformed
 
     private void jTmbDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmbDosenActionPerformed
@@ -165,6 +172,7 @@ public class IsiAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup GroupButton;
     private javax.swing.JButton jBtnGO;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
