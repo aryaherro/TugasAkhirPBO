@@ -1,84 +1,81 @@
-package modultugasakhir;
-
 /***********************************************************************
  * Module:  Dosen.java
  * Author:  Ajeng
  * Purpose: Defines the Class Dosen
  ***********************************************************************/
 
-/** @pdOid f8074944-219a-4925-9eff-e9480b38a0ba */
+package modultugasakhir;
+
+import java.util.*;
+
+/** @pdOid 65586a11-5c88-472f-b9c0-a86bcfc4de58 */
 public class Dosen extends Manusia {
-   /** @pdOid c9c34ae2-342b-4562-80ec-56e16e50d192 */
-   private String idDosen;
-   /** @pdOid 6156830b-8d96-4386-b0f5-2c25e30307a9 */
+   /** @pdOid 9dbd67bd-fee0-42ae-b5e7-d98646de300d */
+   private int idDosen;
+   /** @pdOid 81c95d7c-80ab-4f90-9a92-4ca7dc7a84f8 */
    private String npp;
-   /** @pdOid 89271175-ff46-4f94-906d-0b54a476ee2b */
+   /** @pdOid 5e83841d-fc3b-4a54-94db-38c4303562b9 */
    private String dosenPassword;
    
-   /** @pdRoleInfo migr=no name=Jabatan assc=menjabat coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   public Jabatan jabatan;
-   /** @pdRoleInfo migr=no name=Revisi assc=menuliskan coll=java.util.Collection impl=java.util.HashSet mult=0..* */
+   /** @pdRoleInfo migr=no name=Revisi assc=dosenMenuliskanRevisi coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
    public java.util.Collection<Revisi> revisi;
-   /** @pdRoleInfo migr=no name=Kelayakan assc=menentukan coll=java.util.Collection impl=java.util.HashSet mult=0..* */
+   /** @pdRoleInfo migr=no name=Kelayakan assc=dosenMenentukanKelayakan coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
    public java.util.Collection<Kelayakan> kelayakan;
-   /** @pdRoleInfo migr=no name=Prodi assc=bagian coll=java.util.Collection impl=java.util.HashSet mult=1..* */
+   /** @pdRoleInfo migr=no name=Prodi assc=dosenBagianProdi coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
    public java.util.Collection<Prodi> prodi;
+   /** @pdRoleInfo migr=no name=JadwalSeminar assc=dosenMelihatJadwal coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   public java.util.Collection<JadwalSeminar> jadwalSeminar;
    
-   /** @pdOid 980b8f3e-5a10-4531-be1d-90e20c904316 */
+   /** @pdOid 23d034f8-d545-4f3e-8b7d-07560dfc23b0 */
    public void dosen() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid 5b6d09fa-c2af-4d3e-91e3-c435a113dbd3 */
-   public String getIDDosen() {
+   /** @pdOid 0a0b882f-d978-4bca-9ccc-47cd5e0b81d3 */
+   public int getidDosen() {
       return idDosen;
    }
    
-   /** @param newIDDosen
-    * @pdOid 008ef69d-49d1-4e1a-8fa2-d465cee24ce1 */
-   public void setIDDosen(String newIDDosen) {
-      idDosen = newIDDosen;
+   /** @param newIdDosen
+    * @pdOid 7fec9339-952f-4d1c-8d17-8cad37fb3093 */
+   public void setidDosen(int newIdDosen) {
+      idDosen = newIdDosen;
    }
    
-   /**
-     * @return  *  @pdOid 561af3b3-0e3e-4014-9ef4-c3ee4303ffff */
-   public String getNPP() {
+   /** @pdOid 538d0d0e-a4e8-4a55-ba3c-fde7574f6fe5 */
+   public String getnpp() {
       return npp;
    }
    
-   /** @param newNPP
-    * @pdOid 8ee4d363-7a9b-4741-b713-7ef8b600177b */
-   public void setNPP(String newNPP) {
-      npp = newNPP;
+   /** @param newNpp
+    * @pdOid 88186162-1086-45ab-8d22-76dc39d3dd3d */
+   public void setnpp(String newNpp) {
+      npp = newNpp;
    }
    
-   /**
-     * @return  *  @pdOid 54a79a30-08f1-4513-8375-46f25295d86a */
-   public String getDosenPassword() {
+   /** @pdOid 8973d4fb-d395-478e-98d4-dde8a3951f4b */
+   public String getdosenPassword() {
       return dosenPassword;
    }
    
    /** @param newDosenPassword
-    * @pdOid 1041b18a-496c-4066-a141-aae3e9a3a40d */
-   public void setDosenPassword(String newDosenPassword) {
+    * @pdOid 9fcc4a38-b787-4001-a89f-b6289c5810a1 */
+   public void setdosenPassword(String newDosenPassword) {
       dosenPassword = newDosenPassword;
    }
    
    
-   /**
-     * @return  *  @pdGenerated default getter */
+   /** @pdGenerated default getter */
    public java.util.Collection<Revisi> getRevisi() {
       if (revisi == null)
-         revisi = new java.util.HashSet<Revisi>();
+         revisi = new java.util.ArrayList<Revisi>();
       return revisi;
    }
    
-   /**
-     * @return  *  @pdGenerated default iterator getter */
+   /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorRevisi() {
       if (revisi == null)
-         revisi = new java.util.HashSet<Revisi>();
+         revisi = new java.util.ArrayList<Revisi>();
       return revisi.iterator();
    }
    
@@ -96,7 +93,7 @@ public class Dosen extends Manusia {
       if (newRevisi == null)
          return;
       if (this.revisi == null)
-         this.revisi = new java.util.HashSet<Revisi>();
+         this.revisi = new java.util.ArrayList<Revisi>();
       if (!this.revisi.contains(newRevisi))
          this.revisi.add(newRevisi);
    }
@@ -116,19 +113,17 @@ public class Dosen extends Manusia {
       if (revisi != null)
          revisi.clear();
    }
-   /**
-     * @return  *  @pdGenerated default getter */
+   /** @pdGenerated default getter */
    public java.util.Collection<Kelayakan> getKelayakan() {
       if (kelayakan == null)
-         kelayakan = new java.util.HashSet<Kelayakan>();
+         kelayakan = new java.util.ArrayList<Kelayakan>();
       return kelayakan;
    }
    
-   /**
-     * @return  *  @pdGenerated default iterator getter */
+   /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorKelayakan() {
       if (kelayakan == null)
-         kelayakan = new java.util.HashSet<Kelayakan>();
+         kelayakan = new java.util.ArrayList<Kelayakan>();
       return kelayakan.iterator();
    }
    
@@ -146,7 +141,7 @@ public class Dosen extends Manusia {
       if (newKelayakan == null)
          return;
       if (this.kelayakan == null)
-         this.kelayakan = new java.util.HashSet<Kelayakan>();
+         this.kelayakan = new java.util.ArrayList<Kelayakan>();
       if (!this.kelayakan.contains(newKelayakan))
          this.kelayakan.add(newKelayakan);
    }
@@ -166,19 +161,17 @@ public class Dosen extends Manusia {
       if (kelayakan != null)
          kelayakan.clear();
    }
-   /**
-     * @return  *  @pdGenerated default getter */
+   /** @pdGenerated default getter */
    public java.util.Collection<Prodi> getProdi() {
       if (prodi == null)
-         prodi = new java.util.HashSet<Prodi>();
+         prodi = new java.util.ArrayList<Prodi>();
       return prodi;
    }
    
-   /**
-     * @return  *  @pdGenerated default iterator getter */
+   /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorProdi() {
       if (prodi == null)
-         prodi = new java.util.HashSet<Prodi>();
+         prodi = new java.util.ArrayList<Prodi>();
       return prodi.iterator();
    }
    
@@ -196,7 +189,7 @@ public class Dosen extends Manusia {
       if (newProdi == null)
          return;
       if (this.prodi == null)
-         this.prodi = new java.util.HashSet<Prodi>();
+         this.prodi = new java.util.ArrayList<Prodi>();
       if (!this.prodi.contains(newProdi))
          this.prodi.add(newProdi);
    }
@@ -215,6 +208,54 @@ public class Dosen extends Manusia {
    public void removeAllProdi() {
       if (prodi != null)
          prodi.clear();
+   }
+   /** @pdGenerated default getter */
+   public java.util.Collection<JadwalSeminar> getJadwalSeminar() {
+      if (jadwalSeminar == null)
+         jadwalSeminar = new java.util.ArrayList<JadwalSeminar>();
+      return jadwalSeminar;
+   }
+   
+   /** @pdGenerated default iterator getter */
+   public java.util.Iterator getIteratorJadwalSeminar() {
+      if (jadwalSeminar == null)
+         jadwalSeminar = new java.util.ArrayList<JadwalSeminar>();
+      return jadwalSeminar.iterator();
+   }
+   
+   /** @pdGenerated default setter
+     * @param newJadwalSeminar */
+   public void setJadwalSeminar(java.util.Collection<JadwalSeminar> newJadwalSeminar) {
+      removeAllJadwalSeminar();
+      for (java.util.Iterator iter = newJadwalSeminar.iterator(); iter.hasNext();)
+         addJadwalSeminar((JadwalSeminar)iter.next());
+   }
+   
+   /** @pdGenerated default add
+     * @param newJadwalSeminar */
+   public void addJadwalSeminar(JadwalSeminar newJadwalSeminar) {
+      if (newJadwalSeminar == null)
+         return;
+      if (this.jadwalSeminar == null)
+         this.jadwalSeminar = new java.util.ArrayList<JadwalSeminar>();
+      if (!this.jadwalSeminar.contains(newJadwalSeminar))
+         this.jadwalSeminar.add(newJadwalSeminar);
+   }
+   
+   /** @pdGenerated default remove
+     * @param oldJadwalSeminar */
+   public void removeJadwalSeminar(JadwalSeminar oldJadwalSeminar) {
+      if (oldJadwalSeminar == null)
+         return;
+      if (this.jadwalSeminar != null)
+         if (this.jadwalSeminar.contains(oldJadwalSeminar))
+            this.jadwalSeminar.remove(oldJadwalSeminar);
+   }
+   
+   /** @pdGenerated default removeAll */
+   public void removeAllJadwalSeminar() {
+      if (jadwalSeminar != null)
+         jadwalSeminar.clear();
    }
 
 }
