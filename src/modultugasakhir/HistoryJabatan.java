@@ -1,7 +1,7 @@
 /***********************************************************************
- * Module:  HistoryJabatan.java
+ * Module:  historyJabatan.java
  * Author:  Ajeng
- * Purpose: Defines the Class HistoryJabatan
+ * Purpose: Defines the Class historyJabatan
  ***********************************************************************/
 
 package modultugasakhir;
@@ -9,7 +9,7 @@ package modultugasakhir;
 import java.util.*;
 
 /** @pdOid 1354cc0c-7286-4761-a68a-ea552331f0b1 */
-public class HistoryJabatan {
+public class historyJabatan {
    /** @pdOid e345ce29-9604-407a-9a84-b23656779525 */
    private int idHistoryJabatan;
    /** @pdOid d64c0ca1-cfd8-41a3-8ae3-2aa0e0a555b5 */
@@ -20,7 +20,7 @@ public class HistoryJabatan {
    private boolean statusAktif;
    
    /** @pdOid 2fc538ce-44be-4fb4-9303-d88ed494952f */
-   public void historyJabatan() {
+   public historyJabatan() {
       // TODO: implement
    }
    

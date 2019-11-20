@@ -1,7 +1,7 @@
 /***********************************************************************
- * Module:  Mahasiswa.java
+ * Module:  mahasiswa.java
  * Author:  Ajeng
- * Purpose: Defines the Class Mahasiswa
+ * Purpose: Defines the Class mahasiswa
  ***********************************************************************/
 
 package modultugasakhir;
@@ -9,7 +9,7 @@ package modultugasakhir;
 import java.util.*;
 
 /** @pdOid 90ef432f-cd1e-4370-af94-7a8d8c7ff3fe */
-public class Mahasiswa extends Manusia {
+public class mahasiswa extends manusia {
    /** @pdOid 19139f53-e141-41a8-a285-df33dd8f2140 */
    private int idMahasiswa;
    /** @pdOid a1bfdd15-c63f-4640-8f86-3e8bc510c614 */
@@ -17,15 +17,15 @@ public class Mahasiswa extends Manusia {
    /** @pdOid a5cd37fb-fe92-4cd5-8ec3-aa0fe161ec22 */
    private String mahasiswaPassword;
    
-   /** @pdRoleInfo migr=no name=Prodi assc=mahasiswaBagianProdi coll=java.util.Collection mult=1..1 */
-   public Prodi prodi;
-   /** @pdRoleInfo migr=no name=Judul assc=mahasiswaMengajukanJudul coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
-   public java.util.Collection<Judul> judul;
-   /** @pdRoleInfo migr=no name=Dosen assc=dosenMembimbingMahasiswa coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   public Dosen dosen;
+   /** @pdRoleInfo migr=no name=prodi assc=mahasiswaBagianProdi coll=java.util.Collection mult=1..1 */
+   public prodi prodi;
+   /** @pdRoleInfo migr=no name=judul assc=mahasiswaMengajukanJudul coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   public java.util.Collection<judul> judul;
+   /** @pdRoleInfo migr=no name=dosen assc=dosenMembimbingMahasiswa coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
+   public dosen dosen;
    
    /** @pdOid df3b74a4-3155-4e81-bc20-51a50baea930 */
-   public void mahasiswa() {
+   public mahasiswa() {
       // TODO: implement
    }
    
@@ -64,41 +64,41 @@ public class Mahasiswa extends Manusia {
    
    
    /** @pdGenerated default getter */
-   public java.util.Collection<Judul> getJudul() {
+   public java.util.Collection<judul> getJudul() {
       if (judul == null)
-         judul = new java.util.ArrayList<Judul>();
+         judul = new java.util.ArrayList<judul>();
       return judul;
    }
    
    /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorJudul() {
       if (judul == null)
-         judul = new java.util.ArrayList<Judul>();
+         judul = new java.util.ArrayList<judul>();
       return judul.iterator();
    }
    
    /** @pdGenerated default setter
      * @param newJudul */
-   public void setJudul(java.util.Collection<Judul> newJudul) {
+   public void setJudul(java.util.Collection<judul> newJudul) {
       removeAllJudul();
       for (java.util.Iterator iter = newJudul.iterator(); iter.hasNext();)
-         addJudul((Judul)iter.next());
+         addJudul((judul)iter.next());
    }
    
    /** @pdGenerated default add
      * @param newJudul */
-   public void addJudul(Judul newJudul) {
+   public void addJudul(judul newJudul) {
       if (newJudul == null)
          return;
       if (this.judul == null)
-         this.judul = new java.util.ArrayList<Judul>();
+         this.judul = new java.util.ArrayList<judul>();
       if (!this.judul.contains(newJudul))
          this.judul.add(newJudul);
    }
    
    /** @pdGenerated default remove
      * @param oldJudul */
-   public void removeJudul(Judul oldJudul) {
+   public void removeJudul(judul oldJudul) {
       if (oldJudul == null)
          return;
       if (this.judul != null)

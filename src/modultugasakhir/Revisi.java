@@ -1,7 +1,7 @@
 /***********************************************************************
- * Module:  Revisi.java
+ * Module:  revisi.java
  * Author:  Ajeng
- * Purpose: Defines the Class Revisi
+ * Purpose: Defines the Class revisi
  ***********************************************************************/
 
 package modultugasakhir;
@@ -9,7 +9,7 @@ package modultugasakhir;
 import java.util.*;
 
 /** @pdOid b383390d-f37d-43ed-9b37-1b889e5deb4d */
-public class Revisi {
+public class revisi {
    /** @pdOid 0acbb9a7-77b9-4a3b-a166-72c16dfb5ef5 */
    private int idRevisi;
    /** @pdOid 6ad7fd13-d598-4982-ad02-9852785e0df9 */
@@ -17,11 +17,11 @@ public class Revisi {
    /** @pdOid f9f8e64e-11de-4ab7-9129-c62937a8cce2 */
    private Date tanggalRevisi;
    
-   /** @pdRoleInfo migr=no name=Judul assc=judulMemilikiRevisi mult=1..1 */
-   public Judul judul;
+   /** @pdRoleInfo migr=no name=judul assc=judulMemilikiRevisi mult=1..1 */
+   public judul judul;
    
    /** @pdOid dacfdd7a-6c25-4606-8c67-5eb04bdb5356 */
-   public void revisi() {
+   public revisi() {
       // TODO: implement
    }
    

@@ -1,7 +1,7 @@
 /***********************************************************************
- * Module:  Manusia.java
+ * Module:  manusia.java
  * Author:  Ajeng
- * Purpose: Defines the Class Manusia
+ * Purpose: Defines the Class manusia
  ***********************************************************************/
 
 package modultugasakhir;
@@ -9,7 +9,7 @@ package modultugasakhir;
 import java.util.*;
 
 /** @pdOid 5584844c-ef95-4b28-8500-3403ac7aad80 */
-public class Manusia {
+public class manusia {
    /** @pdOid 4a695443-df84-4dee-8e9f-ab61893107ad */
    private String nama;
    /** @pdOid 140bb309-cbf3-4d3d-8671-95315b33e135 */
@@ -26,7 +26,7 @@ public class Manusia {
    private String agama;
    
    /** @pdOid 3bfdfc1e-1ebc-43b9-ab47-2b016e5bec31 */
-   public void manusia() {
+   public manusia() {
       // TODO: implement
    }
    

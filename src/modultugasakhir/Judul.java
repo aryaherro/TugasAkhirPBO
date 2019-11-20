@@ -1,7 +1,7 @@
 /***********************************************************************
- * Module:  Judul.java
+ * Module:  judul.java
  * Author:  Ajeng
- * Purpose: Defines the Class Judul
+ * Purpose: Defines the Class judul
  ***********************************************************************/
 
 package modultugasakhir;
@@ -9,7 +9,7 @@ package modultugasakhir;
 import java.util.*;
 
 /** @pdOid a6351650-68a7-46dc-b013-544474178f32 */
-public class Judul {
+public class judul {
    /** @pdOid ff0e4946-028f-4cec-813b-8885267657e0 */
    private int idJudul;
    /** @pdOid 9a8b1b2c-dfca-4943-9523-a4b25b773664 */
@@ -18,7 +18,7 @@ public class Judul {
    private String deskripsi;
    
    /** @pdOid 30a8cc76-e435-4340-b065-586de7e53c05 */
-   public void judul() {
+   public judul() {
       // TODO: implement
    }
    

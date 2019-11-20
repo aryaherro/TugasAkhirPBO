@@ -1,7 +1,7 @@
 /***********************************************************************
- * Module:  Kelayakan.java
+ * Module:  kelayakan.java
  * Author:  Ajeng
- * Purpose: Defines the Class Kelayakan
+ * Purpose: Defines the Class kelayakan
  ***********************************************************************/
 
 package modultugasakhir;
@@ -9,17 +9,17 @@ package modultugasakhir;
 import java.util.*;
 
 /** @pdOid d7c08cb0-07ea-49e1-ba74-6e79cf3a3c38 */
-public class Kelayakan {
+public class kelayakan {
    /** @pdOid 17f2c9a1-9cf7-4e38-b5fd-d2523520cba1 */
    private int idLayak;
    /** @pdOid f472ec25-ce68-4025-9927-13fb32d9d769 */
    private boolean statusLayak;
    
-   /** @pdRoleInfo migr=no name=Judul assc=judulStatusKelayakan mult=0..1 */
-   public Judul judul;
+   /** @pdRoleInfo migr=no name=judul assc=judulStatusKelayakan mult=0..1 */
+   public judul judul;
    
    /** @pdOid b67a5890-a889-49c3-a598-a3d16e193ea7 */
-   public void kelayakan() {
+   public kelayakan() {
       // TODO: implement
    }
    

@@ -1,7 +1,7 @@
 /***********************************************************************
- * Module:  Admin.java
+ * Module:  admin.java
  * Author:  Ajeng
- * Purpose: Defines the Class Admin
+ * Purpose: Defines the Class admin
  ***********************************************************************/
 
 package modultugasakhir;
@@ -9,7 +9,7 @@ package modultugasakhir;
 import java.util.*;
 
 /** @pdOid 67578f45-1f4b-437e-9e8a-4431004fb3e5 */
-public class Admin {
+public class admin {
    /** @pdOid 21a353c8-504c-4dbe-9e95-4358a4df0745 */
    private int idAdmin;
    /** @pdOid a325e2b3-450d-43b1-aeec-cfdf8b7daba4 */
@@ -17,15 +17,15 @@ public class Admin {
    /** @pdOid 503b6a36-4667-4580-9950-0ff6e98434f3 */
    private String passwordAdmin;
    
-   /** @pdRoleInfo migr=no name=Mahasiswa assc=adminEditMahasiswa coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
-   public java.util.Collection<Mahasiswa> mahasiswa;
-   /** @pdRoleInfo migr=no name=Prodi assc=adminEditProdi coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
-   public java.util.Collection<Prodi> prodi;
-   /** @pdRoleInfo migr=no name=Dosen assc=adminEditDosen coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
-   public java.util.Collection<Dosen> dosen;
+   /** @pdRoleInfo migr=no name=mahasiswa assc=adminEditMahasiswa coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   public java.util.Collection<mahasiswa> mahasiswa;
+   /** @pdRoleInfo migr=no name=prodi assc=adminEditProdi coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   public java.util.Collection<prodi> prodi;
+   /** @pdRoleInfo migr=no name=dosen assc=adminEditDosen coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   public java.util.Collection<dosen> dosen;
    
    /** @pdOid 99d90e9a-43ee-42b8-8cf1-566998c9c792 */
-   public void admin() {
+   public admin() {
       // TODO: implement
    }
    
@@ -64,41 +64,41 @@ public class Admin {
    
    
    /** @pdGenerated default getter */
-   public java.util.Collection<Mahasiswa> getMahasiswa() {
+   public java.util.Collection<mahasiswa> getMahasiswa() {
       if (mahasiswa == null)
-         mahasiswa = new java.util.ArrayList<Mahasiswa>();
+         mahasiswa = new java.util.ArrayList<mahasiswa>();
       return mahasiswa;
    }
    
    /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorMahasiswa() {
       if (mahasiswa == null)
-         mahasiswa = new java.util.ArrayList<Mahasiswa>();
+         mahasiswa = new java.util.ArrayList<mahasiswa>();
       return mahasiswa.iterator();
    }
    
    /** @pdGenerated default setter
      * @param newMahasiswa */
-   public void setMahasiswa(java.util.Collection<Mahasiswa> newMahasiswa) {
+   public void setMahasiswa(java.util.Collection<mahasiswa> newMahasiswa) {
       removeAllMahasiswa();
       for (java.util.Iterator iter = newMahasiswa.iterator(); iter.hasNext();)
-         addMahasiswa((Mahasiswa)iter.next());
+         addMahasiswa((mahasiswa)iter.next());
    }
    
    /** @pdGenerated default add
      * @param newMahasiswa */
-   public void addMahasiswa(Mahasiswa newMahasiswa) {
+   public void addMahasiswa(mahasiswa newMahasiswa) {
       if (newMahasiswa == null)
          return;
       if (this.mahasiswa == null)
-         this.mahasiswa = new java.util.ArrayList<Mahasiswa>();
+         this.mahasiswa = new java.util.ArrayList<mahasiswa>();
       if (!this.mahasiswa.contains(newMahasiswa))
          this.mahasiswa.add(newMahasiswa);
    }
    
    /** @pdGenerated default remove
      * @param oldMahasiswa */
-   public void removeMahasiswa(Mahasiswa oldMahasiswa) {
+   public void removeMahasiswa(mahasiswa oldMahasiswa) {
       if (oldMahasiswa == null)
          return;
       if (this.mahasiswa != null)
@@ -112,41 +112,41 @@ public class Admin {
          mahasiswa.clear();
    }
    /** @pdGenerated default getter */
-   public java.util.Collection<Prodi> getProdi() {
+   public java.util.Collection<prodi> getProdi() {
       if (prodi == null)
-         prodi = new java.util.ArrayList<Prodi>();
+         prodi = new java.util.ArrayList<prodi>();
       return prodi;
    }
    
    /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorProdi() {
       if (prodi == null)
-         prodi = new java.util.ArrayList<Prodi>();
+         prodi = new java.util.ArrayList<prodi>();
       return prodi.iterator();
    }
    
    /** @pdGenerated default setter
      * @param newProdi */
-   public void setProdi(java.util.Collection<Prodi> newProdi) {
+   public void setProdi(java.util.Collection<prodi> newProdi) {
       removeAllProdi();
       for (java.util.Iterator iter = newProdi.iterator(); iter.hasNext();)
-         addProdi((Prodi)iter.next());
+         addProdi((prodi)iter.next());
    }
    
    /** @pdGenerated default add
      * @param newProdi */
-   public void addProdi(Prodi newProdi) {
+   public void addProdi(prodi newProdi) {
       if (newProdi == null)
          return;
       if (this.prodi == null)
-         this.prodi = new java.util.ArrayList<Prodi>();
+         this.prodi = new java.util.ArrayList<prodi>();
       if (!this.prodi.contains(newProdi))
          this.prodi.add(newProdi);
    }
    
    /** @pdGenerated default remove
      * @param oldProdi */
-   public void removeProdi(Prodi oldProdi) {
+   public void removeProdi(prodi oldProdi) {
       if (oldProdi == null)
          return;
       if (this.prodi != null)
@@ -160,41 +160,41 @@ public class Admin {
          prodi.clear();
    }
    /** @pdGenerated default getter */
-   public java.util.Collection<Dosen> getDosen() {
+   public java.util.Collection<dosen> getDosen() {
       if (dosen == null)
-         dosen = new java.util.ArrayList<Dosen>();
+         dosen = new java.util.ArrayList<dosen>();
       return dosen;
    }
    
    /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorDosen() {
       if (dosen == null)
-         dosen = new java.util.ArrayList<Dosen>();
+         dosen = new java.util.ArrayList<dosen>();
       return dosen.iterator();
    }
    
    /** @pdGenerated default setter
      * @param newDosen */
-   public void setDosen(java.util.Collection<Dosen> newDosen) {
+   public void setDosen(java.util.Collection<dosen> newDosen) {
       removeAllDosen();
       for (java.util.Iterator iter = newDosen.iterator(); iter.hasNext();)
-         addDosen((Dosen)iter.next());
+         addDosen((dosen)iter.next());
    }
    
    /** @pdGenerated default add
      * @param newDosen */
-   public void addDosen(Dosen newDosen) {
+   public void addDosen(dosen newDosen) {
       if (newDosen == null)
          return;
       if (this.dosen == null)
-         this.dosen = new java.util.ArrayList<Dosen>();
+         this.dosen = new java.util.ArrayList<dosen>();
       if (!this.dosen.contains(newDosen))
          this.dosen.add(newDosen);
    }
    
    /** @pdGenerated default remove
      * @param oldDosen */
-   public void removeDosen(Dosen oldDosen) {
+   public void removeDosen(dosen oldDosen) {
       if (oldDosen == null)
          return;
       if (this.dosen != null)
