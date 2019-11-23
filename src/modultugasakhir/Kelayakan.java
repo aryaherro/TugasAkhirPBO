@@ -1,100 +1,48 @@
-package modultugasakhir;
-
 /***********************************************************************
- * Module:  Kelayakan.java
+ * Module:  kelayakan.java
  * Author:  Ajeng
- * Purpose: Defines the Class Kelayakan
+ * Purpose: Defines the Class kelayakan
  ***********************************************************************/
 
-/** @pdOid 4d95b612-8729-4aae-8d5f-6e3e91b604c2 */
-public class Kelayakan {
-   /** @pdOid f760e90f-9347-4994-9bcb-4332502d82aa */
-   private String idLayak;
-   /** @pdOid 69287df3-c2cc-41af-9522-ee5eb52f4b52 */
+package modultugasakhir;
+
+import java.util.*;
+
+/** @pdOid d7c08cb0-07ea-49e1-ba74-6e79cf3a3c38 */
+public class kelayakan {
+   /** @pdOid 17f2c9a1-9cf7-4e38-b5fd-d2523520cba1 */
+   private int idLayak;
+   /** @pdOid f472ec25-ce68-4025-9927-13fb32d9d769 */
    private boolean statusLayak;
-
-   /** @pdRoleInfo migr=no name=JadwalSeminar assc=menentukan coll=java.util.Collection impl=java.util.HashSet mult=0..* */
-   public java.util.Collection<JadwalSeminar> jadwalSeminar;
-
-   /** @pdOid 92b41707-fa96-45da-99d5-295369a4af6c */
-   public void kelayakan() {
+   
+   /** @pdRoleInfo migr=no name=judul assc=judulStatusKelayakan mult=0..1 */
+   public judul judul;
+   
+   /** @pdOid b67a5890-a889-49c3-a598-a3d16e193ea7 */
+   public kelayakan() {
       // TODO: implement
    }
-
-   /**
-     * @return  *  @pdOid 8a468889-fe17-4b2e-9fac-d5cccfd241b6 */
-   public String getIDLayak() {
+   
+   /** @pdOid cfad942f-745b-4d4f-b32a-1408c106dc9f */
+   public int getidLayak() {
       return idLayak;
    }
-
-   /** @param newIDLayak
-    * @pdOid c64066ca-0013-497d-8175-13e72f0ebcd9 */
-   public void setIDLayak(String newIDLayak) {
-      idLayak = newIDLayak;
+   
+   /** @param newIdLayak
+    * @pdOid 8900f27c-51aa-4be3-8c5d-19bfe02303e4 */
+   public void setidLayak(int newIdLayak) {
+      idLayak = newIdLayak;
    }
-
-   /**
-     * @return  *  @pdOid df5dd429-201b-4282-a136-e1a5c7a0969b */
-   public boolean isStatusLayak() {
+   
+   /** @pdOid ff819e53-3980-42e4-8e51-97a9b4e321e4 */
+   public boolean isstatusLayak() {
       return statusLayak;
    }
-
+   
    /** @param newStatusLayak
-    * @pdOid 94e066a6-ef6a-4406-b482-d396c097ee3d */
-   public void setStatusLayak(boolean newStatusLayak) {
+    * @pdOid ebf651a9-b945-4b64-9a41-95914ebb5d4b */
+   public void setstatusLayak(boolean newStatusLayak) {
       statusLayak = newStatusLayak;
-   }
-
-
-   /**
-     * @return  *  @pdGenerated default getter */
-   public java.util.Collection<JadwalSeminar> getJadwalSeminar() {
-      if (jadwalSeminar == null)
-         jadwalSeminar = new java.util.HashSet<JadwalSeminar>();
-      return jadwalSeminar;
-   }
-
-   /**
-     * @return  *  @pdGenerated default iterator getter */
-   public java.util.Iterator getIteratorJadwalSeminar() {
-      if (jadwalSeminar == null)
-         jadwalSeminar = new java.util.HashSet<JadwalSeminar>();
-      return jadwalSeminar.iterator();
-   }
-
-   /** @pdGenerated default setter
-     * @param newJadwalSeminar */
-   public void setJadwalSeminar(java.util.Collection<JadwalSeminar> newJadwalSeminar) {
-      removeAllJadwalSeminar();
-      for (java.util.Iterator iter = newJadwalSeminar.iterator(); iter.hasNext();)
-         addJadwalSeminar((JadwalSeminar)iter.next());
-   }
-
-   /** @pdGenerated default add
-     * @param newJadwalSeminar */
-   public void addJadwalSeminar(JadwalSeminar newJadwalSeminar) {
-      if (newJadwalSeminar == null)
-         return;
-      if (this.jadwalSeminar == null)
-         this.jadwalSeminar = new java.util.HashSet<JadwalSeminar>();
-      if (!this.jadwalSeminar.contains(newJadwalSeminar))
-         this.jadwalSeminar.add(newJadwalSeminar);
-   }
-
-   /** @pdGenerated default remove
-     * @param oldJadwalSeminar */
-   public void removeJadwalSeminar(JadwalSeminar oldJadwalSeminar) {
-      if (oldJadwalSeminar == null)
-         return;
-      if (this.jadwalSeminar != null)
-         if (this.jadwalSeminar.contains(oldJadwalSeminar))
-            this.jadwalSeminar.remove(oldJadwalSeminar);
-   }
-
-   /** @pdGenerated default removeAll */
-   public void removeAllJadwalSeminar() {
-      if (jadwalSeminar != null)
-         jadwalSeminar.clear();
    }
 
 }

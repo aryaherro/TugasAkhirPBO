@@ -1,113 +1,96 @@
-package modultugasakhir;
-
 /***********************************************************************
- * Module:  Jabatan.java
+ * Module:  jabatan.java
  * Author:  Ajeng
- * Purpose: Defines the Class Jabatan
+ * Purpose: Defines the Class jabatan
  ***********************************************************************/
+
+package modultugasakhir;
 
 import java.util.*;
 
-/** @pdOid dd6da3f7-11fb-4e6d-b00b-a22eb6149761 */
-public class Jabatan {
-   /** @pdOid b810497a-2432-4656-9f56-8575057a829c */
-   private String idJabatan;
-   /** @pdOid 341c55c1-16e7-4e51-9b6b-322582de3aff */
+/** @pdOid 3063e55a-9375-4e77-8adb-f24808120c30 */
+public class jabatan {
+   /** @pdOid fe0df7c3-0219-4d1c-b04b-50e1308d60b3 */
+   private int idJabatan;
+   /** @pdOid f9e0fe80-6903-4725-9a5a-9425615d2925 */
    private String namaJabatan;
-<<<<<<< HEAD:src/modultugasakhir/jabatan.java
-
-   /** @pdRoleInfo migr=no name=HistoryJabatan assc=pencatatan coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<HistoryJabatan> historyJabatan;
-
-=======
    
-   /** @pdRoleInfo migr=no name=HistoryJabatan assc=pencatatan coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<HistoryJabatan> historyJabatan;
+   /** @pdRoleInfo migr=no name=dosen assc=dosenMenjabatSebagai mult=1..1 */
+   public dosen dosen;
+   /** @pdRoleInfo migr=no name=historyJabatan assc=jabatanDicatatDalamHistory coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   public java.util.Collection<historyJabatan> historyJabatan;
    
->>>>>>> parent of 8041fa5... Add Array List:src/modultugasakhir/Jabatan.java
-   /** @pdOid e3c8831c-5585-4013-bd03-f28581c91d9b */
-   public void jabatan() {
+   /** @pdOid e01d3a2d-ac48-41fe-ac1d-7f2d62200b83 */
+   public jabatan() {
       // TODO: implement
    }
-<<<<<<< HEAD:src/modultugasakhir/jabatan.java
-
-=======
    
->>>>>>> parent of 8041fa5... Add Array List:src/modultugasakhir/Jabatan.java
-   /** @pdOid e329c252-f48d-45f0-bdc7-b866656f0a6c */
-   public String getIDJabatan() {
+   /** @pdOid a41d4f96-3930-4e5c-8b01-d1836222f536 */
+   public int getidJabatan() {
       return idJabatan;
    }
-<<<<<<< HEAD:src/modultugasakhir/jabatan.java
-
-=======
    
->>>>>>> parent of 8041fa5... Add Array List:src/modultugasakhir/Jabatan.java
-   /** @param newIDJabatan
-    * @pdOid a86a651f-075d-4a8d-ac10-b7923ed06cdf */
-   public void setIDJabatan(String newIDJabatan) {
-      idJabatan = newIDJabatan;
+   /** @param newIdJabatan
+    * @pdOid 7b4f7e15-5f08-4924-9cda-dac8d0ccaf74 */
+   public void setidJabatan(int newIdJabatan) {
+      idJabatan = newIdJabatan;
    }
-<<<<<<< HEAD:src/modultugasakhir/jabatan.java
-
-=======
    
->>>>>>> parent of 8041fa5... Add Array List:src/modultugasakhir/Jabatan.java
-   /** @pdOid c3885193-7309-4c2e-8cae-1351cc2a99fa */
-   public String getNamaJabatan() {
+   /** @pdOid ce8354ad-4896-40b8-8a48-38bc4fdc4d92 */
+   public String getnamaJabatan() {
       return namaJabatan;
    }
-
+   
    /** @param newNamaJabatan
-    * @pdOid 9579be4b-f0c2-4e05-a0e4-6d90a5c259c3 */
-   public void setNamaJabatan(String newNamaJabatan) {
+    * @pdOid 0eb03878-df06-4020-b39a-32e7fc80a77f */
+   public void setnamaJabatan(String newNamaJabatan) {
       namaJabatan = newNamaJabatan;
    }
-
-
+   
+   
    /** @pdGenerated default getter */
-   public java.util.Collection<HistoryJabatan> getHistoryJabatan() {
+   public java.util.Collection<historyJabatan> getHistoryJabatan() {
       if (historyJabatan == null)
-         historyJabatan = new java.util.HashSet<HistoryJabatan>();
+         historyJabatan = new java.util.ArrayList<historyJabatan>();
       return historyJabatan;
    }
-
+   
    /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorHistoryJabatan() {
       if (historyJabatan == null)
-         historyJabatan = new java.util.HashSet<HistoryJabatan>();
+         historyJabatan = new java.util.ArrayList<historyJabatan>();
       return historyJabatan.iterator();
    }
-
+   
    /** @pdGenerated default setter
      * @param newHistoryJabatan */
-   public void setHistoryJabatan(java.util.Collection<HistoryJabatan> newHistoryJabatan) {
+   public void setHistoryJabatan(java.util.Collection<historyJabatan> newHistoryJabatan) {
       removeAllHistoryJabatan();
       for (java.util.Iterator iter = newHistoryJabatan.iterator(); iter.hasNext();)
-         addHistoryJabatan((HistoryJabatan)iter.next());
+         addHistoryJabatan((historyJabatan)iter.next());
    }
-
+   
    /** @pdGenerated default add
      * @param newHistoryJabatan */
-   public void addHistoryJabatan(HistoryJabatan newHistoryJabatan) {
+   public void addHistoryJabatan(historyJabatan newHistoryJabatan) {
       if (newHistoryJabatan == null)
          return;
       if (this.historyJabatan == null)
-         this.historyJabatan = new java.util.HashSet<HistoryJabatan>();
+         this.historyJabatan = new java.util.ArrayList<historyJabatan>();
       if (!this.historyJabatan.contains(newHistoryJabatan))
          this.historyJabatan.add(newHistoryJabatan);
    }
-
+   
    /** @pdGenerated default remove
      * @param oldHistoryJabatan */
-   public void removeHistoryJabatan(HistoryJabatan oldHistoryJabatan) {
+   public void removeHistoryJabatan(historyJabatan oldHistoryJabatan) {
       if (oldHistoryJabatan == null)
          return;
       if (this.historyJabatan != null)
          if (this.historyJabatan.contains(oldHistoryJabatan))
             this.historyJabatan.remove(oldHistoryJabatan);
    }
-
+   
    /** @pdGenerated default removeAll */
    public void removeAllHistoryJabatan() {
       if (historyJabatan != null)
