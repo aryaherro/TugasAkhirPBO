@@ -14,54 +14,54 @@ public class Prodi {
    private String namaProdi;
    /** @pdOid fe072f69-3155-4897-80cf-7ebecbc0563f */
    private String prodiPassword;
-   
+
    /** @pdRoleInfo migr=no name=JadwalSeminar assc=prodiMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<JadwalSeminar> jadwalSeminar;
    /** @pdRoleInfo migr=no name=BeritaAcara assc=association19 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<BeritaAcara> beritaAcara;
-   
+
    /** @pdOid 7fd05a6e-d5d4-4218-96fa-2e777032abbf */
    public void prodi() {
       // TODO: implement
    }
-   
+
    /**
      * @return  *  @pdOid fe4c420b-1e92-4595-9b6b-508c43a107fb */
    public String getIDProdi() {
       return idProdi;
    }
-   
+
    /** @param newIDProdi
     * @pdOid 7421bc6a-8000-4145-94c1-ad2659161d65 */
    public void setIDProdi(String newIDProdi) {
       idProdi = newIDProdi;
    }
-   
+
    /**
      * @return  *  @pdOid de9f3c20-04c0-4ad1-9271-cfb584b7c379 */
    public String getNamaProdi() {
       return namaProdi;
    }
-   
+
    /** @param newNamaProdi
     * @pdOid 7c4ffec3-6c41-4c40-bcf5-e9006b3fb325 */
    public void setNamaProdi(String newNamaProdi) {
       namaProdi = newNamaProdi;
    }
-   
+
    /**
      * @return  *  @pdOid 51a0d6d1-3336-414a-9f62-31f4be2709c3 */
    public String getProdiPassword() {
       return prodiPassword;
    }
-   
+
    /** @param newProdiPassword
     * @pdOid d693b6ee-ae31-4345-9e61-f462adcb07df */
    public void setProdiPassword(String newProdiPassword) {
       prodiPassword = newProdiPassword;
    }
-   
-   
+
+
    /**
      * @return  *  @pdGenerated default getter */
    public java.util.Collection<JadwalSeminar> getJadwalSeminar() {
@@ -69,7 +69,7 @@ public class Prodi {
          jadwalSeminar = new java.util.HashSet<JadwalSeminar>();
       return jadwalSeminar;
    }
-   
+
    /**
      * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorJadwalSeminar() {
@@ -77,7 +77,7 @@ public class Prodi {
          jadwalSeminar = new java.util.HashSet<JadwalSeminar>();
       return jadwalSeminar.iterator();
    }
-   
+
    /** @pdGenerated default setter
      * @param newJadwalSeminar */
    public void setJadwalSeminar(java.util.Collection<JadwalSeminar> newJadwalSeminar) {
@@ -85,7 +85,7 @@ public class Prodi {
       for (java.util.Iterator iter = newJadwalSeminar.iterator(); iter.hasNext();)
          addJadwalSeminar((JadwalSeminar)iter.next());
    }
-   
+
    /** @pdGenerated default add
      * @param newJadwalSeminar */
    public void addJadwalSeminar(JadwalSeminar newJadwalSeminar) {
@@ -96,7 +96,7 @@ public class Prodi {
       if (!this.jadwalSeminar.contains(newJadwalSeminar))
          this.jadwalSeminar.add(newJadwalSeminar);
    }
-   
+
    /** @pdGenerated default remove
      * @param oldJadwalSeminar */
    public void removeJadwalSeminar(JadwalSeminar oldJadwalSeminar) {
@@ -106,7 +106,7 @@ public class Prodi {
          if (this.jadwalSeminar.contains(oldJadwalSeminar))
             this.jadwalSeminar.remove(oldJadwalSeminar);
    }
-   
+
    /** @pdGenerated default removeAll */
    public void removeAllJadwalSeminar() {
       if (jadwalSeminar != null)
@@ -119,7 +119,7 @@ public class Prodi {
          beritaAcara = new java.util.HashSet<BeritaAcara>();
       return beritaAcara;
    }
-   
+
    /**
      * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorBeritaAcara() {
@@ -127,7 +127,7 @@ public class Prodi {
          beritaAcara = new java.util.HashSet<BeritaAcara>();
       return beritaAcara.iterator();
    }
-   
+
    /** @pdGenerated default setter
      * @param newBeritaAcara */
    public void setBeritaAcara(java.util.Collection<BeritaAcara> newBeritaAcara) {
@@ -135,7 +135,7 @@ public class Prodi {
       for (java.util.Iterator iter = newBeritaAcara.iterator(); iter.hasNext();)
          addBeritaAcara((BeritaAcara)iter.next());
    }
-   
+
    /** @pdGenerated default add
      * @param newBeritaAcara */
    public void addBeritaAcara(BeritaAcara newBeritaAcara) {
@@ -146,7 +146,7 @@ public class Prodi {
       if (!this.beritaAcara.contains(newBeritaAcara))
          this.beritaAcara.add(newBeritaAcara);
    }
-   
+
    /** @pdGenerated default remove
      * @param oldBeritaAcara */
    public void removeBeritaAcara(BeritaAcara oldBeritaAcara) {
@@ -156,7 +156,7 @@ public class Prodi {
          if (this.beritaAcara.contains(oldBeritaAcara))
             this.beritaAcara.remove(oldBeritaAcara);
    }
-   
+
    /** @pdGenerated default removeAll */
    public void removeAllBeritaAcara() {
       if (beritaAcara != null)
