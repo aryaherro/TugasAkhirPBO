@@ -6,8 +6,6 @@
 
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid 34a340d5-3367-4f97-87e3-faf1bf5afcb1 */
 public class jabatan {
    /** @pdOid 2f126d47-be7e-440d-9daa-74a0689259b4 */

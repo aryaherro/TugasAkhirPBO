@@ -6,8 +6,6 @@
 
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid dc67caf7-59f1-4f4b-b730-7060d21fc7f5 */
 public class mahasiswa extends manusia {
    /** @pdOid 40e4cab4-c0a3-4660-988b-17dc17475d43 */

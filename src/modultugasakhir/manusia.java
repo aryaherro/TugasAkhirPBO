@@ -6,8 +6,6 @@
 
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid cedd4ce0-6260-4948-98a4-b9b6cc024403 */
 public class manusia {
    /** @pdOid 30c60689-c002-4a11-8e87-080fe1a6ba65 */

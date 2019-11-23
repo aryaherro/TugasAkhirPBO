@@ -6,8 +6,6 @@
 
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid 0ff6429c-5241-429e-ab03-97595dadc616 */
 public class kelayakan {
    /** @pdOid 2ee95c90-fa5f-4d40-ac7e-95451743d686 */

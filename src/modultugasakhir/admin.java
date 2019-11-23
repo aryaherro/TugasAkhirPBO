@@ -6,8 +6,6 @@
 
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid 3f384822-d0a2-4246-8885-454851d3ccac */
 public class admin {
    /** @pdOid aef22040-af9c-4ca4-b49b-eb46c9ebad55 */
@@ -63,7 +61,8 @@ public class admin {
    }
    
    
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<mahasiswa> getMahasiswa() {
       if (mahasiswa == null)
          mahasiswa = new java.util.HashSet<mahasiswa>();

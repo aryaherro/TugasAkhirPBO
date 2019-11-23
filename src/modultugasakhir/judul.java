@@ -6,8 +6,6 @@
 
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid 15d0092c-84fa-4a3b-a64a-4e012675204d */
 public class judul {
    /** @pdOid 5e6f4cf9-640e-47a5-b397-41e454e98200 */

@@ -6,8 +6,6 @@
 
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid c5d3f500-c5b0-47d9-8bd6-547769a0af5e */
 public class prodi {
    /** @pdOid 287aaba8-ce2d-42e8-a4da-81aad43edadd */

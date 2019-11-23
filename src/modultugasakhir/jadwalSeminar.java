@@ -6,8 +6,6 @@
 
 package modultugasakhir;
 
-import java.util.*;
-
 /** @pdOid fe0e0153-61c6-44bd-8445-fe4a56d108d6 */
 public class jadwalSeminar {
    /** @pdOid f5145d5d-12a4-46ee-a562-408e7b15bfe9 */
