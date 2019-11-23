@@ -14,26 +14,45 @@ public class Jabatan {
    private String idJabatan;
    /** @pdOid 341c55c1-16e7-4e51-9b6b-322582de3aff */
    private String namaJabatan;
+<<<<<<< HEAD:src/modultugasakhir/jabatan.java
 
    /** @pdRoleInfo migr=no name=HistoryJabatan assc=pencatatan coll=java.util.Collection impl=java.util.HashSet mult=1..* */
    public java.util.Collection<HistoryJabatan> historyJabatan;
 
+=======
+   
+   /** @pdRoleInfo migr=no name=HistoryJabatan assc=pencatatan coll=java.util.Collection impl=java.util.HashSet mult=1..* */
+   public java.util.Collection<HistoryJabatan> historyJabatan;
+   
+>>>>>>> parent of 8041fa5... Add Array List:src/modultugasakhir/Jabatan.java
    /** @pdOid e3c8831c-5585-4013-bd03-f28581c91d9b */
    public void jabatan() {
       // TODO: implement
    }
+<<<<<<< HEAD:src/modultugasakhir/jabatan.java
 
+=======
+   
+>>>>>>> parent of 8041fa5... Add Array List:src/modultugasakhir/Jabatan.java
    /** @pdOid e329c252-f48d-45f0-bdc7-b866656f0a6c */
    public String getIDJabatan() {
       return idJabatan;
    }
+<<<<<<< HEAD:src/modultugasakhir/jabatan.java
 
+=======
+   
+>>>>>>> parent of 8041fa5... Add Array List:src/modultugasakhir/Jabatan.java
    /** @param newIDJabatan
     * @pdOid a86a651f-075d-4a8d-ac10-b7923ed06cdf */
    public void setIDJabatan(String newIDJabatan) {
       idJabatan = newIDJabatan;
    }
+<<<<<<< HEAD:src/modultugasakhir/jabatan.java
 
+=======
+   
+>>>>>>> parent of 8041fa5... Add Array List:src/modultugasakhir/Jabatan.java
    /** @pdOid c3885193-7309-4c2e-8cae-1351cc2a99fa */
    public String getNamaJabatan() {
       return namaJabatan;
