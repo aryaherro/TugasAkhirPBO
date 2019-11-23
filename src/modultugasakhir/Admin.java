@@ -1,79 +1,82 @@
+package modultugasakhir;
+
 /***********************************************************************
  * Module:  Admin.java
  * Author:  Ajeng
  * Purpose: Defines the Class Admin
  ***********************************************************************/
 
-package modultugasakhir;
-
-import java.util.*;
-
-/** @pdOid 67578f45-1f4b-437e-9e8a-4431004fb3e5 */
+/** @pdOid 4ad238aa-2f4d-4661-846f-3dbe241513c7 */
 public class Admin {
-   /** @pdOid 21a353c8-504c-4dbe-9e95-4358a4df0745 */
-   private int idAdmin;
-   /** @pdOid a325e2b3-450d-43b1-aeec-cfdf8b7daba4 */
+   /** @pdOid 6caa82ba-9bb5-42a6-bb31-279a73d6ed64 */
+   private String idAdmin;
+   /** @pdOid 79a9a864-ebfc-4376-98b9-d669745e26e4 */
    private String usernameAdmin;
-   /** @pdOid 503b6a36-4667-4580-9950-0ff6e98434f3 */
+   /** @pdOid de882e8b-c8e9-4c4a-b1fb-d733f67ba0c3 */
    private String passwordAdmin;
    
-   /** @pdRoleInfo migr=no name=Mahasiswa assc=adminEditMahasiswa coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   /** @pdRoleInfo migr=no name=Mahasiswa assc=editMahasiswa coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<Mahasiswa> mahasiswa;
-   /** @pdRoleInfo migr=no name=Prodi assc=adminEditProdi coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   /** @pdRoleInfo migr=no name=Prodi assc=editProdi coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<Prodi> prodi;
-   /** @pdRoleInfo migr=no name=Dosen assc=adminEditDosen coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
+   /** @pdRoleInfo migr=no name=Dosen assc=editDosen coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<Dosen> dosen;
    
-   /** @pdOid 99d90e9a-43ee-42b8-8cf1-566998c9c792 */
+   /** @pdOid cc0909ac-42c1-45bf-970b-74cbc9eb448f */
    public void admin() {
       // TODO: implement
    }
    
-   /** @pdOid 010ee21a-4cf4-4684-9dd9-a7aa939c9125 */
-   public int getidAdmin() {
+   /**
+     * @return  *  @pdOid ad01507f-b5a5-4e01-854f-27dbb74bf7c6 */
+   public String getIDAdmin() {
       return idAdmin;
    }
    
-   /** @param newIdAdmin
-    * @pdOid a5a5edb6-7995-4a1d-a0a4-f1253249c84d */
-   public void setidAdmin(int newIdAdmin) {
-      idAdmin = newIdAdmin;
+   /** @param newIDAdmin
+    * @pdOid a128fdc8-a3c5-4224-a3cb-6ad166f6d3a9 */
+   public void setIDAdmin(String newIDAdmin) {
+      idAdmin = newIDAdmin;
    }
    
-   /** @pdOid d82be122-ba4a-4b24-920a-7b64f90cc021 */
-   public String getusernameAdmin() {
+   /**
+     * @return  *  @pdOid 9158c214-1194-4542-a32f-3c388a61de2b */
+   public String getUsernameAdmin() {
       return usernameAdmin;
    }
    
    /** @param newUsernameAdmin
-    * @pdOid 1c18708d-3573-4f3d-a847-54747cfb9ab8 */
-   public void setusernameAdmin(String newUsernameAdmin) {
+    * @pdOid 81d55dbe-1c26-40eb-ab83-388b0e4807e2 */
+   public void setUsernameAdmin(String newUsernameAdmin) {
       usernameAdmin = newUsernameAdmin;
    }
    
-   /** @pdOid 28f1e2e3-8ff6-4216-b50a-60e8edc3d936 */
-   public String getpasswordAdmin() {
+   /**
+     * @return  *  @pdOid dc48d068-178a-42ea-8877-09510fb5d6bb */
+   public String getPasswordAdmin() {
       return passwordAdmin;
    }
    
    /** @param newPasswordAdmin
-    * @pdOid eb8b5891-2c2b-4ee2-9673-ee4024dcc7c0 */
-   public void setpasswordAdmin(String newPasswordAdmin) {
+    * @pdOid 9b7b4a1f-4e36-433d-a3a4-a047cbf7354c */
+   public void setPasswordAdmin(String newPasswordAdmin) {
       passwordAdmin = newPasswordAdmin;
    }
    
    
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<Mahasiswa> getMahasiswa() {
       if (mahasiswa == null)
-         mahasiswa = new java.util.ArrayList<Mahasiswa>();
+         mahasiswa = new java.util.HashSet<Mahasiswa>();
       return mahasiswa;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorMahasiswa() {
       if (mahasiswa == null)
-         mahasiswa = new java.util.ArrayList<Mahasiswa>();
+         mahasiswa = new java.util.HashSet<Mahasiswa>();
       return mahasiswa.iterator();
    }
    
@@ -91,7 +94,7 @@ public class Admin {
       if (newMahasiswa == null)
          return;
       if (this.mahasiswa == null)
-         this.mahasiswa = new java.util.ArrayList<Mahasiswa>();
+         this.mahasiswa = new java.util.HashSet<Mahasiswa>();
       if (!this.mahasiswa.contains(newMahasiswa))
          this.mahasiswa.add(newMahasiswa);
    }
@@ -111,17 +114,19 @@ public class Admin {
       if (mahasiswa != null)
          mahasiswa.clear();
    }
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<Prodi> getProdi() {
       if (prodi == null)
-         prodi = new java.util.ArrayList<Prodi>();
+         prodi = new java.util.HashSet<Prodi>();
       return prodi;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorProdi() {
       if (prodi == null)
-         prodi = new java.util.ArrayList<Prodi>();
+         prodi = new java.util.HashSet<Prodi>();
       return prodi.iterator();
    }
    
@@ -139,7 +144,7 @@ public class Admin {
       if (newProdi == null)
          return;
       if (this.prodi == null)
-         this.prodi = new java.util.ArrayList<Prodi>();
+         this.prodi = new java.util.HashSet<Prodi>();
       if (!this.prodi.contains(newProdi))
          this.prodi.add(newProdi);
    }
@@ -159,17 +164,19 @@ public class Admin {
       if (prodi != null)
          prodi.clear();
    }
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<Dosen> getDosen() {
       if (dosen == null)
-         dosen = new java.util.ArrayList<Dosen>();
+         dosen = new java.util.HashSet<Dosen>();
       return dosen;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorDosen() {
       if (dosen == null)
-         dosen = new java.util.ArrayList<Dosen>();
+         dosen = new java.util.HashSet<Dosen>();
       return dosen.iterator();
    }
    
@@ -187,7 +194,7 @@ public class Admin {
       if (newDosen == null)
          return;
       if (this.dosen == null)
-         this.dosen = new java.util.ArrayList<Dosen>();
+         this.dosen = new java.util.HashSet<Dosen>();
       if (!this.dosen.contains(newDosen))
          this.dosen.add(newDosen);
    }
