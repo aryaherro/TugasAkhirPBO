@@ -1,104 +1,107 @@
-/***********************************************************************
- * Module:  mahasiswa.java
- * Author:  Ajeng
- * Purpose: Defines the Class mahasiswa
- ***********************************************************************/
-
 package modultugasakhir;
 
-import java.util.*;
+/***********************************************************************
+ * Module:  Mahasiswa.java
+ * Author:  Ajeng
+ * Purpose: Defines the Class Mahasiswa
+ ***********************************************************************/
 
-/** @pdOid 90ef432f-cd1e-4370-af94-7a8d8c7ff3fe */
-public class mahasiswa extends manusia {
-   /** @pdOid 19139f53-e141-41a8-a285-df33dd8f2140 */
+/** @pdOid 9fd0b016-bc97-40bd-b631-3488ab8f298f */
+public class Mahasiswa extends Manusia {
+   /** @pdOid 8b178ffb-c4c1-475e-95ef-160e2c864ac3 */
    private int idMahasiswa;
-   /** @pdOid a1bfdd15-c63f-4640-8f86-3e8bc510c614 */
-   private String nim;
-   /** @pdOid a5cd37fb-fe92-4cd5-8ec3-aa0fe161ec22 */
+   /** @pdOid 9ca2f5cb-5d99-493c-8c45-cc6e925506af */
+   private int nim;
+   /** @pdOid f56fbe30-92f3-44fb-9035-5063115b889c */
    private String mahasiswaPassword;
    
-   /** @pdRoleInfo migr=no name=prodi assc=mahasiswaBagianProdi coll=java.util.Collection mult=1..1 */
-   public prodi prodi;
-   /** @pdRoleInfo migr=no name=judul assc=mahasiswaMengajukanJudul coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
-   public java.util.Collection<judul> judul;
-   /** @pdRoleInfo migr=no name=dosen assc=dosenMembimbingMahasiswa coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   public dosen dosen;
+   /** @pdRoleInfo migr=no name=Prodi assc=bagian coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
+   public Prodi prodi;
+   /** @pdRoleInfo migr=no name=Judul assc=mengajukan coll=java.util.Collection impl=java.util.HashSet mult=1..* */
+   public java.util.Collection<Judul> judul;
+   /** @pdRoleInfo migr=no name=JadwalSeminar assc=melihat coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
+   public JadwalSeminar jadwalSeminar;
    
-   /** @pdOid df3b74a4-3155-4e81-bc20-51a50baea930 */
-   public mahasiswa() {
+   /** @pdOid 8088bc89-d2bb-4dbf-b87e-910dc6c74dba */
+   public void mahasiswa() {
       // TODO: implement
    }
    
-   /** @pdOid c71d39d0-d331-45d5-bf61-1e2e9aaa569b */
-   public int getidMahasiswa() {
+   /**
+     * @return  *  @pdOid 49306e94-3a21-4d33-beec-cbc56563d5e1 */
+   public int getIDMahasiswa() {
       return idMahasiswa;
    }
    
-   /** @param newIdMahasiswa
-    * @pdOid 4793ba12-b7ad-47cc-8d9d-b9885603c7a0 */
-   public void setidMahasiswa(int newIdMahasiswa) {
-      idMahasiswa = newIdMahasiswa;
+   /** @param newIDMahasiswa
+    * @pdOid 657e0593-bd22-4cd7-8ca2-4e71cb5e4661 */
+   public void setIDMahasiswa(int newIDMahasiswa) {
+      idMahasiswa = newIDMahasiswa;
    }
    
-   /** @pdOid ea79ba14-e3d8-4d1b-b3e4-e50125ba8e4f */
-   public String getnim() {
+   /**
+     * @return  *  @pdOid f4b70f5c-8b6b-43b7-b4ed-f1bae0ca44f8 */
+   public int getNIM() {
       return nim;
    }
    
-   /** @param newNim
-    * @pdOid d95a8209-4f40-48e3-bb9c-c8ccc36ca052 */
-   public void setnim(String newNim) {
-      nim = newNim;
+   /** @param newNIM
+    * @pdOid 6ea43766-e7d3-4d7a-9b40-814d867992f4 */
+   public void setNIM(int newNIM) {
+      nim = newNIM;
    }
    
-   /** @pdOid bcc07aa0-5a43-40bf-95c3-71e065cb51ae */
-   public String getmahasiswaPassword() {
+   /**
+     * @return  *  @pdOid c8025785-07ff-4320-aefa-b2940d1ddbcd */
+   public String getMahasiswaPassword() {
       return mahasiswaPassword;
    }
    
    /** @param newMahasiswaPassword
-    * @pdOid e3220b94-7c0c-4928-8ca3-0f62f7ddbc8d */
-   public void setmahasiswaPassword(String newMahasiswaPassword) {
+    * @pdOid 7644b91b-ba72-49c1-afdf-5398cc9387ec */
+   public void setMahasiswaPassword(String newMahasiswaPassword) {
       mahasiswaPassword = newMahasiswaPassword;
    }
    
    
-   /** @pdGenerated default getter */
-   public java.util.Collection<judul> getJudul() {
+   /**
+     * @return  *  @pdGenerated default getter */
+   public java.util.Collection<Judul> getJudul() {
       if (judul == null)
-         judul = new java.util.ArrayList<judul>();
+         judul = new java.util.HashSet<Judul>();
       return judul;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorJudul() {
       if (judul == null)
-         judul = new java.util.ArrayList<judul>();
+         judul = new java.util.HashSet<Judul>();
       return judul.iterator();
    }
    
    /** @pdGenerated default setter
      * @param newJudul */
-   public void setJudul(java.util.Collection<judul> newJudul) {
+   public void setJudul(java.util.Collection<Judul> newJudul) {
       removeAllJudul();
       for (java.util.Iterator iter = newJudul.iterator(); iter.hasNext();)
-         addJudul((judul)iter.next());
+         addJudul((Judul)iter.next());
    }
    
    /** @pdGenerated default add
      * @param newJudul */
-   public void addJudul(judul newJudul) {
+   public void addJudul(Judul newJudul) {
       if (newJudul == null)
          return;
       if (this.judul == null)
-         this.judul = new java.util.ArrayList<judul>();
+         this.judul = new java.util.HashSet<Judul>();
       if (!this.judul.contains(newJudul))
          this.judul.add(newJudul);
    }
    
    /** @pdGenerated default remove
      * @param oldJudul */
-   public void removeJudul(judul oldJudul) {
+   public void removeJudul(Judul oldJudul) {
       if (oldJudul == null)
          return;
       if (this.judul != null)

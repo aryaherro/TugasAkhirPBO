@@ -1,70 +1,72 @@
-/***********************************************************************
- * Module:  historyJabatan.java
- * Author:  Ajeng
- * Purpose: Defines the Class historyJabatan
- ***********************************************************************/
-
 package modultugasakhir;
 
-import java.util.*;
+/***********************************************************************
+ * Module:  HistoryJabatan.java
+ * Author:  Ajeng
+ * Purpose: Defines the Class HistoryJabatan
+ ***********************************************************************/
 
-/** @pdOid 1354cc0c-7286-4761-a68a-ea552331f0b1 */
-public class historyJabatan {
-   /** @pdOid e345ce29-9604-407a-9a84-b23656779525 */
-   private int idHistoryJabatan;
-   /** @pdOid d64c0ca1-cfd8-41a3-8ae3-2aa0e0a555b5 */
-   private Date startDate;
-   /** @pdOid 390f7f99-906d-487d-bbcc-246ea4c32a1e */
+/** @pdOid 860c90d7-f5f7-4fa1-bf76-53dfd1d61f17 */
+public class HistoryJabatan {
+   /** @pdOid 0b120689-2885-4d57-af78-1459651b4ab9 */
+   private String idHistoryJabatan;
+   /** @pdOid 2fa70e3e-bb69-4f47-9587-054318c673ca */
+   private java.util.Date startDate;
+   /** @pdOid 452052cf-07a2-4bb8-87da-60860b97e9ad */
    private String tahunAjaran;
-   /** @pdOid 476d043b-5fc6-4bbe-9aad-88c75cfef98e */
+   /** @pdOid d2e2b4e4-125d-411a-b860-c87daa7fd079 */
    private boolean statusAktif;
    
-   /** @pdOid 2fc538ce-44be-4fb4-9303-d88ed494952f */
-   public historyJabatan() {
+   /** @pdOid eadbde72-5138-4370-a73d-3cc227a28173 */
+   public void historyJabatan() {
       // TODO: implement
    }
    
-   /** @pdOid d2f8ffe0-7797-4afa-8b6e-86311d95d592 */
-   public int getidHistoryJabatan() {
+   /**
+     * @return  *  @pdOid 42701fae-fb0e-4f75-8ee9-64d329bbc6d9 */
+   public String getIDHistoryJabatan() {
       return idHistoryJabatan;
    }
    
-   /** @param newIdHistoryJabatan
-    * @pdOid 2f9edd52-939c-420a-b2d5-abeec43ea6af */
-   public void setidHistoryJabatan(int newIdHistoryJabatan) {
-      idHistoryJabatan = newIdHistoryJabatan;
+   /** @param newIDHistoryJabatan
+    * @pdOid ad0032ca-874e-4a55-abdf-68373fe20fbd */
+   public void setIDHistoryJabatan(String newIDHistoryJabatan) {
+      idHistoryJabatan = newIDHistoryJabatan;
    }
    
-   /** @pdOid f460b7fa-0fae-47c7-96c5-96508d3da779 */
-   public Date getstartDate() {
+   /**
+     * @return  *  @pdOid 31c8a331-df93-4430-a9c0-0177bc87cdea */
+   public java.util.Date getStartDate() {
       return startDate;
    }
    
    /** @param newStartDate
-    * @pdOid 16cc6be6-9983-43d4-8d0d-490512ea116a */
-   public void setstartDate(Date newStartDate) {
+    * @pdOid 2977fe73-c200-4156-95c0-25579e84e947 */
+   public void setStartDate(java.util.Date newStartDate) {
       startDate = newStartDate;
    }
    
-   /** @pdOid 0265f005-e83a-4044-9296-ff1407005e61 */
-   public String gettahunAjaran() {
+   /**
+     * @return  *  @pdOid c0f01e2c-a9cc-4003-98a6-abf2ff12abf4 */
+   public String getTahunAjaran() {
       return tahunAjaran;
    }
    
    /** @param newTahunAjaran
-    * @pdOid c1f72d87-5145-4761-a655-372fe7857a98 */
-   public void settahunAjaran(String newTahunAjaran) {
+    * @pdOid 866b1324-4dea-425f-adab-0957a0295bcd */
+   public void setTahunAjaran(String newTahunAjaran) {
       tahunAjaran = newTahunAjaran;
    }
    
-   /** @pdOid b2bb78ee-1baf-45e5-898e-dc9f8ddf0917 */
-   public boolean isstatusAktif() {
+   /**
+     * @return  *  @pdOid ec176892-1f0d-4cb4-98a8-7bbd828c45f3 */
+   public boolean isStatusAktif() {
       return statusAktif;
    }
    
    /** @param newStatusAktif
-    * @pdOid 0171f625-f40a-4d95-aa80-b416c3c4a114 */
-   public void setstatusAktif(boolean newStatusAktif) {
+    * @pdOid 214623a4-4ad0-45b8-afda-5ce49fe41101 */
+   public void setStatusAktif(boolean newStatusAktif) {
       statusAktif = newStatusAktif;
    }
 

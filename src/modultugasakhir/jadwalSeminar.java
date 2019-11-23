@@ -1,47 +1,47 @@
-/***********************************************************************
- * Module:  jadwalSeminar.java
- * Author:  Ajeng
- * Purpose: Defines the Class jadwalSeminar
- ***********************************************************************/
-
 package modultugasakhir;
 
-import java.util.*;
+/***********************************************************************
+ * Module:  JadwalSeminar.java
+ * Author:  Ajeng
+ * Purpose: Defines the Class JadwalSeminar
+ ***********************************************************************/
 
-/** @pdOid f99c73bb-1de1-4f7e-8728-4a846c95a123 */
-public class jadwalSeminar {
-   /** @pdOid 99f568a9-4c8a-4cfd-8fa3-98279d07b576 */
-   private int idJadwal;
-   /** @pdOid 2ed70d90-9c39-4643-9af5-90c3612731f2 */
+/** @pdOid e4e8551f-de74-4e50-9e79-e55094d0b390 */
+public class JadwalSeminar {
+   /** @pdOid 1cdffe73-ab06-4244-98e6-986364e99d53 */
+   private String idJadwal;
+   /** @pdOid 27618ae3-e28d-4e4b-b831-51e007f0d0b4 */
    private String jadwal;
    
-   /** @pdRoleInfo migr=no name=mahasiswa assc=mahasiswaMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
-   public mahasiswa mahasiswa;
+   /** @pdRoleInfo migr=no name=BeritaAcara assc=lanjut coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
+   public BeritaAcara beritaAcara;
    
-   /** @pdOid a0ea2a99-6303-4570-9268-5358acbd6c3e */
-   public jadwalSeminar() {
+   /** @pdOid 4a20dab4-d435-421c-9a04-565d6082a07a */
+   public void jadwalSeminar() {
       // TODO: implement
    }
    
-   /** @pdOid 43b5b23f-1278-4878-be48-c06684f3a5fa */
-   public int getidJadwal() {
+   /**
+     * @return  *  @pdOid d1a1d327-031e-4eb3-9a8e-9fb7dee8569c */
+   public String getIDJadwal() {
       return idJadwal;
    }
    
-   /** @param newIdJadwal
-    * @pdOid 43aab48f-f94d-40d8-9e32-84826fbd850a */
-   public void setidJadwal(int newIdJadwal) {
-      idJadwal = newIdJadwal;
+   /** @param newIDJadwal
+    * @pdOid fafefaa6-ad37-45fe-acee-ea42ba4f9b09 */
+   public void setIDJadwal(String newIDJadwal) {
+      idJadwal = newIDJadwal;
    }
    
-   /** @pdOid 9d868237-2714-4ce0-8a5b-a2534400e026 */
-   public String getjadwal() {
+   /**
+     * @return  *  @pdOid ebecfd7c-b5d7-469f-8869-11c2b3f1c0f6 */
+   public String getJadwal() {
       return jadwal;
    }
    
    /** @param newJadwal
-    * @pdOid 1153ea4c-7e68-4c74-982b-b62fd6a9c3ca */
-   public void setjadwal(String newJadwal) {
+    * @pdOid ee84dd10-0792-4f29-af70-1b0b6fe806b0 */
+   public void setJadwal(String newJadwal) {
       jadwal = newJadwal;
    }
 
