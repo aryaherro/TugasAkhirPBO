@@ -16,14 +16,15 @@ public class prodi {
    private String prodiPassword;
    
    /** @pdRoleInfo migr=no name=jadwalSeminar assc=prodiMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<jadwalSeminar> jadwalSeminar;
+   private java.util.Collection<jadwalSeminar> jadwalSeminar;
    
    /** @pdOid 74b5c87d-3d33-48e1-9549-e8b3efe7a77f */
    public prodi() {
       // TODO: implement
    }
    
-   /** @pdOid 48106143-a982-429f-97c4-d485756b5822 */
+   /**
+     * @return  *  @pdOid 48106143-a982-429f-97c4-d485756b5822 */
    public int getidProdi() {
       return idProdi;
    }
@@ -34,7 +35,8 @@ public class prodi {
       idProdi = newIdProdi;
    }
    
-   /** @pdOid db01db73-818b-46e9-bafe-3f41ae19e4a6 */
+   /**
+     * @return  *  @pdOid db01db73-818b-46e9-bafe-3f41ae19e4a6 */
    public String getNamaProdi() {
       return namaProdi;
    }
@@ -45,7 +47,8 @@ public class prodi {
       namaProdi = newNamaProdi;
    }
    
-   /** @pdOid 60930ef6-fa3c-4c11-92e2-44e693701c26 */
+   /**
+     * @return  *  @pdOid 60930ef6-fa3c-4c11-92e2-44e693701c26 */
    public String getProdiPassword() {
       return prodiPassword;
    }
@@ -57,14 +60,16 @@ public class prodi {
    }
    
    
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<jadwalSeminar> getJadwalSeminar() {
       if (jadwalSeminar == null)
          jadwalSeminar = new java.util.HashSet<jadwalSeminar>();
       return jadwalSeminar;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorJadwalSeminar() {
       if (jadwalSeminar == null)
          jadwalSeminar = new java.util.HashSet<jadwalSeminar>();

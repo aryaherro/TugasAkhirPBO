@@ -16,20 +16,21 @@ public class dosen extends manusia {
    private String dosenPassword;
    
    /** @pdRoleInfo migr=no name=revisi assc=dosenMenuliskanRevisi coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<revisi> revisi;
+   private java.util.Collection<revisi> revisi;
    /** @pdRoleInfo migr=no name=kelayakan assc=dosenMenentukanKelayakan coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<kelayakan> kelayakan;
+   private java.util.Collection<kelayakan> kelayakan;
    /** @pdRoleInfo migr=no name=prodi assc=dosenBagianProdi coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<prodi> prodi;
+   private java.util.Collection<prodi> prodi;
    /** @pdRoleInfo migr=no name=jadwalSeminar assc=dosenMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<jadwalSeminar> jadwalSeminar;
+   private java.util.Collection<jadwalSeminar> jadwalSeminar;
    
    /** @pdOid 071553bc-fe48-42bd-8336-e2455d24e230 */
    public dosen() {
       // TODO: implement
    }
    
-   /** @pdOid 1babdc87-054c-47bd-83df-ba9b11c40e20 */
+   /**
+     * @return  *  @pdOid 1babdc87-054c-47bd-83df-ba9b11c40e20 */
    public int getidDosen() {
       return idDosen;
    }
@@ -40,7 +41,8 @@ public class dosen extends manusia {
       idDosen = newIdDosen;
    }
    
-   /** @pdOid 948964a0-f06f-4703-8d9b-4526667269ee */
+   /**
+     * @return  *  @pdOid 948964a0-f06f-4703-8d9b-4526667269ee */
    public String getnpp() {
       return npp;
    }
@@ -51,7 +53,8 @@ public class dosen extends manusia {
       npp = newNpp;
    }
    
-   /** @pdOid cd26b463-eb2e-41ff-93c3-13735d06b71a */
+   /**
+     * @return  *  @pdOid cd26b463-eb2e-41ff-93c3-13735d06b71a */
    public String getdosenPassword() {
       return dosenPassword;
    }
@@ -63,14 +66,16 @@ public class dosen extends manusia {
    }
    
    
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<revisi> getRevisi() {
       if (revisi == null)
          revisi = new java.util.HashSet<revisi>();
       return revisi;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorRevisi() {
       if (revisi == null)
          revisi = new java.util.HashSet<revisi>();
@@ -111,14 +116,16 @@ public class dosen extends manusia {
       if (revisi != null)
          revisi.clear();
    }
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<kelayakan> getKelayakan() {
       if (kelayakan == null)
          kelayakan = new java.util.HashSet<kelayakan>();
       return kelayakan;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorKelayakan() {
       if (kelayakan == null)
          kelayakan = new java.util.HashSet<kelayakan>();
@@ -159,14 +166,16 @@ public class dosen extends manusia {
       if (kelayakan != null)
          kelayakan.clear();
    }
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<prodi> getProdi() {
       if (prodi == null)
          prodi = new java.util.HashSet<prodi>();
       return prodi;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorProdi() {
       if (prodi == null)
          prodi = new java.util.HashSet<prodi>();
@@ -207,14 +216,16 @@ public class dosen extends manusia {
       if (prodi != null)
          prodi.clear();
    }
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<jadwalSeminar> getJadwalSeminar() {
       if (jadwalSeminar == null)
          jadwalSeminar = new java.util.HashSet<jadwalSeminar>();
       return jadwalSeminar;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorJadwalSeminar() {
       if (jadwalSeminar == null)
          jadwalSeminar = new java.util.HashSet<jadwalSeminar>();

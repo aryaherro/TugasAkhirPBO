@@ -16,18 +16,19 @@ public class mahasiswa extends manusia {
    private String mahasiswaPassword;
    
    /** @pdRoleInfo migr=no name=prodi assc=mahasiswaBagianProdi coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   public prodi prodi;
+   private prodi prodi;
    /** @pdRoleInfo migr=no name=judul assc=mahasiswaMengajukanJudul coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<judul> judul;
+   private java.util.Collection<judul> judul;
    /** @pdRoleInfo migr=no name=dosen assc=dosenMembimbingMahasiswa coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   public dosen dosen;
+   private dosen dosen;
    
    /** @pdOid 0fb0bd87-82a2-40a3-9c94-75b4843954af */
    public mahasiswa() {
       // TODO: implement
    }
    
-   /** @pdOid 51f499da-96a3-4ba6-b87a-6bb2d6c41c90 */
+   /**
+     * @return  *  @pdOid 51f499da-96a3-4ba6-b87a-6bb2d6c41c90 */
    public int getidMahasiswa() {
       return idMahasiswa;
    }
@@ -38,7 +39,8 @@ public class mahasiswa extends manusia {
       idMahasiswa = newIdMahasiswa;
    }
    
-   /** @pdOid 92119689-4c43-40df-a065-a76ad5a07806 */
+   /**
+     * @return  *  @pdOid 92119689-4c43-40df-a065-a76ad5a07806 */
    public String getnim() {
       return nim;
    }
@@ -49,7 +51,8 @@ public class mahasiswa extends manusia {
       nim = newNim;
    }
    
-   /** @pdOid be7410d6-ab50-4d0e-aa91-e5cf0a24b4e4 */
+   /**
+     * @return  *  @pdOid be7410d6-ab50-4d0e-aa91-e5cf0a24b4e4 */
    public String getmahasiswaPassword() {
       return mahasiswaPassword;
    }
@@ -61,14 +64,16 @@ public class mahasiswa extends manusia {
    }
    
    
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<judul> getJudul() {
       if (judul == null)
          judul = new java.util.HashSet<judul>();
       return judul;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorJudul() {
       if (judul == null)
          judul = new java.util.HashSet<judul>();

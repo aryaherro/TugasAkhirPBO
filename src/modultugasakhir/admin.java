@@ -16,18 +16,19 @@ public class admin {
    private String passwordAdmin;
    
    /** @pdRoleInfo migr=no name=mahasiswa assc=adminEditMahasiswa coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<mahasiswa> mahasiswa;
+   private java.util.Collection<mahasiswa> mahasiswa;
    /** @pdRoleInfo migr=no name=prodi assc=adminEditProdi coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<prodi> prodi;
+   private java.util.Collection<prodi> prodi;
    /** @pdRoleInfo migr=no name=dosen assc=adminEditDosen coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<dosen> dosen;
+   private java.util.Collection<dosen> dosen;
    
    /** @pdOid fc57862c-08f5-4300-b4b9-bfb163627ab3 */
    public admin() {
       // TODO: implement
    }
    
-   /** @pdOid ba7e6c9b-335d-4a78-b517-b80a09d2b720 */
+   /**
+     * @return  *  @pdOid ba7e6c9b-335d-4a78-b517-b80a09d2b720 */
    public int getidAdmin() {
       return idAdmin;
    }
@@ -38,7 +39,8 @@ public class admin {
       idAdmin = newIdAdmin;
    }
    
-   /** @pdOid 536550ef-c0b2-419f-8be9-34804200b769 */
+   /**
+     * @return  *  @pdOid 536550ef-c0b2-419f-8be9-34804200b769 */
    public String getusernameAdmin() {
       return usernameAdmin;
    }
@@ -49,7 +51,8 @@ public class admin {
       usernameAdmin = newUsernameAdmin;
    }
    
-   /** @pdOid 140c858d-c7aa-4315-b3b5-b8d54bbc1ae2 */
+   /**
+     * @return  *  @pdOid 140c858d-c7aa-4315-b3b5-b8d54bbc1ae2 */
    public String getpasswordAdmin() {
       return passwordAdmin;
    }
@@ -69,7 +72,8 @@ public class admin {
       return mahasiswa;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorMahasiswa() {
       if (mahasiswa == null)
          mahasiswa = new java.util.HashSet<mahasiswa>();
@@ -110,14 +114,16 @@ public class admin {
       if (mahasiswa != null)
          mahasiswa.clear();
    }
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<prodi> getProdi() {
       if (prodi == null)
          prodi = new java.util.HashSet<prodi>();
       return prodi;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorProdi() {
       if (prodi == null)
          prodi = new java.util.HashSet<prodi>();
@@ -158,14 +164,16 @@ public class admin {
       if (prodi != null)
          prodi.clear();
    }
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<dosen> getDosen() {
       if (dosen == null)
          dosen = new java.util.HashSet<dosen>();
       return dosen;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorDosen() {
       if (dosen == null)
          dosen = new java.util.HashSet<dosen>();

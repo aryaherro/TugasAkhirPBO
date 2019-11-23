@@ -14,16 +14,17 @@ public class jabatan {
    private String namaJabatan;
    
    /** @pdRoleInfo migr=no name=dosen assc=dosenMenjabatSebagai coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   public dosen dosen;
+   private dosen dosen;
    /** @pdRoleInfo migr=no name=historyJabatan assc=jabatanDicatatDalamHistory coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   public java.util.Collection<historyJabatan> historyJabatan;
+   private java.util.Collection<historyJabatan> historyJabatan;
    
    /** @pdOid b7d8bb4d-995e-4d19-b5b3-b901867237b8 */
    public jabatan() {
       // TODO: implement
    }
    
-   /** @pdOid 14ba1d12-d0c7-4a57-8ec7-0a393499cac1 */
+   /**
+     * @return  *  @pdOid 14ba1d12-d0c7-4a57-8ec7-0a393499cac1 */
    public int getidJabatan() {
       return idJabatan;
    }
@@ -34,7 +35,8 @@ public class jabatan {
       idJabatan = newIdJabatan;
    }
    
-   /** @pdOid c78be582-a883-494a-85c4-c93880d2bdbc */
+   /**
+     * @return  *  @pdOid c78be582-a883-494a-85c4-c93880d2bdbc */
    public String getnamaJabatan() {
       return namaJabatan;
    }
@@ -46,14 +48,16 @@ public class jabatan {
    }
    
    
-   /** @pdGenerated default getter */
+   /**
+     * @return  *  @pdGenerated default getter */
    public java.util.Collection<historyJabatan> getHistoryJabatan() {
       if (historyJabatan == null)
          historyJabatan = new java.util.HashSet<historyJabatan>();
       return historyJabatan;
    }
    
-   /** @pdGenerated default iterator getter */
+   /**
+     * @return  *  @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorHistoryJabatan() {
       if (historyJabatan == null)
          historyJabatan = new java.util.HashSet<historyJabatan>();

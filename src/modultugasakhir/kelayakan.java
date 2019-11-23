@@ -14,14 +14,15 @@ public class kelayakan {
    private boolean statusLayak;
    
    /** @pdRoleInfo migr=no name=judul assc=judulStatusKelayakan coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
-   public judul judul;
+   private judul judul;
    
    /** @pdOid 22a74510-93f2-4cb0-bc79-075b0630687e */
    public kelayakan() {
       // TODO: implement
    }
    
-   /** @pdOid 33e58b53-94dd-410b-b9da-17e07291b63c */
+   /**
+     * @return  *  @pdOid 33e58b53-94dd-410b-b9da-17e07291b63c */
    public int getidLayak() {
       return idLayak;
    }
@@ -32,7 +33,8 @@ public class kelayakan {
       idLayak = newIdLayak;
    }
    
-   /** @pdOid 0eacdd2d-18f2-4017-90d4-85843d3c48c6 */
+   /**
+     * @return  *  @pdOid 0eacdd2d-18f2-4017-90d4-85843d3c48c6 */
    public boolean isstatusLayak() {
       return statusLayak;
    }

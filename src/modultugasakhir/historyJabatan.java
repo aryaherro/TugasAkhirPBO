@@ -24,7 +24,8 @@ public class historyJabatan {
       // TODO: implement
    }
    
-   /** @pdOid 7dce8382-65e0-47b8-ab45-9001c1421b9e */
+   /**
+     * @return  *  @pdOid 7dce8382-65e0-47b8-ab45-9001c1421b9e */
    public int getidHistoryJabatan() {
       return idHistoryJabatan;
    }
@@ -35,7 +36,8 @@ public class historyJabatan {
       idHistoryJabatan = newIdHistoryJabatan;
    }
    
-   /** @pdOid e9444da8-fc8a-44bf-b4db-5c4f5f0cfce7 */
+   /**
+     * @return  *  @pdOid e9444da8-fc8a-44bf-b4db-5c4f5f0cfce7 */
    public Date getstartDate() {
       return startDate;
    }
@@ -46,7 +48,8 @@ public class historyJabatan {
       startDate = newStartDate;
    }
    
-   /** @pdOid faa34743-749f-4654-98f9-fcb0e20c8114 */
+   /**
+     * @return  *  @pdOid faa34743-749f-4654-98f9-fcb0e20c8114 */
    public String gettahunAjaran() {
       return tahunAjaran;
    }
@@ -57,7 +60,8 @@ public class historyJabatan {
       tahunAjaran = newTahunAjaran;
    }
    
-   /** @pdOid a70a451c-2ba5-4a14-9c37-5f421cab4b3e */
+   /**
+     * @return  *  @pdOid a70a451c-2ba5-4a14-9c37-5f421cab4b3e */
    public boolean isstatusAktif() {
       return statusAktif;
    }

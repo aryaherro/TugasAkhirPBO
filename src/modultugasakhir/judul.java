@@ -20,7 +20,8 @@ public class judul {
       // TODO: implement
    }
    
-   /** @pdOid 281e3875-3299-4eae-a1a6-35083b793882 */
+   /**
+     * @return  *  @pdOid 281e3875-3299-4eae-a1a6-35083b793882 */
    public int getidJudul() {
       return idJudul;
    }
@@ -31,7 +32,8 @@ public class judul {
       idJudul = newIdJudul;
    }
    
-   /** @pdOid 3d78d625-2973-456d-9dbd-435ed7571c96 */
+   /**
+     * @return  *  @pdOid 3d78d625-2973-456d-9dbd-435ed7571c96 */
    public String getnamaJudul() {
       return namaJudul;
    }
@@ -42,7 +44,8 @@ public class judul {
       namaJudul = newNamaJudul;
    }
    
-   /** @pdOid 1a76d629-89ee-4de8-9536-e21c70377499 */
+   /**
+     * @return  *  @pdOid 1a76d629-89ee-4de8-9536-e21c70377499 */
    public String getdeskripsi() {
       return deskripsi;
    }

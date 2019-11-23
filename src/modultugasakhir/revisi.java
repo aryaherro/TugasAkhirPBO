@@ -18,14 +18,15 @@ public class revisi {
    private Date tanggalRevisi;
    
    /** @pdRoleInfo migr=no name=judul assc=judulMemilikiRevisi coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   public judul judul;
+   private judul judul;
    
    /** @pdOid 6a1975f0-4ab9-4b76-9c28-f6f05c45378b */
    public revisi() {
       // TODO: implement
    }
    
-   /** @pdOid 5d1b7493-d1e2-471c-99d5-195f4277808e */
+   /**
+     * @return  *  @pdOid 5d1b7493-d1e2-471c-99d5-195f4277808e */
    public int getidRevisi() {
       return idRevisi;
    }
@@ -36,7 +37,8 @@ public class revisi {
       idRevisi = newIdRevisi;
    }
    
-   /** @pdOid f96cedb2-0e0d-436c-8b40-71d525251223 */
+   /**
+     * @return  *  @pdOid f96cedb2-0e0d-436c-8b40-71d525251223 */
    public String getisiRevisi() {
       return isiRevisi;
    }
@@ -47,7 +49,8 @@ public class revisi {
       isiRevisi = newIsiRevisi;
    }
    
-   /** @pdOid 8cc0606f-74cf-46de-82d0-732f0c8e09a5 */
+   /**
+     * @return  *  @pdOid 8cc0606f-74cf-46de-82d0-732f0c8e09a5 */
    public Date gettanggalRevisi() {
       return tanggalRevisi;
    }

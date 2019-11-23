@@ -14,14 +14,15 @@ public class jadwalSeminar {
    private String jadwal;
    
    /** @pdRoleInfo migr=no name=mahasiswa assc=mahasiswaMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
-   public mahasiswa mahasiswa;
+   private mahasiswa mahasiswa;
    
    /** @pdOid 9ccb7d96-3d00-4afa-aa22-ec19e5b4588b */
    public jadwalSeminar() {
       // TODO: implement
    }
    
-   /** @pdOid eddc6a92-c7a9-4596-904b-56fe54724919 */
+   /**
+     * @return  *  @pdOid eddc6a92-c7a9-4596-904b-56fe54724919 */
    public int getidJadwal() {
       return idJadwal;
    }
@@ -32,7 +33,8 @@ public class jadwalSeminar {
       idJadwal = newIdJadwal;
    }
    
-   /** @pdOid fe51b13f-5b03-4545-a538-39fb4259b20c */
+   /**
+     * @return  *  @pdOid fe51b13f-5b03-4545-a538-39fb4259b20c */
    public String getjadwal() {
       return jadwal;
    }

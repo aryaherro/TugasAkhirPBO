@@ -28,7 +28,8 @@ public class manusia {
       // TODO: implement
    }
    
-   /** @pdOid 1c175e4c-58bd-4851-a4b6-480ac6bb768e */
+   /**
+     * @return  *  @pdOid 1c175e4c-58bd-4851-a4b6-480ac6bb768e */
    public String getnama() {
       return nama;
    }
@@ -39,7 +40,8 @@ public class manusia {
       nama = newNama;
    }
    
-   /** @pdOid 6cfc06ae-5f1a-4f4e-a37e-6fb29aaa6007 */
+   /**
+     * @return  *  @pdOid 6cfc06ae-5f1a-4f4e-a37e-6fb29aaa6007 */
    public String getnik() {
       return nik;
    }
@@ -50,7 +52,8 @@ public class manusia {
       nik = newNik;
    }
    
-   /** @pdOid c49d146b-ec8f-4a0f-9315-269b71703849 */
+   /**
+     * @return  *  @pdOid c49d146b-ec8f-4a0f-9315-269b71703849 */
    public String gettanggalLahir() {
       return tanggalLahir;
    }
@@ -61,7 +64,8 @@ public class manusia {
       tanggalLahir = newTanggalLahir;
    }
    
-   /** @pdOid 7d5a8575-d546-4f37-a550-b8dafcc61b6a */
+   /**
+     * @return  *  @pdOid 7d5a8575-d546-4f37-a550-b8dafcc61b6a */
    public char getjenisKelamin() {
       return jenisKelamin;
    }
@@ -72,7 +76,8 @@ public class manusia {
       jenisKelamin = newJenisKelamin;
    }
    
-   /** @pdOid 0f2e02c0-9ded-4f37-8dbb-85711d8c7532 */
+   /**
+     * @return  *  @pdOid 0f2e02c0-9ded-4f37-8dbb-85711d8c7532 */
    public String getalamat() {
       return alamat;
    }
@@ -83,7 +88,8 @@ public class manusia {
       alamat = newAlamat;
    }
    
-   /** @pdOid 4ace9146-81da-4d37-a444-c38b3cbdd3c5 */
+   /**
+     * @return  *  @pdOid 4ace9146-81da-4d37-a444-c38b3cbdd3c5 */
    public String getemail() {
       return email;
    }
@@ -94,7 +100,8 @@ public class manusia {
       email = newEmail;
    }
    
-   /** @pdOid cd73f746-4227-4b55-8afd-8eed6c1e663a */
+   /**
+     * @return  *  @pdOid cd73f746-4227-4b55-8afd-8eed6c1e663a */
    public String getagama() {
       return agama;
    }
