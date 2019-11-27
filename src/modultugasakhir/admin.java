@@ -25,6 +25,9 @@ public class admin {
    /** @pdOid fc57862c-08f5-4300-b4b9-bfb163627ab3 */
    public admin() {
       // TODO: implement
+      setidAdmin(0);
+      setusernameAdmin("Admin");
+      setpasswordAdmin("Admin");
    }
    
    /**
