@@ -6,176 +6,54 @@
 
 package modultugasakhir;
 
-/** @pdOid 9f390029-5089-4996-8e2d-bdabdb9485b2 */
+import java.util.*;
+
+/** @pdOid fd9527fc-2969-4a29-8e5f-28f69e82d26a */
 public class dosen extends manusia {
-   /** @pdOid 0e532b01-c5e3-43a8-8691-b9f372c7bc1c */
-   private int idDosen;
-   /** @pdOid 80b7f43b-2f7d-40c5-af1c-8e180e3c50ed */
+   /** @pdOid d2f85ee7-053d-4eef-97e1-62c44ab46732 */
    private String npp;
-   /** @pdOid 57e77140-39fc-4f56-8ce5-057532d59eed */
+   /** @pdOid c8e22c59-2e6d-4d48-aaec-76f7fc1ca2cc */
    private String dosenPassword;
    
-   /** @pdRoleInfo migr=no name=revisi assc=dosenMenuliskanRevisi coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   private java.util.Collection<revisi> revisi;
-   /** @pdRoleInfo migr=no name=kelayakan assc=dosenMenentukanKelayakan coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   private java.util.Collection<kelayakan> kelayakan;
    /** @pdRoleInfo migr=no name=prodi assc=dosenBagianProdi coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   private java.util.Collection<prodi> prodi;
-   /** @pdRoleInfo migr=no name=jadwalSeminar assc=dosenMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   private java.util.Collection<jadwalSeminar> jadwalSeminar;
+   public java.util.Collection<prodi> prodi;
    
-   /** @pdOid 071553bc-fe48-42bd-8336-e2455d24e230 */
+   /** @pdOid 9363ffee-b59b-47a1-9c4e-a7f8dee99e0e */
    public dosen() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid 1babdc87-054c-47bd-83df-ba9b11c40e20 */
-   public int getidDosen() {
-      return idDosen;
-   }
-   
-   /** @param newIdDosen
-    * @pdOid 0b65bbfd-ee1b-4f95-840f-f4b1a53be8d3 */
-   public void setidDosen(int newIdDosen) {
-      idDosen = newIdDosen;
-   }
-   
-   /**
-     * @return  *  @pdOid 948964a0-f06f-4703-8d9b-4526667269ee */
+   /** @pdOid 159b3cf0-e6f1-4b9e-a613-e28c15153160 */
    public String getnpp() {
       return npp;
    }
    
    /** @param newNpp
-    * @pdOid 9352a0a9-7b00-4492-b366-aa9c72235507 */
+    * @pdOid 7a9b3af7-8193-4514-8018-626d78b9ef49 */
    public void setnpp(String newNpp) {
       npp = newNpp;
    }
    
-   /**
-     * @return  *  @pdOid cd26b463-eb2e-41ff-93c3-13735d06b71a */
+   /** @pdOid c2ee7064-18aa-4e5c-a0c8-c346a114e7d6 */
    public String getdosenPassword() {
       return dosenPassword;
    }
    
    /** @param newDosenPassword
-    * @pdOid 1895393e-7beb-4446-8ea0-f7688729d083 */
+    * @pdOid ab914467-7daf-4d16-80f2-6555fc147677 */
    public void setdosenPassword(String newDosenPassword) {
       dosenPassword = newDosenPassword;
    }
    
    
-   /**
-     * @return  *  @pdGenerated default getter */
-   public java.util.Collection<revisi> getRevisi() {
-      if (revisi == null)
-         revisi = new java.util.HashSet<revisi>();
-      return revisi;
-   }
-   
-   /**
-     * @return  *  @pdGenerated default iterator getter */
-   public java.util.Iterator getIteratorRevisi() {
-      if (revisi == null)
-         revisi = new java.util.HashSet<revisi>();
-      return revisi.iterator();
-   }
-   
-   /** @pdGenerated default setter
-     * @param newRevisi */
-   public void setRevisi(java.util.Collection<revisi> newRevisi) {
-      removeAllRevisi();
-      for (java.util.Iterator iter = newRevisi.iterator(); iter.hasNext();)
-         addRevisi((revisi)iter.next());
-   }
-   
-   /** @pdGenerated default add
-     * @param newRevisi */
-   public void addRevisi(revisi newRevisi) {
-      if (newRevisi == null)
-         return;
-      if (this.revisi == null)
-         this.revisi = new java.util.HashSet<revisi>();
-      if (!this.revisi.contains(newRevisi))
-         this.revisi.add(newRevisi);
-   }
-   
-   /** @pdGenerated default remove
-     * @param oldRevisi */
-   public void removeRevisi(revisi oldRevisi) {
-      if (oldRevisi == null)
-         return;
-      if (this.revisi != null)
-         if (this.revisi.contains(oldRevisi))
-            this.revisi.remove(oldRevisi);
-   }
-   
-   /** @pdGenerated default removeAll */
-   public void removeAllRevisi() {
-      if (revisi != null)
-         revisi.clear();
-   }
-   /**
-     * @return  *  @pdGenerated default getter */
-   public java.util.Collection<kelayakan> getKelayakan() {
-      if (kelayakan == null)
-         kelayakan = new java.util.HashSet<kelayakan>();
-      return kelayakan;
-   }
-   
-   /**
-     * @return  *  @pdGenerated default iterator getter */
-   public java.util.Iterator getIteratorKelayakan() {
-      if (kelayakan == null)
-         kelayakan = new java.util.HashSet<kelayakan>();
-      return kelayakan.iterator();
-   }
-   
-   /** @pdGenerated default setter
-     * @param newKelayakan */
-   public void setKelayakan(java.util.Collection<kelayakan> newKelayakan) {
-      removeAllKelayakan();
-      for (java.util.Iterator iter = newKelayakan.iterator(); iter.hasNext();)
-         addKelayakan((kelayakan)iter.next());
-   }
-   
-   /** @pdGenerated default add
-     * @param newKelayakan */
-   public void addKelayakan(kelayakan newKelayakan) {
-      if (newKelayakan == null)
-         return;
-      if (this.kelayakan == null)
-         this.kelayakan = new java.util.HashSet<kelayakan>();
-      if (!this.kelayakan.contains(newKelayakan))
-         this.kelayakan.add(newKelayakan);
-   }
-   
-   /** @pdGenerated default remove
-     * @param oldKelayakan */
-   public void removeKelayakan(kelayakan oldKelayakan) {
-      if (oldKelayakan == null)
-         return;
-      if (this.kelayakan != null)
-         if (this.kelayakan.contains(oldKelayakan))
-            this.kelayakan.remove(oldKelayakan);
-   }
-   
-   /** @pdGenerated default removeAll */
-   public void removeAllKelayakan() {
-      if (kelayakan != null)
-         kelayakan.clear();
-   }
-   /**
-     * @return  *  @pdGenerated default getter */
+   /** @pdGenerated default getter */
    public java.util.Collection<prodi> getProdi() {
       if (prodi == null)
          prodi = new java.util.HashSet<prodi>();
       return prodi;
    }
    
-   /**
-     * @return  *  @pdGenerated default iterator getter */
+   /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorProdi() {
       if (prodi == null)
          prodi = new java.util.HashSet<prodi>();
@@ -215,56 +93,6 @@ public class dosen extends manusia {
    public void removeAllProdi() {
       if (prodi != null)
          prodi.clear();
-   }
-   /**
-     * @return  *  @pdGenerated default getter */
-   public java.util.Collection<jadwalSeminar> getJadwalSeminar() {
-      if (jadwalSeminar == null)
-         jadwalSeminar = new java.util.HashSet<jadwalSeminar>();
-      return jadwalSeminar;
-   }
-   
-   /**
-     * @return  *  @pdGenerated default iterator getter */
-   public java.util.Iterator getIteratorJadwalSeminar() {
-      if (jadwalSeminar == null)
-         jadwalSeminar = new java.util.HashSet<jadwalSeminar>();
-      return jadwalSeminar.iterator();
-   }
-   
-   /** @pdGenerated default setter
-     * @param newJadwalSeminar */
-   public void setJadwalSeminar(java.util.Collection<jadwalSeminar> newJadwalSeminar) {
-      removeAllJadwalSeminar();
-      for (java.util.Iterator iter = newJadwalSeminar.iterator(); iter.hasNext();)
-         addJadwalSeminar((jadwalSeminar)iter.next());
-   }
-   
-   /** @pdGenerated default add
-     * @param newJadwalSeminar */
-   public void addJadwalSeminar(jadwalSeminar newJadwalSeminar) {
-      if (newJadwalSeminar == null)
-         return;
-      if (this.jadwalSeminar == null)
-         this.jadwalSeminar = new java.util.HashSet<jadwalSeminar>();
-      if (!this.jadwalSeminar.contains(newJadwalSeminar))
-         this.jadwalSeminar.add(newJadwalSeminar);
-   }
-   
-   /** @pdGenerated default remove
-     * @param oldJadwalSeminar */
-   public void removeJadwalSeminar(jadwalSeminar oldJadwalSeminar) {
-      if (oldJadwalSeminar == null)
-         return;
-      if (this.jadwalSeminar != null)
-         if (this.jadwalSeminar.contains(oldJadwalSeminar))
-            this.jadwalSeminar.remove(oldJadwalSeminar);
-   }
-   
-   /** @pdGenerated default removeAll */
-   public void removeAllJadwalSeminar() {
-      if (jadwalSeminar != null)
-         jadwalSeminar.clear();
    }
 
 }

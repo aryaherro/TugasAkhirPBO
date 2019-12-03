@@ -6,97 +6,43 @@
 
 package modultugasakhir;
 
-/** @pdOid 34a340d5-3367-4f97-87e3-faf1bf5afcb1 */
+import java.util.*;
+
+/** @pdOid d42a7064-f962-4cf0-8a26-21e772b55cb1 */
 public class jabatan {
-   /** @pdOid 2f126d47-be7e-440d-9daa-74a0689259b4 */
+   /** @pdOid 071a17b1-b995-47c8-9206-10db01d68c7d */
    private int idJabatan;
-   /** @pdOid bd05d030-2dba-4d01-8ee7-2f3aeece518d */
+   /** @pdOid cf1b5934-7ec6-433d-a31d-2be5b60c84fa */
    private String namaJabatan;
    
    /** @pdRoleInfo migr=no name=dosen assc=dosenMenjabatSebagai coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   private dosen dosen;
-   /** @pdRoleInfo migr=no name=historyJabatan assc=jabatanDicatatDalamHistory coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   private java.util.Collection<historyJabatan> historyJabatan;
+   public dosen dosen;
    
-   /** @pdOid b7d8bb4d-995e-4d19-b5b3-b901867237b8 */
+   /** @pdOid 9f7029ef-201d-4b8e-bfb7-7423f50ab6de */
    public jabatan() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid 14ba1d12-d0c7-4a57-8ec7-0a393499cac1 */
+   /** @pdOid a66b8e56-945f-4c90-af11-a53a6dfa1f74 */
    public int getidJabatan() {
       return idJabatan;
    }
    
    /** @param newIdJabatan
-    * @pdOid dc4b4664-768d-4673-92e7-513287290bfe */
+    * @pdOid 95b71f73-128b-4317-ad1f-e77273f202d0 */
    public void setidJabatan(int newIdJabatan) {
       idJabatan = newIdJabatan;
    }
    
-   /**
-     * @return  *  @pdOid c78be582-a883-494a-85c4-c93880d2bdbc */
+   /** @pdOid 120402a3-f456-4e7b-bbc6-13e9488315ca */
    public String getnamaJabatan() {
       return namaJabatan;
    }
    
    /** @param newNamaJabatan
-    * @pdOid f9a8139b-8251-4066-9bb6-6b20cbded4fc */
+    * @pdOid 4a8a1c17-92d8-4c1c-affe-80058ce9c12e */
    public void setnamaJabatan(String newNamaJabatan) {
       namaJabatan = newNamaJabatan;
-   }
-   
-   
-   /**
-     * @return  *  @pdGenerated default getter */
-   public java.util.Collection<historyJabatan> getHistoryJabatan() {
-      if (historyJabatan == null)
-         historyJabatan = new java.util.HashSet<historyJabatan>();
-      return historyJabatan;
-   }
-   
-   /**
-     * @return  *  @pdGenerated default iterator getter */
-   public java.util.Iterator getIteratorHistoryJabatan() {
-      if (historyJabatan == null)
-         historyJabatan = new java.util.HashSet<historyJabatan>();
-      return historyJabatan.iterator();
-   }
-   
-   /** @pdGenerated default setter
-     * @param newHistoryJabatan */
-   public void setHistoryJabatan(java.util.Collection<historyJabatan> newHistoryJabatan) {
-      removeAllHistoryJabatan();
-      for (java.util.Iterator iter = newHistoryJabatan.iterator(); iter.hasNext();)
-         addHistoryJabatan((historyJabatan)iter.next());
-   }
-   
-   /** @pdGenerated default add
-     * @param newHistoryJabatan */
-   public void addHistoryJabatan(historyJabatan newHistoryJabatan) {
-      if (newHistoryJabatan == null)
-         return;
-      if (this.historyJabatan == null)
-         this.historyJabatan = new java.util.HashSet<historyJabatan>();
-      if (!this.historyJabatan.contains(newHistoryJabatan))
-         this.historyJabatan.add(newHistoryJabatan);
-   }
-   
-   /** @pdGenerated default remove
-     * @param oldHistoryJabatan */
-   public void removeHistoryJabatan(historyJabatan oldHistoryJabatan) {
-      if (oldHistoryJabatan == null)
-         return;
-      if (this.historyJabatan != null)
-         if (this.historyJabatan.contains(oldHistoryJabatan))
-            this.historyJabatan.remove(oldHistoryJabatan);
-   }
-   
-   /** @pdGenerated default removeAll */
-   public void removeAllHistoryJabatan() {
-      if (historyJabatan != null)
-         historyJabatan.clear();
    }
 
 }

@@ -6,41 +6,43 @@
 
 package modultugasakhir;
 
-/** @pdOid 0ff6429c-5241-429e-ab03-97595dadc616 */
+import java.util.*;
+
+/** @pdOid 646b1b37-8ab5-4aea-90c3-708265e779b0 */
 public class kelayakan {
-   /** @pdOid 2ee95c90-fa5f-4d40-ac7e-95451743d686 */
+   /** @pdOid 081ac380-fca3-4546-897c-021ab537ce73 */
    private int idLayak;
-   /** @pdOid 5a0d2d9a-1c08-4237-9ff5-f4c151630366 */
+   /** @pdOid c8514459-05d0-404f-9df5-a1170506531a */
    private boolean statusLayak;
    
    /** @pdRoleInfo migr=no name=judul assc=judulStatusKelayakan coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
-   private judul judul;
+   public judul judul;
+   /** @pdRoleInfo migr=no name=dosen assc=dosenMenentukanKelayakan coll=java.util.Collection impl=java.util.HashSet mult=1..1 side=A */
+   public dosen dosen;
    
-   /** @pdOid 22a74510-93f2-4cb0-bc79-075b0630687e */
+   /** @pdOid 4ac0c62d-ea8e-47f9-a726-be1a877c3107 */
    public kelayakan() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid 33e58b53-94dd-410b-b9da-17e07291b63c */
+   /** @pdOid 0a311748-315c-436b-8be8-5cf44b7b6119 */
    public int getidLayak() {
       return idLayak;
    }
    
    /** @param newIdLayak
-    * @pdOid 673cd197-7ba5-4297-ad1b-e48b8089989e */
+    * @pdOid a0cd0978-b4cc-40a0-a901-64c17db07569 */
    public void setidLayak(int newIdLayak) {
       idLayak = newIdLayak;
    }
    
-   /**
-     * @return  *  @pdOid 0eacdd2d-18f2-4017-90d4-85843d3c48c6 */
+   /** @pdOid 369d7aee-420e-4383-902d-e9ade416de93 */
    public boolean isstatusLayak() {
       return statusLayak;
    }
    
    /** @param newStatusLayak
-    * @pdOid 457886e1-bfa4-403b-87af-3aea78808447 */
+    * @pdOid f7f1a759-e43d-45b9-aa0c-9d34666826c0 */
    public void setstatusLayak(boolean newStatusLayak) {
       statusLayak = newStatusLayak;
    }

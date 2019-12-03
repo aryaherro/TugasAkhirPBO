@@ -6,52 +6,54 @@
 
 package modultugasakhir;
 
-/** @pdOid 15d0092c-84fa-4a3b-a64a-4e012675204d */
+import java.util.*;
+
+/** @pdOid c385cccf-fe5a-4d42-be64-eab52ee25567 */
 public class judul {
-   /** @pdOid 5e6f4cf9-640e-47a5-b397-41e454e98200 */
+   /** @pdOid 476785cf-7960-45b0-adb3-2a722d9d881c */
    private int idJudul;
-   /** @pdOid be145657-fba7-4f67-9522-17ecdd3b6db9 */
+   /** @pdOid ebf1cb2d-3356-4e0b-b24e-f666cf5008fb */
    private String namaJudul;
-   /** @pdOid 92acbe95-6382-40b9-b931-7b76abbeefa7 */
+   /** @pdOid d43d79a7-0ff7-4bf3-8126-b54e75a63bfe */
    private String deskripsi;
    
-   /** @pdOid 085d3152-0ddc-460f-8793-b18c50f834ca */
+   /** @pdRoleInfo migr=no name=mahasiswa assc=mahasiswaMengajukanJudul coll=java.util.Collection impl=java.util.HashSet mult=1..1 side=A */
+   public mahasiswa mahasiswa;
+   
+   /** @pdOid a3322a80-753e-4869-b935-4da9a4bf58bf */
    public judul() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid 281e3875-3299-4eae-a1a6-35083b793882 */
+   /** @pdOid d9c4b13f-7376-4ab5-befa-815dc46e3906 */
    public int getidJudul() {
       return idJudul;
    }
    
    /** @param newIdJudul
-    * @pdOid 752ed17a-bcb8-443b-928f-29a63faf8954 */
+    * @pdOid e94f21fc-bf99-426d-8cd5-d133944c1f6c */
    public void setidJudul(int newIdJudul) {
       idJudul = newIdJudul;
    }
    
-   /**
-     * @return  *  @pdOid 3d78d625-2973-456d-9dbd-435ed7571c96 */
+   /** @pdOid b53d0f86-3efa-4878-ac3a-c2b2b5decad8 */
    public String getnamaJudul() {
       return namaJudul;
    }
    
    /** @param newNamaJudul
-    * @pdOid a83841c5-8757-4ac3-aca2-7c56e6b762ee */
+    * @pdOid ff98f9da-df5d-489a-9b91-b4f2cd179896 */
    public void setnamaJudul(String newNamaJudul) {
       namaJudul = newNamaJudul;
    }
    
-   /**
-     * @return  *  @pdOid 1a76d629-89ee-4de8-9536-e21c70377499 */
+   /** @pdOid 9e00d2c1-7c01-437c-8bc7-41ce9cdc2b39 */
    public String getdeskripsi() {
       return deskripsi;
    }
    
    /** @param newDeskripsi
-    * @pdOid 21f3a96b-af89-405a-980a-42f324abc283 */
+    * @pdOid 8f5f86b7-db23-41b0-acf4-b3e7d120b22c */
    public void setdeskripsi(String newDeskripsi) {
       deskripsi = newDeskripsi;
    }

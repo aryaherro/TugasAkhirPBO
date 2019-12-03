@@ -6,108 +6,103 @@
 
 package modultugasakhir;
 
-/** @pdOid cedd4ce0-6260-4948-98a4-b9b6cc024403 */
+import java.util.*;
+
+/** @pdOid 84fd98fc-0744-4a64-93ac-8373ffff5219 */
 public class manusia {
-   /** @pdOid 30c60689-c002-4a11-8e87-080fe1a6ba65 */
+   /** @pdOid c47f606e-9c2b-45b7-a71d-75acfd1f1e31 */
    private String nama;
-   /** @pdOid 180cfe2d-85e3-47c5-a785-ccef947b2439 */
+   /** @pdOid 43287800-dced-4f4d-93b2-3aeaa7612b11 */
    private String nik;
-   /** @pdOid aee4e53d-b8a9-4033-b334-1db338f1c1fc */
+   /** @pdOid cb9b1446-04b9-4d41-8fdf-eb197e5f8836 */
    private String tanggalLahir;
-   /** @pdOid 0a4a6e70-f22b-40e6-8257-dcec1843316a */
+   /** @pdOid 9fe40f85-94a5-4c47-8fe0-0c9427a28884 */
    private char jenisKelamin;
-   /** @pdOid 55d1d081-88f3-4546-bf0a-4dca555227d0 */
+   /** @pdOid 84e958ba-3562-4cfe-a1bb-fdd2a068b0cd */
    private String alamat;
-   /** @pdOid d206a2f2-77b4-481e-ae74-2e6d2ce0d5f5 */
+   /** @pdOid c75fecef-38d3-42d8-ae4b-132773be298a */
    private String email;
-   /** @pdOid d3c8ce12-b5e1-4980-91a1-5836c7a938d5 */
+   /** @pdOid 7344292a-c3d4-4d1c-9739-1bce09d93698 */
    private String agama;
    
-   /** @pdOid 20e59882-c41a-433f-b23e-3d47bd54a0cd */
+   /** @pdOid c7d8db71-9d2e-4447-bfb6-964120e32b03 */
    public manusia() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid 1c175e4c-58bd-4851-a4b6-480ac6bb768e */
+   /** @pdOid 433d76d7-41c9-444e-b587-7c1f0d383bc5 */
    public String getnama() {
       return nama;
    }
    
    /** @param newNama
-    * @pdOid ef1f1831-12fa-459e-b6d4-e6f7cb2f7aa3 */
+    * @pdOid 392ef787-f992-4d70-b24b-3c5b79db2d68 */
    public void setnama(String newNama) {
       nama = newNama;
    }
    
-   /**
-     * @return  *  @pdOid 6cfc06ae-5f1a-4f4e-a37e-6fb29aaa6007 */
+   /** @pdOid cab1ed83-34a3-4e4a-ad9e-e0fa65c9f6ef */
    public String getnik() {
       return nik;
    }
    
    /** @param newNik
-    * @pdOid a87d0848-0037-4b32-b3b0-4263e1ed3d0c */
+    * @pdOid 0eaa50ac-6757-4db5-b691-a5e242dd8ba8 */
    public void setnik(String newNik) {
       nik = newNik;
    }
    
-   /**
-     * @return  *  @pdOid c49d146b-ec8f-4a0f-9315-269b71703849 */
+   /** @pdOid 354118d0-a891-4073-bc9a-961a2ccad215 */
    public String gettanggalLahir() {
       return tanggalLahir;
    }
    
    /** @param newTanggalLahir
-    * @pdOid 6f301436-eef8-417a-a450-465afec34356 */
+    * @pdOid 46eaee38-51c5-4fda-86ba-0bd3700add40 */
    public void settanggalLahir(String newTanggalLahir) {
       tanggalLahir = newTanggalLahir;
    }
    
-   /**
-     * @return  *  @pdOid 7d5a8575-d546-4f37-a550-b8dafcc61b6a */
+   /** @pdOid 5507b5fb-b6f6-4f40-a51f-da43d0d4b4d1 */
    public char getjenisKelamin() {
       return jenisKelamin;
    }
    
    /** @param newJenisKelamin
-    * @pdOid 03b3d83b-b1d9-40a3-b1f8-42a0ab6ea86b */
+    * @pdOid 5260035b-76d5-4560-b4ae-af5d41301a1e */
    public void setjenisKelamin(char newJenisKelamin) {
       jenisKelamin = newJenisKelamin;
    }
    
-   /**
-     * @return  *  @pdOid 0f2e02c0-9ded-4f37-8dbb-85711d8c7532 */
+   /** @pdOid 0e14729d-89f6-4ed1-a512-bcab23950140 */
    public String getalamat() {
       return alamat;
    }
    
    /** @param newAlamat
-    * @pdOid e107470d-5e2b-41c9-b88b-7f1e528730f2 */
+    * @pdOid 2a2401c8-ed03-478f-bc4b-4e449d5a684c */
    public void setalamat(String newAlamat) {
       alamat = newAlamat;
    }
    
-   /**
-     * @return  *  @pdOid 4ace9146-81da-4d37-a444-c38b3cbdd3c5 */
+   /** @pdOid 151ea05c-7bd4-4b4a-943f-69d068a9a85b */
    public String getemail() {
       return email;
    }
    
    /** @param newEmail
-    * @pdOid 72186b0f-0dc2-430a-be49-e9b8e46f51a0 */
+    * @pdOid 6355593e-f73e-433d-9632-262009ee7143 */
    public void setemail(String newEmail) {
       email = newEmail;
    }
    
-   /**
-     * @return  *  @pdOid cd73f746-4227-4b55-8afd-8eed6c1e663a */
+   /** @pdOid 43691123-da19-41b0-9d78-dc5c6dd7c1f0 */
    public String getagama() {
       return agama;
    }
    
    /** @param newAgama
-    * @pdOid 8702fb7b-fd64-4bb8-b614-e9b19403876a */
+    * @pdOid f2b2ca3a-55b1-4fad-89ea-34eb94b1c02a */
    public void setagama(String newAgama) {
       agama = newAgama;
    }

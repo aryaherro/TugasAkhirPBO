@@ -6,41 +6,43 @@
 
 package modultugasakhir;
 
-/** @pdOid fe0e0153-61c6-44bd-8445-fe4a56d108d6 */
+import java.util.*;
+
+/** @pdOid 4bb72e05-b48a-4b26-a109-dc11b89122a6 */
 public class jadwalSeminar {
-   /** @pdOid f5145d5d-12a4-46ee-a562-408e7b15bfe9 */
+   /** @pdOid 5e99d88d-2f03-4b51-a585-7d2d56c9902c */
    private int idJadwal;
-   /** @pdOid bf2e8b82-a0d9-465a-be59-4131b85b889a */
+   /** @pdOid 1cf9e3c1-a610-49db-81cc-a7840081b3f5 */
    private String jadwal;
    
    /** @pdRoleInfo migr=no name=mahasiswa assc=mahasiswaMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=0..1 */
-   private mahasiswa mahasiswa;
+   public mahasiswa mahasiswa;
+   /** @pdRoleInfo migr=no name=dosen assc=dosenMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=0..1 side=A */
+   public dosen dosen;
    
-   /** @pdOid 9ccb7d96-3d00-4afa-aa22-ec19e5b4588b */
+   /** @pdOid c12f67ec-9de9-4e38-be9b-5283a2452008 */
    public jadwalSeminar() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid eddc6a92-c7a9-4596-904b-56fe54724919 */
+   /** @pdOid eecb4f37-651c-48a3-a02d-0a2d0c848c71 */
    public int getidJadwal() {
       return idJadwal;
    }
    
    /** @param newIdJadwal
-    * @pdOid 25fb9ac2-f863-4f02-8ad0-959034620eef */
+    * @pdOid 351e2405-24c7-4d3b-941a-8b61f1dbf142 */
    public void setidJadwal(int newIdJadwal) {
       idJadwal = newIdJadwal;
    }
    
-   /**
-     * @return  *  @pdOid fe51b13f-5b03-4545-a538-39fb4259b20c */
+   /** @pdOid 20f1beba-5e83-41e7-ba03-17de8e91b7a3 */
    public String getjadwal() {
       return jadwal;
    }
    
    /** @param newJadwal
-    * @pdOid c8dee733-1989-40da-9191-8985f57ec718 */
+    * @pdOid 708a0973-1fad-4bea-94a5-9b943059ccb2 */
    public void setjadwal(String newJadwal) {
       jadwal = newJadwal;
    }

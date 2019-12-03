@@ -8,55 +8,54 @@ package modultugasakhir;
 
 import java.util.*;
 
-/** @pdOid 6f4db3f1-caaf-4482-8613-5c380e752624 */
+/** @pdOid 7ab0d3c4-95ad-42b4-9631-040960023254 */
 public class revisi {
-   /** @pdOid d828a1ce-ba01-4a20-85a2-8668d5d660bc */
+   /** @pdOid fe77b6d1-f7fe-4649-9d1d-42532acbe8e5 */
    private int idRevisi;
-   /** @pdOid d4f2f3e5-ff9c-4aa8-be84-dc90694eb116 */
+   /** @pdOid eead993d-0f93-49d3-a77e-f8612de81be3 */
    private String isiRevisi;
-   /** @pdOid b19ae262-992d-4160-9d95-45d9fe82c1c2 */
+   /** @pdOid bdea137f-9bca-46f0-9a6f-5e0a3ed2e8e0 */
    private Date tanggalRevisi;
    
    /** @pdRoleInfo migr=no name=judul assc=judulMemilikiRevisi coll=java.util.Collection impl=java.util.HashSet mult=1..1 */
-   private judul judul;
+   public judul judul;
+   /** @pdRoleInfo migr=no name=dosen assc=dosenMenuliskanRevisi coll=java.util.Collection impl=java.util.HashSet mult=1..1 side=A */
+   public dosen dosen;
    
-   /** @pdOid 6a1975f0-4ab9-4b76-9c28-f6f05c45378b */
+   /** @pdOid 34537697-e5e5-4438-aa52-dbd53315addc */
    public revisi() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid 5d1b7493-d1e2-471c-99d5-195f4277808e */
+   /** @pdOid 5e3ed376-98b0-4b46-8219-adc5ac0e0db8 */
    public int getidRevisi() {
       return idRevisi;
    }
    
    /** @param newIdRevisi
-    * @pdOid 69717635-ea25-4024-bebe-428e57970f96 */
+    * @pdOid b55fd7a5-208d-42a1-96dc-68ad3fc7f829 */
    public void setidRevisi(int newIdRevisi) {
       idRevisi = newIdRevisi;
    }
    
-   /**
-     * @return  *  @pdOid f96cedb2-0e0d-436c-8b40-71d525251223 */
+   /** @pdOid 22e09b25-8b1d-4169-9d96-83d29b50a58c */
    public String getisiRevisi() {
       return isiRevisi;
    }
    
    /** @param newIsiRevisi
-    * @pdOid 6a8223ec-6726-43db-ab19-eed27aacdae3 */
+    * @pdOid d5d9fbb1-afeb-4535-800b-ceac81aa4c30 */
    public void setisiRevisi(String newIsiRevisi) {
       isiRevisi = newIsiRevisi;
    }
    
-   /**
-     * @return  *  @pdOid 8cc0606f-74cf-46de-82d0-732f0c8e09a5 */
+   /** @pdOid 42651afe-f9e1-46ef-b56d-c990fbdad4b9 */
    public Date gettanggalRevisi() {
       return tanggalRevisi;
    }
    
    /** @param newTanggalRevisi
-    * @pdOid c45eda8f-ac31-4a5c-a683-18da97f5d16e */
+    * @pdOid 31af014b-6113-4d0a-9b2b-ea49e05eeb12 */
    public void settanggalRevisi(Date newTanggalRevisi) {
       tanggalRevisi = newTanggalRevisi;
    }

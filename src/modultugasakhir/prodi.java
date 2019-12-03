@@ -6,70 +6,67 @@
 
 package modultugasakhir;
 
-/** @pdOid c5d3f500-c5b0-47d9-8bd6-547769a0af5e */
+import java.util.*;
+
+/** @pdOid 18b2c9b7-420e-4626-943a-7ae25d69f391 */
 public class prodi {
-   /** @pdOid 287aaba8-ce2d-42e8-a4da-81aad43edadd */
+   /** @pdOid ac073fb0-69b3-47cc-8b35-82756693cd1c */
    private int idProdi;
-   /** @pdOid 865d0ac2-ffca-417e-a229-ead393af1961 */
+   /** @pdOid 166f447a-e598-42bc-b128-5aff02b01cba */
    private String namaProdi;
-   /** @pdOid 24f2cb98-16f8-46f2-8478-ea462c6f4f29 */
+   /** @pdOid 32242682-74f1-48e1-bb2e-c0a86591f72d */
    private String prodiPassword;
    
    /** @pdRoleInfo migr=no name=jadwalSeminar assc=prodiMelihatJadwal coll=java.util.Collection impl=java.util.HashSet mult=1..* */
-   private java.util.Collection<jadwalSeminar> jadwalSeminar;
+   public java.util.Collection<jadwalSeminar> jadwalSeminar;
    
-   /** @pdOid 74b5c87d-3d33-48e1-9549-e8b3efe7a77f */
+   /** @pdOid b6f114f4-4913-4749-98f5-d86d94807de5 */
    public prodi() {
       // TODO: implement
    }
    
-   /**
-     * @return  *  @pdOid 48106143-a982-429f-97c4-d485756b5822 */
+   /** @pdOid 3074a593-a7ef-4c12-8518-a010c6f6d8c3 */
    public int getidProdi() {
       return idProdi;
    }
    
    /** @param newIdProdi
-    * @pdOid e37741c4-f8d1-43a7-b869-10a743ef8566 */
+    * @pdOid b16c6efb-c5a5-4f68-96a3-0fe394c2c6ea */
    public void setidProdi(int newIdProdi) {
       idProdi = newIdProdi;
    }
    
-   /**
-     * @return  *  @pdOid db01db73-818b-46e9-bafe-3f41ae19e4a6 */
+   /** @pdOid 31de1bbe-5c8f-48e1-a09e-79a6ab423bee */
    public String getNamaProdi() {
       return namaProdi;
    }
    
    /** @param newNamaProdi
-    * @pdOid 1759af5b-a581-4f0c-a4c2-6388f310d5ff */
+    * @pdOid 72d77aaf-5db6-4992-9206-3e439ccd91ee */
    public void setnamaProdi(String newNamaProdi) {
       namaProdi = newNamaProdi;
    }
    
-   /**
-     * @return  *  @pdOid 60930ef6-fa3c-4c11-92e2-44e693701c26 */
+   /** @pdOid 224be7ad-74f4-43ec-b98c-b0cd8d2c88b0 */
    public String getProdiPassword() {
       return prodiPassword;
    }
    
    /** @param newProdiPassword
-    * @pdOid 68af45d4-2fcd-43f1-abda-b14e382d738f */
+    * @pdOid 2f347c52-d229-472d-88fe-98cddc3dfa95 */
    public void setprodiPassword(String newProdiPassword) {
       prodiPassword = newProdiPassword;
    }
    
    
-   /**
-     * @return  *  @pdGenerated default getter */
+   /** @pdGenerated default getter */
    public java.util.Collection<jadwalSeminar> getJadwalSeminar() {
       if (jadwalSeminar == null)
          jadwalSeminar = new java.util.HashSet<jadwalSeminar>();
       return jadwalSeminar;
    }
    
-   /**
-     * @return  *  @pdGenerated default iterator getter */
+   /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorJadwalSeminar() {
       if (jadwalSeminar == null)
          jadwalSeminar = new java.util.HashSet<jadwalSeminar>();
