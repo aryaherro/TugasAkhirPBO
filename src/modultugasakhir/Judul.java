@@ -82,7 +82,7 @@ public class Judul {
                Judul jud = new Judul();
                jud.setIdJudul(rs.getString("idJudul"));
                
-               MahasiswaDalamJudul.getSingleDatabase(rs.getString("nim"));
+               jud.MahasiswaDalamJudul.getSingleDatabase(rs.getString("nim"));
                
                jud.setNamaJudul(rs.getString("namaJudul"));
                jud.setDeskripsi(rs.getString("deskripsi"));
@@ -137,8 +137,7 @@ public class Judul {
    }
    
    public int getSizeDatabase(){
-       ArrayList list = getAllDatabase("");
-       return list.size();
+       return getAllDatabase("").size();
    }
    
    public void autoInsertId(){
