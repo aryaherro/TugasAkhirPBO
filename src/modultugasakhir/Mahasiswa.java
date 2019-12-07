@@ -61,8 +61,7 @@ public class Mahasiswa extends Manusia {
                Mahasiswa maha = new Mahasiswa();
                maha.setNim(rs.getString("nim"));
                
-               String query2 = "SELECT * FROM prodi WHERE idProdi = " + rs.getString("idProdi");
-               ProdiDalamMahasiswa.getSingleDatabase(query2);
+               ProdiDalamMahasiswa.getSingleDatabase(rs.getString(rs.getString("idProdi")));
               
                maha.setNama(rs.getString("nama"));
                maha.setNik(rs.getString("nik"));
