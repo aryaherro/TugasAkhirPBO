@@ -31,6 +31,7 @@ public class Prodi {
       // TODO: implement
       setIdProdi(idProdi);
       setNamaProdi(namaProdi);
+      getDosenDalamProdiDatabase(idProdi);
    }
    
    /** @pdOid 76868d40-3b0a-4c83-b535-4e52f33efc49 */
@@ -118,7 +119,7 @@ public class Prodi {
          }
       }
    }
-   
+
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
        ArrayList list = new ArrayList<>();
@@ -132,9 +133,7 @@ public class Prodi {
                pro.setIdProdi(rs.getString("idProdi"));
                pro.setNamaProdi(rs.getString("namaProdi"));
                
-               String query2 = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=(?)";
-               Dosen dos = new Dosen();
-               setDosenDalamProdi(dos.getAllDatabase(query2 + pro.getIdProdi()));
+               getDosenDalamProdiDatabase(pro.getIdProdi());
                
                list.add(pro);
            }
@@ -178,5 +177,12 @@ public class Prodi {
        catch(SQLException e){
            
        }
+   }
+   
+   @SuppressWarnings("unchecked")
+   public void getDosenDalamProdiDatabase(String idProdi){
+       String query2 = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=" + idProdi;
+       Dosen dos = new Dosen();
+       setDosenDalamProdi(dos.getAllDatabase(query2));
    }
 }

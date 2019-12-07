@@ -24,7 +24,7 @@ public class Dosen extends Manusia {
    public Dosen() {
       // TODO: implement
    }
-   
+  
    public Dosen(String npp, String idProdi, String nama, String nik, String tanggalLahir, String jenisKelamin, String alamat, String email, String agama) {
       // TODO: implement
       setNpp(npp);
@@ -111,7 +111,7 @@ public class Dosen extends Manusia {
          }
       }
    }
-   
+
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
        ArrayList list = new ArrayList<>();
