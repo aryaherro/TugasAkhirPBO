@@ -28,7 +28,7 @@ public class Mahasiswa extends Manusia {
    public Mahasiswa(String nim, String idProdi, String nama, String nik, String tanggalLahir, String jenisKelamin, String alamat, String email, String agama) {
       // TODO: implement
       setNim(nim);
-      ProdiDalamMahasiswa.setIdProdi(idProdi);
+      ProdiDalamMahasiswa.getSingleDatabase(idProdi);
       setNama(nama);
       setNik(nik);
       setTanggalLahir(tanggalLahir);

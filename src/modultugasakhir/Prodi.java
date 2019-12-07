@@ -134,7 +134,7 @@ public class Prodi {
                
                String query2 = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=(?)";
                Dosen dos = new Dosen();
-               setDosenDalamProdi(dos.getAllDatabase(query2));
+               setDosenDalamProdi(dos.getAllDatabase(query2 + pro.getIdProdi()));
                
                list.add(pro);
            }

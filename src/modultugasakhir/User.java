@@ -6,7 +6,10 @@
 
 package modultugasakhir;
 
-import java.util.*;
+import connect.connect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /** @pdOid ac735255-5f22-4861-a9f6-324cc501ea97 */
 public class User {
@@ -18,6 +21,12 @@ public class User {
    /** @pdOid 54d54461-5612-4beb-81e2-db38287b87ee */
    public User() {
       // TODO: implement
+   }
+   
+   public User(String username,String password) {
+      // TODO: implement
+       setUsername(username);
+       setPassword(password);
    }
    
    /** @pdOid 0fa9c319-0a59-421c-b67f-579ae999d1f9 */
@@ -43,4 +52,35 @@ public class User {
    }
    
    
+   public void getSingleDatabase(String query){
+       query = "SELECT * FROM user WHERE username="+query;
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               setUsername(rs.getString("username"));
+               setPassword(rs.getString("agama"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public void insertUser(){
+       try{
+           String query = "INSERT INTO user VALUES (?, ?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getUsername());
+           statement.setString(2, getPassword());
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
 }

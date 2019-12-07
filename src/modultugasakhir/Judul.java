@@ -6,6 +6,10 @@
 
 package modultugasakhir;
 
+import connect.connect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 /** @pdOid efaf61e9-76fe-44e4-984c-1562cf4d562f */
@@ -23,6 +27,14 @@ public class Judul {
    /** @pdOid 5cc4953e-47d4-424a-ad79-e570745d6bcb */
    public Judul() {
       // TODO: implement
+   }
+   
+   public Judul(String idJudul, String nim, String namaJudul, String deskripsi) {
+      // TODO: implement
+       setIdJudul(idJudul);
+       MahasiswaDalamJudul.getSingleDatabase(nim);
+       setNamaJudul(namaJudul);
+       setDeskripsi(deskripsi);
    }
    
    /** @pdOid e305398a-f4e6-41d5-b97d-f52557b844d4 */
@@ -58,4 +70,69 @@ public class Judul {
       deskripsi = newDeskripsi;
    }
 
+   @SuppressWarnings("unchecked")
+   public ArrayList getAllDatabase(String query){
+       ArrayList list = new ArrayList<>();
+       try{
+           if(query.equals(""))
+               query = "SELECT * FROM judul";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               Judul jud = new Judul();
+               jud.setIdJudul(rs.getString("idJudul"));
+               
+               MahasiswaDalamJudul.getSingleDatabase(rs.getString("nim"));
+               
+               jud.setNamaJudul(rs.getString("namaJudul"));
+               jud.setDeskripsi(rs.getString("deskripsi"));
+               list.add(jud);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
+   public void getSingleDatabase(String query){
+       query = "SELECT * FROM judul WHERE idJudul="+query;
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               setIdJudul(rs.getString("idJudul"));
+               
+               MahasiswaDalamJudul.getSingleDatabase(rs.getString("nim"));
+               
+               setNamaJudul(rs.getString("namaJudul"));
+               setDeskripsi(rs.getString("deskripsi"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public void insertMahasiswa(){
+       try{
+           String query = "INSERT INTO judul VALUES (?, ?, ?, ?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getIdJudul());
+           statement.setString(2, MahasiswaDalamJudul.getNim());
+           statement.setString(3, getNamaJudul());
+           statement.setString(4, getDeskripsi());
+           
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
 }
