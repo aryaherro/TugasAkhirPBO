@@ -123,22 +123,49 @@ public class IsiAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jBtnGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnGOActionPerformed
-        // TODO add your handling code here:
+        
+        if (jTmbMaha.isSelected()) {
+            addMaha d = new addMaha();
+            d.setVisible(true);
+            //this.setVisible(false);
+        }
+        if(jTmbDosen.isSelected()){
+                 addDosen x = new addDosen();
+                 x.setVisible(true);
+                 //this.setVisible(false);
+                 }
+        if (jTmbPro.isSelected()) {
+            addProdi y = new addProdi();
+            y.setVisible(true);
+            //this.setVisible(false);
+            
+        }
+        
     }//GEN-LAST:event_jBtnGOActionPerformed
 
     private void jTmbProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmbProActionPerformed
-        // TODO add your handling code here:
-        addProdi d = new addProdi();
-        d.setVisible(true);
-        this.setVisible(false);
+        if (jTmbPro.isSelected()) {
+            //addProdi d = new addProdi();
+            //d.setVisible(true);
+            //this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_jTmbProActionPerformed
 
     private void jTmbDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmbDosenActionPerformed
-        // TODO add your handling code here:
+        if (jTmbDosen.isSelected()) {
+            //addDosen x = new addDosen();
+            //x.setVisible(true);
+            //this.setVisible(false);
+        }
     }//GEN-LAST:event_jTmbDosenActionPerformed
 
     private void jTmbMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmbMahaActionPerformed
-        // TODO add your handling code here:
+        if (jTmbMaha.isSelected()) {
+            //addMaha y = new addMaha();
+            //y.setVisible(true);
+            //this.setVisible(false);
+        }
     }//GEN-LAST:event_jTmbMahaActionPerformed
 
     /**
