@@ -31,6 +31,7 @@ public class IsiProdi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jBtnProposal = new javax.swing.JRadioButton();
@@ -61,6 +62,7 @@ public class IsiProdi extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 150, 20));
 
         jBtnProposal.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jBtnProposal);
         jBtnProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
         jBtnProposal.setText("PROPOSAL TA");
         jBtnProposal.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +73,7 @@ public class IsiProdi extends javax.swing.JFrame {
         getContentPane().add(jBtnProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 120, -1));
 
         jBtnTA.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jBtnTA);
         jBtnTA.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
         jBtnTA.setText("TA");
         jBtnTA.addActionListener(new java.awt.event.ActionListener() {
@@ -82,11 +85,7 @@ public class IsiProdi extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "NIM", "JUDUL", "DOSEN PEMBIMBING", "KELAYAKAN"
@@ -172,6 +171,7 @@ public class IsiProdi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton jBtnProposal;
     private javax.swing.JRadioButton jBtnTA;
     private javax.swing.JButton jButton1;

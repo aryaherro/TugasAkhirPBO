@@ -42,7 +42,6 @@ public class IsiAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(660, 528));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(660, 528));
         setSize(new java.awt.Dimension(660, 528));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
