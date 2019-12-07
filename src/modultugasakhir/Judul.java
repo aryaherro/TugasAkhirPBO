@@ -29,9 +29,9 @@ public class Judul {
       // TODO: implement
    }
    
-   public Judul(String idJudul, String nim, String namaJudul, String deskripsi) {
+   public Judul(String nim, String namaJudul, String deskripsi) {
       // TODO: implement
-       setIdJudul(idJudul);
+       autoInsertId();
        MahasiswaDalamJudul.getSingleDatabase(nim);
        setNamaJudul(namaJudul);
        setDeskripsi(deskripsi);
@@ -134,5 +134,14 @@ public class Judul {
        catch(SQLException e){
            
        }
+   }
+   
+   public int getSizeDatabase(){
+       ArrayList list = getAllDatabase("");
+       return list.size();
+   }
+   
+   public void autoInsertId(){
+       setIdJudul(""+ getSizeDatabase() + 1);
    }
 }

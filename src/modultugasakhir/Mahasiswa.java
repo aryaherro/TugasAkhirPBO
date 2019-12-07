@@ -19,15 +19,18 @@ public class Mahasiswa extends Manusia {
    
    /** @pdRoleInfo migr=no name=Prodi assc=association13 mult=0..1 */
    public Prodi ProdiDalamMahasiswa;
+   /** @pdRoleInfo migr=no name=Dosen assc=association14 mult=0..1 */
+   public Dosen DosenPembimbingMahasiswa;
    
    /** @pdOid 3ec9a720-f1a5-48ad-9e18-59d041e9a007 */
    public Mahasiswa() {
       // TODO: implement
    }
    
-   public Mahasiswa(String nim, String idProdi, String nama, String nik, String tanggalLahir, String jenisKelamin, String alamat, String email, String agama) {
+   public Mahasiswa(String nim, String npp, String idProdi, String nama, String nik, String tanggalLahir, String jenisKelamin, String alamat, String email, String agama) {
       // TODO: implement
       setNim(nim);
+      DosenPembimbingMahasiswa.getSingleDatabase(npp);
       ProdiDalamMahasiswa.getSingleDatabase(idProdi);
       setNama(nama);
       setNik(nik);
@@ -48,7 +51,7 @@ public class Mahasiswa extends Manusia {
    public void setNim(String newNim) {
       nim = newNim;
    }
-   
+
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
        ArrayList list = new ArrayList<>();

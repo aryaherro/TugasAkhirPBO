@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     Sat 07.12.19 19:13:24                        */
+/* Created on:     Sat 07.12.19 21:43:28                        */
 /*==============================================================*/
 
 
@@ -42,7 +42,7 @@ create table HistoryJabatan
    idJabatan            varchar(254) not null  comment '',
    startDate            datetime  comment '',
    tahunAjaran          varchar(254)  comment '',
-   statusAktif          boolean  comment '',
+   statusAktif          bool  comment '',
    primary key (idHistoryJabatan),
    constraint FK_HISTORYJ_ASSOCIATI_JABATAN foreign key (idJabatan)
       references Jabatan (idJabatan) on delete restrict on update restrict
@@ -64,6 +64,7 @@ create table Prodi
 create table Mahasiswa
 (
    nim                  varchar(254) not null  comment '',
+   npp                  varchar(254)  comment '',
    idProdi              varchar(254)  comment '',
    nama                 varchar(254) not null  comment '',
    nik                  varchar(254)  comment '',
@@ -74,7 +75,9 @@ create table Mahasiswa
    agama                varchar(254)  comment '',
    primary key (nim),
    constraint FK_MAHASISW_ASSOCIATI_PRODI foreign key (idProdi)
-      references Prodi (idProdi) on delete restrict on update restrict
+      references Prodi (idProdi) on delete restrict on update restrict,
+   constraint FK_MAHASISW_ASSOCIATI_DOSEN foreign key (npp)
+      references Dosen (npp) on delete restrict on update restrict
 );
 
 /*==============================================================*/
@@ -114,7 +117,7 @@ create table Kelayakan
 (
    idLayak              varchar(254) not null  comment '',
    idJudul              varchar(254) not null  comment '',
-   statusLayak          boolean not null  comment '',
+   statusLayak          bool not null  comment '',
    primary key (idLayak),
    constraint FK_KELAYAKA_ASSOCIATI_JUDUL foreign key (idJudul)
       references Judul (idJudul) on delete restrict on update restrict
