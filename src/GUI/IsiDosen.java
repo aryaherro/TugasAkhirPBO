@@ -151,11 +151,15 @@ public class IsiDosen extends javax.swing.JFrame {
     }//GEN-LAST:event_jBeritaAcara1ActionPerformed
 
     private void jBtnProposalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProposalActionPerformed
-        // TODO add your handling code here:
+        if (jBtnProposal.isSelected()) {
+            
+        }
     }//GEN-LAST:event_jBtnProposalActionPerformed
 
     private void jBtnTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTAActionPerformed
-        // TODO add your handling code here:
+        if (jBtnTA.isSelected()) {
+            
+        }
     }//GEN-LAST:event_jBtnTAActionPerformed
 
     /**

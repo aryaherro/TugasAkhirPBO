@@ -121,11 +121,16 @@ public class IsiProdi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTAActionPerformed
-        // TODO add your handling code here:
+        if (jBtnTA.isSelected()) {
+            
+        }
     }//GEN-LAST:event_jBtnTAActionPerformed
 
     private void jBtnProposalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProposalActionPerformed
-        // TODO add your handling code here:
+        if (jBtnProposal.isSelected()) {
+            
+            
+        }
     }//GEN-LAST:event_jBtnProposalActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
