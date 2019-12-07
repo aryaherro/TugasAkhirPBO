@@ -6,6 +6,10 @@
 
 package modultugasakhir;
 
+import connect.connect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 /** @pdOid f4611ccc-0ffe-4352-ad42-78ee6b4fdcf5 */
@@ -16,97 +20,163 @@ public class Prodi {
    private String namaProdi;
    
    /** @pdRoleInfo migr=no name=Dosen assc=dosenDanProdi coll=java.util.Collection impl=java.util.ArrayList mult=1..* */
-   public java.util.Collection<Dosen> Dosen;
+   public java.util.Collection<Dosen> DosenDalamProdi;
    
    /** @pdOid 65f52ae3-c356-40c5-9684-365860c005cc */
    public Prodi() {
       // TODO: implement
    }
    
-   /** @pdOid b2b4b6f0-e1ad-4e8f-9870-6da2485631eb */
+   public Prodi(String idProdi, String namaProdi) {
+      // TODO: implement
+      setIdProdi(idProdi);
+      setNamaProdi(namaProdi);
+   }
+   
+   /** @pdOid 76868d40-3b0a-4c83-b535-4e52f33efc49 */
    public String getIdProdi() {
       return idProdi;
    }
    
    /** @param newIdProdi
-    * @pdOid f588a02f-32ca-44a8-be36-7c4a743b2949 */
-   public void setidProdi(String newIdProdi) {
+    * @pdOid 4f25424b-0fcb-4f79-85d4-48db63b3edc7 */
+   public void setIdProdi(String newIdProdi) {
       idProdi = newIdProdi;
    }
    
-   /** @pdOid a2531aa7-b64d-4c8f-920e-de8408e32c58 */
+   /** @pdOid f6812c32-efc0-4376-95c3-bba5bd5aa1c8 */
    public String getNamaProdi() {
       return namaProdi;
    }
    
    /** @param newNamaProdi
-    * @pdOid 8407c2df-0412-4822-bae2-7c83b173ff1b */
-   public void setnamaProdi(String newNamaProdi) {
+    * @pdOid 806c2213-cfbc-41e3-b17c-841518bbdee2 */
+   public void setNamaProdi(String newNamaProdi) {
       namaProdi = newNamaProdi;
    }
    
    
    /** @pdGenerated default getter */
-   public java.util.Collection<Dosen> getDosen() {
-      if (Dosen == null)
-         Dosen = new java.util.ArrayList<Dosen>();
-      return Dosen;
+   public java.util.Collection<Dosen> getDosenDalamProdi() {
+      if (DosenDalamProdi == null)
+         DosenDalamProdi = new java.util.ArrayList<Dosen>();
+      return DosenDalamProdi;
    }
    
    /** @pdGenerated default iterator getter */
-   public java.util.Iterator getIteratorDosen() {
-      if (Dosen == null)
-         Dosen = new java.util.ArrayList<Dosen>();
-      return Dosen.iterator();
+   public java.util.Iterator getIteratorDosenDalamProdi() {
+      if (DosenDalamProdi == null)
+         DosenDalamProdi = new java.util.ArrayList<Dosen>();
+      return DosenDalamProdi.iterator();
    }
    
    /** @pdGenerated default setter
-     * @param newDosen */
-   public void setDosen(java.util.Collection<Dosen> newDosen) {
-      removeAllDosen();
-      for (java.util.Iterator iter = newDosen.iterator(); iter.hasNext();)
-         addDosen((Dosen)iter.next());
+     * @param newDosenDalamProdi */
+   public void setDosenDalamProdi(java.util.Collection<Dosen> newDosenDalamProdi) {
+      removeAllDosenDalamProdi();
+      for (java.util.Iterator iter = newDosenDalamProdi.iterator(); iter.hasNext();)
+         addDosenDalamProdi((Dosen)iter.next());
    }
    
    /** @pdGenerated default add
      * @param newDosen */
-   public void addDosen(Dosen newDosen) {
+   public void addDosenDalamProdi(Dosen newDosen) {
       if (newDosen == null)
          return;
-      if (this.Dosen == null)
-         this.Dosen = new java.util.ArrayList<Dosen>();
-      if (!this.Dosen.contains(newDosen))
+      if (this.DosenDalamProdi == null)
+         this.DosenDalamProdi = new java.util.ArrayList<Dosen>();
+      if (!this.DosenDalamProdi.contains(newDosen))
       {
-         this.Dosen.add(newDosen);
-         newDosen.addProdi(this);      
+         this.DosenDalamProdi.add(newDosen);
+         newDosen.addProdiDalamDosen(this);      
       }
    }
    
    /** @pdGenerated default remove
      * @param oldDosen */
-   public void removeDosen(Dosen oldDosen) {
+   public void removeDosenDalamProdi(Dosen oldDosen) {
       if (oldDosen == null)
          return;
-      if (this.Dosen != null)
-         if (this.Dosen.contains(oldDosen))
+      if (this.DosenDalamProdi != null)
+         if (this.DosenDalamProdi.contains(oldDosen))
          {
-            this.Dosen.remove(oldDosen);
-            oldDosen.removeProdi(this);
+            this.DosenDalamProdi.remove(oldDosen);
+            oldDosen.removeProdiDalamDosen(this);
          }
    }
    
    /** @pdGenerated default removeAll */
-   public void removeAllDosen() {
-      if (Dosen != null)
+   public void removeAllDosenDalamProdi() {
+      if (DosenDalamProdi != null)
       {
          Dosen oldDosen;
-         for (java.util.Iterator iter = getIteratorDosen(); iter.hasNext();)
+         for (java.util.Iterator iter = getIteratorDosenDalamProdi(); iter.hasNext();)
          {
             oldDosen = (Dosen)iter.next();
             iter.remove();
-            oldDosen.removeProdi(this);
+            oldDosen.removeProdiDalamDosen(this);
          }
       }
    }
-
+   
+   @SuppressWarnings("unchecked")
+   public ArrayList getAllDatabase(String query){
+       ArrayList list = new ArrayList<>();
+       try{
+           if(query.equals(""))
+               query = "SELECT * FROM prodi";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               Prodi pro = new Prodi();
+               pro.setIdProdi(rs.getString("idProdi"));
+               pro.setNamaProdi(rs.getString("namaProdi"));
+               
+               String query2 = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=(?)";
+               Dosen dos = new Dosen();
+               setDosenDalamProdi(dos.getAllDatabase(query2));
+               
+               list.add(pro);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
+   public void getSingleDatabase(String query){
+       query = "SELECT * FROM prodi WHERE idProdi=" + query;
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               setIdProdi(rs.getString("idProdi"));
+               setNamaProdi(rs.getString("namaProdi"));
+               
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+           
+   public void insertProdi(){
+       try{
+           String query = "INSERT INTO prodi VALUES (?, ?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getIdProdi());
+           statement.setString(2, getNamaProdi());           
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
 }

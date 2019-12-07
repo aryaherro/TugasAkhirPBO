@@ -6,6 +6,10 @@
 
 package modultugasakhir;
 
+import connect.connect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 /** @pdOid 7a6c07c2-b765-4c9d-afeb-4b7270b1ebc6 */
@@ -14,22 +18,115 @@ public class Mahasiswa extends Manusia {
    private String nim;
    
    /** @pdRoleInfo migr=no name=Prodi assc=association13 mult=0..1 */
-   public Prodi Prodi;
+   public Prodi ProdiDalamMahasiswa;
    
    /** @pdOid 3ec9a720-f1a5-48ad-9e18-59d041e9a007 */
    public Mahasiswa() {
       // TODO: implement
    }
    
-   /** @pdOid 1e85f4a3-1e9a-47c0-b37a-43903cc09318 */
-   public String getnim() {
+   public Mahasiswa(String nim, String idProdi, String nama, String nik, String tanggalLahir, String jenisKelamin, String alamat, String email, String agama) {
+      // TODO: implement
+      setNim(nim);
+      ProdiDalamMahasiswa.setIdProdi(idProdi);
+      setNama(nama);
+      setNik(nik);
+      setTanggalLahir(tanggalLahir);
+      setJenisKelamin(jenisKelamin.charAt(0));
+      setAlamat(alamat);
+      setEmail(email);
+      setAgama(agama);
+   }
+   
+   /** @pdOid 859d0c9b-83a7-4105-9e80-34ca02ee9c30 */
+   public String getNim() {
       return nim;
    }
    
    /** @param newNim
-    * @pdOid 58be850b-3626-4c53-8a35-b68fb1b20555 */
-   public void setnim(String newNim) {
+    * @pdOid 160fd74b-7d76-46a0-9b2d-211e1430ec74 */
+   public void setNim(String newNim) {
       nim = newNim;
    }
-
+   
+   @SuppressWarnings("unchecked")
+   public ArrayList getAllDatabase(String query){
+       ArrayList list = new ArrayList<>();
+       try{
+           if(query.equals(""))
+               query = "SELECT * FROM mahasiswa";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               Mahasiswa maha = new Mahasiswa();
+               maha.setNim(rs.getString("nim"));
+               
+               String query2 = "SELECT * FROM prodi WHERE idProdi = " + rs.getString("idProdi");
+               ProdiDalamMahasiswa.getSingleDatabase(query2);
+              
+               maha.setNama(rs.getString("nama"));
+               maha.setNik(rs.getString("nik"));
+               maha.setTanggalLahir(rs.getString("tanggalLahir"));
+               maha.setJenisKelamin(rs.getString("jenisKelamin").charAt(0));
+               maha.setAlamat(rs.getString("alamat"));
+               maha.setEmail(rs.getString("email"));
+               maha.setAgama(rs.getString("agama"));
+               list.add(maha);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
+   public void getSingleDatabase(String query){
+       query = "SELECT * FROM mahasiswa WHERE nim="+query;
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               setNim(rs.getString("nim"));
+               
+               ProdiDalamMahasiswa.getSingleDatabase(rs.getString("idProdi"));
+              
+               setNama(rs.getString("nama"));
+               setNik(rs.getString("nik"));
+               setTanggalLahir(rs.getString("tanggalLahir"));
+               setJenisKelamin(rs.getString("jenisKelamin").charAt(0));
+               setAlamat(rs.getString("alamat"));
+               setEmail(rs.getString("email"));
+               setAgama(rs.getString("agama"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public void insertMahasiswa(){
+       try{
+           String query = "INSERT INTO mahasiswa VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getNim());
+           statement.setString(2, ProdiDalamMahasiswa.getIdProdi());
+           statement.setString(3, getNama());
+           statement.setString(4, getNik());
+           statement.setString(5, getTanggalLahir());
+           statement.setString(6, ""+getJenisKelamin());
+           statement.setString(7, getAlamat());
+           statement.setString(8, getEmail());
+           statement.setString(9, getAgama());
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
 }

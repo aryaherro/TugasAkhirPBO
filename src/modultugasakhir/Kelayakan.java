@@ -16,32 +16,32 @@ public class Kelayakan {
    private java.lang.Boolean statusLayak;
    
    /** @pdRoleInfo migr=no name=Judul assc=association12 mult=1..1 side=A */
-   public Judul Judul;
+   public Judul JudulDalamKelayakan;
    
    /** @pdOid cf0ff2d4-4c29-404c-87a0-1ca2d6719f37 */
    public Kelayakan() {
       // TODO: implement
    }
    
-   /** @pdOid 532c128a-b84e-4746-a7da-4ff3cdf1f298 */
+   /** @pdOid 53443faf-0f30-40e5-8635-b0f723418a60 */
    public String getIdLayak() {
       return idLayak;
    }
    
    /** @param newIdLayak
-    * @pdOid f648f6a3-fbc2-4d9b-84f6-380883a32e4c */
-   public void setidLayak(String newIdLayak) {
+    * @pdOid 3d1d2f77-cf43-43a5-a44a-bf97bd63034c */
+   public void setIdLayak(String newIdLayak) {
       idLayak = newIdLayak;
    }
    
-   /** @pdOid f5ef04af-b6a6-4fdf-963a-0ede72967e6b */
+   /** @pdOid df49b37a-4c61-4ded-a8bd-bef7b3cf9663 */
    public java.lang.Boolean getStatusLayak() {
       return statusLayak;
    }
    
    /** @param newStatusLayak
-    * @pdOid 3a1c3e95-4348-4450-bf78-e7dbced2c4b9 */
-   public void setstatusLayak(java.lang.Boolean newStatusLayak) {
+    * @pdOid 37c9ef11-a6e6-4eab-b39b-830f059796cb */
+   public void setStatusLayak(java.lang.Boolean newStatusLayak) {
       statusLayak = newStatusLayak;
    }
 

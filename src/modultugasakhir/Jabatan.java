@@ -16,32 +16,32 @@ public class Jabatan {
    private String namaJabatan;
    
    /** @pdRoleInfo migr=no name=Dosen assc=association7 mult=1..1 side=A */
-   public Dosen Dosen;
+   public Dosen DosenDalamJabatan;
    
    /** @pdOid b64ee835-35dc-4dd9-90ee-487dd4339c4b */
    public Jabatan() {
       // TODO: implement
    }
    
-   /** @pdOid 01f1ccb0-02f5-4589-862e-20bb80c43ea5 */
+   /** @pdOid 660b7125-1433-4c6f-9ce8-9f74d407f3fa */
    public String getIdJabatan() {
       return idJabatan;
    }
    
    /** @param newIdJabatan
-    * @pdOid 2d172c03-cf98-4940-96ad-f9a6afdddefb */
-   public void setidJabatan(String newIdJabatan) {
+    * @pdOid 47bdd61b-e27e-412c-a6ac-4c28bf086afd */
+   public void setIdJabatan(String newIdJabatan) {
       idJabatan = newIdJabatan;
    }
    
-   /** @pdOid 2054c640-dae6-438e-a5fc-a85a87a522c2 */
+   /** @pdOid 09a08508-b3d3-448e-b88c-c2dea1844a20 */
    public String getNamaJabatan() {
       return namaJabatan;
    }
    
    /** @param newNamaJabatan
-    * @pdOid 0f69134a-931a-4476-957d-32107b041b74 */
-   public void setnamaJabatan(String newNamaJabatan) {
+    * @pdOid 0989b1e5-b008-48bb-90d7-04234264881d */
+   public void setNamaJabatan(String newNamaJabatan) {
       namaJabatan = newNamaJabatan;
    }
 

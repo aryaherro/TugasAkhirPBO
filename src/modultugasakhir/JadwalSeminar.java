@@ -16,32 +16,32 @@ public class JadwalSeminar {
    private String jadwal;
    
    /** @pdRoleInfo migr=no name=Mahasiswa assc=association10 mult=0..1 side=A */
-   public Mahasiswa Mahasiswa;
+   public Mahasiswa MahasiswaDalamJadwalSeminar;
    
    /** @pdOid b8be38bb-13d2-45b1-8b41-7b8f07bfbf65 */
    public JadwalSeminar() {
       // TODO: implement
    }
    
-   /** @pdOid 2b1da373-966a-4dff-b365-b3d1dc2c302b */
+   /** @pdOid a1ccacef-c3b9-4d04-a383-3575018bee7e */
    public String getIdJadwal() {
       return idJadwal;
    }
    
    /** @param newIdJadwal
-    * @pdOid 5aa2f998-c5d7-4fec-bbe5-02725c3c63d7 */
-   public void setidJadwal(String newIdJadwal) {
+    * @pdOid 694061c4-af45-4fef-927d-30cc7111c12a */
+   public void setIdJadwal(String newIdJadwal) {
       idJadwal = newIdJadwal;
    }
    
-   /** @pdOid 942e19c4-8c7f-4a2c-8c2d-760d43d752ca */
+   /** @pdOid 5972df07-3a24-47f2-b93f-7389e03e25b1 */
    public String getJadwal() {
       return jadwal;
    }
    
    /** @param newJadwal
-    * @pdOid cd8209ab-532d-43ab-9e0e-939f374a637b */
-   public void setjadwal(String newJadwal) {
+    * @pdOid 70562bca-083a-49be-979e-a42820375953 */
+   public void setJadwal(String newJadwal) {
       jadwal = newJadwal;
    }
 

@@ -18,43 +18,43 @@ public class Judul {
    private String deskripsi;
    
    /** @pdRoleInfo migr=no name=Mahasiswa assc=association4 mult=1..1 side=A */
-   public Mahasiswa Mahasiswa;
+   public Mahasiswa MahasiswaDalamJudul;
    
    /** @pdOid 5cc4953e-47d4-424a-ad79-e570745d6bcb */
    public Judul() {
       // TODO: implement
    }
    
-   /** @pdOid c452d560-bd1c-41cb-94a9-59e89f72742a */
+   /** @pdOid e305398a-f4e6-41d5-b97d-f52557b844d4 */
    public String getIdJudul() {
       return idJudul;
    }
    
    /** @param newIdJudul
-    * @pdOid 68716cfa-dd1b-4c5e-9d3f-f9f6060c7f00 */
-   public void setidJudul(String newIdJudul) {
+    * @pdOid 7ab09a62-65d6-4529-b2cf-77a55ca28138 */
+   public void setIdJudul(String newIdJudul) {
       idJudul = newIdJudul;
    }
    
-   /** @pdOid d2ab59e2-808d-449b-b14b-0b28e2b8d36b */
+   /** @pdOid b142ca57-8732-4486-8ed0-263bb69be630 */
    public String getNamaJudul() {
       return namaJudul;
    }
    
    /** @param newNamaJudul
-    * @pdOid bf0d17b1-c579-4f2f-ad3f-90de17ea15b6 */
-   public void setnamaJudul(String newNamaJudul) {
+    * @pdOid 5ec0b9af-cb16-4421-84d4-10255426a422 */
+   public void setNamaJudul(String newNamaJudul) {
       namaJudul = newNamaJudul;
    }
    
-   /** @pdOid e2295641-3f39-4f57-8f12-ec45f545dbd2 */
-   public String getdeskripsi() {
+   /** @pdOid c9094875-6e0f-4e11-8c89-aed17a31c9d8 */
+   public String getDeskripsi() {
       return deskripsi;
    }
    
    /** @param newDeskripsi
-    * @pdOid 29377972-4939-43c6-8965-6efa959eaba4 */
-   public void setdeskripsi(String newDeskripsi) {
+    * @pdOid dff53cc1-45ee-47af-a78a-acc4df03e546 */
+   public void setDeskripsi(String newDeskripsi) {
       deskripsi = newDeskripsi;
    }
 

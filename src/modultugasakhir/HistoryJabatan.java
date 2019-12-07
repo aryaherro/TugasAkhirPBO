@@ -20,54 +20,54 @@ public class HistoryJabatan {
    private java.lang.Boolean statusAktif;
    
    /** @pdRoleInfo migr=no name=Jabatan assc=association8 mult=1..1 side=A */
-   public Jabatan Jabatan;
+   public Jabatan JabatanDalamHistoryJabatan;
    
    /** @pdOid 20bcc0c2-9052-46c1-941d-bfbda0eefd32 */
    public HistoryJabatan() {
       // TODO: implement
    }
    
-   /** @pdOid 7b8cbf7d-7747-44e8-9121-a5c1f30fd127 */
+   /** @pdOid b024b3e7-8ec4-4e61-839f-b8ff56c8624f */
    public String getIdHistoryJabatan() {
       return idHistoryJabatan;
    }
    
    /** @param newIdHistoryJabatan
-    * @pdOid 57041b6c-889b-4af7-840e-622c8d54f96b */
-   public void setidHistoryJabatan(String newIdHistoryJabatan) {
+    * @pdOid add4bd58-d78f-4e83-8273-82b41cf4bfe3 */
+   public void setIdHistoryJabatan(String newIdHistoryJabatan) {
       idHistoryJabatan = newIdHistoryJabatan;
    }
    
-   /** @pdOid 09a3ed6c-4e30-412a-9c34-315398a0e293 */
-   public Date getstartDate() {
+   /** @pdOid 11677266-333b-491a-badd-2c707d299f26 */
+   public Date getStartDate() {
       return startDate;
    }
    
    /** @param newStartDate
-    * @pdOid 66b1afe3-318d-4ba5-822b-2690644eea02 */
-   public void setstartDate(Date newStartDate) {
+    * @pdOid 38cf8eb4-013c-4b62-b2ff-0a93479dc2dd */
+   public void setStartDate(Date newStartDate) {
       startDate = newStartDate;
    }
    
-   /** @pdOid f08a1495-eea0-410f-b4ff-7abfe1651cf7 */
-   public String gettahunAjaran() {
+   /** @pdOid fa77094b-e971-4cb3-8a44-4ae5753a7699 */
+   public String getTahunAjaran() {
       return tahunAjaran;
    }
    
    /** @param newTahunAjaran
-    * @pdOid 3f2d405d-b64b-4eb8-97cb-62799c567b2f */
-   public void settahunAjaran(String newTahunAjaran) {
+    * @pdOid 8cef0c70-1749-4ecb-94ce-0428e108cbe5 */
+   public void setTahunAjaran(String newTahunAjaran) {
       tahunAjaran = newTahunAjaran;
    }
    
-   /** @pdOid 8ac12e84-03d1-40a1-b5de-51c71fff1801 */
+   /** @pdOid 56857474-1c59-4078-a1d0-7698434223f9 */
    public java.lang.Boolean getStatusAktif() {
       return statusAktif;
    }
    
    /** @param newStatusAktif
-    * @pdOid 57cdcf14-bf71-416f-bc1c-ad668f2b67c1 */
-   public void setstatusAktif(java.lang.Boolean newStatusAktif) {
+    * @pdOid be279acc-2e56-4340-8db5-cb331fce3556 */
+   public void setStatusAktif(java.lang.Boolean newStatusAktif) {
       statusAktif = newStatusAktif;
    }
 

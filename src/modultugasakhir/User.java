@@ -20,26 +20,27 @@ public class User {
       // TODO: implement
    }
    
-   /** @pdOid 4984b886-111b-4433-bb05-840192534462 */
+   /** @pdOid 0fa9c319-0a59-421c-b67f-579ae999d1f9 */
    public String getUsername() {
       return username;
    }
    
    /** @param newUsername
-    * @pdOid b3eeecce-0b0d-496a-8bad-f52bcb9233e4 */
-   public void setusername(String newUsername) {
+    * @pdOid bb84ac02-0b07-416d-88fd-265de15027e8 */
+   public void setUsername(String newUsername) {
       username = newUsername;
    }
    
-   /** @pdOid d560ba92-0dd1-42ab-a06a-c1ff9f793c5c */
+   /** @pdOid 14c085eb-f995-48ed-ba53-abc7f5cb49ac */
    public String getPassword() {
       return password;
    }
    
    /** @param newPassword
-    * @pdOid 4548e4f0-9125-4569-90a4-8df514d56097 */
-   public void setpassword(String newPassword) {
+    * @pdOid 640d4f20-d923-4604-a9c8-5fdfe6bb77b2 */
+   public void setPassword(String newPassword) {
       password = newPassword;
    }
-
+   
+   
 }

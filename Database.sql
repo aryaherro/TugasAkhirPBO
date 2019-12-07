@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     Sat 07.12.19 15:52:34                        */
+/* Created on:     Sat 07.12.19 19:13:24                        */
 /*==============================================================*/
 
 
@@ -155,9 +155,9 @@ create table dosenDanProdi
    idProdi              varchar(254) not null  comment '',
    npp                  varchar(254) not null  comment '',
    primary key (idProdi, npp),
-   constraint FK_DOSENDAN_DOSEN_PRODI foreign key (idProdi)
+   constraint FK_DOSENDAN_DOSENDALA_PRODI foreign key (idProdi)
       references Prodi (idProdi) on delete restrict on update restrict,
-   constraint FK_DOSENDAN_PRODI_DOSEN foreign key (npp)
+   constraint FK_DOSENDAN_PRODIDALA_DOSEN foreign key (npp)
       references Dosen (npp) on delete restrict on update restrict
 );
 
