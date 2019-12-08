@@ -97,10 +97,11 @@ public class Judul {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM judul WHERE idJudul="+query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM judul WHERE idJudul = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setIdJudul(rs.getString("idJudul"));

@@ -83,10 +83,11 @@ public class Kelayakan {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM kelayakan WHERE idLayak="+query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM kelayakan WHERE idLayak = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setIdLayak(rs.getString("idLayak"));

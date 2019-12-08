@@ -76,10 +76,11 @@ public class Jabatan {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM jabatan WHERE idJabatan="+query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM jabatan WHERE idJabatan = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setIdJabatan(rs.getString("idJabatan"));

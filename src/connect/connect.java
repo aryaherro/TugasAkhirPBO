@@ -31,10 +31,9 @@ public class connect {
             
                 
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection(url+timezone, user, pass);
-            } catch (Exception e) {
+                connection = DriverManager.getConnection(url+namaDB+timezone, user, pass);
+            } catch (ClassNotFoundException | SQLException e) {
                 System.out.println("error di sini juga");
-                e.printStackTrace();
                 return null;
             }
         }

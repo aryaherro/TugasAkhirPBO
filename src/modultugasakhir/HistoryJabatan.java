@@ -109,10 +109,11 @@ public class HistoryJabatan {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM historyjabatan WHERE idHistoryJabatan="+query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM historyjabatan WHERE idHistoryJabatan = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setIdHistoryJabatan(rs.getString("idHistoryJabatan"));

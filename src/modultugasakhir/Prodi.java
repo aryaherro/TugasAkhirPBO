@@ -146,10 +146,11 @@ public class Prodi {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM prodi WHERE idProdi=" + query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM prodi WHERE idProdi = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setIdProdi(rs.getString("idProdi"));
@@ -180,12 +181,12 @@ public class Prodi {
    
    @SuppressWarnings("unchecked")
    public void getDosenDalamProdiDatabase(String idProdi){
-       String query2 = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=" + idProdi;
+       String query2 = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=\"" + idProdi + "\"";
        Dosen dos = new Dosen();
        setDosenDalamProdi(dos.getAllDatabase(query2));
    }
    
-   public void insertToUser(String Password){
+   public void insertToUser(String Password) throws SQLException{
        User u = new User(getIdProdi(), Password, "Prodi");
        u.insertUser();
    }

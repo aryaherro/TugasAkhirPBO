@@ -99,10 +99,11 @@ public class Revisi {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM revisi WHERE idRevisi="+query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM revisi WHERE idRevisi = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setIdRevisi(rs.getString("idRevisi"));

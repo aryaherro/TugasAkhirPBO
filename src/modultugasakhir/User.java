@@ -10,6 +10,7 @@ import connect.connect;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /** @pdOid ac735255-5f22-4861-a9f6-324cc501ea97 */
 public class User {
@@ -65,41 +66,32 @@ public class User {
       typeUser = newTypeUser;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM user WHERE username="+query;
-       try{
-           PreparedStatement statement = connect.getConnection().prepareStatement(query);
-           ResultSet rs = statement.executeQuery();
-           if(rs.next()){
-               setUsername(rs.getString("username"));
-               setPassword(rs.getString("password"));
-               setTypeUser(rs.getString("typeUser"));
-           }
-           statement.close();
-           rs.close();
+   public void getSingleDatabase(String kunci) throws SQLException{
+       String query = "SELECT * FROM user WHERE username = (?)";
+       PreparedStatement statement = connect.getConnection().prepareStatement(query);
+       statement.setString(1, kunci);
+       ResultSet rs = statement.executeQuery();
+       if(rs.next()){
+           setUsername(rs.getString("username"));
+           setPassword(rs.getString("password"));
+           setTypeUser(rs.getString("typeUser"));
        }
-       catch(SQLException e){
-           
-       }
+       statement.close();
+       rs.close();
    }
    
-   public void insertUser(){
-       try{
-           String query = "INSERT INTO user VALUES (?, ?, ?)";
-           PreparedStatement statement = connect.getConnection().prepareStatement(query);
-           statement.setString(1, getUsername());
-           statement.setString(2, getPassword());
-           statement.setString(3, getTypeUser());
-           
-           statement.execute();
-           statement.close();
-       }
-       catch(SQLException e){
-           
-       }
+   public void insertUser() throws SQLException{
+       String query = "INSERT INTO user VALUES (?, ?, ?)";
+       PreparedStatement statement = connect.getConnection().prepareStatement(query);
+       statement.setString(1, getUsername());
+       statement.setString(2, getPassword());
+       statement.setString(3, getTypeUser());
+       
+       statement.execute();
+       statement.close();
    }
    
-   public boolean cekLogin(String username, String pass){
+   public boolean cekLogin(String username, String pass) throws SQLException{
        getSingleDatabase(username);
        if((getUsername() == null)||(getUsername().equals("")))
                return false;

@@ -85,10 +85,11 @@ public class Mahasiswa extends Manusia {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM mahasiswa WHERE nim="+query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM mahasiswa WHERE nim = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setNim(rs.getString("nim"));
@@ -135,7 +136,7 @@ public class Mahasiswa extends Manusia {
        }
    }
    
-   public void insertToUser(String Password){
+   public void insertToUser(String Password) throws SQLException{
        User u = new User(getNim(), Password, "Mahasiswa");
        u.insertUser();
    }

@@ -142,10 +142,11 @@ public class Dosen extends Manusia {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM dosen WHERE npp=" + query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM dosen WHERE npp = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setNpp(rs.getString("npp"));
@@ -201,14 +202,14 @@ public class Dosen extends Manusia {
        }
    }
    
-   @SuppressWarnings("unchecked")
+   @SuppressWarnings({"unchecked", "unchecked"})
    public void getProdiDalamDosenDatabase(String npp){
-       String query2 = "SELECT p.idProdi, p.namaProdi FROM dosendanprodi AS dpd INNER JOIN prodi as p ON dpd.idProdi = p.idProdi AND dpd.npp=" + npp;
+       String query2 = "SELECT p.idProdi, p.namaProdi FROM dosendanprodi AS dpd INNER JOIN prodi as p ON dpd.idProdi = p.idProdi AND dpd.npp = \"" + npp + "\"";
        Prodi pro = new Prodi();
        setProdiDalamDosen(pro.getAllDatabase(query2));
    }
            
-   public void insertToUser(String Password){
+   public void insertToUser(String Password) throws SQLException{
        User u = new User(getNpp(), Password, "Dosen");
        u.insertUser();
    }
