@@ -27,10 +27,11 @@ public class Kelayakan {
       // TODO: implement
    }
    
-   public Kelayakan(Boolean statusLayak) {
+   public Kelayakan(Boolean statusLayak, String idJudul) {
       // TODO: implement
       autoInsertId();
       setStatusLayak(statusLayak);
+      JudulDalamKelayakan.getSingleDatabase(idJudul);
    }
    
    /** @pdOid 53443faf-0f30-40e5-8635-b0f723418a60 */
@@ -57,7 +58,7 @@ public class Kelayakan {
 
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
-       ArrayList list = new ArrayList<>();
+       ArrayList<Kelayakan> list = new ArrayList<>();
        try{
            if(query.equals(""))
                query = "SELECT * FROM kelayakan";
@@ -109,8 +110,6 @@ public class Kelayakan {
            statement.setString(1, getIdLayak());
            statement.setString(2, JudulDalamKelayakan.getIdJudul());
            statement.setBoolean(3, getStatusLayak());
-           
-           
            
            statement.execute();
            statement.close();

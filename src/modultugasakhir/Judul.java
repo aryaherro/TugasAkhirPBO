@@ -72,7 +72,7 @@ public class Judul {
 
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
-       ArrayList list = new ArrayList<>();
+       ArrayList<Judul> list = new ArrayList<>();
        try{
            if(query.equals(""))
                query = "SELECT * FROM judul";
@@ -126,7 +126,6 @@ public class Judul {
            statement.setString(2, MahasiswaDalamJudul.getNim());
            statement.setString(3, getNamaJudul());
            statement.setString(4, getDeskripsi());
-           
            
            statement.execute();
            statement.close();

@@ -6,6 +6,10 @@
 
 package modultugasakhir;
 
+import connect.connect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 /** @pdOid b600160e-01ee-4083-906e-55397010cd1d */
@@ -21,10 +25,17 @@ public class HistoryJabatan {
    
    /** @pdRoleInfo migr=no name=Jabatan assc=association8 mult=1..1 side=A */
    public Jabatan JabatanDalamHistoryJabatan;
+   /** @pdRoleInfo migr=no name=Dosen assc=association15 mult=1..1 side=A */
+   public Dosen DosenDalamHistoryJabatan;
    
    /** @pdOid 20bcc0c2-9052-46c1-941d-bfbda0eefd32 */
    public HistoryJabatan() {
       // TODO: implement
+   }
+   
+   public HistoryJabatan(String idJabatan, String npp, Date startDate, String tahunAjaran, Boolean statusAktif) {
+      // TODO: implement
+      
    }
    
    /** @pdOid b024b3e7-8ec4-4e61-839f-b8ff56c8624f */
@@ -71,4 +82,79 @@ public class HistoryJabatan {
       statusAktif = newStatusAktif;
    }
 
+   @SuppressWarnings("unchecked")
+   public ArrayList getAllDatabase(String query){
+       ArrayList<HistoryJabatan> list = new ArrayList<>();
+       try{
+           if(query.equals(""))
+               query = "SELECT * FROM historyjabatan";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               HistoryJabatan his = new HistoryJabatan();
+               his.setIdHistoryJabatan(rs.getString("idHistoryJabatan"));
+               his.JabatanDalamHistoryJabatan.getSingleDatabase(rs.getString("idJabatan"));
+               his.DosenDalamHistoryJabatan.getSingleDatabase(rs.getString("npp"));
+               his.setStartDate(rs.getDate("startDate"));
+               his.setTahunAjaran(rs.getString("tahunAjaran"));
+               his.setStatusAktif(rs.getBoolean("statusAktif"));
+               list.add(his);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
+   public void getSingleDatabase(String query){
+       query = "SELECT * FROM historyjabatan WHERE idHistoryJabatan="+query;
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               setIdHistoryJabatan(rs.getString("idHistoryJabatan"));
+               JabatanDalamHistoryJabatan.getSingleDatabase(rs.getString("idJabatan"));
+               DosenDalamHistoryJabatan.getSingleDatabase(rs.getString("npp"));
+               setStartDate(rs.getDate("startDate"));
+               setTahunAjaran(rs.getString("tahunAjaran"));
+               setStatusAktif(rs.getBoolean("statusAktif"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public void insertMahasiswa(){
+       try{
+           String query = "INSERT INTO historyjabatan VALUES (?, ?, ?, ?, ?, ?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getIdHistoryJabatan());
+           statement.setString(2, JabatanDalamHistoryJabatan.getIdJabatan());
+           statement.setString(3, DosenDalamHistoryJabatan.getNpp());
+           statement.setDate(4, (java.sql.Date) getStartDate());
+           statement.setString(5, getTahunAjaran());
+           statement.setBoolean(6, getStatusAktif());
+           
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public int getSizeDatabase(){
+       return getAllDatabase("").size();
+   }
+   
+   public void autoInsertId(){
+       setIdHistoryJabatan(""+ getSizeDatabase() + 1);
+   }
 }

@@ -74,7 +74,7 @@ public class Revisi {
 
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
-       ArrayList list = new ArrayList<>();
+       ArrayList<Revisi> list = new ArrayList<>();
        try{
            if(query.equals(""))
                query = "SELECT * FROM revisi";
@@ -119,9 +119,9 @@ public class Revisi {
        }
    }
    
-   public void insertKelayakan(){
+   public void insertToDatabase(){
        try{
-           String query = "INSERT INTO kelayakan VALUES (?, ?, ?, ?, ?)";
+           String query = "INSERT INTO revisi VALUES (?, ?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, getIdRevisi());
            statement.setString(2, JudulDalamRevisi.getIdJudul());

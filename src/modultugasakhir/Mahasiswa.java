@@ -54,7 +54,7 @@ public class Mahasiswa extends Manusia {
 
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
-       ArrayList list = new ArrayList<>();
+       ArrayList<Mahasiswa> list = new ArrayList<>();
        try{
            if(query.equals(""))
                query = "SELECT * FROM mahasiswa";
@@ -64,7 +64,8 @@ public class Mahasiswa extends Manusia {
                Mahasiswa maha = new Mahasiswa();
                maha.setNim(rs.getString("nim"));
                
-               maha.ProdiDalamMahasiswa.getSingleDatabase(rs.getString(rs.getString("idProdi")));
+               maha.DosenPembimbingMahasiswa.getSingleDatabase(rs.getString("npp"));
+               maha.ProdiDalamMahasiswa.getSingleDatabase(rs.getString("idProdi"));
               
                maha.setNama(rs.getString("nama"));
                maha.setNik(rs.getString("nik"));
@@ -92,6 +93,7 @@ public class Mahasiswa extends Manusia {
            if(rs.next()){
                setNim(rs.getString("nim"));
                
+               DosenPembimbingMahasiswa.getSingleDatabase(rs.getString("npp"));
                ProdiDalamMahasiswa.getSingleDatabase(rs.getString("idProdi"));
               
                setNama(rs.getString("nama"));
@@ -112,17 +114,18 @@ public class Mahasiswa extends Manusia {
    
    public void insertMahasiswa(){
        try{
-           String query = "INSERT INTO mahasiswa VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+           String query = "INSERT INTO mahasiswa VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, getNim());
-           statement.setString(2, ProdiDalamMahasiswa.getIdProdi());
-           statement.setString(3, getNama());
-           statement.setString(4, getNik());
-           statement.setString(5, getTanggalLahir());
-           statement.setString(6, ""+getJenisKelamin());
-           statement.setString(7, getAlamat());
-           statement.setString(8, getEmail());
-           statement.setString(9, getAgama());
+           statement.setString(2, DosenPembimbingMahasiswa.getNpp());
+           statement.setString(3, ProdiDalamMahasiswa.getIdProdi());
+           statement.setString(4, getNama());
+           statement.setString(5, getNik());
+           statement.setString(6, getTanggalLahir());
+           statement.setString(7, ""+getJenisKelamin());
+           statement.setString(8, getAlamat());
+           statement.setString(9, getEmail());
+           statement.setString(10, getAgama());
            
            statement.execute();
            statement.close();
@@ -130,5 +133,10 @@ public class Mahasiswa extends Manusia {
        catch(SQLException e){
            
        }
+   }
+   
+   public void insertToUser(String Password){
+       User u = new User(getNim(), Password, "Mahasiswa");
+       u.insertUser();
    }
 }
