@@ -6,6 +6,9 @@
 package GUI;
 
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modultugasakhir.Prodi;
 
 /**
@@ -97,10 +100,16 @@ public class addProdi extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Prodi pro = new Prodi();
-        pro.setIdProdi(idProdi.getText());
-        pro.setNamaProdi(namaProdi.getText());
-        pro.insertToUser(passProdi.getText());
-        pro.insertToDatabase();
+        try {
+            pro.setIdProdi(idProdi.getText());
+            pro.setNamaProdi(namaProdi.getText());
+        
+            pro.insertToUser(passProdi.getText());
+            pro.insertToDatabase();
+        } catch (SQLException ex) {
+            Logger.getLogger(addProdi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
