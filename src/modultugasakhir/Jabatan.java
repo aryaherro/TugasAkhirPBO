@@ -94,7 +94,7 @@ public class Jabatan {
        }
    }
    
-   public void insertMahasiswa(){
+   public void insertToDatabase(){
        try{
            String query = "INSERT INTO jabatan VALUES (?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);

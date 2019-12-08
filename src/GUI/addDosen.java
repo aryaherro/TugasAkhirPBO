@@ -10,11 +10,16 @@ package GUI;
  * @author Jempol
  */
 public class addDosen extends javax.swing.JFrame {
-
+    String DataTransfer;
     /**
      * Creates new form addDosen
      */
     public addDosen() {
+        initComponents();
+    }
+    
+    public addDosen(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
         initComponents();
     }
 

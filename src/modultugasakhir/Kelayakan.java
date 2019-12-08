@@ -104,7 +104,7 @@ public class Kelayakan {
        }
    }
    
-   public void insertKelayakan(){
+   public void insertToDatabase(){
        try{
            String query = "INSERT INTO kelayakan VALUES (?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);

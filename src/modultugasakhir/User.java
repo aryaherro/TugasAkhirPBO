@@ -10,7 +10,6 @@ import connect.connect;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 /** @pdOid ac735255-5f22-4861-a9f6-324cc501ea97 */
 public class User {
@@ -80,7 +79,7 @@ public class User {
        rs.close();
    }
    
-   public void insertUser() throws SQLException{
+   public void insertToDatabase() throws SQLException{
        String query = "INSERT INTO user VALUES (?, ?, ?)";
        PreparedStatement statement = connect.getConnection().prepareStatement(query);
        statement.setString(1, getUsername());

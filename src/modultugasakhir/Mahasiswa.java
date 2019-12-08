@@ -113,7 +113,7 @@ public class Mahasiswa extends Manusia {
        }
    }
    
-   public void insertMahasiswa(){
+   public void insertToDatabase(){
        try{
            String query = "INSERT INTO mahasiswa VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
@@ -138,6 +138,6 @@ public class Mahasiswa extends Manusia {
    
    public void insertToUser(String Password) throws SQLException{
        User u = new User(getNim(), Password, "Mahasiswa");
-       u.insertUser();
+       u.insertToDatabase();
    }
 }

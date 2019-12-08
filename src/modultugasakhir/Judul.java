@@ -119,7 +119,7 @@ public class Judul {
        }
    }
    
-   public void insertMahasiswa(){
+   public void insertToDatabase(){
        try{
            String query = "INSERT INTO judul VALUES (?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);

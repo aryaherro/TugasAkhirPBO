@@ -109,7 +109,7 @@ public class JadwalSeminar {
        }
    }
    
-   public void insertMahasiswa(){
+   public void insertToDatabase(){
        try{
            String query = "INSERT INTO jadwalseminar VALUES (?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);

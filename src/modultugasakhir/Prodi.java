@@ -188,6 +188,6 @@ public class Prodi {
    
    public void insertToUser(String Password) throws SQLException{
        User u = new User(getIdProdi(), Password, "Prodi");
-       u.insertUser();
+       u.insertToDatabase();
    }
 }

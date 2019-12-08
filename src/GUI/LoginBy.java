@@ -1,7 +1,12 @@
 package GUI;
 
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import modultugasakhir.*;
 //
 
 public class LoginBy extends javax.swing.JFrame {
@@ -46,6 +51,11 @@ public class LoginBy extends javax.swing.JFrame {
         getContentPane().add(kataSandi, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 150, 30));
 
         masukButton.setText("MASUK");
+        masukButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                masukButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(masukButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/Close32.png"))); // NOI18N
@@ -72,6 +82,48 @@ public class LoginBy extends javax.swing.JFrame {
     private void kataSandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kataSandiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_kataSandiActionPerformed
+
+    private void masukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukButtonActionPerformed
+        // TODO add your handling code here:
+        User u = new User();
+        try {
+            u.cekLogin(Username.getText(), kataSandi.getText());
+            switch (u.getTypeUser())
+            {
+                case "Admin" :
+                {
+                    new IsiAdmin(u.getUsername()).setVisible(true);
+                    break;
+                }
+                
+                case "Prodi" :
+                {
+                    new IsiProdi(u.getUsername()).setVisible(true);
+                    break;
+                }
+                
+                case "Dosen" :
+                {
+                    new IsiDosen(u.getUsername()).setVisible(true);
+                    break;
+                }
+                
+                case "Mahasiswa" :
+                {
+                    new IsiMahasiswa(u.getUsername()).setVisible(true);
+                    break;
+                }
+                
+                default :
+                {
+                    JOptionPane.showMessageDialog(null, "Data login tidak ditemukan!");
+                }
+            }
+            setVisible(false);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginBy.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_masukButtonActionPerformed
 
     /**
      * @param args the command line arguments

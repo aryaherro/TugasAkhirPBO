@@ -16,11 +16,17 @@ import modultugasakhir.Prodi;
  * @author CQ42
  */
 public class addProdi extends javax.swing.JFrame {
-
+    String DataTransfer;
     /**
      * Creates new form addProdi
      */
     public addProdi() {
+        initComponents();
+        //this.setBackground (new Color(0,0,0,0)); 
+    }
+    
+    public addProdi(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
         initComponents();
         //this.setBackground (new Color(0,0,0,0)); 
     }

@@ -10,11 +10,16 @@ package GUI;
  * @author Jempol
  */
 public class addMaha extends javax.swing.JFrame {
-
+    String DataTransfer;
     /**
      * Creates new form addMaha
      */
     public addMaha() {
+        initComponents();
+    }
+    
+    public addMaha(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
         initComponents();
     }
 
@@ -43,7 +48,6 @@ public class addMaha extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(530, 660));
         setSize(new java.awt.Dimension(530, 660));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -81,7 +85,12 @@ public class addMaha extends javax.swing.JFrame {
         emailMaha.setText("e-mail");
         getContentPane().add(emailMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 180, -1));
 
-        agamaMaha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "HINDU", "BUDHA", "KONGHUCU", " " }));
+        agamaMaha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "KATOLIK", "HINDU", "BUDHA", "KONGHUCU" }));
+        agamaMaha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agamaMahaActionPerformed(evt);
+            }
+        });
         getContentPane().add(agamaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 120, -1));
 
         buatMaha.setText("BUAT");
@@ -106,6 +115,10 @@ public class addMaha extends javax.swing.JFrame {
     private void nimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nimActionPerformed
+
+    private void agamaMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agamaMahaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agamaMahaActionPerformed
 
     /**
      * @param args the command line arguments

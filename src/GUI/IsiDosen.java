@@ -14,9 +14,15 @@ import java.awt.Color;
  * @author Jempol
  */
 public class IsiDosen extends javax.swing.JFrame {
-
+    String DataTransfer;
     /** Creates new form IsiDosen */
     public IsiDosen() {
+        initComponents();
+         this.setBackground (new Color(0,0,0,0));
+    }
+    
+    public IsiDosen(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
         initComponents();
          this.setBackground (new Color(0,0,0,0));
     }
