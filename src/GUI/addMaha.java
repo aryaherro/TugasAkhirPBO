@@ -28,17 +28,17 @@ public class addMaha extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        nim = new javax.swing.JTextField();
+        nppMaha = new javax.swing.JTextField();
+        namaMaha = new javax.swing.JTextField();
+        passMaha = new javax.swing.JTextField();
+        LMaha = new javax.swing.JRadioButton();
+        PMaha = new javax.swing.JRadioButton();
+        alamatMaha = new javax.swing.JTextField();
+        emailMaha = new javax.swing.JTextField();
+        agamaMaha = new javax.swing.JComboBox<>();
+        buatMaha = new javax.swing.JButton();
+        kembaliButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -47,48 +47,48 @@ public class addMaha extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(530, 660));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setText("NIM");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nim.setText("NIM");
+        nim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nimActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 180, -1));
+        getContentPane().add(nim, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 180, -1));
 
-        jTextField2.setText("NPP");
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 180, -1));
+        nppMaha.setText("NPP");
+        getContentPane().add(nppMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 180, -1));
 
-        jTextField3.setText("Nama Mahasiswa");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 180, 30));
+        namaMaha.setText("Nama Mahasiswa");
+        getContentPane().add(namaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 180, 30));
 
-        jTextField4.setText("Kata Sandi");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 180, -1));
+        passMaha.setText("Kata Sandi");
+        getContentPane().add(passMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 180, -1));
 
-        jRadioButton1.setText("L");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        LMaha.setText("L");
+        LMaha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                LMahaActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
+        getContentPane().add(LMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
 
-        jRadioButton2.setText("P");
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
+        PMaha.setText("P");
+        getContentPane().add(PMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
 
-        jTextField5.setText("Alamat");
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 180, 50));
+        alamatMaha.setText("Alamat");
+        getContentPane().add(alamatMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 180, 50));
 
-        jTextField6.setText("e-mail");
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 180, -1));
+        emailMaha.setText("e-mail");
+        getContentPane().add(emailMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 180, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "HINDU", "BUDHA", "KONGHUCU", " " }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 120, -1));
+        agamaMaha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "HINDU", "BUDHA", "KONGHUCU", " " }));
+        getContentPane().add(agamaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 120, -1));
 
-        jButton1.setText("BUAT");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, -1, -1));
+        buatMaha.setText("BUAT");
+        getContentPane().add(buatMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, -1, -1));
 
-        jButton2.setText("Kembali");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
+        kembaliButton.setText("Kembali");
+        getContentPane().add(kembaliButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/form-Mahasiswa.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 450, 560));
@@ -99,13 +99,13 @@ public class addMaha extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void LMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LMahaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_LMahaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nimActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,19 +143,19 @@ public class addMaha extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton LMaha;
+    private javax.swing.JRadioButton PMaha;
+    private javax.swing.JComboBox<String> agamaMaha;
+    private javax.swing.JTextField alamatMaha;
+    private javax.swing.JButton buatMaha;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField emailMaha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JButton kembaliButton;
+    private javax.swing.JTextField namaMaha;
+    private javax.swing.JTextField nim;
+    private javax.swing.JTextField nppMaha;
+    private javax.swing.JTextField passMaha;
     // End of variables declaration//GEN-END:variables
 }

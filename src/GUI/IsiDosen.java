@@ -140,9 +140,9 @@ public class IsiDosen extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        LoginDosen d = new LoginDosen();
-        d.setVisible(true);
-        this.setVisible(false);
+//        LoginDosen d = new LoginDosen();
+//        d.setVisible(true);
+//        this.setVisible(false);
         
     }//GEN-LAST:event_jLabel3MouseClicked
 

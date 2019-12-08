@@ -34,11 +34,11 @@ public class addProdi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        kembaliButton = new javax.swing.JButton();
         namaProdi = new javax.swing.JTextField();
         idProdi = new javax.swing.JTextField();
         passProdi = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        buatProdi = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -47,13 +47,13 @@ public class addProdi extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(528, 660));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Kembali");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        kembaliButton.setText("Kembali");
+        kembaliButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                kembaliButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
+        getContentPane().add(kembaliButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
         namaProdi.setText("nama prodi");
         namaProdi.addActionListener(new java.awt.event.ActionListener() {
@@ -61,43 +61,43 @@ public class addProdi extends javax.swing.JFrame {
                 namaProdiActionPerformed(evt);
             }
         });
-        getContentPane().add(namaProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 140, -1));
+        getContentPane().add(namaProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 140, -1));
 
         idProdi.setText("username");
-        getContentPane().add(idProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 140, -1));
+        getContentPane().add(idProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 140, -1));
 
         passProdi.setText("kata sandi");
-        getContentPane().add(passProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 140, -1));
+        getContentPane().add(passProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, 140, -1));
 
-        jButton2.setText("BUAT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        buatProdi.setText("BUAT");
+        buatProdi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buatProdiActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 80, 30));
+        getContentPane().add(buatProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 80, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/form-prodi.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 450, 590));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/addProdi2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 690));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 530, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void kembaliButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliButtonActionPerformed
         // TODO add your handling code here:
         IsiAdmin d = new IsiAdmin();
         d.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_kembaliButtonActionPerformed
 
     private void namaProdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaProdiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_namaProdiActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void buatProdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buatProdiActionPerformed
         // TODO add your handling code here:
         Prodi pro = new Prodi();
         try {
@@ -110,7 +110,7 @@ public class addProdi extends javax.swing.JFrame {
             Logger.getLogger(addProdi.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_buatProdiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,11 +148,11 @@ public class addProdi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buatProdi;
     private javax.swing.JTextField idProdi;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton kembaliButton;
     private javax.swing.JTextField namaProdi;
     private javax.swing.JTextField passProdi;
     // End of variables declaration//GEN-END:variables

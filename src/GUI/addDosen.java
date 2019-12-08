@@ -27,70 +27,69 @@ public class addDosen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        nppDosen = new javax.swing.JTextField();
+        namaDosen = new javax.swing.JTextField();
+        nidn = new javax.swing.JTextField();
+        passDosen = new javax.swing.JTextField();
+        LDosen = new javax.swing.JRadioButton();
+        PDosen = new javax.swing.JRadioButton();
+        alamatDosen = new javax.swing.JTextField();
+        emailDosen = new javax.swing.JTextField();
+        agamaDosen = new javax.swing.JComboBox<>();
+        buatDosen = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(528, 660));
         setSize(new java.awt.Dimension(528, 660));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setText("NPP");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nppDosen.setText("NPP");
+        nppDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nppDosenActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
+        getContentPane().add(nppDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 180, -1));
 
-        jTextField2.setText("Nama Dosen");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        namaDosen.setText("Nama Dosen");
+        namaDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                namaDosenActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 180, 50));
+        getContentPane().add(namaDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 180, 50));
 
-        jTextField3.setText("NIDN");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 180, -1));
+        nidn.setText("NIDN");
+        getContentPane().add(nidn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 180, -1));
 
-        jTextField4.setText("Kata Sandi");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 180, -1));
+        passDosen.setText("Kata Sandi");
+        getContentPane().add(passDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 180, -1));
 
-        jRadioButton1.setText("L");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        LDosen.setText("L");
+        LDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                LDosenActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, -1, -1));
+        getContentPane().add(LDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, -1, -1));
 
-        jRadioButton2.setText("P");
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, -1, -1));
+        PDosen.setText("P");
+        getContentPane().add(PDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, -1, -1));
 
-        jTextField5.setText("Alamat");
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 180, 60));
+        alamatDosen.setText("Alamat");
+        getContentPane().add(alamatDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 180, 60));
 
-        jTextField6.setText("e-mail");
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 180, -1));
+        emailDosen.setText("e-mail");
+        getContentPane().add(emailDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 180, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "HINDU", "BUDHA", "KONGHUCU", " " }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 120, -1));
+        agamaDosen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "HINDU", "BUDHA", "KONGHUCU", " " }));
+        getContentPane().add(agamaDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 120, -1));
 
-        jButton1.setText("BUAT");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 603, 60, 30));
+        buatDosen.setText("BUAT");
+        getContentPane().add(buatDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 603, 60, 30));
 
         jButton2.setText("Kembali");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
@@ -105,17 +104,17 @@ public class addDosen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void namaDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaDosenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_namaDosenActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void LDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDosenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_LDosenActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nppDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nppDosenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nppDosenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,19 +152,19 @@ public class addDosen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JRadioButton LDosen;
+    private javax.swing.JRadioButton PDosen;
+    private javax.swing.JComboBox<String> agamaDosen;
+    private javax.swing.JTextField alamatDosen;
+    private javax.swing.JButton buatDosen;
+    private javax.swing.JTextField emailDosen;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField namaDosen;
+    private javax.swing.JTextField nidn;
+    private javax.swing.JTextField nppDosen;
+    private javax.swing.JTextField passDosen;
     // End of variables declaration//GEN-END:variables
 }

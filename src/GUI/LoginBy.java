@@ -22,9 +22,9 @@ public class LoginBy extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Username = new javax.swing.JTextField();
+        kataSandi = new javax.swing.JTextField();
+        masukButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -34,19 +34,19 @@ public class LoginBy extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setText("Username");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 120, 30));
+        Username.setText("Username");
+        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 120, 30));
 
-        jTextField2.setText("Kata sandi");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        kataSandi.setText("Kata sandi");
+        kataSandi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                kataSandiActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 150, 30));
+        getContentPane().add(kataSandi, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 150, 30));
 
-        jButton1.setText("MASUK");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
+        masukButton.setText("MASUK");
+        getContentPane().add(masukButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/Close32.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -69,9 +69,9 @@ public class LoginBy extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void kataSandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kataSandiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_kataSandiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,11 +109,11 @@ public class LoginBy extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField Username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField kataSandi;
+    private javax.swing.JButton masukButton;
     // End of variables declaration//GEN-END:variables
 }
