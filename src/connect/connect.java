@@ -7,46 +7,54 @@ package connect;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Ajeng
  */
 public class connect {
-    private static Connection conn;
-    private static final String url = "jdbc:mysql://localhost/";
-    private static final String timezone = "?usetimezone=true&serverTimezone=UTC";
-    private static String namaDB, user, pass;
-    
+    private static Connection connection = null;
     
     public static Connection getConnection(){
-        try{
-            namaDB = "tugas_akhir";//sesuaikan dengan nama database di mySQL
-            user = "aryaherro";//sesuaikan dengan username di mySQL
-            pass = "03042009";//sesuaikan dengan password di mySQL default ("")
+        if (connection==null){
+            try {
+                String url = "jdbc:mysql://localhost/";
+                String timezone = "?usetimezone=true&serverTimezone=UTC";
+                String namaDB, user, pass;
+                
+                namaDB = "tugas_akhir";//sesuaikan dengan nama database di mySQL
+                user = "root";//sesuaikan dengan username di mySQL
+                pass = "";//sesuaikan dengan password di mySQL default ("")
             
-            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-            conn = DriverManager.getConnection(url + namaDB+ timezone, user, pass);
+                
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection(url+timezone, user, pass);
+            } catch (Exception e) {
+                System.out.println("error di sini juga");
+                e.printStackTrace();
+                return null;
+            }
         }
-        catch(SQLException e){
-            System.out.println("error");
-        }
-        return null;
-    }
-
-    /**
-     * @return the con
-     */
-    public static Connection getCon() {
-        return conn;
-    }
-
-    /**
-     * @param aCon the con to set
-     */
-    public static void setCon(Connection aCon) {
-        conn = aCon;
+        return connection;
+        
     }
     
-    
+    public static boolean isConnect(){
+        try {
+            if (getConnection()==null){
+                return false;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(connect.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;
+    }
+
+    public ResultSet getConnection(String query) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   
 }
