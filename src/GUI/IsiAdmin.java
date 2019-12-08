@@ -7,6 +7,7 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 
 /**
  *
@@ -148,8 +149,7 @@ public class IsiAdmin extends javax.swing.JFrame {
             //addProdi d = new addProdi();
             //d.setVisible(true);
             //this.setVisible(false);
-        }
-        
+        }       
     }//GEN-LAST:event_jTmbProActionPerformed
 
     private void jTmbDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmbDosenActionPerformed
