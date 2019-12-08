@@ -97,6 +97,11 @@ public class addMaha extends javax.swing.JFrame {
         getContentPane().add(buatMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, -1, -1));
 
         kembaliButton.setText("Kembali");
+        kembaliButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembaliButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(kembaliButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/form-Mahasiswa.png"))); // NOI18N
@@ -119,6 +124,12 @@ public class addMaha extends javax.swing.JFrame {
     private void agamaMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agamaMahaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_agamaMahaActionPerformed
+
+    private void kembaliButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliButtonActionPerformed
+        // TODO add your handling code here:
+        new IsiAdmin(DataTransfer).setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_kembaliButtonActionPerformed
 
     /**
      * @param args the command line arguments

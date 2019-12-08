@@ -10,6 +10,7 @@ import connect.connect;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /** @pdOid ac735255-5f22-4861-a9f6-324cc501ea97 */
 public class User {
@@ -93,13 +94,19 @@ public class User {
    public boolean cekLogin(String username, String pass) throws SQLException{
        getSingleDatabase(username);
        if((getUsername() == null)||(getUsername().equals("")))
-               return false;
+       {
+           JOptionPane.showMessageDialog(null, "Username tidak terdaftar!");
+           return false;
+       }
        else
        {
            if(getPassword().equals(pass))
                 return true;
            else
+           {
+               JOptionPane.showMessageDialog(null, "Password Salah!");
                return false;
+           }
        }
    }
 }

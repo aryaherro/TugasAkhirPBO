@@ -94,9 +94,8 @@ public class addProdi extends javax.swing.JFrame {
 
     private void kembaliButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliButtonActionPerformed
         // TODO add your handling code here:
-        IsiAdmin d = new IsiAdmin();
-        d.setVisible(true);
-        this.setVisible(false);
+        new IsiAdmin(DataTransfer).setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_kembaliButtonActionPerformed
 
     private void namaProdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaProdiActionPerformed

@@ -87,39 +87,40 @@ public class LoginBy extends javax.swing.JFrame {
         // TODO add your handling code here:
         User u = new User();
         try {
-            u.cekLogin(Username.getText(), kataSandi.getText());
-            switch (u.getTypeUser())
-            {
-                case "Admin" :
+            if((u.cekLogin(Username.getText(), kataSandi.getText())) && (u.getTypeUser() != null)){
+                switch (u.getTypeUser())
                 {
-                    new IsiAdmin(u.getUsername()).setVisible(true);
-                    break;
+                    case "Admin" :
+                    {
+                        new IsiAdmin(u.getUsername()).setVisible(true);
+                        break;
+                    }
+
+                    case "Prodi" :
+                    {
+                        new IsiProdi(u.getUsername()).setVisible(true);
+                        break;
+                    }
+
+                    case "Dosen" :
+                    {
+                        new IsiDosen(u.getUsername()).setVisible(true);
+                        break;
+                    }
+
+                    case "Mahasiswa" :
+                    {
+                        new IsiMahasiswa(u.getUsername()).setVisible(true);
+                        break;
+                    }
+
+                    default :
+                    {
+                        JOptionPane.showMessageDialog(null, "Data login tidak ditemukan!");
+                    }
                 }
-                
-                case "Prodi" :
-                {
-                    new IsiProdi(u.getUsername()).setVisible(true);
-                    break;
-                }
-                
-                case "Dosen" :
-                {
-                    new IsiDosen(u.getUsername()).setVisible(true);
-                    break;
-                }
-                
-                case "Mahasiswa" :
-                {
-                    new IsiMahasiswa(u.getUsername()).setVisible(true);
-                    break;
-                }
-                
-                default :
-                {
-                    JOptionPane.showMessageDialog(null, "Data login tidak ditemukan!");
-                }
+                setVisible(false);
             }
-            setVisible(false);
         } catch (SQLException ex) {
             Logger.getLogger(LoginBy.class.getName()).log(Level.SEVERE, null, ex);
         }
