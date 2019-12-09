@@ -92,16 +92,22 @@ public class User {
    }
    
    public boolean cekLogin(String username, String pass) throws SQLException{
-       getSingleDatabase(username);
-       if((getUsername() == null)||(getUsername().equals("")))
+       User u = new User();
+       u.getSingleDatabase(username);
+       if((u.getUsername() == null)||(u.getUsername().equals("")))
        {
            JOptionPane.showMessageDialog(null, "Username tidak terdaftar!");
            return false;
        }
        else
        {
-           if(getPassword().equals(pass))
+           if(u.getPassword().equals(pass))
+           {
+               setUsername(u.getUsername());
+               setPassword(u.getPassword());
+               setTypeUser(u.getTypeUser());
                 return true;
+           }
            else
            {
                JOptionPane.showMessageDialog(null, "Password Salah!");

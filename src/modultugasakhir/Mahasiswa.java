@@ -63,10 +63,8 @@ public class Mahasiswa extends Manusia {
            while(rs.next()){
                Mahasiswa maha = new Mahasiswa();
                maha.setNim(rs.getString("nim"));
-               
                maha.DosenPembimbingMahasiswa.getSingleDatabase(rs.getString("npp"));
                maha.ProdiDalamMahasiswa.getSingleDatabase(rs.getString("idProdi"));
-              
                maha.setNama(rs.getString("nama"));
                maha.setNik(rs.getString("nik"));
                maha.setTanggalLahir(rs.getString("tanggalLahir"));
@@ -93,10 +91,8 @@ public class Mahasiswa extends Manusia {
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setNim(rs.getString("nim"));
-               
                DosenPembimbingMahasiswa.getSingleDatabase(rs.getString("npp"));
                ProdiDalamMahasiswa.getSingleDatabase(rs.getString("idProdi"));
-              
                setNama(rs.getString("nama"));
                setNik(rs.getString("nik"));
                setTanggalLahir(rs.getString("tanggalLahir"));
@@ -137,7 +133,35 @@ public class Mahasiswa extends Manusia {
    }
    
    public void insertToUser(String Password) throws SQLException{
-       User u = new User(getNim(), Password, "Mahasiswa");
-       u.insertToDatabase();
+       new User(getNim(), Password, "Mahasiswa").insertToDatabase();
+   }
+   
+   public void editDatabase() throws SQLException{
+       String query = "UPDATE mahasiswa SET npp = (?), idProdi = (?), nama = (?), nik = (?), tanggalLahir = (?), jenisKelamin = (?),"
+                      + " alamat = (?), email = (?), agama = (?) WHERE nim = (?)";
+       PreparedStatement statement = connect.getConnection().prepareStatement(query);
+       statement.setString(1, DosenPembimbingMahasiswa.getNpp());
+       statement.setString(2, ProdiDalamMahasiswa.getIdProdi());
+       statement.setString(3, getNama());
+       statement.setString(4, getNik());
+       statement.setString(5, getTanggalLahir());
+       statement.setString(6, ""+getJenisKelamin());
+       statement.setString(7, getAlamat());
+       statement.setString(8, getEmail());
+       statement.setString(9, getAgama());
+       statement.setString(10, getNim());
+       
+       statement.execute();
+       statement.close();
+       
+   }
+   
+   public boolean cekExistData(String nim){
+       Mahasiswa m = new Mahasiswa();
+       m.getSingleDatabase(nim);
+       if(m.getNama() == null)
+           return false;
+       else
+           return true;
    }
 }

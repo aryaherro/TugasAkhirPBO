@@ -57,16 +57,16 @@ public class addMaha extends javax.swing.JFrame {
                 nimActionPerformed(evt);
             }
         });
-        getContentPane().add(nim, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 180, -1));
+        getContentPane().add(nim, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 180, -1));
 
         nppMaha.setText("NPP");
-        getContentPane().add(nppMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 180, -1));
+        getContentPane().add(nppMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 180, -1));
 
         namaMaha.setText("Nama Mahasiswa");
-        getContentPane().add(namaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 180, 30));
+        getContentPane().add(namaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 180, 30));
 
         passMaha.setText("Kata Sandi");
-        getContentPane().add(passMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 180, -1));
+        getContentPane().add(passMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 180, -1));
 
         LMaha.setText("L");
         LMaha.addActionListener(new java.awt.event.ActionListener() {
@@ -74,16 +74,16 @@ public class addMaha extends javax.swing.JFrame {
                 LMahaActionPerformed(evt);
             }
         });
-        getContentPane().add(LMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
+        getContentPane().add(LMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, -1, -1));
 
         PMaha.setText("P");
-        getContentPane().add(PMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
+        getContentPane().add(PMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
 
         alamatMaha.setText("Alamat");
-        getContentPane().add(alamatMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 180, 50));
+        getContentPane().add(alamatMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 180, 50));
 
         emailMaha.setText("e-mail");
-        getContentPane().add(emailMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 180, -1));
+        getContentPane().add(emailMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 180, -1));
 
         agamaMaha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "KATOLIK", "HINDU", "BUDHA", "KONGHUCU" }));
         agamaMaha.addActionListener(new java.awt.event.ActionListener() {
@@ -91,9 +91,14 @@ public class addMaha extends javax.swing.JFrame {
                 agamaMahaActionPerformed(evt);
             }
         });
-        getContentPane().add(agamaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 120, -1));
+        getContentPane().add(agamaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 120, -1));
 
         buatMaha.setText("BUAT");
+        buatMaha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buatMahaActionPerformed(evt);
+            }
+        });
         getContentPane().add(buatMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, -1, -1));
 
         kembaliButton.setText("Kembali");
@@ -130,6 +135,12 @@ public class addMaha extends javax.swing.JFrame {
         new IsiAdmin(DataTransfer).setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_kembaliButtonActionPerformed
+
+    private void buatMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buatMahaActionPerformed
+        // TODO add your handling code here:
+        
+        nim.setVisible(false);
+    }//GEN-LAST:event_buatMahaActionPerformed
 
     /**
      * @param args the command line arguments

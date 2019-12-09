@@ -224,12 +224,11 @@ public class Dosen extends Manusia {
    }
            
    public void insertToUser(String Password) throws SQLException{
-       User u = new User(getNpp(), Password, "Dosen");
-       u.insertToDatabase();
+       new User(getNpp(), Password, "Dosen").insertToDatabase();
    }
    
    public void editDatabase() throws SQLException{
-       String query = "UPDATE dosen SET nama = (?), tanggalLahir = (?), jenisKelamin = (?),"
+       String query = "UPDATE dosen SET nama = (?), nik =(?), tanggalLahir = (?), jenisKelamin = (?),"
                       + " alamat = (?), email = (?), agama = (?) WHERE npp = (?)";
        PreparedStatement statement = connect.getConnection().prepareStatement(query);
        statement.setString(1, getNama());
@@ -244,5 +243,14 @@ public class Dosen extends Manusia {
        statement.execute();
        statement.close();
        
+   }
+   
+   public boolean cekExistData(String npp){
+       Dosen d = new Dosen();
+       d.getSingleDatabase(npp);
+       if(d.getNama() == null)
+           return false;
+       else
+           return true;
    }
 }
