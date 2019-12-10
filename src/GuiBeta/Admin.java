@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GuiBeta;
+
+import GUI.*;
 
 /**
  *
  * @author Jempol
  */
-public class addMaha extends javax.swing.JFrame {
+public class Admin extends javax.swing.JFrame {
     String DataTransfer;
     /**
      * Creates new form addMaha
      */
-    public addMaha() {
+    public Admin() {
         initComponents();
     }
     
-    public addMaha(String DataTransfer) {
+    public Admin(String DataTransfer) {
         this.DataTransfer = DataTransfer;
         initComponents();
     }
@@ -33,6 +35,7 @@ public class addMaha extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jComboBox1 = new javax.swing.JComboBox<>();
         nim = new javax.swing.JTextField();
         nppMaha = new javax.swing.JTextField();
         namaMaha = new javax.swing.JTextField();
@@ -59,6 +62,9 @@ public class addMaha extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(530, 660));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select-", "Prodi", "Dosen", "Mahasiswa" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
         nim.setText("NIM");
         nim.addActionListener(new java.awt.event.ActionListener() {
@@ -193,20 +199,23 @@ public class addMaha extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addMaha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addMaha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addMaha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addMaha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addMaha().setVisible(true);
+                new Admin().setVisible(true);
             }
         });
     }
@@ -222,6 +231,7 @@ public class addMaha extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailMaha;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jKLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
