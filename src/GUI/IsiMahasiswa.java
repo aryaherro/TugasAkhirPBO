@@ -74,15 +74,15 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(50, 250, 220, 30);
 
-        jSeminarProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jSeminarProposal.setText("JADWAL SEMINAR PROPOSAL");
+        jSeminarProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jSeminarProposal.setText("LIHAT JADWAL SEMINAR PROPOSAL");
         jPanel1.add(jSeminarProposal);
-        jSeminarProposal.setBounds(60, 420, 320, 30);
+        jSeminarProposal.setBounds(60, 420, 310, 30);
 
-        jBeritaAcara1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        jBeritaAcara1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jBeritaAcara1.setText("LIHAT BERITA ACARA");
         jPanel1.add(jBeritaAcara1);
-        jBeritaAcara1.setBounds(330, 370, 260, 30);
+        jBeritaAcara1.setBounds(340, 370, 260, 30);
 
         jSimpan.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jSimpan.setText("SIMPAN");
@@ -94,15 +94,15 @@ public class IsiMahasiswa extends javax.swing.JFrame {
         jPanel1.add(jSimpan);
         jSimpan.setBounds(490, 470, 120, 30);
 
-        jSeminarTA2.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        jSeminarTA2.setText("JADWAL SEMINAR TA");
+        jSeminarTA2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jSeminarTA2.setText("LIHAT JADWAL SEMINAR TA");
         jSeminarTA2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSeminarTA2ActionPerformed(evt);
             }
         });
         jPanel1.add(jSeminarTA2);
-        jSeminarTA2.setBounds(50, 370, 260, 30);
+        jSeminarTA2.setBounds(60, 370, 260, 30);
 
         txtDeskripsi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

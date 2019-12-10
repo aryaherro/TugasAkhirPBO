@@ -92,26 +92,26 @@ public class IsiDosen extends javax.swing.JFrame {
                 jBeritaAcara1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBeritaAcara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 240, 20));
+        getContentPane().add(jBeritaAcara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 240, 20));
 
         jSeminarTA2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jSeminarTA2.setText("JADWAL SEMINAR TA");
-        getContentPane().add(jSeminarTA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 240, 20));
+        jSeminarTA2.setText("LIHAT JADWAL SEMINAR TA");
+        getContentPane().add(jSeminarTA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, 20));
 
         jSeminarProposal.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jSeminarProposal.setText("JADWAL SEMINAR PROPOSAL");
-        getContentPane().add(jSeminarProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 280, 20));
+        jSeminarProposal.setText("LIHAT JADWAL SEMINAR PROPOSAL");
+        getContentPane().add(jSeminarProposal, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 310, 20));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "NIM", "TANGGAL BIMBINGAN", "JUDUL", "HISTORY BIMBINGAN", "KELAYAKAN"
+                "NIM", "TANGGAL BIMBINGAN", "JUDUL", "HISTORY BIMBINGAN", "KELAYAKAN", "JADWAL SEMINAR"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
