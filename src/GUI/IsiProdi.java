@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Jempol
  */
 public class IsiProdi extends javax.swing.JFrame {
-
+    String DataTransfer;
     /**
      * Creates new form IsiProdi
      */
@@ -22,6 +22,12 @@ public class IsiProdi extends javax.swing.JFrame {
         this.setBackground (new Color(0,0,0,0));
     }
 
+    public IsiProdi(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
+        initComponents();
+        this.setBackground (new Color(0,0,0,0));
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -148,9 +154,7 @@ public class IsiProdi extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        LoginProdi c = new LoginProdi();
-        c.setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

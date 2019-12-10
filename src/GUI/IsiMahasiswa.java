@@ -10,7 +10,7 @@ import modultugasakhir.*;
  * @author Jempol
  */
 public class IsiMahasiswa extends javax.swing.JFrame {
-
+    String DataTransfer;
     private Object txtProposal;
     private Object jtxtProposal;
 
@@ -18,6 +18,12 @@ public class IsiMahasiswa extends javax.swing.JFrame {
      * Creates new form IsiMahasiswa
      */
     public IsiMahasiswa() {
+        initComponents();
+        this.setBackground (new Color(0,0,0,0));
+    }
+
+    public IsiMahasiswa(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
         initComponents();
         this.setBackground (new Color(0,0,0,0));
     }
@@ -160,9 +166,7 @@ public class IsiMahasiswa extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        LoginMahasiswa c = new LoginMahasiswa();
-        c.setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jtxtProposal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtProposal1ActionPerformed

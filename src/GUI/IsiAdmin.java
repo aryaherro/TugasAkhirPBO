@@ -6,19 +6,33 @@
 package GUI;
 
 import java.awt.Color;
-import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modultugasakhir.*;
 
 /**
  *
  * @author Jempol
  */
 public class IsiAdmin extends javax.swing.JFrame {
-
+    String DataTransfer;
     /**
      * Creates new form IsiAdmin
      */
     public IsiAdmin() {
         initComponents();
+        this.setBackground (new Color(0,0,0,0)); 
+    }
+    
+    public IsiAdmin(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
+        initComponents();
+        try {
+            new User().getSingleDatabase(DataTransfer);
+        } catch (SQLException ex) {
+            Logger.getLogger(IsiAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setBackground (new Color(0,0,0,0)); 
     }
 
@@ -116,31 +130,26 @@ public class IsiAdmin extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        LoginAdmin d = new LoginAdmin();
-        d.setVisible(true);
-        this.setVisible(false);
-
+        new LoginBy().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jBtnGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnGOActionPerformed
         
         if (jTmbMaha.isSelected()) {
-            addMaha d = new addMaha();
-            d.setVisible(true);
+            new addMaha(DataTransfer).setVisible(true);
             //this.setVisible(false);
         }
         if(jTmbDosen.isSelected()){
-                 addDosen x = new addDosen();
-                 x.setVisible(true);
+            new addDosen(DataTransfer).setVisible(true);
                  //this.setVisible(false);
                  }
         if (jTmbPro.isSelected()) {
-            addProdi y = new addProdi();
-            y.setVisible(true);
+            new addProdi(DataTransfer).setVisible(true);
             //this.setVisible(false);
             
         }
-        
+        setVisible(false);
     }//GEN-LAST:event_jBtnGOActionPerformed
 
     private void jTmbProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmbProActionPerformed
@@ -148,8 +157,7 @@ public class IsiAdmin extends javax.swing.JFrame {
             //addProdi d = new addProdi();
             //d.setVisible(true);
             //this.setVisible(false);
-        }
-        
+        }       
     }//GEN-LAST:event_jTmbProActionPerformed
 
     private void jTmbDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmbDosenActionPerformed

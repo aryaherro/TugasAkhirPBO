@@ -6,6 +6,10 @@
 
 package modultugasakhir;
 
+import connect.connect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 /** @pdOid 6ceddc8d-e6ee-411c-a051-d80033ebf740 */
@@ -21,6 +25,13 @@ public class Kelayakan {
    /** @pdOid cf0ff2d4-4c29-404c-87a0-1ca2d6719f37 */
    public Kelayakan() {
       // TODO: implement
+   }
+   
+   public Kelayakan(Boolean statusLayak, String idJudul) {
+      // TODO: implement
+      autoInsertId();
+      setStatusLayak(statusLayak);
+      JudulDalamKelayakan.getSingleDatabase(idJudul);
    }
    
    /** @pdOid 53443faf-0f30-40e5-8635-b0f723418a60 */
@@ -45,4 +56,75 @@ public class Kelayakan {
       statusLayak = newStatusLayak;
    }
 
+   @SuppressWarnings("unchecked")
+   public ArrayList getAllDatabase(String query){
+       ArrayList<Kelayakan> list = new ArrayList<>();
+       try{
+           if(query.equals(""))
+               query = "SELECT * FROM kelayakan";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               Kelayakan kel = new Kelayakan();
+               kel.setIdLayak(rs.getString("idLayak"));
+               
+               kel.JudulDalamKelayakan.getSingleDatabase(rs.getString("idJudul"));
+               
+               kel.setStatusLayak(rs.getBoolean("statusLayak"));
+               
+               list.add(kel);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM kelayakan WHERE idLayak = (?)";
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               setIdLayak(rs.getString("idLayak"));
+               
+               JudulDalamKelayakan.getSingleDatabase(rs.getString("idJudul"));
+               
+               setStatusLayak(rs.getBoolean("statusLayak"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public void insertToDatabase(){
+       try{
+           String query = "INSERT INTO kelayakan VALUES (?, ?, ?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getIdLayak());
+           statement.setString(2, JudulDalamKelayakan.getIdJudul());
+           statement.setBoolean(3, getStatusLayak());
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public int getSizeDatabase(){
+       return getAllDatabase("").size();
+   }
+   
+   public void autoInsertId(){
+       setIdLayak(""+ getSizeDatabase() + 1);
+   }
 }

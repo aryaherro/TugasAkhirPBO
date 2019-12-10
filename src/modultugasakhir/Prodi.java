@@ -122,7 +122,7 @@ public class Prodi {
 
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
-       ArrayList list = new ArrayList<>();
+       ArrayList<Prodi> list = new ArrayList<>();
        try{
            if(query.equals(""))
                query = "SELECT * FROM prodi";
@@ -146,15 +146,15 @@ public class Prodi {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM prodi WHERE idProdi=" + query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM prodi WHERE idProdi = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setIdProdi(rs.getString("idProdi"));
                setNamaProdi(rs.getString("namaProdi"));
-               
            }
            statement.close();
            rs.close();
@@ -164,7 +164,7 @@ public class Prodi {
        }
    }
            
-   public void insertProdi(){
+   public void insertToDatabase(){
        try{
            String query = "INSERT INTO prodi VALUES (?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
@@ -181,8 +181,20 @@ public class Prodi {
    
    @SuppressWarnings("unchecked")
    public void getDosenDalamProdiDatabase(String idProdi){
-       String query2 = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=" + idProdi;
-       Dosen dos = new Dosen();
-       setDosenDalamProdi(dos.getAllDatabase(query2));
+       String query = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=\"" + idProdi + "\"";
+       setDosenDalamProdi(new Dosen().getAllDatabase(query));
+   }
+   
+   public void insertToUser(String Password) throws SQLException{
+       new User(getIdProdi(), Password, "Prodi").insertToDatabase();
+   }
+   
+   public boolean cekExistData(String idProdi){
+       Prodi p = new Prodi();
+       p.getSingleDatabase(idProdi);
+       if(p.getNamaProdi() == null)
+           return false;
+       else
+           return true;
    }
 }

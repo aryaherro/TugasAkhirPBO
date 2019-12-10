@@ -10,11 +10,16 @@ package GUI;
  * @author Jempol
  */
 public class addMaha extends javax.swing.JFrame {
-
+    String DataTransfer;
     /**
      * Creates new form addMaha
      */
     public addMaha() {
+        initComponents();
+    }
+    
+    public addMaha(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
         initComponents();
     }
 
@@ -27,21 +32,151 @@ public class addMaha extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        nim = new javax.swing.JTextField();
+        nppMaha = new javax.swing.JTextField();
+        namaMaha = new javax.swing.JTextField();
+        passMaha = new javax.swing.JTextField();
+        LMaha = new javax.swing.JRadioButton();
+        PMaha = new javax.swing.JRadioButton();
+        alamatMaha = new javax.swing.JTextField();
+        emailMaha = new javax.swing.JTextField();
+        agamaMaha = new javax.swing.JComboBox<>();
+        buatMaha = new javax.swing.JButton();
+        kembaliButton = new javax.swing.JButton();
+        nimLabel = new javax.swing.JLabel();
+        nppLabel = new javax.swing.JLabel();
+        namaMahaLabel = new javax.swing.JLabel();
+        kataSandiLabel = new javax.swing.JLabel();
+        tglLahirLabel = new javax.swing.JLabel();
+        jKLabel = new javax.swing.JLabel();
+        alamatLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        agamaLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(530, 660));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nim.setText("NIM");
+        nim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nimActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nim, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 180, -1));
+
+        nppMaha.setText("NPP");
+        getContentPane().add(nppMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 180, -1));
+
+        namaMaha.setText("Nama Mahasiswa");
+        getContentPane().add(namaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 180, 30));
+
+        passMaha.setText("Kata Sandi");
+        getContentPane().add(passMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 180, -1));
+
+        LMaha.setText("L");
+        LMaha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LMahaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
+
+        PMaha.setText("P");
+        getContentPane().add(PMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
+
+        alamatMaha.setText("Alamat");
+        getContentPane().add(alamatMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 180, 50));
+
+        emailMaha.setText("e-mail");
+        getContentPane().add(emailMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 180, -1));
+
+        agamaMaha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "KATOLIK", "HINDU", "BUDHA", "KONGHUCU" }));
+        agamaMaha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agamaMahaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(agamaMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 120, -1));
+
+        buatMaha.setText("BUAT");
+        buatMaha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buatMahaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buatMaha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, -1, -1));
+
+        kembaliButton.setText("Kembali");
+        kembaliButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembaliButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(kembaliButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
+
+        nimLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/NIM.png"))); // NOI18N
+        getContentPane().add(nimLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 100, 30));
+
+        nppLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/NPP.png"))); // NOI18N
+        getContentPane().add(nppLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 80, 30));
+
+        namaMahaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/namaMahasiswa.png"))); // NOI18N
+        getContentPane().add(namaMahaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, 30));
+
+        kataSandiLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/kataSandiM.png"))); // NOI18N
+        getContentPane().add(kataSandiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, 20));
+
+        tglLahirLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/tanggalLahirM.png"))); // NOI18N
+        getContentPane().add(tglLahirLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, 40));
+
+        jKLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/jenisKelaminM.png"))); // NOI18N
+        getContentPane().add(jKLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 120, 30));
+
+        alamatLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/alamatM.png"))); // NOI18N
+        getContentPane().add(alamatLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 80, 20));
+
+        emailLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/emailM.png"))); // NOI18N
+        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 70, 20));
+
+        agamaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/agamaM.png"))); // NOI18N
+        getContentPane().add(agamaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 70, 20));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/form-Mahasiswa.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 450, 560));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/addProdi2.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LMahaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LMahaActionPerformed
+
+    private void nimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nimActionPerformed
+
+    private void agamaMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agamaMahaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agamaMahaActionPerformed
+
+    private void kembaliButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliButtonActionPerformed
+        // TODO add your handling code here:
+        new IsiAdmin(DataTransfer).setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_kembaliButtonActionPerformed
+
+    private void buatMahaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buatMahaActionPerformed
+        // TODO add your handling code here:
+        
+        nim.setVisible(false);
+    }//GEN-LAST:event_buatMahaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +214,28 @@ public class addMaha extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton LMaha;
+    private javax.swing.JRadioButton PMaha;
+    private javax.swing.JLabel agamaLabel;
+    private javax.swing.JComboBox<String> agamaMaha;
+    private javax.swing.JLabel alamatLabel;
+    private javax.swing.JTextField alamatMaha;
+    private javax.swing.JButton buatMaha;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JTextField emailMaha;
+    private javax.swing.JLabel jKLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel kataSandiLabel;
+    private javax.swing.JButton kembaliButton;
+    private javax.swing.JTextField namaMaha;
+    private javax.swing.JLabel namaMahaLabel;
+    private javax.swing.JTextField nim;
+    private javax.swing.JLabel nimLabel;
+    private javax.swing.JLabel nppLabel;
+    private javax.swing.JTextField nppMaha;
+    private javax.swing.JTextField passMaha;
+    private javax.swing.JLabel tglLahirLabel;
     // End of variables declaration//GEN-END:variables
 }

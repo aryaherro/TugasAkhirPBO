@@ -142,10 +142,11 @@ public class Dosen extends Manusia {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM dosen WHERE npp=" + query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM dosen WHERE npp = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setNpp(rs.getString("npp"));
@@ -165,7 +166,7 @@ public class Dosen extends Manusia {
        }
    }
    
-   public void insertDosen(){
+   public void insertToDatabase(){
        try{
            String query = "INSERT INTO dosen VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
@@ -186,11 +187,11 @@ public class Dosen extends Manusia {
        }
    }
    
-   public void masukProdi(String Prodi){
+   public void addMasukProdi(String idProdi){
        try{
            String query = "INSERT INTO dosendanprodi VALUES (?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
-           statement.setString(1, Prodi);
+           statement.setString(1, idProdi);
            statement.setString(2, getNpp());           
            
            statement.execute();
@@ -199,5 +200,57 @@ public class Dosen extends Manusia {
        catch(SQLException e){
            
        }
+   }
+   
+   public void editMasukProdi(String idProdi){
+       try{
+           String query = "UPDATE dosendanprodi SET idProdi = (?) WHERE npp = (?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, idProdi);
+           statement.setString(2, getNpp());           
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   @SuppressWarnings("unchecked")
+   public void getProdiDalamDosenDatabase(String npp){
+       String query = "SELECT p.idProdi, p.namaProdi FROM dosendanprodi AS dpd INNER JOIN prodi as p ON dpd.idProdi = p.idProdi AND dpd.npp = \"" + npp + "\"";
+       setProdiDalamDosen(new Prodi().getAllDatabase(query));
+   }
+           
+   public void insertToUser(String Password) throws SQLException{
+       new User(getNpp(), Password, "Dosen").insertToDatabase();
+   }
+   
+   public void editDatabase() throws SQLException{
+       String query = "UPDATE dosen SET nama = (?), nik =(?), tanggalLahir = (?), jenisKelamin = (?),"
+                      + " alamat = (?), email = (?), agama = (?) WHERE npp = (?)";
+       PreparedStatement statement = connect.getConnection().prepareStatement(query);
+       statement.setString(1, getNama());
+       statement.setString(2, getNik());
+       statement.setString(3, getTanggalLahir());
+       statement.setString(4, ""+getJenisKelamin());
+       statement.setString(5, getAlamat());
+       statement.setString(6, getEmail());
+       statement.setString(7, getAgama());
+       statement.setString(8, getNpp());
+       
+       statement.execute();
+       statement.close();
+       
+   }
+   
+   public boolean cekExistData(String npp){
+       Dosen d = new Dosen();
+       d.getSingleDatabase(npp);
+       if(d.getNama() == null)
+           return false;
+       else
+           return true;
    }
 }

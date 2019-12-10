@@ -1,7 +1,12 @@
 package GUI;
 
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import modultugasakhir.*;
 //
 
 public class LoginBy extends javax.swing.JFrame {
@@ -22,11 +27,10 @@ public class LoginBy extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel6 = new javax.swing.JLabel();
+        Username = new javax.swing.JTextField();
+        kataSandi = new javax.swing.JTextField();
+        masukButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel6.setText("jLabel6");
@@ -34,6 +38,25 @@ public class LoginBy extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Username.setText("Username");
+        getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 120, 30));
+
+        kataSandi.setText("Kata sandi");
+        kataSandi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kataSandiActionPerformed(evt);
+            }
+        });
+        getContentPane().add(kataSandi, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 150, 30));
+
+        masukButton.setText("MASUK");
+        masukButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                masukButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(masukButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/Close32.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -43,42 +66,6 @@ public class LoginBy extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/Mahasiswa1.png"))); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 140, 40));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/Dosen.png"))); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 110, 40));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/Admin.png"))); // NOI18N
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 280, 130, 40));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image_pckg/Prodi.png"))); // NOI18N
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 120, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/LoginBy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 459));
@@ -92,44 +79,52 @@ public class LoginBy extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void kataSandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kataSandiActionPerformed
         // TODO add your handling code here:
-        LoginMahasiswa LMhs = new LoginMahasiswa();
-        LMhs.setVisible(true);
-        LMhs.pack();
-        LMhs.setLocationRelativeTo(null);
-        LMhs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_kataSandiActionPerformed
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void masukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukButtonActionPerformed
         // TODO add your handling code here:
-        LoginDosen LgD = new LoginDosen();
-        LgD.setVisible(true);
-        LgD.pack();
-        LgD.setLocationRelativeTo(null);
-        LgD.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
+        User u = new User();
+        try {
+            if((u.cekLogin(Username.getText(), kataSandi.getText())) && (u.getTypeUser() != null)){
+                switch (u.getTypeUser())
+                {
+                    case "Admin" :
+                    {
+                        new IsiAdmin(u.getUsername()).setVisible(true);
+                        break;
+                    }
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-        LoginAdmin ad = new LoginAdmin();
-        ad.setVisible(true);
-        ad.pack();
-        ad.setLocationRelativeTo(null);
-        ad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
+                    case "Prodi" :
+                    {
+                        new IsiProdi(u.getUsername()).setVisible(true);
+                        break;
+                    }
 
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        LoginProdi LgP = new LoginProdi();
-        LgP.setVisible(true);
-        LgP.pack();
-        LgP.setLocationRelativeTo(null);
-        LgP.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.dispose();
-    }//GEN-LAST:event_jLabel7MouseClicked
+                    case "Dosen" :
+                    {
+                        new IsiDosen(u.getUsername()).setVisible(true);
+                        break;
+                    }
+
+                    case "Mahasiswa" :
+                    {
+                        new IsiMahasiswa(u.getUsername()).setVisible(true);
+                        break;
+                    }
+
+                    default :
+                    {
+                        JOptionPane.showMessageDialog(null, "Data login tidak ditemukan!");
+                    }
+                }
+                setVisible(false);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginBy.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_masukButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,12 +162,11 @@ public class LoginBy extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField kataSandi;
+    private javax.swing.JButton masukButton;
     // End of variables declaration//GEN-END:variables
 }

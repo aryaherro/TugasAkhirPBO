@@ -6,6 +6,10 @@
 
 package modultugasakhir;
 
+import connect.connect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 /** @pdOid 5882c5af-60f8-40d5-8661-1f9490407925 */
@@ -15,12 +19,15 @@ public class Jabatan {
    /** @pdOid d526407f-58cf-4f6d-ba35-713080cf6365 */
    private String namaJabatan;
    
-   /** @pdRoleInfo migr=no name=Dosen assc=association7 mult=1..1 side=A */
-   public Dosen DosenDalamJabatan;
-   
    /** @pdOid b64ee835-35dc-4dd9-90ee-487dd4339c4b */
    public Jabatan() {
       // TODO: implement
+   }
+   
+   public Jabatan(String npp, String namaJabatan) {
+      // TODO: implement
+      autoInsertId();
+      setNamaJabatan(namaJabatan);
    }
    
    /** @pdOid 660b7125-1433-4c6f-9ce8-9f74d407f3fa */
@@ -45,4 +52,68 @@ public class Jabatan {
       namaJabatan = newNamaJabatan;
    }
 
+   @SuppressWarnings("unchecked")
+   public ArrayList getAllDatabase(String query){
+       ArrayList<Jabatan> list = new ArrayList<>();
+       try{
+           if(query.equals(""))
+               query = "SELECT * FROM jabatan";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               Jabatan jab = new Jabatan();
+               jab.setIdJabatan(rs.getString("idJabatan"));
+               
+               jab.setNamaJabatan(rs.getString("namaJabatan"));
+               list.add(jab);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM jabatan WHERE idJabatan = (?)";
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               setIdJabatan(rs.getString("idJabatan"));
+               setNamaJabatan(rs.getString("namaJabatan"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public void insertToDatabase(){
+       try{
+           String query = "INSERT INTO jabatan VALUES (?, ?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getIdJabatan());
+           statement.setString(2, getNamaJabatan());
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public int getSizeDatabase(){
+       return getAllDatabase("").size();
+   }
+   
+   public void autoInsertId(){
+       setIdJabatan(""+ getSizeDatabase() + 1);
+   }
 }

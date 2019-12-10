@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     Sat 07.12.19 21:43:28                        */
+/* Created on:     Sun 08.12.19 16:44:39                        */
 /*==============================================================*/
 
 
@@ -26,11 +26,8 @@ create table Dosen
 create table Jabatan
 (
    idJabatan            varchar(254) not null  comment '',
-   npp                  varchar(254) not null  comment '',
    namaJabatan          varchar(254) not null  comment '',
-   primary key (idJabatan),
-   constraint FK_JABATAN_ASSOCIATI_DOSEN foreign key (npp)
-      references Dosen (npp) on delete restrict on update restrict
+   primary key (idJabatan)
 );
 
 /*==============================================================*/
@@ -40,12 +37,15 @@ create table HistoryJabatan
 (
    idHistoryJabatan     varchar(254) not null  comment '',
    idJabatan            varchar(254) not null  comment '',
+   npp                  varchar(254) not null  comment '',
    startDate            datetime  comment '',
    tahunAjaran          varchar(254)  comment '',
    statusAktif          bool  comment '',
    primary key (idHistoryJabatan),
    constraint FK_HISTORYJ_ASSOCIATI_JABATAN foreign key (idJabatan)
-      references Jabatan (idJabatan) on delete restrict on update restrict
+      references Jabatan (idJabatan) on delete restrict on update restrict,
+   constraint FK_HISTORYJ_ASSOCIATI_DOSEN foreign key (npp)
+      references Dosen (npp) on delete restrict on update restrict
 );
 
 /*==============================================================*/
@@ -147,6 +147,7 @@ create table User
 (
    username             varchar(254) not null  comment '',
    password             varchar(254) not null  comment '',
+   typeUser             varchar(254) not null  comment '',
    primary key (username)
 );
 

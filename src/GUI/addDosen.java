@@ -10,11 +10,16 @@ package GUI;
  * @author Jempol
  */
 public class addDosen extends javax.swing.JFrame {
-
+    String DataTransfer;
     /**
      * Creates new form addDosen
      */
     public addDosen() {
+        initComponents();
+    }
+    
+    public addDosen(String DataTransfer) {
+        this.DataTransfer = DataTransfer;
         initComponents();
     }
 
@@ -27,21 +32,130 @@ public class addDosen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        nppDosen = new javax.swing.JTextField();
+        namaDosen = new javax.swing.JTextField();
+        nidn = new javax.swing.JTextField();
+        passDosen = new javax.swing.JTextField();
+        LDosen = new javax.swing.JRadioButton();
+        PDosen = new javax.swing.JRadioButton();
+        alamatDosen = new javax.swing.JTextField();
+        emailDosen = new javax.swing.JTextField();
+        agamaDosen = new javax.swing.JComboBox<>();
+        buatDosen = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        nppLabel = new javax.swing.JLabel();
+        namaDosenLabel = new javax.swing.JLabel();
+        nidnLabel = new javax.swing.JLabel();
+        kataSandiLabel = new javax.swing.JLabel();
+        tglLahirLabel = new javax.swing.JLabel();
+        jKLabel = new javax.swing.JLabel();
+        alamatLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        agamaLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(528, 660));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nppDosen.setText("NPP");
+        nppDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nppDosenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nppDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 180, -1));
+
+        namaDosen.setText("Nama Dosen");
+        namaDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namaDosenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(namaDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 180, 50));
+
+        nidn.setText("NIDN");
+        getContentPane().add(nidn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 180, -1));
+
+        passDosen.setText("Kata Sandi");
+        getContentPane().add(passDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 180, -1));
+
+        LDosen.setText("L");
+        LDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDosenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, -1));
+
+        PDosen.setText("P");
+        getContentPane().add(PDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, -1, -1));
+
+        alamatDosen.setText("Alamat");
+        getContentPane().add(alamatDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 180, 60));
+
+        emailDosen.setText("e-mail");
+        getContentPane().add(emailDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 180, -1));
+
+        agamaDosen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "HINDU", "BUDHA", "KONGHUCU", " " }));
+        getContentPane().add(agamaDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, 120, -1));
+
+        buatDosen.setText("BUAT");
+        getContentPane().add(buatDosen, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 60, 30));
+
+        jButton2.setText("Kembali");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
+
+        nppLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/NPP.png"))); // NOI18N
+        getContentPane().add(nppLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 70, 30));
+
+        namaDosenLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/namaDosen.png"))); // NOI18N
+        getContentPane().add(namaDosenLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 110, 20));
+
+        nidnLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/NIDN.png"))); // NOI18N
+        getContentPane().add(nidnLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 70, 20));
+
+        kataSandiLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/kataSandiM.png"))); // NOI18N
+        getContentPane().add(kataSandiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 100, 20));
+
+        tglLahirLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/tanggalLahirM.png"))); // NOI18N
+        getContentPane().add(tglLahirLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 120, 20));
+
+        jKLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/jenisKelaminM.png"))); // NOI18N
+        getContentPane().add(jKLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 120, 20));
+
+        alamatLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/alamatM.png"))); // NOI18N
+        getContentPane().add(alamatLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 70, 20));
+
+        emailLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/emailM.png"))); // NOI18N
+        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 60, 20));
+
+        agamaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/agamaM.png"))); // NOI18N
+        getContentPane().add(agamaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 540, 60, 20));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/form-Dosen.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 450, 560));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 450, 560));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/addProdi2.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void namaDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namaDosenActionPerformed
+
+    private void LDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LDosenActionPerformed
+
+    private void nppDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nppDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nppDosenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +193,28 @@ public class addDosen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton LDosen;
+    private javax.swing.JRadioButton PDosen;
+    private javax.swing.JComboBox<String> agamaDosen;
+    private javax.swing.JLabel agamaLabel;
+    private javax.swing.JTextField alamatDosen;
+    private javax.swing.JLabel alamatLabel;
+    private javax.swing.JButton buatDosen;
+    private javax.swing.JTextField emailDosen;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jKLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel kataSandiLabel;
+    private javax.swing.JTextField namaDosen;
+    private javax.swing.JLabel namaDosenLabel;
+    private javax.swing.JTextField nidn;
+    private javax.swing.JLabel nidnLabel;
+    private javax.swing.JTextField nppDosen;
+    private javax.swing.JLabel nppLabel;
+    private javax.swing.JTextField passDosen;
+    private javax.swing.JLabel tglLahirLabel;
     // End of variables declaration//GEN-END:variables
 }

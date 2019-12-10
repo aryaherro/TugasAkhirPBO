@@ -72,7 +72,7 @@ public class Judul {
 
    @SuppressWarnings("unchecked")
    public ArrayList getAllDatabase(String query){
-       ArrayList list = new ArrayList<>();
+       ArrayList<Judul> list = new ArrayList<>();
        try{
            if(query.equals(""))
                query = "SELECT * FROM judul";
@@ -82,7 +82,7 @@ public class Judul {
                Judul jud = new Judul();
                jud.setIdJudul(rs.getString("idJudul"));
                
-               MahasiswaDalamJudul.getSingleDatabase(rs.getString("nim"));
+               jud.MahasiswaDalamJudul.getSingleDatabase(rs.getString("nim"));
                
                jud.setNamaJudul(rs.getString("namaJudul"));
                jud.setDeskripsi(rs.getString("deskripsi"));
@@ -97,10 +97,11 @@ public class Judul {
        return list;
    }
    
-   public void getSingleDatabase(String query){
-       query = "SELECT * FROM judul WHERE idJudul="+query;
+   public void getSingleDatabase(String kunci){
+       String query = "SELECT * FROM judul WHERE idJudul = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                setIdJudul(rs.getString("idJudul"));
@@ -118,7 +119,7 @@ public class Judul {
        }
    }
    
-   public void insertMahasiswa(){
+   public void insertToDatabase(){
        try{
            String query = "INSERT INTO judul VALUES (?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
@@ -126,7 +127,6 @@ public class Judul {
            statement.setString(2, MahasiswaDalamJudul.getNim());
            statement.setString(3, getNamaJudul());
            statement.setString(4, getDeskripsi());
-           
            
            statement.execute();
            statement.close();
@@ -137,8 +137,7 @@ public class Judul {
    }
    
    public int getSizeDatabase(){
-       ArrayList list = getAllDatabase("");
-       return list.size();
+       return getAllDatabase("").size();
    }
    
    public void autoInsertId(){
