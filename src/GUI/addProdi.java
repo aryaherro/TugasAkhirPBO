@@ -45,11 +45,13 @@ public class addProdi extends javax.swing.JFrame {
         idProdi = new javax.swing.JTextField();
         passProdi = new javax.swing.JTextField();
         buatProdi = new javax.swing.JButton();
+        idProdiLabel = new javax.swing.JLabel();
+        namaProdiLabel = new javax.swing.JLabel();
+        kataSandiLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(528, 660));
         setSize(new java.awt.Dimension(528, 660));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -67,13 +69,13 @@ public class addProdi extends javax.swing.JFrame {
                 namaProdiActionPerformed(evt);
             }
         });
-        getContentPane().add(namaProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 140, -1));
+        getContentPane().add(namaProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 140, 30));
 
         idProdi.setText("username");
-        getContentPane().add(idProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 140, -1));
+        getContentPane().add(idProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 140, 30));
 
         passProdi.setText("kata sandi");
-        getContentPane().add(passProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, 140, -1));
+        getContentPane().add(passProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 140, 30));
 
         buatProdi.setText("BUAT");
         buatProdi.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +83,16 @@ public class addProdi extends javax.swing.JFrame {
                 buatProdiActionPerformed(evt);
             }
         });
-        getContentPane().add(buatProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 80, 30));
+        getContentPane().add(buatProdi, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 80, 30));
+
+        idProdiLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/IdProdi.png"))); // NOI18N
+        getContentPane().add(idProdiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, 30));
+
+        namaProdiLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/namaProdi.png"))); // NOI18N
+        getContentPane().add(namaProdiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, 30));
+
+        kataSandiLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/kataSandi.png"))); // NOI18N
+        getContentPane().add(kataSandiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/form-prodi.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 450, 590));
@@ -155,10 +166,13 @@ public class addProdi extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buatProdi;
     private javax.swing.JTextField idProdi;
+    private javax.swing.JLabel idProdiLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel kataSandiLabel;
     private javax.swing.JButton kembaliButton;
     private javax.swing.JTextField namaProdi;
+    private javax.swing.JLabel namaProdiLabel;
     private javax.swing.JTextField passProdi;
     // End of variables declaration//GEN-END:variables
 }
