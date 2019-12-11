@@ -83,7 +83,7 @@ public class isiFrom extends javax.swing.JFrame {
                 idTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(idTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 170, 20));
+        jPanel1.add(idTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 170, 30));
 
         idProdiLabel.setText("ID Prodi");
         jPanel1.add(idProdiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
@@ -119,10 +119,10 @@ public class isiFrom extends javax.swing.JFrame {
         jPanel1.add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 550, -1, -1));
 
         agamaLabel.setText("Agama");
-        jPanel1.add(agamaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, -1));
+        jPanel1.add(agamaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, -1, -1));
 
         prodiLabel1.setText("Prodi");
-        jPanel1.add(prodiLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, -1, -1));
+        jPanel1.add(prodiLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 640, -1, -1));
 
         dsnPembLabel.setText("Dosen Pembimbing");
         jPanel1.add(dsnPembLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 690, -1, -1));
@@ -144,7 +144,7 @@ public class isiFrom extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, -1, -1));
+        jPanel1.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, -1, -1));
 
         namaTextField.setText("nama");
         jPanel1.add(namaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 180, 30));
@@ -158,7 +158,7 @@ public class isiFrom extends javax.swing.JFrame {
         jPanel1.add(kataSandiTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 180, 30));
 
         nikTextField.setText("nik");
-        jPanel1.add(nikTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 180, -1));
+        jPanel1.add(nikTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 180, 30));
 
         LRadioButton.setText("L");
         jPanel1.add(LRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
@@ -175,7 +175,7 @@ public class isiFrom extends javax.swing.JFrame {
                 emailTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 180, -1));
+        jPanel1.add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 180, 30));
 
         agamaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "KATOLIK", "HINDU", "BUDHA", "KONGHUCU" }));
         agamaComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -183,20 +183,20 @@ public class isiFrom extends javax.swing.JFrame {
                 agamaComboBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(agamaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, 160, -1));
+        jPanel1.add(agamaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 600, 160, -1));
 
         prodiTextField.setText("prodi");
-        jPanel1.add(prodiTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 630, 180, -1));
+        jPanel1.add(prodiTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 640, 180, -1));
 
         dsnPembTextField.setText("dosen pembimbing");
         jPanel1.add(dsnPembTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 690, 180, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\PBO-GUI\\isiForm.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/isiForm.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 840));
 
         jScrollPane1.setViewportView(jPanel1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 770, 610));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 770, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
