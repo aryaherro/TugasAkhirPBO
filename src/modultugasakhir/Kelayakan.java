@@ -83,6 +83,37 @@ public class Kelayakan {
        return list;
    }
    
+   
+   @SuppressWarnings("unchecked")
+   public ArrayList getAllJudulKelayakanDatabase(String nim){
+       String query = "SELECT j.idJudul, j.namaJudul, j.deskripsi, k.statusLayak"
+                    + "FROM judul AS j, kelayakan AS k"
+                    + "WHERE j.idJudul = k.idJudul";
+       if (nim != "") {
+           query += " AND j.nim = \"" + nim + "\"";
+       }
+       ArrayList<Kelayakan> list = new ArrayList<>();
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               
+               Kelayakan kel = new Kelayakan();
+               kel.JudulDalamKelayakan.getSingleDatabase(rs.getString("idJudul"));
+               kel.JudulDalamKelayakan.getSingleDatabase(rs.getString("namaJudul"));
+               kel.JudulDalamKelayakan.getSingleDatabase(rs.getString("deskripsi"));
+               kel.setStatusLayak(rs.getBoolean("statusLayak"));
+               list.add(kel);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
    public void getSingleDatabase(String kunci){
        String query = "SELECT * FROM kelayakan WHERE idLayak = (?)";
        try{

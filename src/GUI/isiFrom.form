@@ -54,10 +54,10 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Prodi"/>
-                    <StringItem index="1" value="Dosen"/>
-                    <StringItem index="2" value="Mahasiswa"/>
-                    <StringItem index="3" value="Tambah Baru"/>
+                    <StringItem index="0" value="-Tambah Baru-"/>
+                    <StringItem index="1" value="Prodi"/>
+                    <StringItem index="2" value="Dosen"/>
+                    <StringItem index="3" value="Mahasiswa"/>
                   </StringArray>
                 </Property>
               </Properties>

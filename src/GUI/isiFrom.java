@@ -69,7 +69,7 @@ public class isiFrom extends javax.swing.JFrame {
         cariButton.setText("Cari");
         jPanel1.add(cariButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, -1));
 
-        opsiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prodi", "Dosen", "Mahasiswa", "Tambah Baru" }));
+        opsiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Tambah Baru-", "Prodi", "Dosen", "Mahasiswa" }));
         opsiComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opsiComboBoxActionPerformed(evt);

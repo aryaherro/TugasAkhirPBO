@@ -59,7 +59,7 @@ public class isi_maha extends javax.swing.JFrame {
 
             },
             new String [] {
-                "JUDUL", "DESKRIPSI", "KELAYAKAN"
+                "ID JUDUL", "JUDUL", "DESKRIPSI", "KELAYAKAN"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
