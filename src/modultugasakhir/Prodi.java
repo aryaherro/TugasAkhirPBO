@@ -146,6 +146,24 @@ public class Prodi {
        return list;
    }
    
+   public void getSingleNamaDatabase(String kunci){
+       String query = "SELECT * FROM prodi WHERE namaProdi = (?)";
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               setIdProdi(rs.getString("idProdi"));
+               setNamaProdi(rs.getString("namaProdi"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
    public void getSingleDatabase(String kunci){
        String query = "SELECT * FROM prodi WHERE idProdi = (?)";
        try{
@@ -178,15 +196,26 @@ public class Prodi {
            
        }
    }
+           
+   public void updateDatabase(){
+       try{
+           String query = "UPDATE prodi SET namaProdi = (?) WHERE idProdi = (?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getNamaProdi());           
+           statement.setString(2, getIdProdi());
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
    
    @SuppressWarnings("unchecked")
    public void getDosenDalamProdiDatabase(String idProdi){
        String query = "SELECT d.npp, d.nama, d.nik, d.tanggalLahir, d.jenisKelamin, d.alamat, d.email, d.agama	FROM dosendanprodi AS dpd INNER JOIN dosen as d ON dpd.npp = d.npp AND idProdi=\"" + idProdi + "\"";
        setDosenDalamProdi(new Dosen().getAllDatabase(query));
-   }
-   
-   public void insertToUser(String Password) throws SQLException{
-       new User(getIdProdi(), Password, "Prodi").insertToDatabase();
    }
    
    public boolean cekExistData(String idProdi){

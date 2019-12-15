@@ -28,11 +28,7 @@ public class IsiAdmin extends javax.swing.JFrame {
     public IsiAdmin(String DataTransfer) {
         this.DataTransfer = DataTransfer;
         initComponents();
-        try {
-            new User().getSingleDatabase(DataTransfer);
-        } catch (SQLException ex) {
-            Logger.getLogger(IsiAdmin.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        new User().getSingleDatabase(DataTransfer);
         this.setBackground (new Color(0,0,0,0)); 
     }
 

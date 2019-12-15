@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     Sun 08.12.19 16:44:39                        */
+/* Created on:     Sat 14.12.19 22:27:40                        */
 /*==============================================================*/
 
 
@@ -12,7 +12,7 @@ create table Dosen
    npp                  varchar(254) not null  comment '',
    nama                 varchar(254) not null  comment '',
    nik                  varchar(254)  comment '',
-   tanggalLahir         varchar(254)  comment '',
+   tanggalLahir         datetime  comment '',
    jenisKelamin         char(1)  comment '',
    alamat               varchar(254)  comment '',
    email                varchar(254)  comment '',
@@ -68,7 +68,7 @@ create table Mahasiswa
    idProdi              varchar(254)  comment '',
    nama                 varchar(254) not null  comment '',
    nik                  varchar(254)  comment '',
-   tanggalLahir         varchar(254)  comment '',
+   tanggalLahir         datetime  comment '',
    jenisKelamin         char(1)  comment '',
    alamat               varchar(254)  comment '',
    email                varchar(254)  comment '',
@@ -86,8 +86,8 @@ create table Mahasiswa
 create table JadwalSeminar
 (
    idJadwal             varchar(254) not null  comment '',
-   nim                  varchar(254)  comment '',
    idProdi              varchar(254)  comment '',
+   nim                  varchar(254)  comment '',
    jadwal               varchar(254) not null  comment '',
    primary key (idJadwal),
    constraint FK_JADWALSE_ASSOCIATI_PRODI foreign key (idProdi)

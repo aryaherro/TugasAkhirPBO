@@ -82,43 +82,39 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void masukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukButtonActionPerformed
         // TODO add your handling code here:
-        try {
-            if((getU().cekLogin(Username.getText(), kataSandi.getText())) && (getU().getTypeUser() != null)){
-                switch (getU().getTypeUser())
+        if ((getU().cekLogin(Username.getText(), kataSandi.getText())) && (getU().getTypeUser() != null)) {
+            switch (getU().getTypeUser())
+            {
+                case "Admin" :
                 {
-                    case "Admin" :
-                    {
-                        new AdminFrame().setVisible(true);
-                        break;
-                    }
-
-                    case "Prodi" :
-                    {
-  //                      new IsiProdi(u.getUsername()).setVisible(true);
-                        break;
-                    }
-
-                    case "Dosen" :
-                    {
-//                        new IsiDosen(u.getUsername()).setVisible(true);
-                        break;
-                    }
-
-                    case "Mahasiswa" :
-                    {
-                        new MahasiswaFrame(getU()).setVisible(true);
-                        break;
-                    }
-
-                    default :
-                    {
-                        JOptionPane.showMessageDialog(null, "Data login tidak ditemukan!");
-                    }
+                    new AdminFrame(getU()).setVisible(true);
+                    break;
                 }
-                setVisible(false);
+                
+                case "Prodi" :
+                {
+                    //                      new IsiProdi(u.getUsername()).setVisible(true);
+                    break;
+                }
+                
+                case "Dosen" :
+                {
+//                        new IsiDosen(u.getUsername()).setVisible(true);
+                    break;
+                }
+
+                case "Mahasiswa" :
+                {
+                    new MahasiswaFrame(getU()).setVisible(true);
+                    break;
+                }
+                
+                default :
+                {
+                    JOptionPane.showMessageDialog(null, "Data login tidak ditemukan!");
+                }
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+            setVisible(false);
         }
     }//GEN-LAST:event_masukButtonActionPerformed
 

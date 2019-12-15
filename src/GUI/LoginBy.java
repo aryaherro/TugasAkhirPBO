@@ -86,43 +86,39 @@ public class LoginBy extends javax.swing.JFrame {
     private void masukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukButtonActionPerformed
         // TODO add your handling code here:
         User u = new User();
-        try {
-            if((u.cekLogin(Username.getText(), kataSandi.getText())) && (u.getTypeUser() != null)){
-                switch (u.getTypeUser())
+        if((u.cekLogin(Username.getText(), kataSandi.getText())) && (u.getTypeUser() != null)){
+            switch (u.getTypeUser())
+            {
+                case "Admin" :
                 {
-                    case "Admin" :
-                    {
-                        new IsiAdmin(u.getUsername()).setVisible(true);
-                        break;
-                    }
-
-                    case "Prodi" :
-                    {
-                        new IsiProdi(u.getUsername()).setVisible(true);
-                        break;
-                    }
-
-                    case "Dosen" :
-                    {
-                        new IsiDosen(u.getUsername()).setVisible(true);
-                        break;
-                    }
-
-                    case "Mahasiswa" :
-                    {
-                        new IsiMahasiswa(u.getUsername()).setVisible(true);
-                        break;
-                    }
-
-                    default :
-                    {
-                        JOptionPane.showMessageDialog(null, "Data login tidak ditemukan!");
-                    }
+                    new IsiAdmin(u.getUsername()).setVisible(true);
+                    break;
                 }
-                setVisible(false);
+
+                case "Prodi" :
+                {
+                    new IsiProdi(u.getUsername()).setVisible(true);
+                    break;
+                }
+                
+                case "Dosen" :
+                {
+                    new IsiDosen(u.getUsername()).setVisible(true);
+                    break;
+                }
+                
+                case "Mahasiswa" :
+                {
+                    new IsiMahasiswa(u.getUsername()).setVisible(true);
+                    break;
+                }
+                
+                default :
+                {
+                    JOptionPane.showMessageDialog(null, "Data login tidak ditemukan!");
+                }
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginBy.class.getName()).log(Level.SEVERE, null, ex);
+            setVisible(false);
         }
     }//GEN-LAST:event_masukButtonActionPerformed
 

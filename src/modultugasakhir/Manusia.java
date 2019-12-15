@@ -15,7 +15,7 @@ public class Manusia {
    /** @pdOid dcff29dd-39da-4913-abfd-392f9719ec7f */
    private String nik;
    /** @pdOid 86e2672f-9ce0-4852-8213-f1d3eb2180dd */
-   private String tanggalLahir;
+   private java.util.Date tanggalLahir;
    /** @pdOid d7caf755-43c0-414f-b422-2a6691439b04 */
    private char jenisKelamin;
    /** @pdOid e4c97633-3962-4517-8214-cd380b624218 */
@@ -53,13 +53,13 @@ public class Manusia {
    }
    
    /** @pdOid f028061f-5153-405f-b137-a6ff10b71ed7 */
-   public String getTanggalLahir() {
+   public Date getTanggalLahir() {
       return tanggalLahir;
    }
    
    /** @param newTanggalLahir
     * @pdOid 9cb5b444-b832-4b1d-84b0-77dc6f5f5f44 */
-   public void setTanggalLahir(String newTanggalLahir) {
+   public void setTanggalLahir(Date newTanggalLahir) {
       tanggalLahir = newTanggalLahir;
    }
    

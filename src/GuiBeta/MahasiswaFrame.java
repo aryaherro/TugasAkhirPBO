@@ -19,7 +19,7 @@ import modultugasakhir.*;
  */
 public class MahasiswaFrame extends javax.swing.JFrame {
     private User user = new User();
-    private modultugasakhir.Mahasiswa mahasiswa = new modultugasakhir.Mahasiswa();
+    private Mahasiswa mahasiswa = new Mahasiswa();
     /**
      * Creates new form Mahasiswa
      */
@@ -29,7 +29,9 @@ public class MahasiswaFrame extends javax.swing.JFrame {
 
     
     public MahasiswaFrame(User user) {
-        getMahasiswa().getSingleDatabase(user.getUsername());
+        Mahasiswa maha = new Mahasiswa();
+        maha.getSingleDatabase(user.getUsername());
+        setMahasiswa(maha);
         initComponents();
         
     }

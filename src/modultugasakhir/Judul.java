@@ -32,7 +32,9 @@ public class Judul {
    public Judul(String nim, String namaJudul, String deskripsi) {
       // TODO: implement
        autoInsertId();
-       MahasiswaDalamJudul.getSingleDatabase(nim);
+       Mahasiswa maha = new Mahasiswa();
+       maha.getSingleDatabase(nim);
+       MahasiswaDalamJudul = maha;
        setNamaJudul(namaJudul);
        setDeskripsi(deskripsi);
    }
@@ -82,7 +84,9 @@ public class Judul {
                Judul jud = new Judul();
                jud.setIdJudul(rs.getString("idJudul"));
                
-               jud.MahasiswaDalamJudul.getSingleDatabase(rs.getString("nim"));
+               Mahasiswa maha = new Mahasiswa();
+               maha.getSingleDatabase(rs.getString("nim"));
+               jud.MahasiswaDalamJudul = maha;
                
                jud.setNamaJudul(rs.getString("namaJudul"));
                jud.setDeskripsi(rs.getString("deskripsi"));
@@ -106,7 +110,10 @@ public class Judul {
            if(rs.next()){
                setIdJudul(rs.getString("idJudul"));
                
-               MahasiswaDalamJudul.getSingleDatabase(rs.getString("nim"));
+               Mahasiswa maha = new Mahasiswa();
+               maha.getSingleDatabase(rs.getString("nim"));
+               
+               MahasiswaDalamJudul = maha;
                
                setNamaJudul(rs.getString("namaJudul"));
                setDeskripsi(rs.getString("deskripsi"));

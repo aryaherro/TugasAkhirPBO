@@ -109,19 +109,20 @@ public class HistoryJabatan {
        return list;
    }
    
-   public void getSingleDatabase(String kunci){
+   public HistoryJabatan getSingleDatabase(String kunci){
+       HistoryJabatan his = new HistoryJabatan();
        String query = "SELECT * FROM historyjabatan WHERE idHistoryJabatan = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setIdHistoryJabatan(rs.getString("idHistoryJabatan"));
-               JabatanDalamHistoryJabatan.getSingleDatabase(rs.getString("idJabatan"));
-               DosenDalamHistoryJabatan.getSingleDatabase(rs.getString("npp"));
-               setStartDate(rs.getDate("startDate"));
-               setTahunAjaran(rs.getString("tahunAjaran"));
-               setStatusAktif(rs.getBoolean("statusAktif"));
+               his.setIdHistoryJabatan(rs.getString("idHistoryJabatan"));
+               his.JabatanDalamHistoryJabatan.getSingleDatabase(rs.getString("idJabatan"));
+               his.DosenDalamHistoryJabatan.getSingleDatabase(rs.getString("npp"));
+               his.setStartDate(rs.getDate("startDate"));
+               his.setTahunAjaran(rs.getString("tahunAjaran"));
+               his.setStatusAktif(rs.getBoolean("statusAktif"));
            }
            statement.close();
            rs.close();
@@ -129,6 +130,7 @@ public class HistoryJabatan {
        catch(SQLException e){
            
        }
+       return his;
    }
    
    public void insertToDatabase(){

@@ -29,7 +29,7 @@ public class JadwalSeminar {
       // TODO: implement
    }
    
-   public JadwalSeminar(String nim, String idProdi, String jadwal) {
+   public JadwalSeminar(String idProdi, String nim, String jadwal) {
       // TODO: implement
       autoInsertId();
       MahasiswaDalamJadwalSeminar.getSingleDatabase(nim);
@@ -71,8 +71,8 @@ public class JadwalSeminar {
                JadwalSeminar jad = new JadwalSeminar();
                jad.setIdJadwal(rs.getString("idJudul"));
                
-               jad.MahasiswaDalamJadwalSeminar.getSingleDatabase(rs.getString("nim"));
                jad.ProdiMenentukanJadwal.getSingleDatabase(rs.getString("idProdi"));
+               jad.MahasiswaDalamJadwalSeminar.getSingleDatabase(rs.getString("nim"));
                
                jad.setJadwal(rs.getString("jadwal"));
                
@@ -96,8 +96,8 @@ public class JadwalSeminar {
            if(rs.next()){
                setIdJadwal(rs.getString("idJadwal"));
                
-               MahasiswaDalamJadwalSeminar.getSingleDatabase(rs.getString("nim"));
                ProdiMenentukanJadwal.getSingleDatabase(rs.getString("idProdi"));
+               MahasiswaDalamJadwalSeminar.getSingleDatabase(rs.getString("nim"));
                
                setJadwal(rs.getString("jadwal"));
            }
@@ -114,8 +114,8 @@ public class JadwalSeminar {
            String query = "INSERT INTO jadwalseminar VALUES (?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, getIdJadwal());
-           statement.setString(2, MahasiswaDalamJadwalSeminar.getNim());
-           statement.setString(3, ProdiMenentukanJadwal.getIdProdi());
+           statement.setString(2, ProdiMenentukanJadwal.getIdProdi());
+           statement.setString(3, MahasiswaDalamJadwalSeminar.getNim());
            statement.setString(4, getJadwal());
            
            statement.execute();
