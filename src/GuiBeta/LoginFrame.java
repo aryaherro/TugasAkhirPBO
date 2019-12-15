@@ -99,7 +99,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 
                 case "Dosen" :
                 {
-//                        new IsiDosen(u.getUsername()).setVisible(true);
+                    new isi_dos(getU()).setVisible(true);
                     break;
                 }
 

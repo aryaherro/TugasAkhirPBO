@@ -7,7 +7,6 @@ package GuiBeta;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,6 +31,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
 
     
     public MahasiswaFrame(User user) {
+        setUser(user);
         setMahasiswa(new Mahasiswa().getSingleDatabase(user.getUsername()));
         initComponents();
         getJudulFromDatabase();
@@ -46,14 +46,22 @@ public class MahasiswaFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        logoutButton = new javax.swing.JButton();
         namaMahasiswa = new javax.swing.JLabel();
         tambahJudul = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        judulScrollPane = new javax.swing.JScrollPane();
         JudulTable = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         RevisiTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        logoutButton.setText("Logout");
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonActionPerformed(evt);
+            }
+        });
 
         namaMahasiswa.setText("Hai,");
 
@@ -87,7 +95,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 JudulTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(JudulTable);
+        judulScrollPane.setViewportView(JudulTable);
         JudulTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         RevisiTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,24 +115,25 @@ public class MahasiswaFrame extends javax.swing.JFrame {
             }
         });
         RevisiTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(RevisiTable);
+        jScrollPane1.setViewportView(RevisiTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(tambahJudul))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(namaMahasiswa)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(judulScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaMahasiswa)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(110, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(tambahJudul)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutButton)
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,12 +141,14 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(namaMahasiswa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tambahJudul)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tambahJudul)
+                    .addComponent(logoutButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(335, 335, 335))
+                .addComponent(judulScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(453, 453, 453))
         );
 
         pack();
@@ -148,13 +159,18 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         Judul jud = new Judul(getMahasiswa().getNim(), JOptionPane.showInputDialog(null, "Masukkan Judul", "Judul", 3), JOptionPane.showInputDialog(null, "Masukkan Deskripsi", "Deskripsi", 3));
         jud.insertToDatabase();
         getJudulFromDatabase();
-        
     }//GEN-LAST:event_tambahJudulActionPerformed
 
     private void JudulTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JudulTableMouseClicked
         // TODO add your handling code here:
-        getRevisiFromDatabase((String) JudulTable.getValueAt(JudulTable.getSelectedRow(), 1));
+        getRevisiFromDatabase((String) JudulTable.getValueAt(JudulTable.getSelectedRow(), 0));
     }//GEN-LAST:event_JudulTableMouseClicked
+
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+        // TODO add your handling code here:
+        new LoginFrame().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,7 +225,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
             }
             JudulTable.setModel(modelTableJudul);
         } catch (Exception ex) {
-            Logger.getLogger(Mahasiswa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -231,15 +247,16 @@ public class MahasiswaFrame extends javax.swing.JFrame {
             }
             RevisiTable.setModel(modelTableRevisi);
         } catch (Exception ex) {
-            Logger.getLogger(Mahasiswa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable JudulTable;
     private javax.swing.JTable RevisiTable;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane judulScrollPane;
+    private javax.swing.JButton logoutButton;
     private javax.swing.JLabel namaMahasiswa;
     private javax.swing.JButton tambahJudul;
     // End of variables declaration//GEN-END:variables

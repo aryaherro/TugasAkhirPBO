@@ -86,18 +86,19 @@ public class Kelayakan {
    
    @SuppressWarnings("unchecked")
    public ArrayList<Kelayakan> getAllJudulKelayakanDatabase(String nim){
-       String query = "SELECT k.idLayak, j.idJudul, k.statusLayak"
-                    + "FROM judul AS j, kelayakan AS k"
-                    + "WHERE j.idJudul = k.idJudul";
-       if (nim != "") {
-           query += " AND j.nim = \"" + nim + "\"";
-       }
+       String query = "SELECT k.idLayak, j.idJudul, k.statusLayak "
+                    + "FROM judul AS j LEFT JOIN kelayakan AS k "
+                    + "ON j.idJudul = k.idJudul ";
        ArrayList<Kelayakan> list = new ArrayList<>();
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           if (nim != "") {
+               query += "AND j.nim = (?)";
+               statement = connect.getConnection().prepareStatement(query);
+               statement.setString(1, nim);
+           }   
            ResultSet rs = statement.executeQuery();
            while(rs.next()){
-               
                Kelayakan kel = new Kelayakan();
                kel.setIdLayak(rs.getString("idLayak"));
                kel.JudulDalamKelayakan = new Judul().getSingleDatabase(rs.getString("idJudul"));
@@ -152,10 +153,11 @@ public class Kelayakan {
    }
    
    public int getSizeDatabase(){
-       return getAllDatabase("").size();
+       return getAllDatabase("").size() + 1;
    }
    
    public void autoInsertId(){
-       setIdLayak(""+ getSizeDatabase() + 1);
+       int jumlah = getSizeDatabase();
+       setIdLayak("" + jumlah);
    }
 }

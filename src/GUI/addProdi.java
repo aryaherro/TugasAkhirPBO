@@ -116,15 +116,10 @@ public class addProdi extends javax.swing.JFrame {
     private void buatProdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buatProdiActionPerformed
         // TODO add your handling code here:
         Prodi pro = new Prodi();
-        try {
-            pro.setIdProdi(idProdi.getText());
-            pro.setNamaProdi(namaProdi.getText());
-        
-            pro.insertToUser(passProdi.getText());
-            pro.insertToDatabase();
-        } catch (SQLException ex) {
-            Logger.getLogger(addProdi.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        pro.setIdProdi(idProdi.getText());
+        pro.setNamaProdi(namaProdi.getText());
+        //            pro.insertToUser(passProdi.getText());
+        pro.insertToDatabase();
         
     }//GEN-LAST:event_buatProdiActionPerformed
 

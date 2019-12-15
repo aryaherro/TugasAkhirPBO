@@ -129,10 +129,11 @@ public class JadwalSeminar {
    }
    
    public int getSizeDatabase(){
-       return getAllDatabase("").size();
+       return getAllDatabase("").size() + 1;
    }
    
    public void autoInsertId(){
-       setIdJadwal(""+ getSizeDatabase() + 1);
+       int jumlah = getSizeDatabase();
+       setIdJadwal("" + jumlah);
    }
 }
