@@ -116,13 +116,13 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel1.add(opsiComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 230, -1));
 
         idTextField.setText("id");
-        jPanel1.add(idTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 170, 30));
+        jPanel1.add(idTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 180, 30));
 
         id.setText("ID Prodi");
         jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         namaLabel.setText("Nama");
-        jPanel1.add(namaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
+        jPanel1.add(namaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
 
         kataSandiLabel.setText("Kata Sandi");
         jPanel1.add(kataSandiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
@@ -137,19 +137,19 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel1.add(jKLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
 
         alamatLabel.setText("Alamat");
-        jPanel1.add(alamatLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
+        jPanel1.add(alamatLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, -1, -1));
 
         emailLabel.setText("E-Mail");
-        jPanel1.add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, -1, -1));
+        jPanel1.add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, -1, -1));
 
         agamaLabel.setText("Agama");
-        jPanel1.add(agamaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, -1, -1));
+        jPanel1.add(agamaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 540, -1, -1));
 
         prodiLabel1.setText("Prodi");
-        jPanel1.add(prodiLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 580, -1, -1));
+        jPanel1.add(prodiLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, -1));
 
         dsnPembLabel.setText("Dosen Pembimbing");
-        jPanel1.add(dsnPembLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 610, -1, -1));
+        jPanel1.add(dsnPembLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 620, -1, -1));
 
         updateButton.setText("Update");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +157,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 updateButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 650, -1, -1));
+        jPanel1.add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 680, -1, -1));
 
         simpanButton.setText("Simpan");
         simpanButton.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +165,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 simpanButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(simpanButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 650, -1, -1));
+        jPanel1.add(simpanButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 680, -1, -1));
 
         logoutButton.setText("Logout");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -199,19 +199,24 @@ public class AdminFrame extends javax.swing.JFrame {
         jPanel1.add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 180, 30));
 
         agamaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ISLAM", "KRISTEN", "KATOLIK", "HINDU", "BUDHA", "KONGHUCU" }));
-        jPanel1.add(agamaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, 160, -1));
+        jPanel1.add(agamaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, 130, 20));
 
         tglLahir.setToolTipText("dd-MM-YYYY");
         jPanel1.add(tglLahir, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 150, 30));
 
         prodiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Prodi-" }));
-        jPanel1.add(prodiComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, -1, -1));
+        jPanel1.add(prodiComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, 110, -1));
 
         dsnComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Dosen Pembimbing-" }));
-        jPanel1.add(dsnComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 610, -1, -1));
+        dsnComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dsnComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(dsnComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 620, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/isiForm.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 710));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 780));
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -504,6 +509,10 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_simpanButtonActionPerformed
+
+    private void dsnComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dsnComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dsnComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
