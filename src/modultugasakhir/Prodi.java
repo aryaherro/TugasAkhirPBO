@@ -121,7 +121,7 @@ public class Prodi {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
+   public ArrayList<Prodi> getAllDatabase(String query){
        ArrayList<Prodi> list = new ArrayList<>();
        try{
            if(query.equals(""))
@@ -146,15 +146,16 @@ public class Prodi {
        return list;
    }
    
-   public void getSingleNamaDatabase(String kunci){
+   public Prodi getSingleNamaDatabase(String kunci){
+       Prodi pro = new Prodi();
        String query = "SELECT * FROM prodi WHERE namaProdi = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setIdProdi(rs.getString("idProdi"));
-               setNamaProdi(rs.getString("namaProdi"));
+               pro.setIdProdi(rs.getString("idProdi"));
+               pro.setNamaProdi(rs.getString("namaProdi"));
            }
            statement.close();
            rs.close();
@@ -162,17 +163,19 @@ public class Prodi {
        catch(SQLException e){
            
        }
+       return pro;
    }
    
-   public void getSingleDatabase(String kunci){
+   public Prodi getSingleDatabase(String kunci){
+       Prodi pro = new Prodi();
        String query = "SELECT * FROM prodi WHERE idProdi = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setIdProdi(rs.getString("idProdi"));
-               setNamaProdi(rs.getString("namaProdi"));
+               pro.setIdProdi(rs.getString("idProdi"));
+               pro.setNamaProdi(rs.getString("namaProdi"));
            }
            statement.close();
            rs.close();
@@ -180,6 +183,7 @@ public class Prodi {
        catch(SQLException e){
            
        }
+       return pro;
    }
            
    public void insertToDatabase(){

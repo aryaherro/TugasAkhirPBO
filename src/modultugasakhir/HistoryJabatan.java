@@ -83,7 +83,7 @@ public class HistoryJabatan {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
+   public ArrayList<HistoryJabatan> getAllDatabase(String query){
        ArrayList<HistoryJabatan> list = new ArrayList<>();
        try{
            if(query.equals(""))
@@ -93,8 +93,8 @@ public class HistoryJabatan {
            while(rs.next()){
                HistoryJabatan his = new HistoryJabatan();
                his.setIdHistoryJabatan(rs.getString("idHistoryJabatan"));
-               his.JabatanDalamHistoryJabatan.getSingleDatabase(rs.getString("idJabatan"));
-               his.DosenDalamHistoryJabatan.getSingleDatabase(rs.getString("npp"));
+               his.JabatanDalamHistoryJabatan = new Jabatan().getSingleDatabase(rs.getString("idJabatan"));
+               his.DosenDalamHistoryJabatan = new Dosen().getSingleDatabase(rs.getString("npp"));
                his.setStartDate(rs.getDate("startDate"));
                his.setTahunAjaran(rs.getString("tahunAjaran"));
                his.setStatusAktif(rs.getBoolean("statusAktif"));
@@ -118,8 +118,8 @@ public class HistoryJabatan {
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
                his.setIdHistoryJabatan(rs.getString("idHistoryJabatan"));
-               his.JabatanDalamHistoryJabatan.getSingleDatabase(rs.getString("idJabatan"));
-               his.DosenDalamHistoryJabatan.getSingleDatabase(rs.getString("npp"));
+               his.JabatanDalamHistoryJabatan = new Jabatan().getSingleDatabase(rs.getString("idJabatan"));
+               his.DosenDalamHistoryJabatan = new Dosen().getSingleDatabase(rs.getString("npp"));
                his.setStartDate(rs.getDate("startDate"));
                his.setTahunAjaran(rs.getString("tahunAjaran"));
                his.setStatusAktif(rs.getBoolean("statusAktif"));

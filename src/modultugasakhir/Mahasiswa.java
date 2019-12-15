@@ -30,8 +30,8 @@ public class Mahasiswa extends Manusia {
    public Mahasiswa(String nim, String npp, String idProdi, String nama, String nik, Date tanggalLahir, String jenisKelamin, String alamat, String email, String agama) {
       // TODO: implement
       setNim(nim);
-      DosenPembimbingMahasiswa.getSingleDatabase(npp);
-      ProdiDalamMahasiswa.getSingleDatabase(idProdi);
+      DosenPembimbingMahasiswa = new Dosen().getSingleDatabase(npp);
+      ProdiDalamMahasiswa = new Prodi().getSingleDatabase(idProdi);
       setNama(nama);
       setNik(nik);
       setTanggalLahir(tanggalLahir);
@@ -53,7 +53,7 @@ public class Mahasiswa extends Manusia {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
+   public ArrayList<Mahasiswa> getAllDatabase(String query){
        ArrayList<Mahasiswa> list = new ArrayList<>();
        try{
            if(query.equals(""))
@@ -63,8 +63,8 @@ public class Mahasiswa extends Manusia {
            while(rs.next()){
                Mahasiswa maha = new Mahasiswa();
                maha.setNim(rs.getString("nim"));
-               maha.DosenPembimbingMahasiswa.getSingleDatabase(rs.getString("npp"));
-               maha.ProdiDalamMahasiswa.getSingleDatabase(rs.getString("idProdi"));
+               maha.DosenPembimbingMahasiswa = new Dosen().getSingleDatabase(rs.getString("npp"));
+               maha.ProdiDalamMahasiswa = new Prodi().getSingleDatabase(rs.getString("idProdi"));
                maha.setNama(rs.getString("nama"));
                maha.setNik(rs.getString("nik"));
                maha.setTanggalLahir(rs.getDate("tanggalLahir"));
@@ -83,31 +83,28 @@ public class Mahasiswa extends Manusia {
        return list;
    }
    
-   public void getSingleDatabase(String kunci){
+   public Mahasiswa getSingleDatabase(String kunci){
+       Mahasiswa maha = new Mahasiswa();
        String query = "SELECT * FROM mahasiswa WHERE nim = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setNim(rs.getString("nim"));
+               maha.setNim(rs.getString("nim"));
                if (rs.getString("npp") != null){
-                   Dosen dos = new Dosen();
-                   dos.getSingleDatabase(rs.getString("npp"));
-                   DosenPembimbingMahasiswa = dos;
+                   maha.DosenPembimbingMahasiswa = new Dosen().getSingleDatabase(rs.getString("npp"));
                }
                if (rs.getString("idProdi") !=null){
-                   Prodi pro = new Prodi();
-                   pro.getSingleDatabase(rs.getString("idProdi"));
-                   ProdiDalamMahasiswa = pro;
+                   maha.ProdiDalamMahasiswa = new Prodi().getSingleDatabase(rs.getString("idProdi"));
                }
-               setNama(rs.getString("nama"));
-               setNik(rs.getString("nik"));
-               setTanggalLahir(rs.getDate("tanggalLahir"));
-               setJenisKelamin(rs.getString("jenisKelamin").charAt(0));
-               setAlamat(rs.getString("alamat"));
-               setEmail(rs.getString("email"));
-               setAgama(rs.getString("agama"));
+               maha.setNama(rs.getString("nama"));
+               maha.setNik(rs.getString("nik"));
+               maha.setTanggalLahir(rs.getDate("tanggalLahir"));
+               maha.setJenisKelamin(rs.getString("jenisKelamin").charAt(0));
+               maha.setAlamat(rs.getString("alamat"));
+               maha.setEmail(rs.getString("email"));
+               maha.setAgama(rs.getString("agama"));
            }
            statement.close();
            rs.close();
@@ -115,6 +112,7 @@ public class Mahasiswa extends Manusia {
        catch(SQLException e){
            
        }
+       return maha;
    }
    
    public void insertToDatabase(){

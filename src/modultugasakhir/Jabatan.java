@@ -53,7 +53,7 @@ public class Jabatan {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
+   public ArrayList<Jabatan> getAllDatabase(String query){
        ArrayList<Jabatan> list = new ArrayList<>();
        try{
            if(query.equals(""))
@@ -76,15 +76,16 @@ public class Jabatan {
        return list;
    }
    
-   public void getSingleDatabase(String kunci){
+   public Jabatan getSingleDatabase(String kunci){
+       Jabatan jab = new Jabatan();
        String query = "SELECT * FROM jabatan WHERE idJabatan = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setIdJabatan(rs.getString("idJabatan"));
-               setNamaJabatan(rs.getString("namaJabatan"));
+               jab.setIdJabatan(rs.getString("idJabatan"));
+               jab.setNamaJabatan(rs.getString("namaJabatan"));
            }
            statement.close();
            rs.close();
@@ -92,6 +93,7 @@ public class Jabatan {
        catch(SQLException e){
            
        }
+       return jab;
    }
    
    public void insertToDatabase(){

@@ -29,9 +29,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
 
     
     public MahasiswaFrame(User user) {
-        Mahasiswa maha = new Mahasiswa();
-        maha.getSingleDatabase(user.getUsername());
-        setMahasiswa(maha);
+        setMahasiswa(new Mahasiswa().getSingleDatabase(user.getUsername()));
         initComponents();
         
     }
@@ -194,7 +192,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         DefaultTableModel modelTable = (DefaultTableModel) Judul.getModel();
         Object[] atributJudul = new Object[2];
         try {
-            ArrayList JudulAll = jud.getAllDatabase("SELECT * FROM judul WHERE nim = \"" + getMahasiswa().getNim()+"\""); //harus dikasih try catch
+            ArrayList JudulAll = jud.getAllNimDatabase(mahasiswa.getNim());
             Iterator listJudul = JudulAll.iterator();
             while(listJudul.hasNext()){
                 Judul eachJudul;
@@ -236,14 +234,14 @@ public class MahasiswaFrame extends javax.swing.JFrame {
     /**
      * @return the mahasiswa
      */
-    public modultugasakhir.Mahasiswa getMahasiswa() {
+    public Mahasiswa getMahasiswa() {
         return mahasiswa;
     }
 
     /**
      * @param mahasiswa the mahasiswa to set
      */
-    public void setMahasiswa(modultugasakhir.Mahasiswa mahasiswa) {
+    public void setMahasiswa(Mahasiswa mahasiswa) {
         this.mahasiswa = mahasiswa;
     }
 }

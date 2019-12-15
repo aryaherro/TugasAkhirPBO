@@ -66,16 +66,17 @@ public class User {
       typeUser = newTypeUser;
    }
    
-   public void getSingleDatabase(String kunci){
+   public User getSingleDatabase(String kunci){
+       User user = new User();
        try{
            String query = "SELECT * FROM user WHERE username = (?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setUsername(rs.getString("username"));
-               setPassword(rs.getString("password"));
-               setTypeUser(rs.getString("typeUser"));
+               user.setUsername(rs.getString("username"));
+               user.setPassword(rs.getString("password"));
+               user.setTypeUser(rs.getString("typeUser"));
            }
            statement.close();
            rs.close();
@@ -83,6 +84,7 @@ public class User {
        catch(SQLException e){
            
        }
+       return user;
    }
    
    public void insertToDatabase(){
@@ -102,8 +104,7 @@ public class User {
    }
    
    public boolean cekLogin(String username, String pass){
-       User u = new User();
-       u.getSingleDatabase(username);
+       User u = new User().getSingleDatabase(username);
        if((u.getUsername() == null)||(u.getUsername().equals("")))
        {
            JOptionPane.showMessageDialog(null, "Username tidak terdaftar!");

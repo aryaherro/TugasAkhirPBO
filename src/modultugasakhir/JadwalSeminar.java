@@ -60,7 +60,7 @@ public class JadwalSeminar {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
+   public ArrayList<JadwalSeminar> getAllDatabase(String query){
        ArrayList<JadwalSeminar> list = new ArrayList<>();
        try{
            if(query.equals(""))
@@ -71,8 +71,8 @@ public class JadwalSeminar {
                JadwalSeminar jad = new JadwalSeminar();
                jad.setIdJadwal(rs.getString("idJudul"));
                
-               jad.ProdiMenentukanJadwal.getSingleDatabase(rs.getString("idProdi"));
-               jad.MahasiswaDalamJadwalSeminar.getSingleDatabase(rs.getString("nim"));
+               jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
+               jad.MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
                
                jad.setJadwal(rs.getString("jadwal"));
                
@@ -87,19 +87,20 @@ public class JadwalSeminar {
        return list;
    }
    
-   public void getSingleDatabase(String kunci){
+   public JadwalSeminar getSingleDatabase(String kunci){
+       JadwalSeminar jad = new JadwalSeminar();
        String query = "SELECT * FROM jadwalseminar WHERE idJadwal = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setIdJadwal(rs.getString("idJadwal"));
+               jad.setIdJadwal(rs.getString("idJudul"));
                
-               ProdiMenentukanJadwal.getSingleDatabase(rs.getString("idProdi"));
-               MahasiswaDalamJadwalSeminar.getSingleDatabase(rs.getString("nim"));
+               jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
+               jad.MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
                
-               setJadwal(rs.getString("jadwal"));
+               jad.setJadwal(rs.getString("jadwal"));
            }
            statement.close();
            rs.close();
@@ -107,6 +108,7 @@ public class JadwalSeminar {
        catch(SQLException e){
            
        }
+       return jad;
    }
    
    public void insertToDatabase(){

@@ -34,8 +34,8 @@ public class Revisi {
    public Revisi(String idJudul, String npp, String isiRevisi, Date tanggalRevisi) {
       // TODO: implement
       autoInsertId();
-      JudulDalamRevisi.getSingleDatabase(idJudul);
-      DosenMemberiRevisi.getSingleDatabase(npp);
+      JudulDalamRevisi = new Judul().getSingleDatabase(idJudul);
+      DosenMemberiRevisi = new Dosen().getSingleDatabase(npp);
       setIsiRevisi(isiRevisi);
       setTanggalRevisi(tanggalRevisi);
    }
@@ -73,7 +73,7 @@ public class Revisi {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
+   public ArrayList<Revisi> getAllDatabase(String query){
        ArrayList<Revisi> list = new ArrayList<>();
        try{
            if(query.equals(""))
@@ -83,8 +83,8 @@ public class Revisi {
            while(rs.next()){
                Revisi rev = new Revisi();
                rev.setIdRevisi(rs.getString("idRevisi"));
-               rev.JudulDalamRevisi.getSingleDatabase(rs.getString("idJudul"));
-               rev.DosenMemberiRevisi.getSingleDatabase(rs.getString("npp"));
+               rev.JudulDalamRevisi = new Judul().getSingleDatabase(rs.getString("idJudul"));
+               rev.DosenMemberiRevisi = new Dosen().getSingleDatabase(rs.getString("npp"));
                rev.setIsiRevisi(rs.getString("isiRevisi"));
                rev.setTanggalRevisi(rs.getDate("tanggalRevisi"));
                
@@ -99,18 +99,19 @@ public class Revisi {
        return list;
    }
    
-   public void getSingleDatabase(String kunci){
+   public Revisi getSingleDatabase(String kunci){
+       Revisi rev = new Revisi();
        String query = "SELECT * FROM revisi WHERE idRevisi = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setIdRevisi(rs.getString("idRevisi"));
-               JudulDalamRevisi.getSingleDatabase(rs.getString("idJudul"));
-               DosenMemberiRevisi.getSingleDatabase(rs.getString("npp"));
-               setIsiRevisi(rs.getString("isiRevisi"));
-               setTanggalRevisi(rs.getDate("tanggalRevisi"));
+               rev.setIdRevisi(rs.getString("idRevisi"));
+               rev.JudulDalamRevisi = new Judul().getSingleDatabase(rs.getString("idJudul"));
+               rev.DosenMemberiRevisi = new Dosen().getSingleDatabase(rs.getString("npp"));
+               rev.setIsiRevisi(rs.getString("isiRevisi"));
+               rev.setTanggalRevisi(rs.getDate("tanggalRevisi"));
            }
            statement.close();
            rs.close();
@@ -118,6 +119,7 @@ public class Revisi {
        catch(SQLException e){
            
        }
+       return rev;
    }
    
    public void insertToDatabase(){

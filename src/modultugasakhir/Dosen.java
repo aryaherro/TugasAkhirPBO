@@ -113,8 +113,8 @@ public class Dosen extends Manusia {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
-       ArrayList list = new ArrayList<>();
+   public ArrayList<Dosen> getAllDatabase(String query){
+       ArrayList<Dosen> list = new ArrayList<>();
        try{
            if(query.equals(""))
                query = "SELECT * FROM dosen";

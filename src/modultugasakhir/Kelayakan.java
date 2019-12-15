@@ -57,7 +57,7 @@ public class Kelayakan {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
+   public ArrayList<Kelayakan> getAllDatabase(String query){
        ArrayList<Kelayakan> list = new ArrayList<>();
        try{
            if(query.equals(""))
@@ -68,7 +68,7 @@ public class Kelayakan {
                Kelayakan kel = new Kelayakan();
                kel.setIdLayak(rs.getString("idLayak"));
                
-               kel.JudulDalamKelayakan.getSingleDatabase(rs.getString("idJudul"));
+               kel.JudulDalamKelayakan = new Judul().getSingleDatabase(rs.getString("idJudul"));
                
                kel.setStatusLayak(rs.getBoolean("statusLayak"));
                
@@ -85,8 +85,8 @@ public class Kelayakan {
    
    
    @SuppressWarnings("unchecked")
-   public ArrayList getAllJudulKelayakanDatabase(String nim){
-       String query = "SELECT j.idJudul, j.namaJudul, j.deskripsi, k.statusLayak"
+   public ArrayList<Kelayakan> getAllJudulKelayakanDatabase(String nim){
+       String query = "SELECT k.idLayak, j.idJudul, k.statusLayak"
                     + "FROM judul AS j, kelayakan AS k"
                     + "WHERE j.idJudul = k.idJudul";
        if (nim != "") {
@@ -99,9 +99,8 @@ public class Kelayakan {
            while(rs.next()){
                
                Kelayakan kel = new Kelayakan();
-               kel.JudulDalamKelayakan.getSingleDatabase(rs.getString("idJudul"));
-               kel.JudulDalamKelayakan.getSingleDatabase(rs.getString("namaJudul"));
-               kel.JudulDalamKelayakan.getSingleDatabase(rs.getString("deskripsi"));
+               kel.setIdLayak(rs.getString("idLayak"));
+               kel.JudulDalamKelayakan = new Judul().getSingleDatabase(rs.getString("idJudul"));
                kel.setStatusLayak(rs.getBoolean("statusLayak"));
                list.add(kel);
            }
@@ -114,18 +113,18 @@ public class Kelayakan {
        return list;
    }
    
-   public void getSingleDatabase(String kunci){
+   public Kelayakan getSingleDatabase(String kunci){
+       Kelayakan kel = new Kelayakan();
        String query = "SELECT * FROM kelayakan WHERE idLayak = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
            ResultSet rs = statement.executeQuery();
            if(rs.next()){
-               setIdLayak(rs.getString("idLayak"));
+               kel.setIdLayak(rs.getString("idLayak"));
+               kel.JudulDalamKelayakan = new Judul().getSingleDatabase(rs.getString("idJudul"));
+               kel.setStatusLayak(rs.getBoolean("statusLayak"));
                
-               JudulDalamKelayakan.getSingleDatabase(rs.getString("idJudul"));
-               
-               setStatusLayak(rs.getBoolean("statusLayak"));
            }
            statement.close();
            rs.close();
@@ -133,6 +132,7 @@ public class Kelayakan {
        catch(SQLException e){
            
        }
+       return kel;
    }
    
    public void insertToDatabase(){

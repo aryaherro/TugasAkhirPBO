@@ -242,16 +242,12 @@ public class AdminFrame extends javax.swing.JFrame {
                 getMahasiswa().ProdiDalamMahasiswa = null;
                 if(dsnComboBox.getSelectedIndex() != 0)
                 {
-                    Dosen dos = new Dosen();
-                    dos.getSingleNamaDatabase(dsnComboBox.getSelectedItem().toString());
-                    getMahasiswa().DosenPembimbingMahasiswa = dos;
+                    getMahasiswa().DosenPembimbingMahasiswa = new Dosen().getSingleNamaDatabase(dsnComboBox.getSelectedItem().toString());
                 }
                 
                 if(prodiComboBox.getSelectedIndex() != 0)
                 {
-                    Prodi pro = new Prodi();
-                    pro.getSingleNamaDatabase(prodiComboBox.getSelectedItem().toString());
-                    getMahasiswa().ProdiDalamMahasiswa = pro;
+                    getMahasiswa().ProdiDalamMahasiswa = new Prodi().getSingleNamaDatabase(prodiComboBox.getSelectedItem().toString());
                 }
                 
                 getMahasiswa().setNama(namaTextField.getText());
@@ -333,8 +329,8 @@ public class AdminFrame extends javax.swing.JFrame {
         switch (opsiComboBox.getSelectedItem().toString()){
             case "Mahasiswa" :
             {
-                getUser().getSingleDatabase(idTextField.getText());
-                getMahasiswa().getSingleDatabase(idTextField.getText());
+                setUser(new User().getSingleDatabase(idTextField.getText()));
+                setMahasiswa(new Mahasiswa().getSingleDatabase(idTextField.getText()));
                 if ((getMahasiswa().getNama() == null) || (getMahasiswa().getNama() == "") || (getMahasiswa().getNama() == "id")){
                     hideShowAll(true);
                     updateButton.setVisible(false);
@@ -357,13 +353,13 @@ public class AdminFrame extends javax.swing.JFrame {
                     alamatTextField.setText(getMahasiswa().getAlamat());
                     emailTextField.setText(getMahasiswa().getEmail());
                     agamaComboBox.setSelectedItem(getMahasiswa().getAgama());
-                    if(getMahasiswa().DosenPembimbingMahasiswa != null){
-                        Dosen DPM = getMahasiswa().DosenPembimbingMahasiswa;
-                        dsnComboBox.setSelectedItem(DPM.getNama());
+                    //if(getMahasiswa().DosenPembimbingMahasiswa != null)
+                    {
+                        dsnComboBox.setSelectedItem(getMahasiswa().DosenPembimbingMahasiswa.getNama());
                     }
-                    if(getMahasiswa().ProdiDalamMahasiswa != null){
-                        Prodi PDM = getMahasiswa().ProdiDalamMahasiswa;
-                        prodiComboBox.setSelectedItem(PDM.getNamaProdi());
+                    //if(getMahasiswa().ProdiDalamMahasiswa != null)
+                    {
+                        prodiComboBox.setSelectedItem(getMahasiswa().ProdiDalamMahasiswa.getNamaProdi());
                     }
                 }
                 break;
@@ -371,8 +367,8 @@ public class AdminFrame extends javax.swing.JFrame {
             
             case "Dosen" :
             {
-                getUser().getSingleDatabase(idTextField.getText());
-                getDosen().getSingleDatabase(idTextField.getText());
+                setUser(new User().getSingleDatabase(idTextField.getText()));
+                setDosen(new Dosen().getSingleDatabase(idTextField.getText()));
                 if ((getDosen().getNama() == null) || (getDosen().getNama() == "") || (getDosen().getNama() == "id")){
                     hideShowAll(true);
                     updateButton.setVisible(false);
@@ -391,7 +387,7 @@ public class AdminFrame extends javax.swing.JFrame {
                     tglLahir.setDate(getDosen().getTanggalLahir());
                     if (getDosen().getJenisKelamin() == 'L') {
                         LRadioButton.setSelected(true);
-                        }
+                    }
                     else
                     {
                         PRadioButton.setSelected(true);
@@ -405,8 +401,8 @@ public class AdminFrame extends javax.swing.JFrame {
             
             case "Prodi" :
             {
-                getUser().getSingleDatabase(idTextField.getText());
-                getProdi().getSingleDatabase(idTextField.getText());
+                setUser(new User().getSingleDatabase(idTextField.getText()));
+                setProdi(new Prodi().getSingleDatabase(idTextField.getText()));
                 if ((getProdi().getNamaProdi() == null) || (getProdi().getNamaProdi() == "") || (getProdi().getNamaProdi() == "id")){
                     hideShowAll(false);
                     kataSandiLabel.setVisible(true);
@@ -445,16 +441,12 @@ public class AdminFrame extends javax.swing.JFrame {
                 
                 if(dsnComboBox.getSelectedIndex() != 0)
                 {
-                    Dosen dos = new Dosen();
-                    dos.getSingleNamaDatabase(dsnComboBox.getSelectedItem().toString());
-                    getMahasiswa().DosenPembimbingMahasiswa = dos;
+                    getMahasiswa().DosenPembimbingMahasiswa = new Dosen().getSingleNamaDatabase(dsnComboBox.getSelectedItem().toString());
                 }
                 
                 if(prodiComboBox.getSelectedIndex() != 0)
                 {
-                    Prodi pro = new Prodi();
-                    pro.getSingleNamaDatabase(prodiComboBox.getSelectedItem().toString());
-                    getMahasiswa().ProdiDalamMahasiswa = pro;
+                    getMahasiswa().ProdiDalamMahasiswa = new Prodi().getSingleNamaDatabase(prodiComboBox.getSelectedItem().toString());
                 }
                 
                 getMahasiswa().setNama(namaTextField.getText());

@@ -73,7 +73,7 @@ public class Judul {
    }
 
    @SuppressWarnings("unchecked")
-   public ArrayList getAllDatabase(String query){
+   public ArrayList<Judul> getAllDatabase(String query){
        ArrayList<Judul> list = new ArrayList<>();
        try{
            if(query.equals(""))
@@ -84,9 +84,7 @@ public class Judul {
                Judul jud = new Judul();
                jud.setIdJudul(rs.getString("idJudul"));
                
-               Mahasiswa maha = new Mahasiswa();
-               maha.getSingleDatabase(rs.getString("nim"));
-               jud.MahasiswaDalamJudul = maha;
+               jud.MahasiswaDalamJudul = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
                
                jud.setNamaJudul(rs.getString("namaJudul"));
                jud.setDeskripsi(rs.getString("deskripsi"));
@@ -101,22 +99,22 @@ public class Judul {
        return list;
    }
    
-   public void getSingleDatabase(String kunci){
-       String query = "SELECT * FROM judul WHERE idJudul = (?)";
+   public ArrayList<Judul> getAllNimDatabase(String nim){
+       ArrayList<Judul> list = new ArrayList<>();
        try{
+           String query = "SELECT * FROM judul WHERE nim = (?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
-           statement.setString(1, kunci);
+           statement.setString(1, nim);
            ResultSet rs = statement.executeQuery();
-           if(rs.next()){
-               setIdJudul(rs.getString("idJudul"));
+           while(rs.next()){
+               Judul jud = new Judul();
+               jud.setIdJudul(rs.getString("idJudul"));
                
-               Mahasiswa maha = new Mahasiswa();
-               maha.getSingleDatabase(rs.getString("nim"));
+               jud.MahasiswaDalamJudul = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
                
-               MahasiswaDalamJudul = maha;
-               
-               setNamaJudul(rs.getString("namaJudul"));
-               setDeskripsi(rs.getString("deskripsi"));
+               jud.setNamaJudul(rs.getString("namaJudul"));
+               jud.setDeskripsi(rs.getString("deskripsi"));
+               list.add(jud);
            }
            statement.close();
            rs.close();
@@ -124,6 +122,31 @@ public class Judul {
        catch(SQLException e){
            
        }
+       return list;
+   }
+   
+   public Judul getSingleDatabase(String kunci){
+       Judul jud = new Judul();
+       String query = "SELECT * FROM judul WHERE idJudul = (?)";
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               jud.setIdJudul(rs.getString("idJudul"));
+               
+               jud.MahasiswaDalamJudul = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
+               
+               jud.setNamaJudul(rs.getString("namaJudul"));
+               jud.setDeskripsi(rs.getString("deskripsi"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return jud;
    }
    
    public void insertToDatabase(){
