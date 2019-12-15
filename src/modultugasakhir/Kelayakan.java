@@ -31,7 +31,7 @@ public class Kelayakan {
       // TODO: implement
       autoInsertId();
       setStatusLayak(statusLayak);
-      JudulDalamKelayakan.getSingleDatabase(idJudul);
+      JudulDalamKelayakan = new Judul().getSingleDatabase(idJudul);
    }
    
    /** @pdOid 53443faf-0f30-40e5-8635-b0f723418a60 */
@@ -91,12 +91,15 @@ public class Kelayakan {
                     + "ON j.idJudul = k.idJudul ";
        ArrayList<Kelayakan> list = new ArrayList<>();
        try{
-           PreparedStatement statement = connect.getConnection().prepareStatement(query);
-           if (nim != "") {
-               query += "AND j.nim = (?)";
+           PreparedStatement statement;
+           if ((nim != "") || (nim != null)){
+               query += "WHERE j.nim = (?)";
                statement = connect.getConnection().prepareStatement(query);
                statement.setString(1, nim);
            }   
+           else{
+               statement = connect.getConnection().prepareStatement(query);
+           }
            ResultSet rs = statement.executeQuery();
            while(rs.next()){
                Kelayakan kel = new Kelayakan();

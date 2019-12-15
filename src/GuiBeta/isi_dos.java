@@ -5,6 +5,13 @@
  */
 package GuiBeta;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modultugasakhir.*;
 
 /**
@@ -15,6 +22,10 @@ import modultugasakhir.*;
 public class isi_dos extends javax.swing.JFrame {
     private User user = new User();
     private Dosen dosen = new Dosen();
+    private Mahasiswa mahasiswa = new Mahasiswa();
+    private Judul judul = new Judul();
+    private Revisi revisi = new Revisi();
+    private Kelayakan kelayakan = new Kelayakan();
     
     /**
      * Creates new form isi_dos
@@ -55,6 +66,7 @@ public class isi_dos extends javax.swing.JFrame {
         revisiInputLabel = new javax.swing.JLabel();
         jadwalSeminarTaButton = new javax.swing.JButton();
         revisiLabel = new javax.swing.JLabel();
+        logoutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,8 +129,15 @@ public class isi_dos extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        judulTable.setColumnSelectionAllowed(true);
         judulTable.getTableHeader().setReorderingAllowed(false);
+        judulTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                judulTableMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(judulTable);
+        judulTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         revisiInputLabel.setText("MASUKKAN REVISI");
 
@@ -126,10 +145,21 @@ public class isi_dos extends javax.swing.JFrame {
 
         revisiLabel.setText("LIST REVISI");
 
+        logoutButton.setText("Logout");
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutButton)
+                .addGap(82, 82, 82))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -145,13 +175,6 @@ public class isi_dos extends javax.swing.JFrame {
                             .addComponent(revisiInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(revisiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(nimLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(nimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(nimCariButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -163,7 +186,14 @@ public class isi_dos extends javax.swing.JFrame {
                                 .addGap(38, 38, 38)
                                 .addComponent(jadwalSeminarProposalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(nimLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(nimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nimCariButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -171,7 +201,9 @@ public class isi_dos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logoutButton)
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nimLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -208,8 +240,34 @@ public class isi_dos extends javax.swing.JFrame {
 
     private void nimCariButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimCariButtonActionPerformed
         // TODO add your handling code here:
-        hideShowAll(true);
+        setMahasiswa(new Mahasiswa().getSingleDatabase(nimTextField.getText()));
+        if (getMahasiswa().getNama() != null)
+        {
+            hideShowAll(true);
+            getJudulKelayakanFromDatabase();
+        }
+        else{
+            hideShowAll(false);
+            JOptionPane.showMessageDialog(null, "Data Tidak Ditemukan!");
+        }
     }//GEN-LAST:event_nimCariButtonActionPerformed
+
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+        // TODO add your handling code here:
+        new LoginFrame().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void judulTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_judulTableMouseClicked
+        // TODO add your handling code here:
+        if(judulTable.getSelectedColumn() == 3){
+            setKelayakan(new Kelayakan((Boolean) judulTable.getValueAt(judulTable.getSelectedRow(), 3), (String) judulTable.getValueAt(judulTable.getSelectedRow(), 0)));
+            getKelayakan().insertToDatabase();
+        }
+        else{
+            getRevisiFromDatabase((String) judulTable.getValueAt(judulTable.getSelectedRow(), 0));
+        }
+    }//GEN-LAST:event_judulTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -248,17 +306,58 @@ public class isi_dos extends javax.swing.JFrame {
     }
 
     public void hideShowAll(boolean bool){
-        jScrollPane1.setVisible(bool);
-        jScrollPane3.setVisible(bool);
         beritaAcaraButton.setVisible(bool);
         jadwalSeminarProposalButton.setVisible(bool);
         jadwalSeminarTaButton.setVisible(bool);
-        judulTable.setVisible(bool);
         revisiButton.setVisible(bool);
         revisiInputLabel.setVisible(bool);
         revisiLabel.setVisible(bool);
-        revisiTable.setVisible(bool);
         revisiTextField.setVisible(bool);
+    }
+    
+    public void getJudulKelayakanFromDatabase(){
+        DefaultTableModel modelTableJudul = (DefaultTableModel) judulTable.getModel();
+        modelTableJudul.setRowCount(0);
+        Object[] atributKelayakan = new Object[4];
+        try {
+            ArrayList<Kelayakan> KelayakanAll = new Kelayakan().getAllJudulKelayakanDatabase(getMahasiswa().getNim());
+            Iterator listKelayakan = KelayakanAll.iterator();
+            while(listKelayakan.hasNext()){
+                Kelayakan eachKelayakan;
+                eachKelayakan = (Kelayakan) listKelayakan.next();
+                atributKelayakan[0] = eachKelayakan.JudulDalamKelayakan.getIdJudul();
+                atributKelayakan[1] = eachKelayakan.JudulDalamKelayakan.getNamaJudul();
+                atributKelayakan[2] = eachKelayakan.JudulDalamKelayakan.getDeskripsi();
+                atributKelayakan[3] = eachKelayakan.getStatusLayak();
+        
+                modelTableJudul.addRow(atributKelayakan);
+            }
+            judulTable.setModel(modelTableJudul);
+        } catch (Exception ex) {
+            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void getRevisiFromDatabase(String idJudul){
+        DefaultTableModel modelTableRevisi = (DefaultTableModel) revisiTable.getModel();
+        modelTableRevisi.setRowCount(0);
+        Object[] atributRevisi = new Object[3];
+        try {
+            ArrayList RevisiAll = new Revisi().getAllIdJudulDatabase(idJudul);
+            Iterator listRevisi = RevisiAll.iterator();
+            while(listRevisi.hasNext()){
+                Revisi eachRevisi;
+                eachRevisi = (Revisi) listRevisi.next();
+                atributRevisi[0] = eachRevisi.JudulDalamRevisi.getIdJudul();
+                atributRevisi[1] = eachRevisi.getIsiRevisi();
+                atributRevisi[2] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
+        
+                modelTableRevisi.addRow(atributRevisi);
+            }
+            revisiTable.setModel(modelTableRevisi);
+        } catch (Exception ex) {
+            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -269,6 +368,7 @@ public class isi_dos extends javax.swing.JFrame {
     private javax.swing.JButton jadwalSeminarProposalButton;
     private javax.swing.JButton jadwalSeminarTaButton;
     private javax.swing.JTable judulTable;
+    private javax.swing.JButton logoutButton;
     private javax.swing.JButton nimCariButton;
     private javax.swing.JLabel nimLabel;
     private javax.swing.JTextField nimTextField;
@@ -305,5 +405,61 @@ public class isi_dos extends javax.swing.JFrame {
      */
     public void setDosen(Dosen dosen) {
         this.dosen = dosen;
+    }
+
+    /**
+     * @return the mahasiswa
+     */
+    public Mahasiswa getMahasiswa() {
+        return mahasiswa;
+    }
+
+    /**
+     * @param mahasiswa the mahasiswa to set
+     */
+    public void setMahasiswa(Mahasiswa mahasiswa) {
+        this.mahasiswa = mahasiswa;
+    }
+
+    /**
+     * @return the judul
+     */
+    public Judul getJudul() {
+        return judul;
+    }
+
+    /**
+     * @param judul the judul to set
+     */
+    public void setJudul(Judul judul) {
+        this.judul = judul;
+    }
+
+    /**
+     * @return the revisi
+     */
+    public Revisi getRevisi() {
+        return revisi;
+    }
+
+    /**
+     * @param revisi the revisi to set
+     */
+    public void setRevisi(Revisi revisi) {
+        this.revisi = revisi;
+    }
+
+    /**
+     * @return the kelayakan
+     */
+    public Kelayakan getKelayakan() {
+        return kelayakan;
+    }
+
+    /**
+     * @param kelayakan the kelayakan to set
+     */
+    public void setKelayakan(Kelayakan kelayakan) {
+        this.kelayakan = kelayakan;
     }
 }
