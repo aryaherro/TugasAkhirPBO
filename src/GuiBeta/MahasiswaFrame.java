@@ -5,7 +5,9 @@
  */
 package GuiBeta;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -223,7 +225,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 eachRevisi = (Revisi) listRevisi.next();
                 atributRevisi[0] = eachRevisi.JudulDalamRevisi.getIdJudul();
                 atributRevisi[1] = eachRevisi.getIsiRevisi();
-                atributRevisi[2] = eachRevisi.getTanggalRevisi();
+                atributRevisi[2] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
         
                 modelTableRevisi.addRow(atributRevisi);
             }
