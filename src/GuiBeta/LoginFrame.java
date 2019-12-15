@@ -37,6 +37,12 @@ public class LoginFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Username.setText("Username");
+        Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameActionPerformed(evt);
+            }
+        });
         getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 120, 30));
 
         kataSandi.setText("Kata sandi");
@@ -117,6 +123,10 @@ public class LoginFrame extends javax.swing.JFrame {
             setVisible(false);
         }
     }//GEN-LAST:event_masukButtonActionPerformed
+
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameActionPerformed
 
     /**
      * @param args the command line arguments
