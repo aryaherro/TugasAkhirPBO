@@ -99,6 +99,32 @@ public class Revisi {
        return list;
    }
    
+   public ArrayList<Revisi> getAllIdJudulDatabase(String idJudul){
+       ArrayList<Revisi> list = new ArrayList<>();
+       try{
+           String query = "SELECT * FROM revisi WHERE idJudul = (?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, idJudul);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               Revisi rev = new Revisi();
+               rev.setIdRevisi(rs.getString("idRevisi"));
+               rev.JudulDalamRevisi = new Judul().getSingleDatabase(rs.getString("idJudul"));
+               rev.DosenMemberiRevisi = new Dosen().getSingleDatabase(rs.getString("npp"));
+               rev.setIsiRevisi(rs.getString("isiRevisi"));
+               rev.setTanggalRevisi(rs.getDate("tanggalRevisi"));
+               
+               list.add(rev);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
    public Revisi getSingleDatabase(String kunci){
        Revisi rev = new Revisi();
        String query = "SELECT * FROM revisi WHERE idRevisi = (?)";
@@ -141,10 +167,11 @@ public class Revisi {
    }
    
    public int getSizeDatabase(){
-       return getAllDatabase("").size();
+       return getAllDatabase("").size() + 1;
    }
    
    public void autoInsertId(){
-       setIdRevisi(""+ getSizeDatabase() + 1);
+       int jumlah = getSizeDatabase();
+       setIdRevisi("" + jumlah);
    }
 }

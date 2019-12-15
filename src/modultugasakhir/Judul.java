@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+import javax.swing.JOptionPane;
 
 /** @pdOid efaf61e9-76fe-44e4-984c-1562cf4d562f */
 public class Judul {
@@ -32,9 +33,7 @@ public class Judul {
    public Judul(String nim, String namaJudul, String deskripsi) {
       // TODO: implement
        autoInsertId();
-       Mahasiswa maha = new Mahasiswa();
-       maha.getSingleDatabase(nim);
-       MahasiswaDalamJudul = maha;
+       MahasiswaDalamJudul = new Mahasiswa().getSingleDatabase(nim);
        setNamaJudul(namaJudul);
        setDeskripsi(deskripsi);
    }
@@ -167,10 +166,11 @@ public class Judul {
    }
    
    public int getSizeDatabase(){
-       return getAllDatabase("").size();
+       return getAllDatabase("").size() + 1;
    }
    
    public void autoInsertId(){
-       setIdJudul(""+ getSizeDatabase() + 1);
+       int jumlah = getSizeDatabase();
+       setIdJudul("" + jumlah);
    }
 }

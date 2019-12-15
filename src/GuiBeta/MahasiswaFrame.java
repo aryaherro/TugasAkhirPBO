@@ -25,13 +25,14 @@ public class MahasiswaFrame extends javax.swing.JFrame {
      */
     public MahasiswaFrame() {
         initComponents();
+        getJudulFromDatabase();
     }
 
     
     public MahasiswaFrame(User user) {
         setMahasiswa(new Mahasiswa().getSingleDatabase(user.getUsername()));
         initComponents();
-        
+        getJudulFromDatabase();
     }
     
     /**
@@ -46,9 +47,9 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         namaMahasiswa = new javax.swing.JLabel();
         tambahJudul = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Judul = new javax.swing.JTable();
+        JudulTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Revisi = new javax.swing.JTable();
+        RevisiTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,50 +62,50 @@ public class MahasiswaFrame extends javax.swing.JFrame {
             }
         });
 
-        Judul.setModel(new javax.swing.table.DefaultTableModel(
+        JudulTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Judul", "Deskripsi"
+                "Id Judul", "Judul", "Deskripsi"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        Judul.setColumnSelectionAllowed(true);
-        Judul.getTableHeader().setReorderingAllowed(false);
-        Judul.addMouseListener(new java.awt.event.MouseAdapter() {
+        JudulTable.setColumnSelectionAllowed(true);
+        JudulTable.getTableHeader().setReorderingAllowed(false);
+        JudulTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JudulMouseClicked(evt);
+                JudulTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(Judul);
-        Judul.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        jScrollPane1.setViewportView(JudulTable);
+        JudulTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        Revisi.setModel(new javax.swing.table.DefaultTableModel(
+        RevisiTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Revisi", "Tanggal Revisi"
+                "Id Judul", "Revisi", "Tanggal Revisi"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        Revisi.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(Revisi);
+        RevisiTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(RevisiTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,13 +145,14 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         Judul jud = new Judul(getMahasiswa().getNim(), JOptionPane.showInputDialog(null, "Masukkan Judul", "Judul", 3), JOptionPane.showInputDialog(null, "Masukkan Deskripsi", "Deskripsi", 3));
         jud.insertToDatabase();
+        getJudulFromDatabase();
         
     }//GEN-LAST:event_tambahJudulActionPerformed
 
-    private void JudulMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JudulMouseClicked
+    private void JudulTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JudulTableMouseClicked
         // TODO add your handling code here:
-        String judul = (String) Judul.getValueAt(Judul.getSelectedRow(), 1);
-    }//GEN-LAST:event_JudulMouseClicked
+        getRevisiFromDatabase((String) JudulTable.getValueAt(JudulTable.getSelectedRow(), 1));
+    }//GEN-LAST:event_JudulTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -188,29 +190,52 @@ public class MahasiswaFrame extends javax.swing.JFrame {
     }
     
     public void getJudulFromDatabase(){
-        Judul jud = new Judul();
-        DefaultTableModel modelTable = (DefaultTableModel) Judul.getModel();
-        Object[] atributJudul = new Object[2];
+        DefaultTableModel modelTableJudul = (DefaultTableModel) JudulTable.getModel();
+        modelTableJudul.setRowCount(0);
+        Object[] atributJudul = new Object[3];
         try {
-            ArrayList JudulAll = jud.getAllNimDatabase(mahasiswa.getNim());
+            ArrayList JudulAll = new Judul().getAllNimDatabase(mahasiswa.getNim());
             Iterator listJudul = JudulAll.iterator();
             while(listJudul.hasNext()){
                 Judul eachJudul;
                 eachJudul = (Judul) listJudul.next();
-                atributJudul[0] = eachJudul.getNamaJudul();
-                atributJudul[1] = eachJudul.getDeskripsi();
+                atributJudul[0] = eachJudul.getIdJudul();
+                atributJudul[1] = eachJudul.getNamaJudul();
+                atributJudul[2] = eachJudul.getDeskripsi();
         
-                modelTable.addRow(atributJudul);
+                modelTableJudul.addRow(atributJudul);
             }
-            Judul.setModel(modelTable);
+            JudulTable.setModel(modelTableJudul);
+        } catch (Exception ex) {
+            Logger.getLogger(Mahasiswa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void getRevisiFromDatabase(String idJudul){
+        DefaultTableModel modelTableRevisi = (DefaultTableModel) RevisiTable.getModel();
+        modelTableRevisi.setRowCount(0);
+        Object[] atributRevisi = new Object[3];
+        try {
+            ArrayList RevisiAll = new Revisi().getAllIdJudulDatabase(idJudul);
+            Iterator listRevisi = RevisiAll.iterator();
+            while(listRevisi.hasNext()){
+                Revisi eachRevisi;
+                eachRevisi = (Revisi) listRevisi.next();
+                atributRevisi[0] = eachRevisi.JudulDalamRevisi.getIdJudul();
+                atributRevisi[1] = eachRevisi.getIsiRevisi();
+                atributRevisi[2] = eachRevisi.getTanggalRevisi();
+        
+                modelTableRevisi.addRow(atributRevisi);
+            }
+            RevisiTable.setModel(modelTableRevisi);
         } catch (Exception ex) {
             Logger.getLogger(Mahasiswa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Judul;
-    private javax.swing.JTable Revisi;
+    private javax.swing.JTable JudulTable;
+    private javax.swing.JTable RevisiTable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel namaMahasiswa;

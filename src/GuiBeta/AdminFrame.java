@@ -358,11 +358,11 @@ public class AdminFrame extends javax.swing.JFrame {
                     alamatTextField.setText(getMahasiswa().getAlamat());
                     emailTextField.setText(getMahasiswa().getEmail());
                     agamaComboBox.setSelectedItem(getMahasiswa().getAgama());
-                    //if(getMahasiswa().DosenPembimbingMahasiswa != null)
+                    if(getMahasiswa().DosenPembimbingMahasiswa != null)
                     {
                         dsnComboBox.setSelectedItem(getMahasiswa().DosenPembimbingMahasiswa.getNama());
                     }
-                    //if(getMahasiswa().ProdiDalamMahasiswa != null)
+                    if(getMahasiswa().ProdiDalamMahasiswa != null)
                     {
                         prodiComboBox.setSelectedItem(getMahasiswa().ProdiDalamMahasiswa.getNamaProdi());
                     }
