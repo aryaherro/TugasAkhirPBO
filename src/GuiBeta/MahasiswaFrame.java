@@ -57,7 +57,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        logoutButton.setText("Logout");
+        logoutButton.setText("LOGOUT");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutButtonActionPerformed(evt);
@@ -66,7 +66,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
 
         namaMahasiswa.setText("Hai,");
 
-        tambahJudul.setText("Ajukan Judul Baru");
+        tambahJudul.setText("AJUKAN JUDUL");
         tambahJudul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tambahJudulActionPerformed(evt);
@@ -118,7 +118,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         RevisiTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(RevisiTable);
 
-        jButton2.setText("Lihat Jadwal Seminar");
+        jButton2.setText("LIHAT JADWAL SEMINAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

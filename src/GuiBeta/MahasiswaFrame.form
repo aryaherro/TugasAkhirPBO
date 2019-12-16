@@ -83,7 +83,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="logoutButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Logout"/>
+        <Property name="text" type="java.lang.String" value="LOGOUT"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutButtonActionPerformed"/>
@@ -96,7 +96,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="tambahJudul">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ajukan Judul Baru"/>
+        <Property name="text" type="java.lang.String" value="AJUKAN JUDUL"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tambahJudulActionPerformed"/>
@@ -192,7 +192,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Lihat Jadwal Seminar"/>
+        <Property name="text" type="java.lang.String" value="LIHAT JADWAL SEMINAR"/>
       </Properties>
     </Component>
   </SubComponents>
