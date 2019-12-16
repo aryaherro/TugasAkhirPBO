@@ -301,6 +301,8 @@ public class AdminFrame extends javax.swing.JFrame {
                 break;
             }
         }
+        JOptionPane.showMessageDialog(null, "Data Sudah di update");
+        opsiComboBox.setSelectedIndex(0);
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void opsiComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opsiComboBoxActionPerformed
@@ -500,6 +502,8 @@ public class AdminFrame extends javax.swing.JFrame {
                 break;
             }
         }
+        JOptionPane.showMessageDialog(null, "Data Sudah di simpan");
+        opsiComboBox.setSelectedIndex(0);
     }//GEN-LAST:event_simpanButtonActionPerformed
 
     private void dsnComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dsnComboBoxActionPerformed
