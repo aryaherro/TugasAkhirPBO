@@ -22347,7 +22347,7 @@ SOURCE 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o1175">
 <a:CreationDate>1575797834</a:CreationDate>
 <a:ModificationDate>1575797834</a:ModificationDate>
-<a:Rect>((48284,17759), (61619,19712))</a:Rect>
+<a:Rect>((48284,17764), (61619,19712))</a:Rect>
 <a:ListOfPoints>((52259,18738),(61219,18738))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>2048</a:ArrowStyle>
@@ -23677,9 +23677,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>jadwal</a:Code>
 <a:CreationDate>1575692331</a:CreationDate>
 <a:Creator>Ajeng</a:Creator>
-<a:ModificationDate>1575711056</a:ModificationDate>
+<a:ModificationDate>1576500939</a:ModificationDate>
 <a:Modifier>Ajeng</a:Modifier>
-<a:DataType>String</a:DataType>
+<a:DataType>Date</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 <a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
@@ -23751,10 +23751,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>getJadwal</a:Code>
 <a:CreationDate>1575711055</a:CreationDate>
 <a:Creator>Ajeng</a:Creator>
-<a:ModificationDate>1575711056</a:ModificationDate>
+<a:ModificationDate>1576500939</a:ModificationDate>
 <a:Modifier>Ajeng</a:Modifier>
 <a:Stereotype>Getter</a:Stereotype>
-<a:ReturnType>String</a:ReturnType>
+<a:ReturnType>Date</a:ReturnType>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
@@ -23780,9 +23780,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>newJadwal</a:Code>
 <a:CreationDate>1575711055</a:CreationDate>
 <a:Creator>Ajeng</a:Creator>
-<a:ModificationDate>1575711056</a:ModificationDate>
+<a:ModificationDate>1576500939</a:ModificationDate>
 <a:Modifier>Ajeng</a:Modifier>
-<a:Parameter.DataType>String</a:Parameter.DataType>
+<a:Parameter.DataType>Date</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
 </c:Parameters>
@@ -25219,12 +25219,12 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>CDM_Tugas_Akhir</a:Code>
 <a:CreationDate>1575801379</a:CreationDate>
 <a:Creator>Ajeng</a:Creator>
-<a:ModificationDate>1576337072</a:ModificationDate>
+<a:ModificationDate>1576501170</a:ModificationDate>
 <a:Modifier>Ajeng</a:Modifier>
 <a:TargetModelURL>file:///C|/Users/Ajeng/Documents/GitHub/TugasAkhir/Power Designer/CDM Tugas Akhir.cdm</a:TargetModelURL>
 <a:TargetModelID>A41B7E4C-849F-4B6A-B802-F3F6A05BA4E9</a:TargetModelID>
 <a:TargetModelClassID>1E597170-9350-11D1-AB3C-0020AF71E433</a:TargetModelClassID>
-<a:TargetModelLastModificationDate>1576337112</a:TargetModelLastModificationDate>
+<a:TargetModelLastModificationDate>1576501171</a:TargetModelLastModificationDate>
 <c:SessionShortcuts>
 <o:Shortcut Ref="o5"/>
 </c:SessionShortcuts>
