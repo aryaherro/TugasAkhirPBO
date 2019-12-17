@@ -17,7 +17,7 @@ public class JadwalSeminar {
    /** @pdOid 4da5ae69-a7b4-4e6a-8f44-3bd0a2002517 */
    private String idJadwal;
    /** @pdOid b999dd8b-e31d-4f92-9ec0-ee4cc2233881 */
-   private String jadwal;
+   private Date jadwal;
    
    /** @pdRoleInfo migr=no name=Mahasiswa assc=association10 mult=0..1 side=A */
    public Mahasiswa MahasiswaDalamJadwalSeminar;
@@ -29,11 +29,11 @@ public class JadwalSeminar {
       // TODO: implement
    }
    
-   public JadwalSeminar(String idProdi, String nim, String jadwal) {
+   public JadwalSeminar(String idProdi, String nim, Date jadwal) {
       // TODO: implement
       autoInsertId();
-      MahasiswaDalamJadwalSeminar.getSingleDatabase(nim);
-      ProdiMenentukanJadwal.getSingleDatabase(idProdi);
+      MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(nim);
+      ProdiMenentukanJadwal = new Prodi().getSingleDatabase(idProdi);
       setJadwal(jadwal);
    }
    
@@ -49,13 +49,13 @@ public class JadwalSeminar {
    }
    
    /** @pdOid 5972df07-3a24-47f2-b93f-7389e03e25b1 */
-   public String getJadwal() {
+   public Date getJadwal() {
       return jadwal;
    }
    
    /** @param newJadwal
     * @pdOid 70562bca-083a-49be-979e-a42820375953 */
-   public void setJadwal(String newJadwal) {
+   public void setJadwal(Date newJadwal) {
       jadwal = newJadwal;
    }
 
@@ -74,7 +74,7 @@ public class JadwalSeminar {
                jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
                jad.MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
                
-               jad.setJadwal(rs.getString("jadwal"));
+               jad.setJadwal(rs.getDate("jadwal"));
                
                list.add(jad);
            }
@@ -100,7 +100,31 @@ public class JadwalSeminar {
                jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
                jad.MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
                
-               jad.setJadwal(rs.getString("jadwal"));
+               jad.setJadwal(rs.getDate("jadwal"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return jad;
+   }
+   
+   public JadwalSeminar getSingleNimDatabase(String kunci){
+       JadwalSeminar jad = new JadwalSeminar();
+       String query = "SELECT * FROM jadwalseminar WHERE nim = (?)";
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               jad.setIdJadwal(rs.getString("idJudul"));
+               
+               jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
+               jad.MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
+               
+               jad.setJadwal(rs.getDate("jadwal"));
            }
            statement.close();
            rs.close();
@@ -118,7 +142,8 @@ public class JadwalSeminar {
            statement.setString(1, getIdJadwal());
            statement.setString(2, ProdiMenentukanJadwal.getIdProdi());
            statement.setString(3, MahasiswaDalamJadwalSeminar.getNim());
-           statement.setString(4, getJadwal());
+           java.sql.Date sqlDate = new java.sql.Date(getJadwal().getTime());
+           statement.setDate(4, sqlDate);
            
            statement.execute();
            statement.close();

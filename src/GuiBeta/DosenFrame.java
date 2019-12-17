@@ -7,6 +7,7 @@ package GuiBeta;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +20,7 @@ import modultugasakhir.*;
  * @author Jempol
  */
 @SuppressWarnings("serial")
-public class isi_dos extends javax.swing.JFrame {
+public class DosenFrame extends javax.swing.JFrame {
     private User user = new User();
     private Dosen dosen = new Dosen();
     private Mahasiswa mahasiswa = new Mahasiswa();
@@ -30,12 +31,12 @@ public class isi_dos extends javax.swing.JFrame {
     /**
      * Creates new form isi_dos
      */
-    public isi_dos() {
+    public DosenFrame() {
         initComponents();
         hideShowAll(false);
     }
     
-    public isi_dos(User user) {
+    public DosenFrame(User user) {
         setUser(user);
         setDosen(new Dosen().getSingleDatabase(user.getUsername()));
         initComponents();
@@ -99,6 +100,14 @@ public class isi_dos extends javax.swing.JFrame {
         jLabel2.setText("DOSEN");
 
         revisiButton.setText("TAMBAH");
+<<<<<<< HEAD:src/GuiBeta/isi_dos.java
+=======
+        revisiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                revisiButtonActionPerformed(evt);
+            }
+        });
+>>>>>>> 7aef974e21318982a226210151cfdf783aa9c8f9:src/GuiBeta/DosenFrame.java
 
         judulTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -168,6 +177,7 @@ public class isi_dos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD:src/GuiBeta/isi_dos.java
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(159, 159, 159)
@@ -183,6 +193,21 @@ public class isi_dos extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(revisiInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+=======
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(172, 172, 172)
+                                .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(98, 98, 98)
+                        .addComponent(revisiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(nimLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(nimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nimCariButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+>>>>>>> 7aef974e21318982a226210151cfdf783aa9c8f9:src/GuiBeta/DosenFrame.java
                 .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -218,11 +243,17 @@ public class isi_dos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(revisiButton)))
+<<<<<<< HEAD:src/GuiBeta/isi_dos.java
                 .addGap(32, 32, 32)
                 .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
+=======
+                .addGap(35, 35, 35)
+                .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
+>>>>>>> 7aef974e21318982a226210151cfdf783aa9c8f9:src/GuiBeta/DosenFrame.java
         );
 
         pack();
@@ -240,6 +271,7 @@ public class isi_dos extends javax.swing.JFrame {
             hideShowAll(false);
             JOptionPane.showMessageDialog(null, "Data Tidak Ditemukan!");
         }
+        hideRevisi(false);
     }//GEN-LAST:event_nimCariButtonActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
@@ -250,14 +282,34 @@ public class isi_dos extends javax.swing.JFrame {
 
     private void judulTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_judulTableMouseClicked
         // TODO add your handling code here:
+        String idJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 0);
+        boolean bool = (Boolean) judulTable.getValueAt(judulTable.getSelectedRow(), 3);
         if(judulTable.getSelectedColumn() == 3){
-            setKelayakan(new Kelayakan((Boolean) judulTable.getValueAt(judulTable.getSelectedRow(), 3), (String) judulTable.getValueAt(judulTable.getSelectedRow(), 0)));
-            getKelayakan().insertToDatabase();
+            setKelayakan(new Kelayakan().cekExistKelayakan(getMahasiswa().getNim(), idJudul));
+            if(getKelayakan().getIdLayak() != null){
+                getKelayakan().setStatusLayak(bool);
+                getKelayakan().updateDatabase();
+            }
+            else{
+                setKelayakan(new Kelayakan(bool, idJudul));
+                getKelayakan().insertToDatabase();
+            }
         }
         else{
-            getRevisiFromDatabase((String) judulTable.getValueAt(judulTable.getSelectedRow(), 0));
+            getRevisiFromDatabase(idJudul);
         }
+        hideRevisi(true);
     }//GEN-LAST:event_judulTableMouseClicked
+
+    private void revisiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revisiButtonActionPerformed
+        // TODO add your handling code here:
+        String idJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 0);
+        setRevisi(new Revisi(idJudul, getDosen().getNpp(), revisiTextField.getText(), new java.util.Date()));
+        getRevisi().insertToDatabase();
+        getRevisiFromDatabase(idJudul);
+        JOptionPane.showMessageDialog(null, "Data Tersimpan");
+        hideRevisi(false);
+    }//GEN-LAST:event_revisiButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,13 +328,13 @@ public class isi_dos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(isi_dos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DosenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(isi_dos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DosenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(isi_dos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DosenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(isi_dos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DosenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -290,18 +342,20 @@ public class isi_dos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new isi_dos().setVisible(true);
+                new DosenFrame().setVisible(true);
             }
         });
     }
 
     public void hideShowAll(boolean bool){
-        beritaAcaraButton.setVisible(bool);
-        jadwalSeminarProposalButton.setVisible(bool);
         jadwalSeminarTaButton.setVisible(bool);
+        revisiLabel.setVisible(bool);
+        hideRevisi(bool);
+    }
+    
+    public void hideRevisi(boolean bool){
         revisiButton.setVisible(bool);
         revisiInputLabel.setVisible(bool);
-        revisiLabel.setVisible(bool);
         revisiTextField.setVisible(bool);
     }
     

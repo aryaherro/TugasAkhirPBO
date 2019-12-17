@@ -128,13 +128,43 @@ public class Kelayakan {
                kel.setIdLayak(rs.getString("idLayak"));
                kel.JudulDalamKelayakan = new Judul().getSingleDatabase(rs.getString("idJudul"));
                kel.setStatusLayak(rs.getBoolean("statusLayak"));
-               
            }
            statement.close();
            rs.close();
        }
        catch(SQLException e){
            
+       }
+       return kel;
+   }
+   
+   public Kelayakan getSingleFromJudulDatabase(String kunci){
+       Kelayakan kel = new Kelayakan();
+       String query = "SELECT * FROM kelayakan WHERE idJudul = (?)";
+       try{
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, kunci);
+           ResultSet rs = statement.executeQuery();
+           if(rs.next()){
+               kel.setIdLayak(rs.getString("idLayak"));
+               kel.JudulDalamKelayakan = new Judul().getSingleDatabase(rs.getString("idJudul"));
+               kel.setStatusLayak(rs.getBoolean("statusLayak"));
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return kel;
+   }
+   
+   public Kelayakan cekExistKelayakan(String nim, String idJudul){
+       Kelayakan kel = new Kelayakan();
+       ArrayList<Kelayakan> KelayakanAll = new Kelayakan().getAllJudulKelayakanDatabase(nim);
+       for (Kelayakan eachKelayakan : KelayakanAll) {
+           if(idJudul.equals(eachKelayakan.JudulDalamKelayakan.getIdJudul()))
+               kel = eachKelayakan;
        }
        return kel;
    }
@@ -146,6 +176,21 @@ public class Kelayakan {
            statement.setString(1, getIdLayak());
            statement.setString(2, JudulDalamKelayakan.getIdJudul());
            statement.setBoolean(3, getStatusLayak());
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
+   public void updateDatabase(){
+       try{
+           String query = "UPDATE kelayakan SET statusLayak = (?) WHERE idJudul = (?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setBoolean(1, getStatusLayak());
+           statement.setString(2, JudulDalamKelayakan.getIdJudul());
            
            statement.execute();
            statement.close();

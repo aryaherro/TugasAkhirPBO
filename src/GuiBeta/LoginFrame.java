@@ -1,9 +1,6 @@
 package GuiBeta;
 
 import java.awt.Color;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modultugasakhir.*;
 
@@ -99,13 +96,13 @@ public class LoginFrame extends javax.swing.JFrame {
                 
                 case "Prodi" :
                 {
-                    //                      new IsiProdi(u.getUsername()).setVisible(true);
+                    new isi_pro(getU()).setVisible(true);
                     break;
                 }
                 
                 case "Dosen" :
                 {
-                    new isi_dos(getU()).setVisible(true);
+                    new DosenFrame(getU()).setVisible(true);
                     break;
                 }
 

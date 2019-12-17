@@ -156,7 +156,8 @@ public class Revisi {
            statement.setString(2, JudulDalamRevisi.getIdJudul());
            statement.setString(3, DosenMemberiRevisi.getNpp());
            statement.setString(4, getIsiRevisi());
-           statement.setDate(5, (java.sql.Date) getTanggalRevisi());
+           java.sql.Date sqlDate = new java.sql.Date(getTanggalRevisi().getTime());
+           statement.setDate(5, sqlDate);
            
            statement.execute();
            statement.close();

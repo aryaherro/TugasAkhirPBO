@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     Sat 14.12.19 22:27:40                        */
+/* Created on:     Mon 16.12.19 20:00:46                        */
 /*==============================================================*/
 
 
@@ -88,7 +88,7 @@ create table JadwalSeminar
    idJadwal             varchar(254) not null  comment '',
    idProdi              varchar(254)  comment '',
    nim                  varchar(254)  comment '',
-   jadwal               varchar(254) not null  comment '',
+   jadwal               datetime not null  comment '',
    primary key (idJadwal),
    constraint FK_JADWALSE_ASSOCIATI_PRODI foreign key (idProdi)
       references Prodi (idProdi) on delete restrict on update restrict,
