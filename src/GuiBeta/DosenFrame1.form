@@ -48,7 +48,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="layakCheckBox" min="-2" max="-2" attributes="0"/>
                                   <Component id="jScrollPane1" min="-2" pref="561" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -97,7 +97,7 @@
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+              <Component id="layakCheckBox" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jadwalSeminarTaButton" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace pref="120" max="32767" attributes="0"/>
@@ -117,7 +117,7 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="2" rowCount="0">
-                <Column editable="false" title="Revisi" type="java.lang.Object"/>
+                <Column editable="false" title="ID - Revisi" type="java.lang.Object"/>
                 <Column editable="false" title="Tanggal Revisi" type="java.lang.Object"/>
               </Table>
             </Property>
@@ -170,7 +170,7 @@
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="3" rowCount="0">
                 <Column editable="false" title="Proposal / Tugas Akhir" type="java.lang.Object"/>
-                <Column editable="false" title="Judul" type="java.lang.Object"/>
+                <Column editable="false" title="ID - Judul" type="java.lang.Object"/>
                 <Column editable="false" title="Deskripsi" type="java.lang.Object"/>
               </Table>
             </Property>
@@ -233,16 +233,19 @@
           <StringArray count="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nimNamaComboBoxActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="layakCheckBox">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sudah layak maju?"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="layakCheckBoxActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

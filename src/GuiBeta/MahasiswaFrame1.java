@@ -180,7 +180,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
             {
                 while(listJudul.hasNext()){
                     Judul judul = listJudul.next();
-                    if((judul.MahasiswaDalamJudul.getNim() == getMahasiswa().getNim()) && (judul.getTipeJudul() == "Proposal")){
+                    if((judul.MahasiswaDalamJudul.getNim().equals(getMahasiswa().getNim())) && (judul.getTipeJudul().equals("Proposal"))){
                         tambahJudul.setVisible(false);
                         judulLabel.setVisible(true);
                         judulLabel.setText("Judul Proposal : " + judul.getNamaJudul());
@@ -207,7 +207,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
             {
                 while(listJudul.hasNext()){
                     Judul judul = listJudul.next();
-                    if((judul.MahasiswaDalamJudul.getNim() == getMahasiswa().getNim()) && (judul.getTipeJudul() == "Tugas Akhir")){
+                    if((judul.MahasiswaDalamJudul.getNim().equals(getMahasiswa().getNim())) && (judul.getTipeJudul().equals("Tugas Akhir"))){
                         tambahJudul.setVisible(false);
                         judulLabel.setText("Judul Tugas Akhir : " + judul.getNamaJudul());
                         getRevisiFromDatabase(judul.getIdJudul());

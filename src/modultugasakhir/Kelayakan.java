@@ -200,6 +200,20 @@ public class Kelayakan {
        }
    }
    
+   public void deleteSingleDatabase(String idJudul){
+       try{
+           String query = "DELETE FROM kelayakan WHERE idJudul = (?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, idJudul);
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
    public int getSizeDatabase(){
        return getAllDatabase("").size() + 1;
    }

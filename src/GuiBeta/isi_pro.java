@@ -40,7 +40,7 @@ public class isi_pro extends javax.swing.JFrame {
         setUser(user);
         setProdi(new Prodi().getSingleDatabase(getUser().getUsername()));
         hideAll(false);
-        getJudulKelayakanFromDatabase();
+        getAllMahasiswaLayak();
         seminarDateChooser.setDateFormatString("dd-MM-yyyy");
     }
     
@@ -70,11 +70,11 @@ public class isi_pro extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NIM", "JUDUL", "DOSEN PEMBIMBING", "TANGGAL SEMINAR"
+                "Tipe Judul", "NIM - Nama", "ID - Judul", "Npp - Dosen Pembimbing", "Tanggal Seminar"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -170,7 +170,7 @@ public class isi_pro extends javax.swing.JFrame {
         getJadwalSeminar().insertToDatabase();
         JOptionPane.showMessageDialog(null, "Data Tersimpan");
         hideAll(false);
-        getJudulKelayakanFromDatabase();
+        getAllMahasiswaLayak();
     }//GEN-LAST:event_seminarJadwalButtonActionPerformed
 
     private void seminarTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seminarTableMouseClicked
@@ -223,48 +223,30 @@ public class isi_pro extends javax.swing.JFrame {
             }
         });
     }
-
-    public void getJudulKelayakanFromDatabase(){
-        DefaultTableModel modelTableJudul = (DefaultTableModel) seminarTable.getModel();
-        modelTableJudul.setRowCount(0);
-        Object[] atributKelayakan = new Object[4];
-        try {
-            ArrayList<Kelayakan> KelayakanAll = new Kelayakan().getAllDatabase("");
-            Iterator listKelayakan = KelayakanAll.iterator();
-            while(listKelayakan.hasNext()){
-                Kelayakan eachKelayakan = (Kelayakan) listKelayakan.next();
-                if(eachKelayakan.getStatusLayak() == true){
-                    String nim = eachKelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.getNim();
-                    atributKelayakan[0] = nim;
-                    atributKelayakan[1] = eachKelayakan.JudulDalamKelayakan.getNamaJudul();
-                    atributKelayakan[2] = eachKelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.DosenPembimbingMahasiswa.getNama();
-
-                    atributKelayakan[3] = new JadwalSeminar().getSingleIdJudulDatabase(eachKelayakan.JudulDalamKelayakan.getIdJudul()).getJadwal();
-
-                    modelTableJudul.addRow(atributKelayakan);
-                }
-            }
-            seminarTable.setModel(modelTableJudul);
-        } catch (HeadlessException ex) {
-            
-        }
-    }
     
     public void getAllMahasiswaLayak(){
-        ArrayList<Mahasiswa> allMahasiswa = new Mahasiswa().getAllDatabase("");
-        Iterator<Mahasiswa> listMahasiswa = allMahasiswa.iterator();
-        while(listMahasiswa.hasNext()){
-            Mahasiswa maha = listMahasiswa.next();
-            ArrayList<Judul> allJudul = new Judul().getAllNimDatabase(maha.getNim());
-            Iterator<Judul> listJudul = allJudul.iterator();
-            while(listJudul.hasNext()){
-                Judul jud = listJudul.next();
-                Kelayakan layak = new Kelayakan().getSingleDatabase(jud.getIdJudul());
-                if(layak.getStatusLayak()){
-                }
-            }
+        DefaultTableModel modelTableJudul = (DefaultTableModel) seminarTable.getModel();
+        modelTableJudul.setRowCount(0);
+        Object[] atributKelayakan = new Object[5];
+        
+        ArrayList<Kelayakan> allKelayakan = new Kelayakan().getAllDatabase("");
+        Iterator<Kelayakan> listKelayakan = allKelayakan.iterator();
+        while(listKelayakan.hasNext()){
+            Kelayakan kelayakan = listKelayakan.next();
             
+            atributKelayakan[0] = kelayakan.JudulDalamKelayakan.getTipeJudul();
+            atributKelayakan[1] = kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.getNim() + "-" +
+                                  kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.getNama();
+            atributKelayakan[2] = kelayakan.JudulDalamKelayakan.getIdJudul() + "-" +
+                                  kelayakan.JudulDalamKelayakan.getNamaJudul();
+            atributKelayakan[3] = kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.DosenPembimbingMahasiswa.getNpp() + "-" +
+                                  kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.DosenPembimbingMahasiswa.getNama();
+            atributKelayakan[4] = new SimpleDateFormat("dd-MM-yyyy").format(
+                                  new JadwalSeminar().getSingleIdJudulDatabase(
+                                  kelayakan.JudulDalamKelayakan.getIdJudul()).getJadwal());
+            modelTableJudul.addRow(atributKelayakan);
         }
+        seminarTable.setModel(modelTableJudul);
     }
     
     public void hideAll(boolean bool){

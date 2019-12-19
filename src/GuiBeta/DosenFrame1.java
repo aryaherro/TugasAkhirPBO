@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -35,6 +36,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
         initComponents();
         hideShowAll(false);
         getAllMahasiswaBimbingan();
+        getJudulKelayakanFromDatabase();
     }
     
     public DosenFrame1(User user) {
@@ -43,6 +45,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
         initComponents();
         hideShowAll(false);
         getAllMahasiswaBimbingan();
+        getJudulKelayakanFromDatabase();
     }
 
     /**
@@ -66,7 +69,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
         revisiLabel = new javax.swing.JLabel();
         logoutButton = new javax.swing.JButton();
         nimNamaComboBox = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        layakCheckBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,7 +78,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Revisi", "Tanggal Revisi"
+                "ID - Revisi", "Tanggal Revisi"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -103,7 +106,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Proposal / Tugas Akhir", "Judul", "Deskripsi"
+                "Proposal / Tugas Akhir", "ID - Judul", "Deskripsi"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -137,10 +140,16 @@ public class DosenFrame1 extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setText("Sudah layak maju?");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        nimNamaComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                nimNamaComboBoxActionPerformed(evt);
+            }
+        });
+
+        layakCheckBox.setText("Sudah layak maju?");
+        layakCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                layakCheckBoxActionPerformed(evt);
             }
         });
 
@@ -169,7 +178,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1)
+                                    .addComponent(layakCheckBox)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +214,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(layakCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(120, Short.MAX_VALUE))
@@ -222,28 +231,19 @@ public class DosenFrame1 extends javax.swing.JFrame {
 
     private void judulTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_judulTableMouseClicked
         // TODO add your handling code here:
-        String idJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 0);
-        boolean bool = (Boolean) judulTable.getValueAt(judulTable.getSelectedRow(), 3);
-        if(judulTable.getSelectedColumn() == 3){
-            setKelayakan(new Kelayakan().cekExistKelayakan(getMahasiswa().getNim(), idJudul));
-            if(getKelayakan().getIdLayak() != null){
-                getKelayakan().setStatusLayak(bool);
-                getKelayakan().updateDatabase();
-            }
-            else{
-                setKelayakan(new Kelayakan(bool, idJudul));
-                getKelayakan().insertToDatabase();
-            }
-        }
-        else{
-            getRevisiFromDatabase(idJudul);
-        }
+        String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
+        StringTokenizer token = new StringTokenizer(idNamaJudul);
+        String idJudul = token.nextToken("-");
+        getRevisiFromDatabase(idJudul);
         hideRevisi(true);
     }//GEN-LAST:event_judulTableMouseClicked
 
     private void revisiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revisiButtonActionPerformed
         // TODO add your handling code here:
-        String idJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 0);
+        String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
+        StringTokenizer token = new StringTokenizer(idNamaJudul);
+        String idJudul = token.nextToken("-");
+        
         setRevisi(new Revisi(idJudul, getDosen().getNpp(), revisiTextField.getText(), new java.util.Date()));
         getRevisi().insertToDatabase();
         getRevisiFromDatabase(idJudul);
@@ -251,9 +251,25 @@ public class DosenFrame1 extends javax.swing.JFrame {
         hideRevisi(false);
     }//GEN-LAST:event_revisiButtonActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void layakCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_layakCheckBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+        String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
+        StringTokenizer token = new StringTokenizer(idNamaJudul);
+        String idJudul = token.nextToken("-");
+            
+        if(layakCheckBox.isSelected()){
+            Kelayakan kel = new Kelayakan(true, idJudul);
+            kel.insertToDatabase();
+        }
+        else{
+            new Kelayakan().deleteSingleDatabase(idJudul);
+        }
+    }//GEN-LAST:event_layakCheckBoxActionPerformed
+
+    private void nimNamaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimNamaComboBoxActionPerformed
+        // TODO add your handling code here:
+        getJudulKelayakanFromDatabase();
+    }//GEN-LAST:event_nimNamaComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,19 +324,17 @@ public class DosenFrame1 extends javax.swing.JFrame {
     public void getJudulKelayakanFromDatabase(){
         DefaultTableModel modelTableJudul = (DefaultTableModel) judulTable.getModel();
         modelTableJudul.setRowCount(0);
-        Object[] atributKelayakan = new Object[4];
+        Object[] atributJudul = new Object[3];
         try {
-            ArrayList<Kelayakan> KelayakanAll = new Kelayakan().getAllJudulKelayakanDatabase(getMahasiswa().getNim());
-            Iterator listKelayakan = KelayakanAll.iterator();
-            while(listKelayakan.hasNext()){
-                Kelayakan eachKelayakan;
-                eachKelayakan = (Kelayakan) listKelayakan.next();
-                atributKelayakan[0] = eachKelayakan.JudulDalamKelayakan.getIdJudul();
-                atributKelayakan[1] = eachKelayakan.JudulDalamKelayakan.getNamaJudul();
-                atributKelayakan[2] = eachKelayakan.JudulDalamKelayakan.getDeskripsi();
-                atributKelayakan[3] = eachKelayakan.getStatusLayak();
+            ArrayList<Judul> JudulAll = new Judul().getAllNimDatabase(getSelectedCombo());
+            Iterator<Judul> listJudul = JudulAll.iterator();
+            while(listJudul.hasNext()){
+                Judul eachJudul = listJudul.next();
+                atributJudul[0] = eachJudul.getTipeJudul();
+                atributJudul[1] = eachJudul.getIdJudul() + "-" + eachJudul.getNamaJudul();
+                atributJudul[2] = eachJudul.getDeskripsi();
         
-                modelTableJudul.addRow(atributKelayakan);
+                modelTableJudul.addRow(atributJudul);
             }
             judulTable.setModel(modelTableJudul);
         } catch (Exception ex) {
@@ -331,16 +345,15 @@ public class DosenFrame1 extends javax.swing.JFrame {
     public void getRevisiFromDatabase(String idJudul){
         DefaultTableModel modelTableRevisi = (DefaultTableModel) revisiTable.getModel();
         modelTableRevisi.setRowCount(0);
-        Object[] atributRevisi = new Object[3];
+        Object[] atributRevisi = new Object[2];
         try {
             ArrayList RevisiAll = new Revisi().getAllIdJudulDatabase(idJudul);
             Iterator listRevisi = RevisiAll.iterator();
             while(listRevisi.hasNext()){
                 Revisi eachRevisi;
                 eachRevisi = (Revisi) listRevisi.next();
-                atributRevisi[0] = eachRevisi.JudulDalamRevisi.getIdJudul();
-                atributRevisi[1] = eachRevisi.getIsiRevisi();
-                atributRevisi[2] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
+                atributRevisi[0] = eachRevisi.getIdRevisi() + "-" + eachRevisi.getIsiRevisi();
+                atributRevisi[1] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
         
                 modelTableRevisi.addRow(atributRevisi);
             }
@@ -361,13 +374,18 @@ public class DosenFrame1 extends javax.swing.JFrame {
         }
     }
     
+    public String getSelectedCombo(){
+        String pilih = nimNamaComboBox.getSelectedItem().toString();
+        StringTokenizer token = new StringTokenizer(pilih);
+        return token.nextToken("-");
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jadwalSeminarTaButton;
     private javax.swing.JTable judulTable;
+    private javax.swing.JCheckBox layakCheckBox;
     private javax.swing.JButton logoutButton;
     private javax.swing.JComboBox<String> nimNamaComboBox;
     private javax.swing.JButton revisiButton;
