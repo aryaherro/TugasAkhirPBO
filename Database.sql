@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     Mon 16.12.19 20:00:46                        */
+/* Created on:     Wed 18.12.19 10:35:23                        */
 /*==============================================================*/
 
 
@@ -81,22 +81,6 @@ create table Mahasiswa
 );
 
 /*==============================================================*/
-/* Table: JadwalSeminar                                         */
-/*==============================================================*/
-create table JadwalSeminar
-(
-   idJadwal             varchar(254) not null  comment '',
-   idProdi              varchar(254)  comment '',
-   nim                  varchar(254)  comment '',
-   jadwal               datetime not null  comment '',
-   primary key (idJadwal),
-   constraint FK_JADWALSE_ASSOCIATI_PRODI foreign key (idProdi)
-      references Prodi (idProdi) on delete restrict on update restrict,
-   constraint FK_JADWALSE_ASSOCIATI_MAHASISW foreign key (nim)
-      references Mahasiswa (nim) on delete restrict on update restrict
-);
-
-/*==============================================================*/
 /* Table: Judul                                                 */
 /*==============================================================*/
 create table Judul
@@ -105,9 +89,26 @@ create table Judul
    nim                  varchar(254) not null  comment '',
    namaJudul            varchar(254) not null  comment '',
    deskripsi            varchar(254)  comment '',
+   tipeJudul            varchar(254)  comment '',
    primary key (idJudul),
    constraint FK_JUDUL_ASSOCIATI_MAHASISW foreign key (nim)
       references Mahasiswa (nim) on delete restrict on update restrict
+);
+
+/*==============================================================*/
+/* Table: JadwalSeminar                                         */
+/*==============================================================*/
+create table JadwalSeminar
+(
+   idJadwal             varchar(254) not null  comment '',
+   idProdi              varchar(254)  comment '',
+   idJudul              varchar(254)  comment '',
+   jadwal               datetime not null  comment '',
+   primary key (idJadwal),
+   constraint FK_JADWALSE_ASSOCIATI_PRODI foreign key (idProdi)
+      references Prodi (idProdi) on delete restrict on update restrict,
+   constraint FK_JADWALSE_ASSOCIATI_JUDUL foreign key (idJudul)
+      references Judul (idJudul) on delete restrict on update restrict
 );
 
 /*==============================================================*/
@@ -165,3 +166,4 @@ create table dosenDanProdi
       references Dosen (npp) on delete restrict on update restrict
 );
 
+INSERT INTO User VALUES ("Admin", "Admin","Admin");

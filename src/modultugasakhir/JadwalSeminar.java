@@ -19,9 +19,9 @@ public class JadwalSeminar {
    /** @pdOid b999dd8b-e31d-4f92-9ec0-ee4cc2233881 */
    private Date jadwal;
    
-   /** @pdRoleInfo migr=no name=Mahasiswa assc=association10 mult=0..1 side=A */
-   public Mahasiswa MahasiswaDalamJadwalSeminar;
-      /** @pdRoleInfo migr=no name=Prodi assc=association11 mult=0..1 side=A */
+   /** @pdRoleInfo migr=no name=Judul assc=association10 mult=0..1 side=A */
+   public Judul JudulDalamJadwalSeminar;
+   /** @pdRoleInfo migr=no name=Prodi assc=association11 mult=0..1 side=A */
    public Prodi ProdiMenentukanJadwal;
 
    /** @pdOid b8be38bb-13d2-45b1-8b41-7b8f07bfbf65 */
@@ -32,7 +32,7 @@ public class JadwalSeminar {
    public JadwalSeminar(String idProdi, String nim, Date jadwal) {
       // TODO: implement
       autoInsertId();
-      MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(nim);
+      JudulDalamJadwalSeminar = new Judul().getSingleDatabase(nim);
       ProdiMenentukanJadwal = new Prodi().getSingleDatabase(idProdi);
       setJadwal(jadwal);
    }
@@ -72,7 +72,7 @@ public class JadwalSeminar {
                jad.setIdJadwal(rs.getString("idJudul"));
                
                jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
-               jad.MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
+               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("nim"));
                
                jad.setJadwal(rs.getDate("jadwal"));
                
@@ -98,7 +98,7 @@ public class JadwalSeminar {
                jad.setIdJadwal(rs.getString("idJudul"));
                
                jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
-               jad.MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
+               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("nim"));
                
                jad.setJadwal(rs.getDate("jadwal"));
            }
@@ -122,7 +122,7 @@ public class JadwalSeminar {
                jad.setIdJadwal(rs.getString("idJudul"));
                
                jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
-               jad.MahasiswaDalamJadwalSeminar = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
+               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("nim"));
                
                jad.setJadwal(rs.getDate("jadwal"));
            }
@@ -141,7 +141,7 @@ public class JadwalSeminar {
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, getIdJadwal());
            statement.setString(2, ProdiMenentukanJadwal.getIdProdi());
-           statement.setString(3, MahasiswaDalamJadwalSeminar.getNim());
+           statement.setString(3, JudulDalamJadwalSeminar.getIdJudul());
            java.sql.Date sqlDate = new java.sql.Date(getJadwal().getTime());
            statement.setDate(4, sqlDate);
            

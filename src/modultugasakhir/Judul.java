@@ -21,6 +21,8 @@ public class Judul {
    private String namaJudul;
    /** @pdOid 019b77e1-a929-44c7-b7e4-2e57e27f6020 */
    private String deskripsi;
+   /** @pdOid 6c8d6df9-4b74-41f9-986b-508b94ff5b27 */
+   private String tipeJudul;
    
    /** @pdRoleInfo migr=no name=Mahasiswa assc=association4 mult=1..1 side=A */
    public Mahasiswa MahasiswaDalamJudul;
@@ -30,12 +32,13 @@ public class Judul {
       // TODO: implement
    }
    
-   public Judul(String nim, String namaJudul, String deskripsi) {
+   public Judul(String nim, String namaJudul, String deskripsi, String tipeJudul) {
       // TODO: implement
        autoInsertId();
        MahasiswaDalamJudul = new Mahasiswa().getSingleDatabase(nim);
        setNamaJudul(namaJudul);
        setDeskripsi(deskripsi);
+       setTipeJudul(tipeJudul);
    }
    
    /** @pdOid e305398a-f4e6-41d5-b97d-f52557b844d4 */
@@ -71,6 +74,17 @@ public class Judul {
       deskripsi = newDeskripsi;
    }
 
+   /** @pdOid 94474e2b-aa58-48c1-a8bb-598010306c18 */
+   public String getTipeJudul() {
+      return tipeJudul;
+   }
+   
+   /** @param newTipeJudul
+    * @pdOid 2a766a93-9aba-4f97-a25f-5cec33c5fb77 */
+   public void setTipeJudul(String newTipeJudul) {
+      tipeJudul = newTipeJudul;
+   }
+   
    @SuppressWarnings("unchecked")
    public ArrayList<Judul> getAllDatabase(String query){
        ArrayList<Judul> list = new ArrayList<>();
@@ -87,6 +101,7 @@ public class Judul {
                
                jud.setNamaJudul(rs.getString("namaJudul"));
                jud.setDeskripsi(rs.getString("deskripsi"));
+               jud.setTipeJudul(rs.getString("tipeJudul"));
                list.add(jud);
            }
            statement.close();
@@ -113,6 +128,34 @@ public class Judul {
                
                jud.setNamaJudul(rs.getString("namaJudul"));
                jud.setDeskripsi(rs.getString("deskripsi"));
+               jud.setTipeJudul(rs.getString("tipeJudul"));
+               list.add(jud);
+           }
+           statement.close();
+           rs.close();
+       }
+       catch(SQLException e){
+           
+       }
+       return list;
+   }
+   
+   public ArrayList<Judul> getAllTipeDatabase(String tipeJudul){
+       ArrayList<Judul> list = new ArrayList<>();
+       try{
+           String query = "SELECT * FROM judul WHERE tipeJudul = (?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, tipeJudul);
+           ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               Judul jud = new Judul();
+               jud.setIdJudul(rs.getString("idJudul"));
+               
+               jud.MahasiswaDalamJudul = new Mahasiswa().getSingleDatabase(rs.getString("nim"));
+               
+               jud.setNamaJudul(rs.getString("namaJudul"));
+               jud.setDeskripsi(rs.getString("deskripsi"));
+               jud.setTipeJudul(rs.getString("tipeJudul"));
                list.add(jud);
            }
            statement.close();
@@ -138,6 +181,7 @@ public class Judul {
                
                jud.setNamaJudul(rs.getString("namaJudul"));
                jud.setDeskripsi(rs.getString("deskripsi"));
+               jud.setTipeJudul(rs.getString("tipeJudul"));
            }
            statement.close();
            rs.close();
@@ -150,12 +194,13 @@ public class Judul {
    
    public void insertToDatabase(){
        try{
-           String query = "INSERT INTO judul VALUES (?, ?, ?, ?)";
+           String query = "INSERT INTO judul VALUES (?, ?, ?, ?, ?)";
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, getIdJudul());
            statement.setString(2, MahasiswaDalamJudul.getNim());
            statement.setString(3, getNamaJudul());
            statement.setString(4, getDeskripsi());
+           statement.setString(5, getTipeJudul());
            
            statement.execute();
            statement.close();
