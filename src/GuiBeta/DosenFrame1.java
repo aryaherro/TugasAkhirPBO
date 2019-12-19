@@ -34,6 +34,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
     public DosenFrame1() {
         initComponents();
         hideShowAll(false);
+        getAllMahasiswaBimbingan();
     }
     
     public DosenFrame1(User user) {
@@ -41,6 +42,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
         setDosen(new Dosen().getSingleDatabase(user.getUsername()));
         initComponents();
         hideShowAll(false);
+        getAllMahasiswaBimbingan();
     }
 
     /**
@@ -147,8 +149,8 @@ public class DosenFrame1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(144, 144, 144)
+                .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logoutButton)
                 .addGap(82, 82, 82))
@@ -185,7 +187,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logoutButton)
                     .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -345,6 +347,17 @@ public class DosenFrame1 extends javax.swing.JFrame {
             revisiTable.setModel(modelTableRevisi);
         } catch (Exception ex) {
             Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void getAllMahasiswaBimbingan(){
+        ArrayList<Mahasiswa> allMahasiswa = new Mahasiswa().getAllDatabase("");
+        Iterator listMahasiswa = allMahasiswa.iterator();
+        while(listMahasiswa.hasNext()){
+            Mahasiswa maha = (Mahasiswa) listMahasiswa.next();
+            if(maha.DosenPembimbingMahasiswa.getNpp().equals(getDosen().getNpp())){
+                nimNamaComboBox.addItem(maha.getNim() + "-" + maha.getNama());
+            }
         }
     }
     

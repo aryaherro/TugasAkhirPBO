@@ -26,7 +26,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
      */
     public MahasiswaFrame1() {
         initComponents();
-        getStatusJudulMahasiswa(getMahasiswa());
+        hideAll(false);
     }
 
     
@@ -34,7 +34,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         setUser(user);
         setMahasiswa(new Mahasiswa().getSingleDatabase(user.getUsername()));
         initComponents();
-        getStatusJudulMahasiswa(getMahasiswa());
+        hideAll(false);
     }
     
     /**
@@ -51,7 +51,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         tambahJudul = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         RevisiTable = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        jadwalButton = new javax.swing.JButton();
         tipeJudulComboBox = new javax.swing.JComboBox<>();
         judulLabel = new javax.swing.JLabel();
 
@@ -92,9 +92,9 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         RevisiTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(RevisiTable);
 
-        jButton2.setText("LIHAT JADWAL SEMINAR");
+        jadwalButton.setText("LIHAT JADWAL SEMINAR");
 
-        tipeJudulComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Proposal", "Tugas Akhir" }));
+        tipeJudulComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Judul-", "Proposal", "Tugas Akhir" }));
         tipeJudulComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipeJudulComboBoxActionPerformed(evt);
@@ -122,16 +122,15 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(judulLabel)
                             .addComponent(namaMahasiswa)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jButton2)))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jadwalButton)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -145,11 +144,11 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
                     .addComponent(tipeJudulComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(judulLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(120, 120, 120)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jadwalButton)
+                .addGap(137, 137, 137)
                 .addComponent(logoutButton)
                 .addContainerGap(84, Short.MAX_VALUE))
         );
@@ -171,6 +170,73 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
 
     private void tipeJudulComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipeJudulComboBoxActionPerformed
         // TODO add your handling code here:
+        tambahJudul.setVisible(false);
+        jadwalButton.setVisible(false);
+        ArrayList<Judul> AllJudul = new Judul().getAllDatabase("");
+        Iterator<Judul> listJudul = AllJudul.iterator();
+        boolean cek = true;
+        switch (tipeJudulComboBox.getSelectedItem().toString()){
+            case "Proposal" :
+            {
+                while(listJudul.hasNext()){
+                    Judul judul = listJudul.next();
+                    if((judul.MahasiswaDalamJudul.getNim() == getMahasiswa().getNim()) && (judul.getTipeJudul() == "Proposal")){
+                        tambahJudul.setVisible(false);
+                        judulLabel.setVisible(true);
+                        judulLabel.setText("Judul Proposal : " + judul.getNamaJudul());
+                        getRevisiFromDatabase(judul.getIdJudul());
+                        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(judul.getIdJudul());
+                        if(jad.getJadwal() != null)
+                            jadwalButton.setVisible(true);
+                        cek = false;
+                        break;
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Proposal!");    
+                    }
+                    
+                }
+                if (cek){
+                    tambahJudul.setVisible(true);
+                    judulLabel.setVisible(false);
+                }
+                break;
+            }
+            case "Tugas Akhir" :
+            {
+                while(listJudul.hasNext()){
+                    Judul judul = listJudul.next();
+                    if((judul.MahasiswaDalamJudul.getNim() == getMahasiswa().getNim()) && (judul.getTipeJudul() == "Tugas Akhir")){
+                        tambahJudul.setVisible(false);
+                        judulLabel.setText("Judul Tugas Akhir : " + judul.getNamaJudul());
+                        getRevisiFromDatabase(judul.getIdJudul());
+                        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(judul.getIdJudul());
+                        if(jad.getJadwal() != null)
+                            jadwalButton.setVisible(true);
+                        cek = false;
+                        break;
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Tugas Akhir!");
+                        
+                    }
+                }
+                if (cek){
+                    tambahJudul.setVisible(true);
+                    judulLabel.setVisible(false);
+                }
+                break;
+            }
+            default :
+            {
+                tambahJudul.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Pilih tipe judul!");
+                
+            }
+        }
+        
     }//GEN-LAST:event_tipeJudulComboBoxActionPerformed
 
     /**
@@ -208,20 +274,16 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         });
     }
     
-    public void getStatusJudulMahasiswa(Mahasiswa maha){
-    
-    }
     public void getRevisiFromDatabase(String idJudul){
         DefaultTableModel modelTableRevisi = (DefaultTableModel) RevisiTable.getModel();
         modelTableRevisi.setRowCount(0);
-        Object[] atributRevisi = new Object[3];
+        Object[] atributRevisi = new Object[2];
         try {
             ArrayList RevisiAll = new Revisi().getAllIdJudulDatabase(idJudul);
             Iterator listRevisi = RevisiAll.iterator();
             while(listRevisi.hasNext()){
                 Revisi eachRevisi;
                 eachRevisi = (Revisi) listRevisi.next();
-                atributRevisi[0] = eachRevisi.JudulDalamRevisi.getIdJudul();
                 atributRevisi[1] = eachRevisi.getIsiRevisi();
                 atributRevisi[2] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
         
@@ -233,10 +295,15 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         }
     }
     
+    public void hideAll(boolean bool){
+        jadwalButton.setVisible(bool);
+        judulLabel.setVisible(bool);
+        tambahJudul.setVisible(bool);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable RevisiTable;
-    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jadwalButton;
     private javax.swing.JLabel judulLabel;
     private javax.swing.JButton logoutButton;
     private javax.swing.JLabel namaMahasiswa;

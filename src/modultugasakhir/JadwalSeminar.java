@@ -72,7 +72,7 @@ public class JadwalSeminar {
                jad.setIdJadwal(rs.getString("idJudul"));
                
                jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
-               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("nim"));
+               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("idJudul"));
                
                jad.setJadwal(rs.getDate("jadwal"));
                
@@ -98,7 +98,7 @@ public class JadwalSeminar {
                jad.setIdJadwal(rs.getString("idJudul"));
                
                jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
-               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("nim"));
+               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("idJudul"));
                
                jad.setJadwal(rs.getDate("jadwal"));
            }
@@ -111,9 +111,9 @@ public class JadwalSeminar {
        return jad;
    }
    
-   public JadwalSeminar getSingleNimDatabase(String kunci){
+   public JadwalSeminar getSingleIdJudulDatabase(String kunci){
        JadwalSeminar jad = new JadwalSeminar();
-       String query = "SELECT * FROM jadwalseminar WHERE nim = (?)";
+       String query = "SELECT * FROM jadwalseminar WHERE idJudul = (?)";
        try{
            PreparedStatement statement = connect.getConnection().prepareStatement(query);
            statement.setString(1, kunci);
@@ -122,7 +122,7 @@ public class JadwalSeminar {
                jad.setIdJadwal(rs.getString("idJudul"));
                
                jad.ProdiMenentukanJadwal = new Prodi().getSingleDatabase(rs.getString("idProdi"));
-               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("nim"));
+               jad.JudulDalamJadwalSeminar = new Judul().getSingleDatabase(rs.getString("idJudul"));
                
                jad.setJadwal(rs.getDate("jadwal"));
            }

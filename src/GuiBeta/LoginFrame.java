@@ -102,13 +102,13 @@ public class LoginFrame extends javax.swing.JFrame {
                 
                 case "Dosen" :
                 {
-                    new DosenFrame(getU()).setVisible(true);
+                    new DosenFrame1(getU()).setVisible(true);
                     break;
                 }
 
                 case "Mahasiswa" :
                 {
-                    new MahasiswaFrame(getU()).setVisible(true);
+                    new MahasiswaFrame1(getU()).setVisible(true);
                     break;
                 }
                 

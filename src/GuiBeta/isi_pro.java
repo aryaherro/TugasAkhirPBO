@@ -239,13 +239,30 @@ public class isi_pro extends javax.swing.JFrame {
                     atributKelayakan[1] = eachKelayakan.JudulDalamKelayakan.getNamaJudul();
                     atributKelayakan[2] = eachKelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.DosenPembimbingMahasiswa.getNama();
 
-                    atributKelayakan[3] = new JadwalSeminar().getSingleNimDatabase(nim).getJadwal();
+                    atributKelayakan[3] = new JadwalSeminar().getSingleIdJudulDatabase(eachKelayakan.JudulDalamKelayakan.getIdJudul()).getJadwal();
 
                     modelTableJudul.addRow(atributKelayakan);
                 }
             }
             seminarTable.setModel(modelTableJudul);
         } catch (HeadlessException ex) {
+            
+        }
+    }
+    
+    public void getAllMahasiswaLayak(){
+        ArrayList<Mahasiswa> allMahasiswa = new Mahasiswa().getAllDatabase("");
+        Iterator<Mahasiswa> listMahasiswa = allMahasiswa.iterator();
+        while(listMahasiswa.hasNext()){
+            Mahasiswa maha = listMahasiswa.next();
+            ArrayList<Judul> allJudul = new Judul().getAllNimDatabase(maha.getNim());
+            Iterator<Judul> listJudul = allJudul.iterator();
+            while(listJudul.hasNext()){
+                Judul jud = listJudul.next();
+                Kelayakan layak = new Kelayakan().getSingleDatabase(jud.getIdJudul());
+                if(layak.getStatusLayak()){
+                }
+            }
             
         }
     }
