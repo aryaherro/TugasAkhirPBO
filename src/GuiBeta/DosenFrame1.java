@@ -130,6 +130,11 @@ public class DosenFrame1 extends javax.swing.JFrame {
         revisiInputLabel.setText("MASUKKAN REVISI");
 
         jadwalSeminarTaButton.setText("LIHAT JADWAL SEMINAR");
+        jadwalSeminarTaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jadwalSeminarTaButtonActionPerformed(evt);
+            }
+        });
 
         revisiLabel.setText("LIST REVISI");
 
@@ -235,7 +240,17 @@ public class DosenFrame1 extends javax.swing.JFrame {
         StringTokenizer token = new StringTokenizer(idNamaJudul);
         String idJudul = token.nextToken("-");
         getRevisiFromDatabase(idJudul);
-        hideRevisi(true);
+        
+        setKelayakan(new Kelayakan().getSingleFromJudulDatabase(idJudul));
+        boolean bool = true;
+        if(getKelayakan().getStatusLayak() != null)
+            bool = getKelayakan().getStatusLayak();
+        layakCheckBox.setSelected(bool);
+        hideRevisi(!bool);
+        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(idJudul);
+        if(jad.getJadwal()!= null)
+            jadwalSeminarTaButton.setVisible(true);
+        
     }//GEN-LAST:event_judulTableMouseClicked
 
     private void revisiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revisiButtonActionPerformed
@@ -270,6 +285,16 @@ public class DosenFrame1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         getJudulKelayakanFromDatabase();
     }//GEN-LAST:event_nimNamaComboBoxActionPerformed
+
+    private void jadwalSeminarTaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jadwalSeminarTaButtonActionPerformed
+        // TODO add your handling code here:
+        String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
+        StringTokenizer token = new StringTokenizer(idNamaJudul);
+        String idJudul = token.nextToken("-");
+        
+        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(idJudul);
+        JOptionPane.showMessageDialog(null, new SimpleDateFormat("dd-MM-yyyy").format(jad.getJadwal()));
+    }//GEN-LAST:event_jadwalSeminarTaButtonActionPerformed
 
     /**
      * @param args the command line arguments

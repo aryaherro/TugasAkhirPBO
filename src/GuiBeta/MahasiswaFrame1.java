@@ -8,6 +8,7 @@ package GuiBeta;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -21,6 +22,7 @@ import modultugasakhir.*;
 public class MahasiswaFrame1 extends javax.swing.JFrame {
     private User user = new User();
     private Mahasiswa mahasiswa = new Mahasiswa();
+    private JadwalSeminar jadwalSeminar = new JadwalSeminar();
     /**
      * Creates new form Mahasiswa
      */
@@ -93,6 +95,11 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(RevisiTable);
 
         jadwalButton.setText("LIHAT JADWAL SEMINAR");
+        jadwalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jadwalButtonActionPerformed(evt);
+            }
+        });
 
         tipeJudulComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Judul-", "Proposal", "Tugas Akhir" }));
         tipeJudulComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -185,8 +192,8 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
                         judulLabel.setVisible(true);
                         judulLabel.setText("Judul Proposal : " + judul.getNamaJudul());
                         getRevisiFromDatabase(judul.getIdJudul());
-                        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(judul.getIdJudul());
-                        if(jad.getJadwal() != null)
+                        setJadwalSeminar(new JadwalSeminar().getSingleIdJudulDatabase(judul.getIdJudul()));
+                        if(getJadwalSeminar().getJadwal() != null)
                             jadwalButton.setVisible(true);
                         cek = false;
                         break;
@@ -211,8 +218,8 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
                         tambahJudul.setVisible(false);
                         judulLabel.setText("Judul Tugas Akhir : " + judul.getNamaJudul());
                         getRevisiFromDatabase(judul.getIdJudul());
-                        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(judul.getIdJudul());
-                        if(jad.getJadwal() != null)
+                        setJadwalSeminar(new JadwalSeminar().getSingleIdJudulDatabase(judul.getIdJudul()));
+                        if(getJadwalSeminar().getJadwal() != null)
                             jadwalButton.setVisible(true);
                         cek = false;
                         break;
@@ -238,6 +245,11 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_tipeJudulComboBoxActionPerformed
+
+    private void jadwalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jadwalButtonActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, new SimpleDateFormat("dd-MM-yyyy").format(getJadwalSeminar().getJadwal()));
+    }//GEN-LAST:event_jadwalButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,8 +296,8 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
             while(listRevisi.hasNext()){
                 Revisi eachRevisi;
                 eachRevisi = (Revisi) listRevisi.next();
-                atributRevisi[1] = eachRevisi.getIsiRevisi();
-                atributRevisi[2] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
+                atributRevisi[0] = eachRevisi.getIsiRevisi();
+                atributRevisi[1] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
         
                 modelTableRevisi.addRow(atributRevisi);
             }
@@ -337,5 +349,19 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
      */
     public void setMahasiswa(Mahasiswa mahasiswa) {
         this.mahasiswa = mahasiswa;
+    }
+
+    /**
+     * @return the jadwalSeminar
+     */
+    public JadwalSeminar getJadwalSeminar() {
+        return jadwalSeminar;
+    }
+
+    /**
+     * @param jadwalSeminar the jadwalSeminar to set
+     */
+    public void setJadwalSeminar(JadwalSeminar jadwalSeminar) {
+        this.jadwalSeminar = jadwalSeminar;
     }
 }

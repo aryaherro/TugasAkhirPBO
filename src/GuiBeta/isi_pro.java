@@ -5,13 +5,11 @@
  */
 package GuiBeta;
 
-import java.awt.HeadlessException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modultugasakhir.*;
@@ -33,6 +31,9 @@ public class isi_pro extends javax.swing.JFrame {
      */
     public isi_pro() {
         initComponents();
+        hideAll(false);
+        getAllMahasiswaLayak();
+        seminarDateChooser.setDateFormatString("dd-MM-yyyy");
     }
 
     public isi_pro(User user) {
@@ -166,7 +167,7 @@ public class isi_pro extends javax.swing.JFrame {
     private void seminarJadwalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seminarJadwalButtonActionPerformed
         // TODO add your handling code here:
         Date jadwal = seminarDateChooser.getDate();
-        setJadwalSeminar(new JadwalSeminar(getProdi().getIdProdi(), getMahasiswa().getNim(), jadwal));
+        setJadwalSeminar(new JadwalSeminar(getProdi().getIdProdi(), getJudul().getIdJudul(), jadwal));
         getJadwalSeminar().insertToDatabase();
         JOptionPane.showMessageDialog(null, "Data Tersimpan");
         hideAll(false);
@@ -175,10 +176,13 @@ public class isi_pro extends javax.swing.JFrame {
 
     private void seminarTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seminarTableMouseClicked
         // TODO add your handling code here:
-        String nim = (String) seminarTable.getValueAt(seminarTable.getSelectedRow(), 0);
-        setMahasiswa(new Mahasiswa().getSingleDatabase(nim));
-        Date jadwal = (Date) seminarTable.getValueAt(seminarTable.getSelectedRow(), 3);
-        if (jadwal == null)
+        hideAll(false);
+        String idNamaJudul = (String) seminarTable.getValueAt(seminarTable.getSelectedRow(), 2);
+        StringTokenizer token = new StringTokenizer(idNamaJudul);
+        String idJudul = token.nextToken("-");
+        setJudul(new Judul().getSingleDatabase(idJudul));
+        //String jadwal = (Date) seminarTable.getValueAt(seminarTable.getSelectedRow(), 4);
+        if (seminarTable.getValueAt(seminarTable.getSelectedRow(), 4) == null)
             hideAll(true);
     }//GEN-LAST:event_seminarTableMouseClicked
 
@@ -241,9 +245,9 @@ public class isi_pro extends javax.swing.JFrame {
                                   kelayakan.JudulDalamKelayakan.getNamaJudul();
             atributKelayakan[3] = kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.DosenPembimbingMahasiswa.getNpp() + "-" +
                                   kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.DosenPembimbingMahasiswa.getNama();
-            atributKelayakan[4] = new SimpleDateFormat("dd-MM-yyyy").format(
-                                  new JadwalSeminar().getSingleIdJudulDatabase(
-                                  kelayakan.JudulDalamKelayakan.getIdJudul()).getJadwal());
+            Date tgl = new JadwalSeminar().getSingleIdJudulDatabase(kelayakan.JudulDalamKelayakan.getIdJudul()).getJadwal();
+            if(tgl != null)
+                atributKelayakan[4] = new SimpleDateFormat("dd-MM-yyyy").format(tgl);
             modelTableJudul.addRow(atributKelayakan);
         }
         seminarTable.setModel(modelTableJudul);

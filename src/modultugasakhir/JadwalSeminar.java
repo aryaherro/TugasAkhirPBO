@@ -29,10 +29,10 @@ public class JadwalSeminar {
       // TODO: implement
    }
    
-   public JadwalSeminar(String idProdi, String nim, Date jadwal) {
+   public JadwalSeminar(String idProdi, String idJudul, Date jadwal) {
       // TODO: implement
       autoInsertId();
-      JudulDalamJadwalSeminar = new Judul().getSingleDatabase(nim);
+      JudulDalamJadwalSeminar = new Judul().getSingleDatabase(idJudul);
       ProdiMenentukanJadwal = new Prodi().getSingleDatabase(idProdi);
       setJadwal(jadwal);
    }
