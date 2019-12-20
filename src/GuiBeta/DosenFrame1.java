@@ -236,6 +236,8 @@ public class DosenFrame1 extends javax.swing.JFrame {
 
     private void judulTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_judulTableMouseClicked
         // TODO add your handling code here:
+        layakCheckBox.setVisible(true);
+        jadwalSeminarTaButton.setVisible(false);
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
         StringTokenizer token = new StringTokenizer(idNamaJudul);
         String idJudul = token.nextToken("-");
@@ -249,7 +251,10 @@ public class DosenFrame1 extends javax.swing.JFrame {
         hideRevisi(!bool);
         JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(idJudul);
         if(jad.getJadwal()!= null)
+        {
+            layakCheckBox.setVisible(false);
             jadwalSeminarTaButton.setVisible(true);
+        }
     }//GEN-LAST:event_judulTableMouseClicked
 
     private void revisiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revisiButtonActionPerformed
