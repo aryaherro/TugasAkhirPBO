@@ -103,6 +103,22 @@ public class User {
        }
    }
    
+   public void updateToDatabase(){
+       try{
+           String query = "UPDATE user SET password = (?), typeUser = (?) WHERE username = (?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, getPassword());
+           statement.setString(2, getTypeUser());
+           statement.setString(3, getUsername());
+           
+           statement.execute();
+           statement.close();
+           }
+       catch(SQLException e){
+           
+       }
+   }
+   
    public boolean cekLogin(String username, String pass){
        User u = new User().getSingleDatabase(username);
        if((u.getUsername() == null)||(u.getUsername().equals("")))
