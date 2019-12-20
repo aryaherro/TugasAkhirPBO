@@ -242,7 +242,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
         getRevisiFromDatabase(idJudul);
         
         setKelayakan(new Kelayakan().getSingleFromJudulDatabase(idJudul));
-        boolean bool = true;
+        boolean bool = false;
         if(getKelayakan().getStatusLayak() != null)
             bool = getKelayakan().getStatusLayak();
         layakCheckBox.setSelected(bool);
@@ -250,7 +250,6 @@ public class DosenFrame1 extends javax.swing.JFrame {
         JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(idJudul);
         if(jad.getJadwal()!= null)
             jadwalSeminarTaButton.setVisible(true);
-        
     }//GEN-LAST:event_judulTableMouseClicked
 
     private void revisiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revisiButtonActionPerformed
@@ -275,9 +274,11 @@ public class DosenFrame1 extends javax.swing.JFrame {
         if(layakCheckBox.isSelected()){
             Kelayakan kel = new Kelayakan(true, idJudul);
             kel.insertToDatabase();
+            hideRevisi(false);
         }
         else{
             new Kelayakan().deleteSingleDatabase(idJudul);
+            hideRevisi(true);
         }
     }//GEN-LAST:event_layakCheckBoxActionPerformed
 

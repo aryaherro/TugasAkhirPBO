@@ -109,6 +109,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
             }
         });
 
+        judulLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         judulLabel.setText("Judul : ");
 
         jButton1.setText("SIMPAN");
@@ -169,7 +170,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logoutButton)
                     .addComponent(jButton1))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
@@ -191,15 +192,16 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         tambahJudul.setVisible(false);
         jadwalButton.setVisible(false);
-        ArrayList<Judul> AllJudul = new Judul().getAllDatabase("");
-        Iterator<Judul> listJudul = AllJudul.iterator();
         boolean cek = true;
         switch (tipeJudulComboBox.getSelectedItem().toString()){
             case "Proposal" :
             {
+                ArrayList<Judul> AllJudul = new Judul().getAllTipeDatabase("Proposal");
+                Iterator<Judul> listJudul = AllJudul.iterator();
+        
                 while(listJudul.hasNext()){
                     Judul judul = listJudul.next();
-                    if((judul.MahasiswaDalamJudul.getNim().equals(getMahasiswa().getNim())) && (judul.getTipeJudul().equals("Proposal"))){
+                    if(judul.MahasiswaDalamJudul.getNim().equals(getMahasiswa().getNim())){
                         tambahJudul.setVisible(false);
                         judulLabel.setVisible(true);
                         judulLabel.setText("Judul Proposal : " + judul.getNamaJudul());
@@ -211,10 +213,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
                         break;
                     }
                     else
-                    {
-                        JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Proposal!");    
-                    }
-                    
+                        JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Proposal!");
                 }
                 if (cek){
                     tambahJudul.setVisible(true);
@@ -224,9 +223,12 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
             }
             case "Tugas Akhir" :
             {
+                ArrayList<Judul> AllJudul = new Judul().getAllTipeDatabase("Tugas Akhir");
+                Iterator<Judul> listJudul = AllJudul.iterator();
+                
                 while(listJudul.hasNext()){
                     Judul judul = listJudul.next();
-                    if((judul.MahasiswaDalamJudul.getNim().equals(getMahasiswa().getNim())) && (judul.getTipeJudul().equals("Tugas Akhir"))){
+                    if(judul.MahasiswaDalamJudul.getNim().equals(getMahasiswa().getNim())){
                         tambahJudul.setVisible(false);
                         judulLabel.setText("Judul Tugas Akhir : " + judul.getNamaJudul());
                         getRevisiFromDatabase(judul.getIdJudul());
@@ -237,10 +239,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
                         break;
                     }
                     else
-                    {
                         JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Tugas Akhir!");
-                        
-                    }
                 }
                 if (cek){
                     tambahJudul.setVisible(true);
@@ -251,6 +250,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
             default :
             {
                 tambahJudul.setVisible(false);
+                hideAll(false);
                 JOptionPane.showMessageDialog(null, "Pilih tipe judul!");
                 
             }

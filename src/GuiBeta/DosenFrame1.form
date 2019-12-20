@@ -37,21 +37,12 @@
                       <Component id="jLabel2" min="-2" pref="342" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane3" alignment="0" min="-2" pref="569" max="-2" attributes="0"/>
-                                  <Component id="revisiLabel" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="layakCheckBox" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" min="-2" pref="561" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jScrollPane3" alignment="0" min="-2" pref="569" max="-2" attributes="0"/>
+                          <Component id="revisiLabel" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="layakCheckBox" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="561" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">

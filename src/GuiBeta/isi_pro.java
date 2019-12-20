@@ -181,7 +181,6 @@ public class isi_pro extends javax.swing.JFrame {
         StringTokenizer token = new StringTokenizer(idNamaJudul);
         String idJudul = token.nextToken("-");
         setJudul(new Judul().getSingleDatabase(idJudul));
-        //String jadwal = (Date) seminarTable.getValueAt(seminarTable.getSelectedRow(), 4);
         if (seminarTable.getValueAt(seminarTable.getSelectedRow(), 4) == null)
             hideAll(true);
     }//GEN-LAST:event_seminarTableMouseClicked
@@ -248,6 +247,8 @@ public class isi_pro extends javax.swing.JFrame {
             Date tgl = new JadwalSeminar().getSingleIdJudulDatabase(kelayakan.JudulDalamKelayakan.getIdJudul()).getJadwal();
             if(tgl != null)
                 atributKelayakan[4] = new SimpleDateFormat("dd-MM-yyyy").format(tgl);
+            else
+                atributKelayakan[4] = null;
             modelTableJudul.addRow(atributKelayakan);
         }
         seminarTable.setModel(modelTableJudul);
