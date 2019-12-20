@@ -239,7 +239,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 getUser().setUsername(idTextField.getText());
                 getUser().setPassword(kataSandiTextField.getText());
                 getUser().setTypeUser(opsiComboBox.getSelectedItem().toString());
-                getUser().insertToDatabase();
+                getUser().updateToDatabase();
                 
                 getMahasiswa().setNim(idTextField.getText());
                 
