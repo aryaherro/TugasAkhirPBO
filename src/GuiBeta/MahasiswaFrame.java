@@ -19,20 +19,20 @@ import modultugasakhir.*;
  *
  * @author Ajeng
  */
-public class MahasiswaFrame1 extends javax.swing.JFrame {
+public class MahasiswaFrame extends javax.swing.JFrame {
     private User user = new User();
     private Mahasiswa mahasiswa = new Mahasiswa();
     private JadwalSeminar jadwalSeminar = new JadwalSeminar();
     /**
      * Creates new form Mahasiswa
      */
-    public MahasiswaFrame1() {
+    public MahasiswaFrame() {
         initComponents();
         hideAll(false);
     }
 
     
-    public MahasiswaFrame1(User user) {
+    public MahasiswaFrame(User user) {
         setUser(user);
         setMahasiswa(new Mahasiswa().getSingleDatabase(user.getUsername()));
         initComponents();
@@ -298,7 +298,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MahasiswaFrame1().setVisible(true);
+                new MahasiswaFrame().setVisible(true);
             }
         });
     }
@@ -320,7 +320,7 @@ public class MahasiswaFrame1 extends javax.swing.JFrame {
             }
             RevisiTable.setModel(modelTableRevisi);
         } catch (Exception ex) {
-            Logger.getLogger(MahasiswaFrame1.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

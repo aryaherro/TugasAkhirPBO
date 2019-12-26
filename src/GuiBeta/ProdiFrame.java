@@ -18,7 +18,7 @@ import modultugasakhir.*;
  *
  * @author Jempol
  */
-public class isi_pro extends javax.swing.JFrame {
+public class ProdiFrame extends javax.swing.JFrame {
     private User user = new User();
     private Prodi prodi = new Prodi();
     private Mahasiswa mahasiswa = new Mahasiswa();
@@ -29,14 +29,14 @@ public class isi_pro extends javax.swing.JFrame {
     /**
      * Creates new form isi_pro
      */
-    public isi_pro() {
+    public ProdiFrame() {
         initComponents();
         hideAll(false);
         getAllMahasiswaLayak();
         seminarDateChooser.setDateFormatString("dd-MM-yyyy");
     }
 
-    public isi_pro(User user) {
+    public ProdiFrame(User user) {
         initComponents();
         setUser(user);
         setProdi(new Prodi().getSingleDatabase(getUser().getUsername()));
@@ -208,21 +208,23 @@ public class isi_pro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(isi_pro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProdiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(isi_pro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProdiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(isi_pro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProdiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(isi_pro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProdiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new isi_pro().setVisible(true);
+                new ProdiFrame().setVisible(true);
             }
         });
     }

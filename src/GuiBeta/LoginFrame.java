@@ -96,19 +96,19 @@ public class LoginFrame extends javax.swing.JFrame {
                 
                 case "Prodi" :
                 {
-                    new isi_pro(getU()).setVisible(true);
+                    new ProdiFrame(getU()).setVisible(true);
                     break;
                 }
                 
                 case "Dosen" :
                 {
-                    new DosenFrame1(getU()).setVisible(true);
+                    new DosenFrame(getU()).setVisible(true);
                     break;
                 }
 
                 case "Mahasiswa" :
                 {
-                    new MahasiswaFrame1(getU()).setVisible(true);
+                    new MahasiswaFrame(getU()).setVisible(true);
                     break;
                 }
                 
