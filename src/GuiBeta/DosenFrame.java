@@ -282,8 +282,8 @@ public class DosenFrame extends javax.swing.JFrame {
         layakCheckBox.setVisible(true);
         jadwalSeminarTaButton.setVisible(false);
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
-        StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken(" - ");
+        StringTokenizer token = new StringTokenizer(idNamaJudul, " | ");
+        String idJudul = token.nextToken();
         getRevisiFromDatabase(idJudul);
         
         setKelayakan(new Kelayakan().getSingleFromJudulDatabase(idJudul));
@@ -303,8 +303,8 @@ public class DosenFrame extends javax.swing.JFrame {
     private void revisiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revisiButtonActionPerformed
         // TODO add your handling code here:
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
-        StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken(" - ");
+        StringTokenizer token = new StringTokenizer(idNamaJudul, " | ");
+        String idJudul = token.nextToken();
         
         setRevisi(new Revisi(idJudul, getDosen().getNpp(), revisiTextField.getText(), new java.util.Date()));
         getRevisi().insertToDatabase();
@@ -316,8 +316,8 @@ public class DosenFrame extends javax.swing.JFrame {
     private void layakCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_layakCheckBoxActionPerformed
         // TODO add your handling code here:
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
-        StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken(" - ");
+        StringTokenizer token = new StringTokenizer(idNamaJudul, " | ");
+        String idJudul = token.nextToken();
             
         if(layakCheckBox.isSelected()){
             Kelayakan kel = new Kelayakan(true, idJudul);
@@ -338,8 +338,8 @@ public class DosenFrame extends javax.swing.JFrame {
     private void jadwalSeminarTaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jadwalSeminarTaButtonActionPerformed
         // TODO add your handling code here:
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
-        StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken(" - ");
+        StringTokenizer token = new StringTokenizer(idNamaJudul, " | ");
+        String idJudul = token.nextToken();
         
         JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(idJudul);
         JOptionPane.showMessageDialog(null, new SimpleDateFormat("dd-MM-yyyy").format(jad.getJadwal()));
@@ -409,7 +409,7 @@ public class DosenFrame extends javax.swing.JFrame {
             while(listJudul.hasNext()){
                 Judul eachJudul = listJudul.next();
                 atributJudul[0] = eachJudul.getTipeJudul();
-                atributJudul[1] = eachJudul.getIdJudul() + " - " + eachJudul.getNamaJudul();
+                atributJudul[1] = eachJudul.getIdJudul() + " | " + eachJudul.getNamaJudul();
                 atributJudul[2] = eachJudul.getDeskripsi();
         
                 modelTableJudul.addRow(atributJudul);
@@ -430,7 +430,7 @@ public class DosenFrame extends javax.swing.JFrame {
             while(listRevisi.hasNext()){
                 Revisi eachRevisi;
                 eachRevisi = (Revisi) listRevisi.next();
-                atributRevisi[0] = eachRevisi.getIdRevisi() + " - " + eachRevisi.getIsiRevisi();
+                atributRevisi[0] = eachRevisi.getIdRevisi() + " | " + eachRevisi.getIsiRevisi();
                 atributRevisi[1] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
         
                 modelTableRevisi.addRow(atributRevisi);
@@ -447,15 +447,15 @@ public class DosenFrame extends javax.swing.JFrame {
         while(listMahasiswa.hasNext()){
             Mahasiswa maha = (Mahasiswa) listMahasiswa.next();
             if(maha.DosenPembimbingMahasiswa.getNpp().equals(getDosen().getNpp())){
-                nimNamaComboBox.addItem(maha.getNim() + " - " + maha.getNama());
+                nimNamaComboBox.addItem(maha.getNim() + " | " + maha.getNama());
             }
         }
     }
     
     public String getSelectedCombo(){
         String pilih = nimNamaComboBox.getSelectedItem().toString();
-        StringTokenizer token = new StringTokenizer(pilih);
-        return token.nextToken(" - ");
+        StringTokenizer token = new StringTokenizer(pilih," | ");
+        return token.nextToken();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
