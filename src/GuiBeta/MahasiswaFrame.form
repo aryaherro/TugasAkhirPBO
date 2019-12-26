@@ -99,7 +99,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="namaMahasiswa">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Hai,"/>
+        <Property name="text" type="java.lang.String" value="Hai, "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="tambahJudul">

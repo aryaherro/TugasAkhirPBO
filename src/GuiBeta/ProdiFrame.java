@@ -179,7 +179,7 @@ public class ProdiFrame extends javax.swing.JFrame {
         hideAll(false);
         String idNamaJudul = (String) seminarTable.getValueAt(seminarTable.getSelectedRow(), 2);
         StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken("-");
+        String idJudul = token.nextToken(" - ");
         setJudul(new Judul().getSingleDatabase(idJudul));
         if (seminarTable.getValueAt(seminarTable.getSelectedRow(), 4) == null)
             hideAll(true);
@@ -242,7 +242,7 @@ public class ProdiFrame extends javax.swing.JFrame {
             atributKelayakan[0] = kelayakan.JudulDalamKelayakan.getTipeJudul();
             atributKelayakan[1] = kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.getNim() + "-" +
                                   kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.getNama();
-            atributKelayakan[2] = kelayakan.JudulDalamKelayakan.getIdJudul() + "-" +
+            atributKelayakan[2] = kelayakan.JudulDalamKelayakan.getIdJudul() + " - " +
                                   kelayakan.JudulDalamKelayakan.getNamaJudul();
             atributKelayakan[3] = kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.DosenPembimbingMahasiswa.getNpp() + "-" +
                                   kelayakan.JudulDalamKelayakan.MahasiswaDalamJudul.DosenPembimbingMahasiswa.getNama();

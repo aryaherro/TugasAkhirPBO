@@ -76,6 +76,7 @@ public class DosenFrame extends javax.swing.JFrame {
         nidnLabel = new javax.swing.JLabel();
         namaDosenLabel = new javax.swing.JLabel();
         mahasiswaLabel = new javax.swing.JLabel();
+        judulLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -177,6 +178,8 @@ public class DosenFrame extends javax.swing.JFrame {
 
         mahasiswaLabel.setText("Mahasiswa Bimbingan : ");
 
+        judulLabel.setText("Judul ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -221,7 +224,8 @@ public class DosenFrame extends javax.swing.JFrame {
                         .addComponent(mahasiswaLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(nidnLabel))
+                    .addComponent(nidnLabel)
+                    .addComponent(judulLabel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -245,7 +249,9 @@ public class DosenFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(mahasiswaLabel)
                             .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(judulLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(revisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,7 +283,7 @@ public class DosenFrame extends javax.swing.JFrame {
         jadwalSeminarTaButton.setVisible(false);
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
         StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken("-");
+        String idJudul = token.nextToken(" - ");
         getRevisiFromDatabase(idJudul);
         
         setKelayakan(new Kelayakan().getSingleFromJudulDatabase(idJudul));
@@ -298,7 +304,7 @@ public class DosenFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
         StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken("-");
+        String idJudul = token.nextToken(" - ");
         
         setRevisi(new Revisi(idJudul, getDosen().getNpp(), revisiTextField.getText(), new java.util.Date()));
         getRevisi().insertToDatabase();
@@ -311,7 +317,7 @@ public class DosenFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
         StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken("-");
+        String idJudul = token.nextToken(" - ");
             
         if(layakCheckBox.isSelected()){
             Kelayakan kel = new Kelayakan(true, idJudul);
@@ -333,7 +339,7 @@ public class DosenFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
         StringTokenizer token = new StringTokenizer(idNamaJudul);
-        String idJudul = token.nextToken("-");
+        String idJudul = token.nextToken(" - ");
         
         JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(idJudul);
         JOptionPane.showMessageDialog(null, new SimpleDateFormat("dd-MM-yyyy").format(jad.getJadwal()));
@@ -403,7 +409,7 @@ public class DosenFrame extends javax.swing.JFrame {
             while(listJudul.hasNext()){
                 Judul eachJudul = listJudul.next();
                 atributJudul[0] = eachJudul.getTipeJudul();
-                atributJudul[1] = eachJudul.getIdJudul() + "-" + eachJudul.getNamaJudul();
+                atributJudul[1] = eachJudul.getIdJudul() + " - " + eachJudul.getNamaJudul();
                 atributJudul[2] = eachJudul.getDeskripsi();
         
                 modelTableJudul.addRow(atributJudul);
@@ -424,7 +430,7 @@ public class DosenFrame extends javax.swing.JFrame {
             while(listRevisi.hasNext()){
                 Revisi eachRevisi;
                 eachRevisi = (Revisi) listRevisi.next();
-                atributRevisi[0] = eachRevisi.getIdRevisi() + "-" + eachRevisi.getIsiRevisi();
+                atributRevisi[0] = eachRevisi.getIdRevisi() + " - " + eachRevisi.getIsiRevisi();
                 atributRevisi[1] = new SimpleDateFormat("dd-MM-yyyy").format(eachRevisi.getTanggalRevisi());
         
                 modelTableRevisi.addRow(atributRevisi);
@@ -441,7 +447,7 @@ public class DosenFrame extends javax.swing.JFrame {
         while(listMahasiswa.hasNext()){
             Mahasiswa maha = (Mahasiswa) listMahasiswa.next();
             if(maha.DosenPembimbingMahasiswa.getNpp().equals(getDosen().getNpp())){
-                nimNamaComboBox.addItem(maha.getNim() + "-" + maha.getNama());
+                nimNamaComboBox.addItem(maha.getNim() + " - " + maha.getNama());
             }
         }
     }
@@ -449,7 +455,7 @@ public class DosenFrame extends javax.swing.JFrame {
     public String getSelectedCombo(){
         String pilih = nimNamaComboBox.getSelectedItem().toString();
         StringTokenizer token = new StringTokenizer(pilih);
-        return token.nextToken("-");
+        return token.nextToken(" - ");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -457,6 +463,7 @@ public class DosenFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jadwalSeminarTaButton;
+    private javax.swing.JLabel judulLabel;
     private javax.swing.JTable judulTable;
     private javax.swing.JCheckBox layakCheckBox;
     private javax.swing.JButton logoutButton;

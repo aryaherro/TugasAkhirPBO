@@ -37,6 +37,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         setMahasiswa(new Mahasiswa().getSingleDatabase(user.getUsername()));
         initComponents();
         hideAll(false);
+        namaMahasiswa.setText("Hai, " + getMahasiswa().getNama());
     }
     
     /**
@@ -67,7 +68,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
             }
         });
 
-        namaMahasiswa.setText("Hai,");
+        namaMahasiswa.setText("Hai, ");
 
         tambahJudul.setText("AJUKAN JUDUL");
         tambahJudul.addActionListener(new java.awt.event.ActionListener() {

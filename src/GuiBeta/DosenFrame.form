@@ -75,6 +75,7 @@
                       <Component id="nimNamaComboBox" min="-2" pref="249" max="-2" attributes="0"/>
                   </Group>
                   <Component id="nidnLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="judulLabel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -103,7 +104,9 @@
                           <Component id="mahasiswaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="nimNamaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="66" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="judulLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="46" max="32767" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="101" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="revisiLabel" min="-2" pref="30" max="-2" attributes="0"/>
@@ -293,6 +296,11 @@
     <Component class="javax.swing.JLabel" name="mahasiswaLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Mahasiswa Bimbingan : "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="judulLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Judul "/>
       </Properties>
     </Component>
   </SubComponents>
