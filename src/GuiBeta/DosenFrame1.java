@@ -386,7 +386,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
             }
             judulTable.setModel(modelTableJudul);
         } catch (Exception ex) {
-            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DosenFrame1.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -407,7 +407,7 @@ public class DosenFrame1 extends javax.swing.JFrame {
             }
             revisiTable.setModel(modelTableRevisi);
         } catch (Exception ex) {
-            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DosenFrame1.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
