@@ -34,21 +34,26 @@
                       <Component id="jLabel3" min="-2" pref="87" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="313" max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="125" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="seminarDateChooser" min="-2" pref="124" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="seminarJadwalButton" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="125" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="seminarDateChooser" min="-2" pref="124" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="seminarJadwalButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -58,30 +63,23 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" pref="30" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                      <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="seminarJadwalButton" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="seminarJadwalButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" min="-2" pref="123" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="seminarDateChooser" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="337" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="123" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="seminarDateChooser" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="285" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -168,7 +166,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="logoutButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Logout"/>
+        <Property name="text" type="java.lang.String" value="LOGOUT"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutButtonActionPerformed"/>

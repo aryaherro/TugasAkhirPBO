@@ -151,7 +151,7 @@ public class AdminFrame extends javax.swing.JFrame {
         dsnPembLabel.setText("Dosen Pembimbing");
         jPanel1.add(dsnPembLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 620, -1, -1));
 
-        updateButton.setText("Update");
+        updateButton.setText("UPDATE");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
@@ -159,7 +159,7 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel1.add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 680, -1, -1));
 
-        simpanButton.setText("Simpan");
+        simpanButton.setText("SIMPAN");
         simpanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 simpanButtonActionPerformed(evt);
@@ -167,13 +167,13 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         jPanel1.add(simpanButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 680, -1, -1));
 
-        logoutButton.setText("Logout");
+        logoutButton.setText("LOGOUT");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, -1, -1));
+        jPanel1.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 680, -1, -1));
 
         namaTextField.setText("nama");
         jPanel1.add(namaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 180, 30));
