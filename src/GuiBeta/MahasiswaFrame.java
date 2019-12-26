@@ -181,6 +181,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         Judul jud = new Judul(getMahasiswa().getNim(), JOptionPane.showInputDialog(null, "Masukkan Judul", "Judul", 3), JOptionPane.showInputDialog(null, "Masukkan Deskripsi", "Deskripsi", 3), tipeJudulComboBox.getSelectedItem().toString());
         jud.insertToDatabase();
+        tipeJudulComboBoxActionPerformed(evt);
     }//GEN-LAST:event_tambahJudulActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
@@ -213,10 +214,10 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                         cek = false;
                         break;
                     }
-                    else
-                        JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Proposal!");
+                    
                 }
                 if (cek){
+                    JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Proposal!");
                     tambahJudul.setVisible(true);
                     judulLabel.setVisible(false);
                 }
@@ -239,10 +240,9 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                         cek = false;
                         break;
                     }
-                    else
-                        JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Tugas Akhir!");
                 }
                 if (cek){
+                    JOptionPane.showMessageDialog(null, "Anda belum mengajukan Judul Tugas Akhir!");
                     tambahJudul.setVisible(true);
                     judulLabel.setVisible(false);
                 }
