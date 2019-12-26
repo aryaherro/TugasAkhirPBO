@@ -172,9 +172,9 @@ public class DosenFrame extends javax.swing.JFrame {
             }
         });
 
-        nidnLabel.setText("NIDN : ");
+        nidnLabel.setText("NIDN                            : ");
 
-        namaDosenLabel.setText("Nama Dosen : ");
+        namaDosenLabel.setText("Nama Dosen                : ");
 
         mahasiswaLabel.setText("Mahasiswa Bimbingan : ");
 

@@ -285,12 +285,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="nidnLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="NIDN : "/>
+        <Property name="text" type="java.lang.String" value="NIDN                            : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="namaDosenLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nama Dosen : "/>
+        <Property name="text" type="java.lang.String" value="Nama Dosen                : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mahasiswaLabel">
