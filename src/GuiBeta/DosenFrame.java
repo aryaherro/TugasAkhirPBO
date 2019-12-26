@@ -7,7 +7,6 @@ package GuiBeta;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -36,7 +35,7 @@ public class DosenFrame extends javax.swing.JFrame {
         initComponents();
         hideShowAll(false);
         getAllMahasiswaBimbingan();
-        getJudulKelayakanFromDatabase();
+        
     }
     
     public DosenFrame(User user) {
@@ -45,9 +44,8 @@ public class DosenFrame extends javax.swing.JFrame {
         initComponents();
         hideShowAll(false);
         getAllMahasiswaBimbingan();
-        getJudulKelayakanFromDatabase();
-        nidnLabel.setText("NIDN : " + getDosen().getNpp());
-        namaDosenLabel.setText("Nama Dosen : " + getDosen().getNama());
+        nidnLabel.setText("NIDN                            : " + getDosen().getNpp());
+        namaDosenLabel.setText("Nama Dosen                : " + getDosen().getNama());
     }
 
     /**
@@ -62,11 +60,7 @@ public class DosenFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         revisiTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        revisiTextField = new javax.swing.JTextField();
         revisiButton = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        judulTable = new javax.swing.JTable();
-        revisiInputLabel = new javax.swing.JLabel();
         jadwalSeminarTaButton = new javax.swing.JButton();
         revisiLabel = new javax.swing.JLabel();
         logoutButton = new javax.swing.JButton();
@@ -107,34 +101,6 @@ public class DosenFrame extends javax.swing.JFrame {
                 revisiButtonActionPerformed(evt);
             }
         });
-
-        judulTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Proposal / Tugas Akhir", "ID - Judul", "Deskripsi"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        judulTable.setColumnSelectionAllowed(true);
-        judulTable.getTableHeader().setReorderingAllowed(false);
-        judulTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                judulTableMouseClicked(evt);
-            }
-        });
-        jScrollPane3.setViewportView(judulTable);
-        judulTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-
-        revisiInputLabel.setText("MASUKKAN REVISI");
 
         jadwalSeminarTaButton.setText("LIHAT JADWAL SEMINAR");
         jadwalSeminarTaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -185,9 +151,7 @@ public class DosenFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(137, 587, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logoutButton)
@@ -195,76 +159,56 @@ public class DosenFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(layakCheckBox)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(revisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 10, Short.MAX_VALUE)
-                                .addComponent(revisiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(revisiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(revisiInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77))))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(namaDosenLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(mahasiswaLabel)
+                        .addComponent(revisiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(nidnLabel)
-                    .addComponent(judulLabel))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(layakCheckBox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 354, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(202, 202, 202)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(namaDosenLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(mahasiswaLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nidnLabel)
+                            .addComponent(judulLabel)
+                            .addComponent(revisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(revisiInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(revisiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(revisiButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(nidnLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(namaDosenLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mahasiswaLabel)
-                            .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(judulLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(revisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(nidnLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(layakCheckBox)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(logoutButton)))
+                .addComponent(namaDosenLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mahasiswaLabel)
+                    .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(judulLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(revisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(revisiButton)
+                    .addComponent(layakCheckBox)
+                    .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(logoutButton))
                 .addGap(30, 30, 30))
         );
 
@@ -277,71 +221,50 @@ public class DosenFrame extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
-    private void judulTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_judulTableMouseClicked
-        // TODO add your handling code here:
-        layakCheckBox.setVisible(true);
-        jadwalSeminarTaButton.setVisible(false);
-        String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
-        StringTokenizer token = new StringTokenizer(idNamaJudul, " | ");
-        String idJudul = token.nextToken();
-        getRevisiFromDatabase(idJudul);
-        
-        setKelayakan(new Kelayakan().getSingleFromJudulDatabase(idJudul));
-        boolean bool = false;
-        if(getKelayakan().getStatusLayak() != null)
-            bool = getKelayakan().getStatusLayak();
-        layakCheckBox.setSelected(bool);
-        hideRevisi(!bool);
-        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(idJudul);
-        if(jad.getJadwal()!= null)
-        {
-            layakCheckBox.setVisible(false);
-            jadwalSeminarTaButton.setVisible(true);
-        }
-    }//GEN-LAST:event_judulTableMouseClicked
-
     private void revisiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revisiButtonActionPerformed
         // TODO add your handling code here:
-        String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
-        StringTokenizer token = new StringTokenizer(idNamaJudul, " | ");
-        String idJudul = token.nextToken();
-        
-        setRevisi(new Revisi(idJudul, getDosen().getNpp(), revisiTextField.getText(), new java.util.Date()));
+        setRevisi(new Revisi(getJudul().getIdJudul(), getDosen().getNpp(), JOptionPane.showInputDialog(null, "Masukkan Revisi"), new java.util.Date()));
         getRevisi().insertToDatabase();
-        getRevisiFromDatabase(idJudul);
+        getRevisiFromDatabase(getJudul().getIdJudul());
         JOptionPane.showMessageDialog(null, "Data Tersimpan");
-        hideRevisi(false);
     }//GEN-LAST:event_revisiButtonActionPerformed
 
     private void layakCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_layakCheckBoxActionPerformed
         // TODO add your handling code here:
-        String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
-        StringTokenizer token = new StringTokenizer(idNamaJudul, " | ");
-        String idJudul = token.nextToken();
-            
         if(layakCheckBox.isSelected()){
-            Kelayakan kel = new Kelayakan(true, idJudul);
+            Kelayakan kel = new Kelayakan(true, getJudul().getIdJudul());
             kel.insertToDatabase();
             hideRevisi(false);
+            if(getJudul().getTipeJudul().equals("Proposal")){
+                String nim = getJudul().MahasiswaDalamJudul.getNim(),
+                        namaJudul = getJudul().getNamaJudul(),
+                        deskripsi = getJudul().getDeskripsi();
+                setJudul(new Judul(nim, namaJudul, 
+                         deskripsi, "Tugas Akhir"));
+                getJudul().insertToDatabase();
+            }
+            getJudulDb();
         }
         else{
-            new Kelayakan().deleteSingleDatabase(idJudul);
+            new Kelayakan().deleteSingleDatabase(getJudul().getIdJudul());
+            if(getJudul().getTipeJudul().equals("Tugas Akhir")){
+                new Judul().deleteSingleDatabase(getJudul().getIdJudul());
+                
+            }
+            getJudulDb();
+            new Kelayakan().deleteSingleDatabase(getJudul().getIdJudul());
             hideRevisi(true);
         }
     }//GEN-LAST:event_layakCheckBoxActionPerformed
 
     private void nimNamaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimNamaComboBoxActionPerformed
         // TODO add your handling code here:
-        getJudulKelayakanFromDatabase();
+        getJudulDb();
     }//GEN-LAST:event_nimNamaComboBoxActionPerformed
 
     private void jadwalSeminarTaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jadwalSeminarTaButtonActionPerformed
         // TODO add your handling code here:
-        String idNamaJudul = (String) judulTable.getValueAt(judulTable.getSelectedRow(), 1);
-        StringTokenizer token = new StringTokenizer(idNamaJudul, " | ");
-        String idJudul = token.nextToken();
-        
-        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(idJudul);
+        JadwalSeminar jad = new JadwalSeminar().getSingleIdJudulDatabase(getJudul().getIdJudul());
         JOptionPane.showMessageDialog(null, new SimpleDateFormat("dd-MM-yyyy").format(jad.getJadwal()));
     }//GEN-LAST:event_jadwalSeminarTaButtonActionPerformed
 
@@ -390,34 +313,11 @@ public class DosenFrame extends javax.swing.JFrame {
     public void hideShowAll(boolean bool){
         jadwalSeminarTaButton.setVisible(bool);
         revisiLabel.setVisible(bool);
-        hideRevisi(bool);
+        hideRevisi(true);
     }
     
     public void hideRevisi(boolean bool){
         revisiButton.setVisible(bool);
-        revisiInputLabel.setVisible(bool);
-        revisiTextField.setVisible(bool);
-    }
-    
-    public void getJudulKelayakanFromDatabase(){
-        DefaultTableModel modelTableJudul = (DefaultTableModel) judulTable.getModel();
-        modelTableJudul.setRowCount(0);
-        Object[] atributJudul = new Object[3];
-        try {
-            ArrayList<Judul> JudulAll = new Judul().getAllNimDatabase(getSelectedCombo());
-            Iterator<Judul> listJudul = JudulAll.iterator();
-            while(listJudul.hasNext()){
-                Judul eachJudul = listJudul.next();
-                atributJudul[0] = eachJudul.getTipeJudul();
-                atributJudul[1] = eachJudul.getIdJudul() + " | " + eachJudul.getNamaJudul();
-                atributJudul[2] = eachJudul.getDeskripsi();
-        
-                modelTableJudul.addRow(atributJudul);
-            }
-            judulTable.setModel(modelTableJudul);
-        } catch (Exception ex) {
-            Logger.getLogger(DosenFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     public void getRevisiFromDatabase(String idJudul){
@@ -457,14 +357,56 @@ public class DosenFrame extends javax.swing.JFrame {
         StringTokenizer token = new StringTokenizer(pilih," | ");
         return token.nextToken();
     }
+    
+    public void getJudulDb(){
+        setJudul(new Judul());
+        getJudul().setIdJudul("");
+        getJudul().setNamaJudul("");
+        getJudul().setDeskripsi("");
+        getJudul().setTipeJudul("");
+        
+        setKelayakan(new Kelayakan());
+        ArrayList<Judul> allJudulTugasAkhir = new Judul().getAllTipeDatabase("Tugas Akhir");
+        Iterator<Judul> listJudulTugasAkhir = allJudulTugasAkhir.iterator();
+        while(listJudulTugasAkhir.hasNext()){
+            Judul tempJudul = listJudulTugasAkhir.next();
+            if(tempJudul.MahasiswaDalamJudul.getNim().equals(getSelectedCombo())){
+                setJudul(tempJudul);
+            }
+        }
+        if(getJudul().getNamaJudul().equals("")){
+            ArrayList<Judul> allJudulProposal = new Judul().getAllTipeDatabase("Proposal");
+            Iterator<Judul> listJudulProposal = allJudulProposal.iterator();
+            while(listJudulProposal.hasNext()){
+                Judul tempJudul = listJudulProposal.next();
+                if(tempJudul.MahasiswaDalamJudul.getNim().equals(getSelectedCombo())){
+                    setJudul(tempJudul);
+                }
+            }
+        }
+        if(getJudul().getNamaJudul().equals("")){
+            JOptionPane.showMessageDialog(null, "Mahasiswa belum mengajukan judul");
+            judulLabel.setVisible(false);
+        }else
+        {
+            judulLabel.setVisible(true);
+            judulLabel.setText("Judul " + getJudul().getTipeJudul() + " : " + getJudul().getNamaJudul());
+            getRevisiFromDatabase(getJudul().getIdJudul());
+            setKelayakan(new Kelayakan().getSingleFromJudulDatabase(getJudul().getIdJudul()));
+            boolean bool = false;
+            if(getKelayakan().getStatusLayak() != null)
+                bool = getKelayakan().getStatusLayak();
+            layakCheckBox.setSelected(bool);
+            hideRevisi(!bool);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jadwalSeminarTaButton;
     private javax.swing.JLabel judulLabel;
-    private javax.swing.JTable judulTable;
     private javax.swing.JCheckBox layakCheckBox;
     private javax.swing.JButton logoutButton;
     private javax.swing.JLabel mahasiswaLabel;
@@ -472,10 +414,8 @@ public class DosenFrame extends javax.swing.JFrame {
     private javax.swing.JLabel nidnLabel;
     private javax.swing.JComboBox<String> nimNamaComboBox;
     private javax.swing.JButton revisiButton;
-    private javax.swing.JLabel revisiInputLabel;
     private javax.swing.JLabel revisiLabel;
     private javax.swing.JTable revisiTable;
-    private javax.swing.JTextField revisiTextField;
     // End of variables declaration//GEN-END:variables
 
     /**

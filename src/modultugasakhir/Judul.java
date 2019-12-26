@@ -210,6 +210,20 @@ public class Judul {
        }
    }
    
+   public void deleteSingleDatabase(String idJudul){
+       try{
+           String query = "DELETE FROM judul WHERE idJudul = (?)";
+           PreparedStatement statement = connect.getConnection().prepareStatement(query);
+           statement.setString(1, idJudul);
+           
+           statement.execute();
+           statement.close();
+       }
+       catch(SQLException e){
+           
+       }
+   }
+   
    public int getSizeDatabase(){
        return getAllDatabase("").size() + 1;
    }
