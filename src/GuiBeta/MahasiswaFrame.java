@@ -58,8 +58,10 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         tipeJudulComboBox = new javax.swing.JComboBox<>();
         judulLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logoutButton.setText("LOGOUT");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -67,8 +69,10 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 540, 89, -1));
 
         namaMahasiswa.setText("Hai, ");
+        getContentPane().add(namaMahasiswa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         tambahJudul.setText("AJUKAN JUDUL");
         tambahJudul.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +80,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 tambahJudulActionPerformed(evt);
             }
         });
+        getContentPane().add(tambahJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
 
         RevisiTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,12 +101,15 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         RevisiTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(RevisiTable);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, 114));
+
         jadwalButton.setText("LIHAT JADWAL SEMINAR");
         jadwalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jadwalButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(jadwalButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
         tipeJudulComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Judul-", "Proposal", "Tugas Akhir" }));
         tipeJudulComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -109,9 +117,11 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 tipeJudulComboBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(tipeJudulComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         judulLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         judulLabel.setText("Judul : ");
+        getContentPane().add(judulLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
         jButton1.setText("SIMPAN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -119,60 +129,10 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(tipeJudulComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tambahJudul)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(21, 21, 21))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(judulLabel)
-                            .addComponent(namaMahasiswa)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jadwalButton)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(namaMahasiswa)
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tambahJudul)
-                    .addComponent(tipeJudulComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(judulLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jadwalButton)
-                .addGap(137, 137, 137)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logoutButton)
-                    .addComponent(jButton1))
-                .addContainerGap(81, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/MHS.psd.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -333,6 +293,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable RevisiTable;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jadwalButton;
     private javax.swing.JLabel judulLabel;
