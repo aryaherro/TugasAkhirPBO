@@ -59,7 +59,6 @@ public class DosenFrame extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         revisiTable = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
         revisiButton = new javax.swing.JButton();
         jadwalSeminarTaButton = new javax.swing.JButton();
         revisiLabel = new javax.swing.JLabel();
@@ -71,8 +70,10 @@ public class DosenFrame extends javax.swing.JFrame {
         namaDosenLabel = new javax.swing.JLabel();
         mahasiswaLabel = new javax.swing.JLabel();
         judulLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         revisiTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,8 +93,7 @@ public class DosenFrame extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(revisiTable);
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("DOSEN");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 561, 86));
 
         revisiButton.setText("TAMBAH");
         revisiButton.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +101,7 @@ public class DosenFrame extends javax.swing.JFrame {
                 revisiButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(revisiButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 80, -1));
 
         jadwalSeminarTaButton.setText("LIHAT JADWAL SEMINAR");
         jadwalSeminarTaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -108,8 +109,10 @@ public class DosenFrame extends javax.swing.JFrame {
                 jadwalSeminarTaButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(jadwalSeminarTaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 228, 30));
 
         revisiLabel.setText("LIST REVISI");
+        getContentPane().add(revisiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 148, 30));
 
         logoutButton.setText("Logout");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -117,12 +120,14 @@ public class DosenFrame extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 570, -1, -1));
 
         nimNamaComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nimNamaComboBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(nimNamaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 249, -1));
 
         layakCheckBox.setText("Sudah layak maju?");
         layakCheckBox.addActionListener(new java.awt.event.ActionListener() {
@@ -130,6 +135,7 @@ public class DosenFrame extends javax.swing.JFrame {
                 layakCheckBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(layakCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, -1, -1));
 
         jButton1.setText("Simpan");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -137,80 +143,23 @@ public class DosenFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, -1, -1));
 
         nidnLabel.setText("NIDN                            : ");
+        getContentPane().add(nidnLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         namaDosenLabel.setText("Nama Dosen                : ");
+        getContentPane().add(namaDosenLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         mahasiswaLabel.setText("Mahasiswa Bimbingan : ");
+        getContentPane().add(mahasiswaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         judulLabel.setText("Judul ");
+        getContentPane().add(judulLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(137, 587, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logoutButton)
-                .addGap(66, 66, 66))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(revisiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(layakCheckBox)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 354, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(202, 202, 202)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(namaDosenLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(mahasiswaLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(nidnLabel)
-                            .addComponent(judulLabel)
-                            .addComponent(revisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(nidnLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(namaDosenLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mahasiswaLabel)
-                    .addComponent(nimNamaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(judulLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(revisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(revisiButton)
-                    .addComponent(layakCheckBox)
-                    .addComponent(jadwalSeminarTaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(logoutButton))
-                .addGap(30, 30, 30))
-        );
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/DOSEN.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
