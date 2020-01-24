@@ -36,7 +36,7 @@ public class AdminFrame extends javax.swing.JFrame {
     }
     
     public AdminFrame(User Admin) {
-        super(Admin.getUsername());
+        super("Admin : " + Admin.getUsername());
         setAdmin(Admin);
         initComponents();
         hideShowId(false);
@@ -220,6 +220,7 @@ public class AdminFrame extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 770, 720));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed

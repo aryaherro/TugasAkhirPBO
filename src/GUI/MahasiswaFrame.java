@@ -32,7 +32,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
 
     
     public MahasiswaFrame(User user) {
-        super((new Mahasiswa().getSingleDatabase(user.getUsername())).getNama());
+        super("Mahasiswa : " + (new Mahasiswa().getSingleDatabase(user.getUsername())).getNama());
         setUser(user);
         setMahasiswa(new Mahasiswa().getSingleDatabase(user.getUsername()));
         initComponents();
@@ -135,6 +135,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 630));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tambahJudulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahJudulActionPerformed

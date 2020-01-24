@@ -37,7 +37,7 @@ public class ProdiFrame extends javax.swing.JFrame {
     }
 
     public ProdiFrame(User user) {
-        super((new Prodi().getSingleDatabase(user.getUsername())).getNamaProdi());
+        super("Prodi : " + (new Prodi().getSingleDatabase(user.getUsername())).getNamaProdi());
         initComponents();
         setUser(user);
         setProdi(new Prodi().getSingleDatabase(getUser().getUsername()));
@@ -118,6 +118,7 @@ public class ProdiFrame extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void seminarJadwalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seminarJadwalButtonActionPerformed

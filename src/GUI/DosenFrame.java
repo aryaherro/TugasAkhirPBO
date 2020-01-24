@@ -39,7 +39,7 @@ public class DosenFrame extends javax.swing.JFrame {
     }
     
     public DosenFrame(User user) {
-        super((new Dosen().getSingleDatabase(user.getUsername())).getNama());
+        super("Dosen : " + (new Dosen().getSingleDatabase(user.getUsername())).getNama());
         setUser(user);
         setDosen(new Dosen().getSingleDatabase(user.getUsername()));
         initComponents();
@@ -163,6 +163,7 @@ public class DosenFrame extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 630));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed

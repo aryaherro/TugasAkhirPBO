@@ -23,7 +23,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jLabel6 = new javax.swing.JLabel();
         Username = new javax.swing.JTextField();
-        kataSandi = new javax.swing.JTextField();
+        Sandi = new javax.swing.JPasswordField();
         masukButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -36,6 +36,11 @@ public class LoginFrame extends javax.swing.JFrame {
 
         Username.setText("Username");
         Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Username.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                UsernameFocusGained(evt);
+            }
+        });
         Username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsernameActionPerformed(evt);
@@ -43,13 +48,12 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 120, 30));
 
-        kataSandi.setText("Kata sandi");
-        kataSandi.addActionListener(new java.awt.event.ActionListener() {
+        Sandi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kataSandiActionPerformed(evt);
+                SandiActionPerformed(evt);
             }
         });
-        getContentPane().add(kataSandi, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 150, 30));
+        getContentPane().add(Sandi, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 150, 30));
 
         masukButton.setText("MASUK");
         masukButton.addActionListener(new java.awt.event.ActionListener() {
@@ -80,13 +84,9 @@ public class LoginFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void kataSandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kataSandiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kataSandiActionPerformed
-
     private void masukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukButtonActionPerformed
         // TODO add your handling code here:
-        if ((getU().cekLogin(Username.getText(), kataSandi.getText())) && (getU().getTypeUser() != null)) {
+        if ((getU().cekLogin(Username.getText(), Sandi.getText())) && (getU().getTypeUser() != null)) {
             switch (getU().getTypeUser())
             {
                 case "Admin" :
@@ -125,6 +125,16 @@ public class LoginFrame extends javax.swing.JFrame {
     private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsernameActionPerformed
+
+    private void UsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusGained
+        // TODO add your handling code here:
+        Username.selectAll();
+    }//GEN-LAST:event_UsernameFocusGained
+
+    private void SandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SandiActionPerformed
+        // TODO add your handling code here:
+        masukButtonActionPerformed(evt);
+    }//GEN-LAST:event_SandiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,11 +179,11 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField Sandi;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField kataSandi;
     private javax.swing.JButton masukButton;
     // End of variables declaration//GEN-END:variables
 
