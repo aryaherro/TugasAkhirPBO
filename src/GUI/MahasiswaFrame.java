@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GuiBeta;
+package GUI;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -33,6 +32,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
 
     
     public MahasiswaFrame(User user) {
+        super((new Mahasiswa().getSingleDatabase(user.getUsername())).getNama());
         setUser(user);
         setMahasiswa(new Mahasiswa().getSingleDatabase(user.getUsername()));
         initComponents();

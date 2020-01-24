@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GuiBeta;
+package GUI;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -37,6 +37,7 @@ public class ProdiFrame extends javax.swing.JFrame {
     }
 
     public ProdiFrame(User user) {
+        super((new Prodi().getSingleDatabase(user.getUsername())).getNamaProdi());
         initComponents();
         setUser(user);
         setProdi(new Prodi().getSingleDatabase(getUser().getUsername()));

@@ -1,4 +1,4 @@
-package GuiBeta;
+package GUI;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -7,6 +7,7 @@ import modultugasakhir.*;
 public class LoginFrame extends javax.swing.JFrame {
     private User u = new User();
     public LoginFrame() {
+        super("Login Page");
         initComponents();
         this.setBackground (new Color(0,0,0,0));
     }

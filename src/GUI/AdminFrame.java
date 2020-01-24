@@ -3,14 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GuiBeta;
+package GUI;
 
-import java.time.Instant;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
-import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
 import modultugasakhir.*;
 
@@ -40,6 +36,7 @@ public class AdminFrame extends javax.swing.JFrame {
     }
     
     public AdminFrame(User Admin) {
+        super(Admin.getUsername());
         setAdmin(Admin);
         initComponents();
         hideShowId(false);

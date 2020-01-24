@@ -30,6 +30,17 @@ public class Manusia {
       // TODO: implement
    }
    
+   public Manusia(String nama, String nik, java.util.Date tanggalLahir, char jenisKelamin, String alamat, String email, String agama) {
+      // TODO: implement
+       setNama(nama);
+       setNik(nik);
+       setTanggalLahir(tanggalLahir);
+       setJenisKelamin(jenisKelamin);
+       setAlamat(alamat);
+       setEmail(email);
+       setAgama(agama);
+   }
+   
    /** @pdOid d2d2f646-45f7-4e2e-a454-7acd0488e0e6 */
    public String getNama() {
       return nama;

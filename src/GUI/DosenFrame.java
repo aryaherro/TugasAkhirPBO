@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GuiBeta;
+package GUI;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,6 +39,7 @@ public class DosenFrame extends javax.swing.JFrame {
     }
     
     public DosenFrame(User user) {
+        super((new Dosen().getSingleDatabase(user.getUsername())).getNama());
         setUser(user);
         setDosen(new Dosen().getSingleDatabase(user.getUsername()));
         initComponents();

@@ -29,16 +29,10 @@ public class Mahasiswa extends Manusia {
    
    public Mahasiswa(String nim, String npp, String idProdi, String nama, String nik, Date tanggalLahir, String jenisKelamin, String alamat, String email, String agama) {
       // TODO: implement
+      super(nama, nik, tanggalLahir, jenisKelamin.charAt(0), alamat, email, agama);
       setNim(nim);
       DosenPembimbingMahasiswa = new Dosen().getSingleDatabase(npp);
       ProdiDalamMahasiswa = new Prodi().getSingleDatabase(idProdi);
-      setNama(nama);
-      setNik(nik);
-      setTanggalLahir(tanggalLahir);
-      setJenisKelamin(jenisKelamin.charAt(0));
-      setAlamat(alamat);
-      setEmail(email);
-      setAgama(agama);
    }
    
    /** @pdOid 859d0c9b-83a7-4105-9e80-34ca02ee9c30 */

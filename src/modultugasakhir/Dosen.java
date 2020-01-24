@@ -27,14 +27,8 @@ public class Dosen extends Manusia {
   
    public Dosen(String npp, String idProdi, String nama, String nik, Date tanggalLahir, String jenisKelamin, String alamat, String email, String agama) {
       // TODO: implement
+      super(nama, nik, tanggalLahir, jenisKelamin.charAt(0), alamat, email, agama);
       setNpp(npp);
-      setNama(nama);
-      setNik(nik);
-      setTanggalLahir(tanggalLahir);
-      setJenisKelamin(jenisKelamin.charAt(0));
-      setAlamat(alamat);
-      setEmail(email);
-      setAgama(agama);
    }
    
    /** @pdOid a4e163f9-a309-4722-aea4-aa33d00ecafa */
