@@ -41,13 +41,13 @@ public class LoginFrame extends javax.swing.JFrame {
                 UsernameFocusGained(evt);
             }
         });
-        Username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameActionPerformed(evt);
-            }
-        });
         getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 120, 30));
 
+        Sandi.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                SandiFocusGained(evt);
+            }
+        });
         Sandi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SandiActionPerformed(evt);
@@ -122,10 +122,6 @@ public class LoginFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_masukButtonActionPerformed
 
-    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameActionPerformed
-
     private void UsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusGained
         // TODO add your handling code here:
         Username.selectAll();
@@ -135,6 +131,11 @@ public class LoginFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         masukButtonActionPerformed(evt);
     }//GEN-LAST:event_SandiActionPerformed
+
+    private void SandiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SandiFocusGained
+        // TODO add your handling code here:
+        Sandi.selectAll();
+    }//GEN-LAST:event_SandiFocusGained
 
     /**
      * @param args the command line arguments

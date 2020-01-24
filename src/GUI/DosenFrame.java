@@ -35,7 +35,6 @@ public class DosenFrame extends javax.swing.JFrame {
         initComponents();
         hideShowAll(false);
         getAllMahasiswaBimbingan();
-        
     }
     
     public DosenFrame(User user) {
@@ -71,7 +70,7 @@ public class DosenFrame extends javax.swing.JFrame {
         namaDosenLabel = new javax.swing.JLabel();
         mahasiswaLabel = new javax.swing.JLabel();
         judulLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        backgroundLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -158,9 +157,9 @@ public class DosenFrame extends javax.swing.JFrame {
         judulLabel.setText("Judul ");
         getContentPane().add(judulLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/DOSEN.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 630));
+        backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/DOSEN.png"))); // NOI18N
+        getContentPane().add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 630));
 
         pack();
         setLocationRelativeTo(null);
@@ -353,8 +352,8 @@ public class DosenFrame extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel backgroundLabel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jadwalSeminarTaButton;
     private javax.swing.JLabel judulLabel;
