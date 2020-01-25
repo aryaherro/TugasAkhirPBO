@@ -92,6 +92,7 @@ public class AdminFrame extends javax.swing.JFrame {
         datePickerSettings1.setTranslationArrayStandaloneLongMonthNames(new String[] {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "December"});
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

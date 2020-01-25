@@ -70,9 +70,10 @@ public class DosenFrame extends javax.swing.JFrame {
         namaDosenLabel = new javax.swing.JLabel();
         mahasiswaLabel = new javax.swing.JLabel();
         judulLabel = new javax.swing.JLabel();
-        backgroundLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         revisiTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -120,7 +121,7 @@ public class DosenFrame extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 570, -1, -1));
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 560, -1, -1));
 
         nimNamaComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +144,7 @@ public class DosenFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 560, -1, -1));
 
         nidnLabel.setText("NIDN                            : ");
         getContentPane().add(nidnLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
@@ -157,9 +158,8 @@ public class DosenFrame extends javax.swing.JFrame {
         judulLabel.setText("Judul ");
         getContentPane().add(judulLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image_pckg/DOSEN.png"))); // NOI18N
-        getContentPane().add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 630));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ajeng\\Documents\\GitHub\\TugasAkhir\\src\\GUI\\Image_pckg\\Dosen2.png")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 4, 750, 600));
 
         pack();
         setLocationRelativeTo(null);
@@ -352,8 +352,8 @@ public class DosenFrame extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel backgroundLabel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jadwalSeminarTaButton;
     private javax.swing.JLabel judulLabel;
