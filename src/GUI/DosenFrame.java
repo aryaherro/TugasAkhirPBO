@@ -158,7 +158,7 @@ public class DosenFrame extends javax.swing.JFrame {
         judulLabel.setText("Judul ");
         getContentPane().add(judulLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ajeng\\Documents\\GitHub\\TugasAkhir\\src\\GUI\\Image_pckg\\Dosen2.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jempol\\Documents\\GitHub\\TugasAkhir\\src\\GUI\\Image_pckg\\Dosen2.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 4, 750, 600));
 
         pack();
