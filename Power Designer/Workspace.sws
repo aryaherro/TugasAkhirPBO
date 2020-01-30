@@ -4,9 +4,13 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{1AD2E3B2-8A7B-464E-837B-5F61F4C71383}" Name="Java Tugas Akhir" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Java Tugas Akhir.oom"/>
-		<Model Expanded="Yes" ID="{A41B7E4C-849F-4B6A-B802-F3F6A05BA4E9}" Name="CDM Tugas Akhir" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="CDM Tugas Akhir.cdm"/>
+		<Model Expanded="Yes" ID="{1AD2E3B2-8A7B-464E-837B-5F61F4C71383}" Loaded="No" Name="Java Tugas Akhir" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Java Tugas Akhir.oom"/>
+		<Model Expanded="Yes" ID="{A41B7E4C-849F-4B6A-B802-F3F6A05BA4E9}" Loaded="No" Name="CDM Tugas Akhir" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="CDM Tugas Akhir.cdm"/>
 		<Model Expanded="Yes" ID="{C522C36A-F8FD-4AAE-A3DA-0277220B82FC}" Name="PDM Tugas Akhir" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="PDM Tugas Akhir.pdm"/>
+		<Model Expanded="Yes" ID="{E84C7E14-D51B-4D39-988F-6228A459EFFF}" Name="UML Class Diagram KP Java" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="../../PboTugasAkhir/Power Designer/UML Class Diagram KP Java.pdm"/>
+		<Model Expanded="Yes" ID="{6AC7D5B9-C7E8-4956-8D1C-EB97A2A4DD3E}" Name="UML Class Diagram KP Java" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../PboTugasAkhir/Power Designer/UML Class Diagram KP Java.oom"/>
+		<Model Expanded="Yes" ID="{0853ED4E-D46E-45D0-B62F-6896970DA834}" Name="UML Class Diagram KP Java" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="../../PboTugasAkhir/Power Designer/UML Class Diagram KP Java.cdm"/>
+		<Model ID="{6FA61553-884A-4DDC-ABB6-3797B2CA979F}" Name="UML Class Diagram KP" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../PboTugasAkhir/Power Designer/UML Class Diagram KP.oom"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
